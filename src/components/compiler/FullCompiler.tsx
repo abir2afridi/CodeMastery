@@ -5,7 +5,9 @@ import { css as cssLang } from "@codemirror/lang-css";
 import { javascript as jsLang } from "@codemirror/lang-javascript";
 import { oneDark } from "@codemirror/theme-one-dark";
 import { Button } from "@/components/ui/button";
-import { Monitor, Tablet, Smartphone, RotateCcw, Trash2, ExternalLink } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Monitor, Tablet, Smartphone, RotateCcw, Trash2, ExternalLink, ArrowLeft } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 const DEFAULT_HTML = `<!DOCTYPE html>
 <html>
@@ -18,6 +20,7 @@ const DEFAULT_HTML = `<!DOCTYPE html>
     <button id="btn">Click me</button>
   </body>
 </html>`;
+
 const DEFAULT_CSS = `body {
   font-family: system-ui, sans-serif;
   background: #0F1629;
@@ -34,6 +37,7 @@ button {
   cursor: pointer;
   font-weight: 600;
 }`;
+
 const DEFAULT_JS = `document.getElementById('btn')?.addEventListener('click', () => {
   console.log('Hello from CodeMastery!');
   alert('Button clicked!');
@@ -70,6 +74,8 @@ interface Props {
 }
 
 export function FullCompiler({ initialHtml, initialCss, initialJs }: Props) {
+  const navigate = useNavigate();
+  const { t } = useI18n();
   const [html, setHtml] = useState(initialHtml ?? DEFAULT_HTML);
   const [css, setCss] = useState(initialCss ?? DEFAULT_CSS);
   const [js, setJs] = useState(initialJs ?? DEFAULT_JS);
@@ -102,19 +108,27 @@ export function FullCompiler({ initialHtml, initialCss, initialJs }: Props) {
   };
 
   return (
-    <div className="h-screen flex flex-col bg-background">
-      <header className="h-12 border-b border-border flex items-center justify-between px-4 bg-card/50">
+    <div className="h-screen flex flex-col bg-background text-foreground">
+      <header className="h-12 border-b border-border flex items-center justify-between px-4 bg-muted/30">
         <div className="flex items-center gap-2">
-          <span className="font-display font-bold text-primary">CodeMastery</span>
-          <span className="text-xs text-muted-foreground font-mono">Compiler</span>
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              onClick={() => navigate(-1)} 
+              className="h-8 w-8 p-0 hover:bg-foreground/5"
+            >
+              <ArrowLeft className="h-4 w-4" />
+            </Button>
+            <div className="w-px h-4 bg-border mx-2" />
+            <span className="text-[10px] text-foreground/40 font-black tracking-[0.2em] uppercase">COMPILER_CORE_v3.9</span>
         </div>
         <div className="flex items-center gap-1">
-          <Button size="sm" variant={device === "desktop" ? "default" : "ghost"} onClick={() => setDevice("desktop")} className="h-8 px-2"><Monitor className="h-4 w-4" /></Button>
-          <Button size="sm" variant={device === "tablet" ? "default" : "ghost"} onClick={() => setDevice("tablet")} className="h-8 px-2"><Tablet className="h-4 w-4" /></Button>
-          <Button size="sm" variant={device === "mobile" ? "default" : "ghost"} onClick={() => setDevice("mobile")} className="h-8 px-2"><Smartphone className="h-4 w-4" /></Button>
+          <Button size="sm" variant={device === "desktop" ? "secondary" : "ghost"} onClick={() => setDevice("desktop")} className="h-8 px-2"><Monitor className="h-4 w-4" /></Button>
+          <Button size="sm" variant={device === "tablet" ? "secondary" : "ghost"} onClick={() => setDevice("tablet")} className="h-8 px-2"><Tablet className="h-4 w-4" /></Button>
+          <Button size="sm" variant={device === "mobile" ? "secondary" : "ghost"} onClick={() => setDevice("mobile")} className="h-8 px-2"><Smartphone className="h-4 w-4" /></Button>
           <div className="w-px h-5 bg-border mx-2" />
-          <Button size="sm" variant="ghost" onClick={openNewTab} className="h-8"><ExternalLink className="h-4 w-4 mr-1" /> Open</Button>
-          <Button size="sm" variant="ghost" onClick={reset} className="h-8"><RotateCcw className="h-4 w-4 mr-1" /> Reset</Button>
+          <Button size="sm" variant="ghost" onClick={openNewTab} className="h-8 font-black text-[9px] tracking-widest uppercase"><ExternalLink className="h-3.5 w-3.5 mr-1.5" /> {t("common.preview")}</Button>
+          <Button size="sm" variant="ghost" onClick={reset} className="h-8 font-black text-[9px] tracking-widest uppercase"><RotateCcw className="h-3.5 w-3.5 mr-1.5" /> {t("compiler.reset")}</Button>
         </div>
       </header>
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
@@ -133,15 +147,15 @@ export function FullCompiler({ initialHtml, initialCss, initialJs }: Props) {
           <div className="flex-1 bg-white p-2 overflow-auto">
             <iframe ref={iframeRef} title="preview" srcDoc={srcDoc} className={`w-full h-full mx-auto bg-white border-0 ${widthClass}`} sandbox="allow-scripts allow-same-origin" />
           </div>
-          <div className="h-32 border-t border-border bg-card/40 overflow-y-auto scrollbar-thin">
-            <div className="px-3 py-1.5 text-xs uppercase tracking-wider font-mono text-muted-foreground border-b border-border flex items-center justify-between">
-              <span>Console</span>
-              <button onClick={() => setLogs([])} className="hover:text-foreground"><Trash2 className="h-3 w-3" /></button>
+          <div className="h-32 border-t border-border bg-muted/20 overflow-y-auto scrollbar-thin">
+            <div className="px-3 py-1.5 text-[9px] uppercase tracking-[0.2em] font-black text-foreground/40 border-b border-border flex items-center justify-between">
+              <span>{t("compiler.console")}</span>
+              <button onClick={() => setLogs([])} className="hover:text-primary transition-colors"><Trash2 className="h-3 w-3" /></button>
             </div>
-            <div className="px-3 py-2 font-mono text-xs space-y-1">
-              {logs.length === 0 ? <span className="text-muted-foreground/60">No output yet</span> : logs.map((l, i) => (
-                <div key={i} className={l.level === "error" ? "text-destructive" : l.level === "warn" ? "text-warning" : "text-foreground/80"}>
-                  <span className="opacity-50">› </span>{l.text}
+            <div className="px-3 py-2 font-mono text-[11px] space-y-1">
+              {logs.length === 0 ? <span className="text-foreground/20 italic">Awaiting command execution...</span> : logs.map((l, i) => (
+                <div key={i} className={l.level === "error" ? "text-crimson" : l.level === "warn" ? "text-warning-amber" : "text-foreground/80"}>
+                  <span className="opacity-30 tracking-tighter">[{new Date().toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' })}] › </span>{l.text}
                 </div>
               ))}
             </div>
@@ -154,9 +168,13 @@ export function FullCompiler({ initialHtml, initialCss, initialJs }: Props) {
 
 function Panel({ label, color, children }: { label: string; color: string; children: React.ReactNode }) {
   return (
-    <div className="flex-1 flex flex-col min-h-0">
-      <div className={`h-7 ${color} text-background px-3 flex items-center text-xs font-bold font-mono uppercase`}>{label}</div>
-      <div className="flex-1 overflow-hidden">{children}</div>
+    <div className="flex-1 flex flex-col min-h-0 border-b border-border last:border-b-0">
+      <div className={`h-8 ${color} text-white px-4 flex items-center text-[10px] font-black tracking-[0.2em] uppercase`}>
+        {label}
+      </div>
+      <div className="flex-1 overflow-hidden">
+        {children}
+      </div>
     </div>
   );
 }

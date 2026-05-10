@@ -14,9 +14,9 @@ export const CyberpunkBadge: React.FC<CyberpunkBadgeProps> = ({
   className,
 }) => {
   const variantClasses = {
-    status: 'status-badge',
-    protocol: 'protocol-banner',
-    encryption: 'bg-success/10 border border-success/30 text-success terminal-text',
+    status: 'bg-neon-blue text-black font-black uppercase tracking-[0.2em] text-[9px] px-3 py-1 flex items-center',
+    protocol: 'bg-transparent border border-neon-blue/30 text-neon-blue font-black uppercase tracking-[0.2em] text-[9px] px-3 py-1 flex items-center backdrop-blur-md',
+    encryption: 'bg-black/80 border-y border-white/10 text-white/40 font-mono text-[9px] tracking-[0.3em] uppercase py-2 w-full flex items-center justify-center gap-4 backdrop-blur-xl',
   };
 
   return (

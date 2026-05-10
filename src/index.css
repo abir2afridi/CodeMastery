@@ -8,213 +8,64 @@
 
 @layer base {
   :root {
-    /* Cyberpunk Brutalist Color System */
-    --background: 0 0% 4%;              /* #0A0A0A Deep Obsidian */
-    --foreground: 0 0% 100%;            /* #FFFFFF */
-    --foreground-20: 0 0% 80%;           /* #CCCCCC */
-    --foreground-40: 0 0% 60%;           /* #999999 */
+    /* Cyberpunk Solar (Light) Color System */
+    --background: 0 0% 98%;
+    /* Off-white */
+    --foreground: 0 0% 4%;
+    /* Deep Obsidian */
+    --foreground-20: 0 0% 20%;
+    --foreground-40: 0 0% 40%;
 
-    --surface: 0 0% 7%;                 /* #121212 Translucent Carbon */
-    --surface-80: 0 0% 7% / 0.8;        /* rgba(18,18,18,0.8) */
+    --surface: 0 0% 94%;
+    --surface-80: 0 0% 94% / 0.8;
 
-    --card: 0 0% 7% / 0.8;              /* Glass surface */
-    --card-foreground: 0 0% 100%;
-
-    --popover: 0 0% 7% / 0.9;
-    --popover-foreground: 0 0% 100%;
-
-    --primary: 188 100% 50%;             /* #00D4FF Electric Neon Blue */
-    --primary-foreground: 0 0% 4%;
-    --primary-glow: 188 100% 65%;
-
-    --crimson: 348 100% 51%;             /* #FF006E Vibrant Crimson */
-    --crimson-foreground: 0 0% 4%;
-
-    --secondary: 348 100% 51%;           /* Crimson accent */
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 47%;        /* #787878 */
-
-    --accent: 188 100% 50%;
-    --accent-foreground: 0 0% 4%;
-
-    --success: 158 64% 39%;             /* #10B981 */
-    --success-foreground: 0 0% 100%;
-    --warning: 38 92% 50%;              /* #F59E0B */
-    --warning-foreground: 0 0% 4%;
-    --destructive: 348 100% 51%;        /* Crimson */
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 20%;                 /* #333333 */
-    --input: 0 0% 15%;
-    --ring: 188 100% 50%;
-
-    --radius: 0rem;                     /* No border radius for brutalist */
-
-    /* HTML/CSS/JS track colors */
-    --html-color: 17 88% 56%;           /* orange */
-    --css-color: 217 91% 60%;           /* blue */
-    --js-color: 47 96% 53%;             /* yellow */
-
-    /* Cyberpunk Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(188 100% 50% / 0.15), hsl(348 100% 51% / 0.15));
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 7% / 0.8), hsl(0 0% 4% / 0.8));
-    --gradient-violet: linear-gradient(135deg, hsl(348 100% 51%), hsl(188 100% 50%));
-    --gradient-cyberpunk: linear-gradient(45deg, #00D4FF 0%, #FF006E 50%, #00D4FF 100%);
-
-    /* Cyberpunk Shadows / Glows */
-    --glow-primary: 0 0 20px hsl(188 100% 50% / 0.5);
-    --glow-crimson: 0 0 20px hsl(348 100% 51% / 0.5);
-    --glow-violet: 0 0 32px hsl(262 83% 58% / 0.4);
-    --shadow-card: 0 8px 32px -8px hsl(0 0% 2% / 0.8);
-    --shadow-elegant: 0 20px 60px -20px hsl(188 100% 50% / 0.25);
-    --glass-border: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-
-    /* Sidebar */
-    --sidebar-background: 222 40% 9%;
-    --sidebar-foreground: 213 31% 91%;
-    --sidebar-primary: 190 100% 50%;
-    --sidebar-primary-foreground: 222 41% 7%;
-    --sidebar-accent: 222 30% 15%;
-    --sidebar-accent-foreground: 213 31% 91%;
-    --sidebar-border: 220 39% 20%;
-    --sidebar-ring: 190 100% 50%;
-
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .light {
-    /* Light theme colors */
-    --background: 0 0% 100%;              /* #FFFFFF Pure white */
-    --foreground: 0 0% 9%;              /* #171717 Dark text */
-    --foreground-20: 0 0% 25%;           /* #404040 Medium gray */
-    --foreground-40: 0 0% 45%;           /* #737373 Light gray */
-
-    --surface: 0 0% 96%;                 /* #F5F5F5 Light gray */
-    --surface-80: 0 0% 96% / 0.8;       /* rgba(245,245,245,0.8) */
-
-    --card: 0 0% 100% / 0.9;            /* White glass surface */
-    --card-foreground: 0 0% 9%;
-
-    --popover: 0 0% 100% / 0.95;
-    --popover-foreground: 0 0% 9%;
-
-    --primary: 188 100% 50%;             /* #00D4FF Electric Neon Blue */
+    --primary: 188 100% 45%;
+    /* Slightly darker neon blue */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 188 100% 65%;
 
-    --crimson: 348 100% 51%;             /* #FF006E Vibrant Crimson */
+    --crimson: 348 100% 51%;
     --crimson-foreground: 0 0% 100%;
 
-    --secondary: 348 100% 51%;           /* Crimson accent */
-    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
 
-    --muted: 0 0% 96%;                   /* Lighter muted background */
-    --muted-foreground: 0 0% 46%;       /* #757575 Better contrast */
+    --border: 0 0% 0% / 0.1;
+    --input: 0 0% 100% / 0.8;
+    --ring: 188 100% 45%;
 
-    --accent: 188 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    --radius: 0px;
 
-    --success: 158 64% 39%;             /* #10B981 */
-    --success-foreground: 0 0% 100%;
-    --warning: 38 92% 50%;              /* #F59E0B */
-    --warning-foreground: 0 0% 9%;
-    --destructive: 348 100% 51%;        /* Crimson */
-    --destructive-foreground: 0 0% 100%;
+    --gradient-primary: linear-gradient(135deg, #00B4D8, #FF006E);
+    --glow-primary: 0 0 20px rgba(0, 180, 216, 0.1);
+    --glow-crimson: 0 0 20px rgba(255, 0, 110, 0.1);
 
-    --border: 0 0% 89%;                 /* #E5E5E5 Lighter borders */
-    --input: 0 0% 95%;                  /* Lighter input background */
-    --ring: 188 100% 50%;
-
-    /* Sidebar */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 9%;
-    --sidebar-primary: 188 100% 50%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 0 0% 96%;
-    --sidebar-accent-foreground: 0 0% 9%;
-    --sidebar-border: 0 0% 89%;
-    --sidebar-ring: 188 100% 50%;
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    /* Dark theme colors (existing) */
-    --background: 0 0% 4%;              /* #0A0A0A Deep Obsidian */
-    --foreground: 0 0% 100%;            /* #FFFFFF */
-    --foreground-20: 0 0% 80%;           /* #CCCCCC */
-    --foreground-40: 0 0% 60%;           /* #999999 */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
+    --foreground-20: 0 0% 80%;
+    --foreground-40: 0 0% 60%;
 
-    --surface: 0 0% 7%;                 /* #121212 Translucent Carbon */
-    --surface-80: 0 0% 7% / 0.8;        /* rgba(18,18,18,0.8) */
+    --surface: 0 0% 7%;
+    --surface-80: 0 0% 7% / 0.8;
 
-    --card: 0 0% 7% / 0.8;              /* Glass surface */
-    --card-foreground: 0 0% 100%;
-
-    --popover: 0 0% 7% / 0.9;
-    --popover-foreground: 0 0% 100%;
-
-    --primary: 188 100% 50%;             /* #00D4FF Electric Neon Blue */
+    --primary: 188 100% 50%;
     --primary-foreground: 0 0% 4%;
-    --primary-glow: 188 100% 65%;
 
-    --crimson: 348 100% 51%;             /* #FF006E Vibrant Crimson */
-    --crimson-foreground: 0 0% 4%;
+    --crimson: 348 100% 51%;
+    --crimson-foreground: 0 0% 100%;
 
-    --secondary: 348 100% 51%;           /* Crimson accent */
-    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 47%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 47%;        /* #787878 */
-
-    --accent: 188 100% 50%;
-    --accent-foreground: 0 0% 4%;
-
-    --success: 158 64% 39%;             /* #10B981 */
-    --success-foreground: 0 0% 100%;
-    --warning: 38 92% 50%;              /* #F59E0B */
-    --warning-foreground: 0 0% 4%;
-    --destructive: 348 100% 51%;        /* Crimson */
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 20%;                 /* #333333 */
-    --input: 0 0% 15%;
+    --border: 0 0% 100% / 0.1;
+    --input: 0 0% 15% / 0.5;
     --ring: 188 100% 50%;
 
-    --radius: 0rem;                     /* No border radius for brutalist */
-
-    /* HTML/CSS/JS track colors */
-    --html-color: 17 88% 56%;           /* orange */
-    --css-color: 217 91% 60%;           /* blue */
-    --js-color: 47 96% 53%;             /* yellow */
-
-    /* Cyberpunk Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(188 100% 50% / 0.15), hsl(348 100% 51% / 0.15));
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 7% / 0.8), hsl(0 0% 4% / 0.8));
-    --gradient-violet: linear-gradient(135deg, hsl(348 100% 51%), hsl(188 100% 50%));
-    --gradient-cyberpunk: linear-gradient(45deg, #00D4FF 0%, #FF006E 50%, #00D4FF 100%);
-
-    /* Cyberpunk Shadows / Glows */
-    --glow-primary: 0 0 20px hsl(188 100% 50% / 0.5);
-    --glow-crimson: 0 0 20px hsl(348 100% 51% / 0.5);
-    --glow-violet: 0 0 32px hsl(262 83% 58% / 0.4);
-    --shadow-card: 0 8px 32px -8px hsl(0 0% 2% / 0.8);
-    --shadow-elegant: 0 20px 60px -20px hsl(188 100% 50% / 0.25);
-    --glass-border: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-
-    /* Sidebar */
-    --sidebar-background: 222 40% 9%;
-    --sidebar-foreground: 213 31% 91%;
-    --sidebar-primary: 190 100% 50%;
-    --sidebar-primary-foreground: 222 41% 7%;
-    --sidebar-accent: 222 30% 15%;
-    --sidebar-accent-foreground: 213 31% 91%;
-    --sidebar-border: 220 39% 20%;
-    --sidebar-ring: 190 100% 50%;
-
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --glow-primary: 0 0 20px rgba(0, 212, 255, 0.2);
+    --glow-crimson: 0 0 20px rgba(255, 0, 110, 0.2);
   }
 }
 
@@ -222,51 +73,46 @@
   * {
     @apply border-border;
   }
+
   html {
     scroll-behavior: smooth;
-  }
-  .light html {
-    color-scheme: light;
-  }
-  .dark html {
-    color-scheme: dark;
-  }
-  body {
     @apply bg-background text-foreground antialiased;
+  }
+
+  body {
     font-family: 'Inter', system-ui, sans-serif;
     background-attachment: fixed;
+    overflow-x: hidden;
   }
-  .dark body {
-    background-image:
-      radial-gradient(circle at 30% 20%, hsl(188 100% 50% / 0.1), transparent 50%),
-      radial-gradient(circle at 70% 80%, hsl(348 100% 51% / 0.05), transparent 50%),
-      linear-gradient(hsl(0 0% 20% / 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(0 0% 20% / 0.1) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+
+  /* Apply typography rules globally */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-black uppercase tracking-widest leading-none;
   }
-  .light body {
-    background-image:
-      radial-gradient(circle at 30% 20%, hsl(188 100% 50% / 0.03), transparent 50%),
-      radial-gradient(circle at 70% 80%, hsl(348 100% 51% / 0.01), transparent 50%),
-      linear-gradient(hsl(0 0% 89% / 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(0 0% 89% / 0.05) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+
+  p {
+    @apply leading-relaxed;
   }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Outfit', system-ui, sans-serif;
-    @apply tracking-tighter font-black uppercase;
-  }
+
   .brutalist-text {
     font-family: 'Rock Salt', cursive;
     @apply uppercase tracking-widest;
   }
+
+  .terminal-label {
+    @apply text-[9px] uppercase tracking-[0.2em] font-black text-foreground/40;
+  }
+
   .terminal-text {
     font-family: 'JetBrains Mono', ui-monospace, monospace;
-    @apply text-[11px] tracking-[0.2em] uppercase;
+    @apply text-[11px] tracking-wide uppercase;
   }
-  code, pre, .font-mono {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-  }
+
   ::selection {
     background: hsl(var(--primary) / 0.3);
     color: hsl(var(--foreground));
@@ -274,126 +120,84 @@
 }
 
 @layer components {
-  .glass-card {
-    background: hsl(0 0% 7% / 0.8);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: var(--shadow-card);
+  .glass-surface {
+    @apply bg-surface/80 border border-border backdrop-blur-xl;
   }
+
   .brutalist-card {
-    background: hsl(0 0% 7% / 0.8);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: var(--shadow-card);
+    @apply glass-surface relative transition-all duration-300 overflow-hidden;
     aspect-ratio: 3/4;
+    border-radius: 0;
   }
-  .brutalist-card:hover {
-    transform: scale(1.05);
-    box-shadow: var(--glow-primary);
+
+  .brutalist-card img {
+    @apply grayscale transition-all duration-500 w-full h-full object-cover;
   }
-  .neon-text {
-    text-shadow: 0 0 16px hsl(var(--primary) / 0.6);
+
+  .brutalist-card:hover img {
+    @apply grayscale-0 scale-105;
   }
-  .crimson-text {
-    text-shadow: 0 0 16px hsl(var(--crimson) / 0.6);
-  }
-  .neon-border {
-    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.5), var(--glow-primary);
-  }
-  .crimson-border {
-    box-shadow: 0 0 0 1px hsl(var(--crimson) / 0.5), var(--glow-crimson);
-  }
-  .gradient-text {
-    background: var(--gradient-cyberpunk);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+
   .brutalist-button {
-    background: hsl(0 0% 100%);
-    color: hsl(0 0% 4%);
-    border: none;
-    padding: 12px 24px;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-weight: 900;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    transition: all 0.2s ease;
+    @apply bg-foreground text-background font-black uppercase tracking-[0.2em] text-[11px] py-4 px-8 transition-all duration-200 border-none flex items-center justify-center gap-2 shadow-none;
+    border-radius: 0;
   }
+
   .brutalist-button:hover {
-    background: hsl(var(--primary));
-    color: hsl(0 0% 100%);
-    box-shadow: var(--glow-primary);
+    @apply bg-primary text-primary-foreground shadow-glow;
   }
+
   .brutalist-button-outline {
-    background: transparent;
-    color: hsl(0 0% 100%);
-    border: 1px solid hsl(0 0% 100%);
-    padding: 12px 24px;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-weight: 900;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    transition: all 0.2s ease;
+    @apply bg-transparent text-foreground border border-foreground font-black uppercase tracking-[0.2em] text-[11px] py-4 px-8 transition-all duration-200 flex items-center justify-center gap-2;
+    border-radius: 0;
   }
+
   .brutalist-button-outline:hover {
-    background: hsl(0 0% 100%);
-    color: hsl(0 0% 4%);
-    box-shadow: var(--glass-border);
+    @apply bg-foreground text-background;
   }
+
   .terminal-input {
-    background: hsl(0 0% 15% / 0.5);
-    border: 1px solid hsl(0 0% 20%);
-    color: hsl(0 0% 100%);
-    padding: 12px 16px;
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    transition: all 0.2s ease;
+    @apply bg-muted/50 border border-border text-foreground px-4 py-3 text-[11px] font-mono tracking-wider transition-all duration-200;
+    border-radius: 0;
   }
+
   .terminal-input:focus {
-    outline: none;
-    border-color: hsl(var(--primary));
-    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.3), var(--glow-primary);
+    @apply outline-none border-primary;
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.2);
   }
-  .status-badge {
-    background: hsl(var(--primary));
-    color: hsl(0 0% 4%);
-    padding: 4px 12px;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-weight: 900;
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    border: none;
+
+  /* Protocol & Status Accents */
+  .badge-protocol {
+    @apply bg-transparent border border-primary/30 text-primary font-black uppercase tracking-[0.2em] text-[9px] px-3 py-1 flex items-center backdrop-blur-md;
   }
-  .protocol-banner {
-    background: linear-gradient(90deg, hsl(158 64% 39% / 0.1), hsl(158 64% 39% / 0.05));
-    border: 1px solid hsl(158 64% 39% / 0.3);
-    padding: 8px 16px;
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: hsl(158 64% 39%);
+
+  .banner-encryption {
+    @apply bg-background/80 border-y border-border text-foreground/40 font-mono text-[9px] tracking-[0.3em] uppercase py-2 w-full flex items-center justify-center gap-4 backdrop-blur-xl;
   }
-  .scrollbar-thin {
-    scrollbar-width: thin;
-    scrollbar-color: hsl(var(--border)) transparent;
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px currentColor;
   }
-  .scrollbar-thin::-webkit-scrollbar { width: 8px; height: 8px; }
-  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
-  .scrollbar-thin::-webkit-scrollbar-thumb {
-    background: hsl(var(--border));
-    border-radius: 0px;
+
+  .bg-radial-leak {
+    background: radial-gradient(circle at center, var(--primary) 0%, transparent 70%);
+    opacity: 0.05;
   }
-  .scrollbar-thin::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.5); }
+
+
+
+  .border-glow {
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.2);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }

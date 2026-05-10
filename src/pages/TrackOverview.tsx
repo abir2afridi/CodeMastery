@@ -2,12 +2,13 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { getTrack } from "@/lib/curriculum";
 import { useProgress } from "@/hooks/useProgress";
 import { getChapterProgress, isChapterUnlocked, startTrackFor, saveProgress } from "@/lib/progress";
-import { Lock, Check, Play, Circle, Clock, ArrowLeft } from "lucide-react";
+import { Lock, Check, Play, ArrowLeft, Terminal, Shield, Zap, Activity, ChevronRight, Cpu, Database } from "lucide-react";
 import { DifficultyBadge, XPBadge } from "@/components/ui/badges";
-import { Progress } from "@/components/ui/progress";
 import type { TrackId } from "@/lib/curriculum/types";
 import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { CyberpunkButton, CyberpunkCard } from "@/components/ui/cyberpunk";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const TrackOverview = () => {
   const { trackId } = useParams<{ trackId: TrackId }>();
@@ -32,66 +33,176 @@ const TrackOverview = () => {
   // group by partLabel
   const groups = new Map<string, typeof track.chapters>();
   track.chapters.forEach((ch) => {
-    const key = ch.partLabel ?? "Curriculum";
+    const key = ch.partLabel ?? "CORE_CURRICULUM";
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key)!.push(ch);
   });
 
   return (
-    <div className="container py-8 max-w-5xl">
-      <Button asChild variant="ghost" size="sm" className="mb-4"><Link to="/learn"><ArrowLeft className="h-4 w-4 mr-1" /> Dashboard</Link></Button>
-      <div className="glass-card p-6 md:p-8 mb-8">
-        <h1 className="text-3xl md:text-4xl font-display font-bold mb-2">{track.title} Mastery Track</h1>
-        <p className="text-muted-foreground mb-4">{track.tagline}</p>
-        <div className="flex flex-wrap gap-3 mb-4 text-xs font-mono text-muted-foreground">
-          <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {track.estimatedHours} hours</span>
-          <span>{track.totalChapters} chapters</span>
-          <span>{completed} completed</span>
-        </div>
-        <Progress value={pct} className="h-2" />
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 pb-24 relative overflow-hidden font-inter">
+      {/* BACKGROUND ACCENTS */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:32px_32px]" />
+        <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-primary/5 blur-[120px] rounded-full" />
       </div>
 
-      {[...groups.entries()].map(([part, chapters]) => (
-        <div key={part} className="mb-8">
-          <h2 className="text-xs uppercase tracking-[0.3em] font-mono text-primary mb-3">{part}</h2>
-          <div className="space-y-2">
-            {chapters.map((ch) => {
-              const cp = getChapterProgress(progress, track.id, ch.id);
-              const unlocked = isChapterUnlocked(progress, track.id, ch.id);
-              const StatusIcon = !unlocked ? Lock : cp.status === "completed" ? Check : cp.status === "in_progress" ? Play : Circle;
-              const statusClr = !unlocked ? "text-muted-foreground" : cp.status === "completed" ? "text-success" : "text-primary";
-              const inner = (
-                <div className={`glass-card p-4 flex items-center gap-4 transition-all ${unlocked ? "hover:border-primary/50 hover:shadow-glow cursor-pointer" : "opacity-60"}`}>
-                  <div className={`h-9 w-9 rounded-full bg-muted/40 flex items-center justify-center ${statusClr}`}>
-                    <StatusIcon className="h-4 w-4" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1 flex-wrap">
-                      <span className="text-xs font-mono text-muted-foreground">Ch {ch.number}</span>
-                      <h3 className="font-display font-semibold truncate">{ch.title}</h3>
-                      {ch.sections.length === 1 && ch.sections[0].content.includes("being expanded chapter by chapter") && (
-                        <span className="text-[10px] font-mono uppercase tracking-wider px-1.5 py-0.5 rounded bg-muted text-muted-foreground border border-border">Preview</span>
-                      )}
-                    </div>
-                    <p className="text-sm text-muted-foreground truncate">{ch.subtitle}</p>
-                  </div>
-                  <div className="hidden md:flex flex-col items-end gap-1">
-                    <DifficultyBadge difficulty={ch.difficulty} />
-                    <XPBadge xp={ch.xpReward} />
-                  </div>
-                </div>
-              );
-              return unlocked ? (
-                <Link key={ch.id} to={`/learn/${track.id}/${ch.id}`}>{inner}</Link>
-              ) : (
-                <div key={ch.id}>{inner}</div>
-              );
-            })}
+      <div className="container relative z-10 pt-8 max-w-7xl">
+        {/* NAVIGATION & META */}
+        <div className="flex items-center justify-between mb-12 border-b-2 border-foreground/10 pb-4">
+          <Link to="/learn" className="group flex items-center gap-3">
+            <ArrowLeft className="h-4 w-4 text-foreground/40 group-hover:text-primary transition-colors" />
+            <span className="text-[10px] font-black tracking-[0.3em] uppercase opacity-40 group-hover:opacity-100 transition-opacity">RETURN_TO_BASE</span>
+          </Link>
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2">
+              <Database className="h-3 w-3 text-primary" />
+              <span className="text-[10px] font-black tracking-[0.3em] uppercase">DOSSIER_ID: {track.id.toUpperCase()}</span>
+            </div>
           </div>
         </div>
-      ))}
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* LEFT COLUMN: TRACK INFO */}
+          <div className="lg:col-span-5 space-y-12">
+            <header className="relative space-y-8">
+              <div className="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-primary z-20" />
+              
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="h-[2px] w-8 bg-primary" />
+                  <span className="terminal-label text-primary">TRACK_CLASSIFICATION</span>
+                </div>
+                <h1 className="text-7xl font-black uppercase tracking-tighter leading-[0.8] font-outfit">
+                  {track.title}
+                </h1>
+                <p className="text-sm font-black tracking-widest text-foreground/40 uppercase leading-relaxed max-w-md">
+                  {track.tagline}
+                </p>
+              </div>
+
+              <div className="p-8 border-2 border-foreground/10 bg-foreground/[0.02] space-y-8">
+                <div className="space-y-4">
+                  <div className="flex justify-between items-end">
+                    <span className="terminal-label">SYNC_PROGRESS</span>
+                    <span className="text-3xl font-black font-outfit text-primary">{Math.round(pct)}%</span>
+                  </div>
+                  <div className="h-2 w-full bg-foreground/5 relative overflow-hidden">
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      animate={{ width: `${pct}%` }}
+                      className="absolute inset-y-0 left-0 bg-primary shadow-[0_0_15px_rgba(0,212,255,0.4)]"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-8">
+                  <div className="space-y-1">
+                    <span className="text-[8px] font-black tracking-widest text-foreground/20 uppercase">TIME_ESTIMATE</span>
+                    <p className="text-xl font-black">{track.estimatedHours}H</p>
+                  </div>
+                  <div className="space-y-1">
+                    <span className="text-[8px] font-black tracking-widest text-foreground/20 uppercase">NODE_COUNT</span>
+                    <p className="text-xl font-black">{track.totalChapters}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="h-[2px] w-8 bg-foreground/20" />
+                  <span className="terminal-label">MISSION_OBJECTIVES</span>
+                </div>
+                <ul className="space-y-3">
+                  {track.chapters.slice(0, 3).map((ch, i) => (
+                    <li key={i} className="flex items-center gap-3 text-[10px] font-black tracking-widest text-foreground/60 uppercase">
+                      <div className="w-1 h-1 bg-primary" />
+                      SECURE_NODE: {ch.title}
+                    </li>
+                  ))}
+                  <li className="text-[10px] font-black tracking-widest text-primary uppercase animate-pulse">
+                    [...MORE_OBJECTIVES_IN_DEEP_MEMORY]
+                  </li>
+                </ul>
+              </div>
+            </header>
+          </div>
+
+          {/* RIGHT COLUMN: CURRICULUM NODES */}
+          <div className="lg:col-span-7 space-y-16">
+            {[...groups.entries()].map(([part, chapters], groupIdx) => (
+              <div key={part} className="space-y-8">
+                <div className="flex items-center justify-between border-b border-foreground/10 pb-4">
+                  <h2 className="text-xl font-black tracking-[0.3em] text-foreground uppercase font-outfit">{part}</h2>
+                  <span className="text-[9px] font-black tracking-widest opacity-20 uppercase">{chapters.length} NODES</span>
+                </div>
+
+                <div className="space-y-4">
+                  {chapters.map((ch, idx) => {
+                    const cp = getChapterProgress(progress, track.id, ch.id);
+                    const unlocked = isChapterUnlocked(progress, track.id, ch.id);
+                    const isDone = cp.status === "completed";
+                    const isInProgress = cp.status === "in_progress";
+
+                    return (
+                      <Link 
+                        key={ch.id} 
+                        to={unlocked ? `/learn/${track.id}/${ch.id}` : "#"}
+                        className={cn(
+                          "group block relative border-2 transition-all duration-300",
+                          !unlocked ? "border-foreground/5 opacity-40 cursor-not-allowed" : "border-foreground/10 hover:border-primary bg-foreground/[0.02]"
+                        )}
+                      >
+                        <div className="p-6 flex items-center gap-6">
+                          {/* Status Icon Box */}
+                          <div className={cn(
+                            "w-12 h-12 border-2 flex items-center justify-center shrink-0 transition-all",
+                            !unlocked ? "border-foreground/10" :
+                            isDone ? "border-primary bg-primary/10 text-primary" :
+                            isInProgress ? "border-foreground bg-foreground/10 animate-pulse" :
+                            "border-foreground/20 group-hover:border-primary/40"
+                          )}>
+                            {!unlocked ? <Lock className="h-4 w-4" /> :
+                             isDone ? <Check className="h-5 w-5" /> :
+                             isInProgress ? <Play className="h-4 w-4" /> :
+                             <div className="w-1.5 h-1.5 bg-foreground/20 group-hover:bg-primary/40" />}
+                          </div>
+
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-4 mb-1">
+                              <span className="text-[8px] font-black tracking-widest text-foreground/20 uppercase font-mono">NODE_{ch.number.toString().padStart(2, '0')}</span>
+                              <h3 className="text-xl font-black uppercase tracking-tight truncate font-outfit">{ch.title}</h3>
+                            </div>
+                            <p className="text-[10px] font-black tracking-widest text-foreground/40 uppercase truncate">
+                              {ch.subtitle}
+                            </p>
+                          </div>
+
+                          <div className="hidden sm:flex items-center gap-8 text-right shrink-0">
+                            <div className="space-y-1">
+                              <span className="text-[8px] font-black tracking-widest text-foreground/20 uppercase block">XP_VAL</span>
+                              <span className="text-xs font-black tracking-widest uppercase">{ch.xpReward}</span>
+                            </div>
+                            <ChevronRight className={cn(
+                              "h-4 w-4 transition-transform group-hover:translate-x-1",
+                              unlocked ? "text-primary/40 group-hover:text-primary" : "text-foreground/10"
+                            )} />
+                          </div>
+                        </div>
+
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default TrackOverview;
+

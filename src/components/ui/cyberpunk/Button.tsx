@@ -31,16 +31,16 @@ export const CyberpunkButton: React.FC<CyberpunkButtonProps> = ({
   };
 
   const variantClasses = {
-    brutalist: 'bg-background text-foreground hover:bg-primary hover:text-primary-foreground hover:shadow-glow-neon',
-    outline: 'bg-transparent text-foreground border-border hover:bg-background hover:text-foreground hover:shadow-glass-border',
-    neon: 'bg-primary text-primary-foreground hover:bg-primary/80 hover:shadow-glow-neon',
-    crimson: 'bg-crimson text-crimson-foreground hover:bg-crimson/80 hover:shadow-glow-crimson',
+    brutalist: 'bg-white text-black hover:bg-neon-blue hover:text-black hover:shadow-[0_0_20px_rgba(0,212,255,0.4)]',
+    outline: 'bg-transparent text-white border border-white hover:bg-white hover:text-black',
+    neon: 'bg-neon-blue text-black hover:shadow-[0_0_20px_rgba(0,212,255,0.6)]',
+    crimson: 'bg-crimson text-white hover:shadow-[0_0_20px_rgba(255,0,110,0.6)]',
   };
 
   return (
     <Component
       className={cn(
-        baseClasses,
+        'font-black uppercase tracking-[0.2em] transition-all duration-200 border-none flex items-center justify-center gap-2 cursor-pointer',
         sizeClasses[size],
         variantClasses[variant],
         disabled && 'opacity-50 cursor-not-allowed',

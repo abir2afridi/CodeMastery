@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import animate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -27,17 +28,28 @@ export default {
         'terminal-green': '#00FF41',
         'warning-amber': '#FFB700',
         'glass': 'rgba(18, 18, 18, 0.8)',
+        surface: {
+          DEFAULT: "hsl(var(--surface) / <alpha-value>)",
+          80: "hsl(var(--surface-80))",
+        },
         
         // System Colors (mapped to CSS variables)
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: "hsl(var(--border) / <alpha-value>)",
+        input: "hsl(var(--input) / <alpha-value>)",
+        ring: "hsl(var(--ring) / <alpha-value>)",
+        background: "hsl(var(--background) / <alpha-value>)",
+        foreground: {
+          DEFAULT: "hsl(var(--foreground) / <alpha-value>)",
+          20: "hsl(var(--foreground-20) / <alpha-value>)",
+          40: "hsl(var(--foreground-40) / <alpha-value>)",
+        },
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-          glow: "hsl(var(--primary-glow))",
+          DEFAULT: "hsl(var(--primary) / <alpha-value>)",
+          foreground: "hsl(var(--primary-foreground) / <alpha-value>)",
+        },
+        crimson: {
+          DEFAULT: "hsl(var(--crimson))",
+          foreground: "hsl(var(--crimson-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -150,5 +162,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animate],
 } satisfies Config;
