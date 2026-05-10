@@ -36,7 +36,7 @@ export function StreakBadge({ count }: { count: number }) {
 
 export function LevelBadge({ level, name }: { level: number; name: string }) {
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-violet text-white px-3 py-1 text-xs font-bold shadow-glow-violet">
+    <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-violet text-primary-foreground px-3 py-1 text-xs font-bold shadow-glow-violet">
       <Star className="h-3.5 w-3.5" /> Lv {level} · {name}
     </span>
   );

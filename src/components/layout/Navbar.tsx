@@ -5,6 +5,7 @@ import { getLevel } from "@/lib/progress";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navbar() {
   const { progress } = useProgress();
@@ -53,13 +54,14 @@ export function Navbar() {
             <span>{t("nav.search")}</span>
             <kbd className="ml-2 px-1.5 py-0.5 rounded bg-background/60 border border-border font-mono text-[10px]">⌘K</kbd>
           </button>
+          <ThemeToggle />
           <LanguageSwitcher />
           {progress && lvl && (
             <>
               <span className="hidden sm:inline-flex items-center gap-1 text-xs font-mono text-muted-foreground">
                 <Zap className="h-3.5 w-3.5 text-primary" /> {progress.totalXP} {t("common.xp")}
               </span>
-              <span className="text-xs font-bold px-2 py-1 rounded-md bg-gradient-violet text-white">Lv {lvl.level}</span>
+              <span className="text-xs font-bold px-2 py-1 rounded-md bg-gradient-violet text-primary-foreground">Lv {lvl.level}</span>
             </>
           )}
         </div>

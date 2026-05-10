@@ -23,7 +23,7 @@ const Profile = () => {
     <div className="container py-8 max-w-4xl">
       <div className="glass-card p-6 md:p-8 mb-6">
         <div className="flex items-center gap-4 mb-6">
-          <div className="h-16 w-16 rounded-full bg-gradient-violet flex items-center justify-center text-2xl font-display font-bold text-white">
+          <div className="h-16 w-16 rounded-full bg-gradient-violet flex items-center justify-center text-2xl font-display font-bold text-primary-foreground">
             {progress.name[0]?.toUpperCase()}
           </div>
           <div>

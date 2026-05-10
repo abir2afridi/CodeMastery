@@ -12,12 +12,23 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+        display: ['"Outfit"', 'system-ui', 'sans-serif'],
+        brutalist: ['"Rock Salt"', 'cursive'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
-        cursive: ['"Playfair Display"', 'serif'],
+        terminal: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       colors: {
+        // Cyberpunk Color System
+        'obsidian': '#0A0A0A',
+        'carbon': '#121212',
+        'neon-blue': '#00D4FF',
+        'crimson': '#FF006E',
+        'terminal-green': '#00FF41',
+        'warning-amber': '#FFB700',
+        'glass': 'rgba(18, 18, 18, 0.8)',
+        
+        // System Colors (mapped to CSS variables)
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -79,10 +90,15 @@ export default {
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-violet': 'var(--gradient-violet)',
         'gradient-card': 'var(--gradient-card)',
+        'cyberpunk-grid': 'linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px)',
+        'radial-leak': 'radial-gradient(circle at 30% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%)',
       },
       boxShadow: {
         glow: 'var(--glow-primary)',
         'glow-violet': 'var(--glow-violet)',
+        'glow-neon': '0 0 20px rgba(0, 212, 255, 0.5)',
+        'glow-crimson': '0 0 20px rgba(255, 0, 110, 0.5)',
+        'glass-border': 'inset 0 0 0 1px rgba(255, 255, 255, 0.1)',
         elegant: 'var(--shadow-elegant)',
         card: 'var(--shadow-card)',
       },
@@ -103,6 +119,21 @@ export default {
         },
         "float": { "0%, 100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-8px)" } },
         "shimmer": { "0%": { backgroundPosition: "-200% 0" }, "100%": { backgroundPosition: "200% 0" } },
+        "cyberpunk-pulse": {
+          "0%, 100%": { opacity: "1", boxShadow: "0 0 5px rgba(0, 212, 255, 0.5)" },
+          "50%": { opacity: "0.8", boxShadow: "0 0 20px rgba(0, 212, 255, 0.8)" },
+        },
+        "terminal-blink": {
+          "0%, 50%": { opacity: "1" },
+          "51%, 100%": { opacity: "0" },
+        },
+        "glitch": {
+          "0%, 100%": { transform: "translate(0)" },
+          "20%": { transform: "translate(-2px, 2px)" },
+          "40%": { transform: "translate(-2px, -2px)" },
+          "60%": { transform: "translate(2px, 2px)" },
+          "80%": { transform: "translate(2px, -2px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -113,6 +144,9 @@ export default {
         "pulse-glow": "pulse-glow 2.5s ease-in-out infinite",
         "float": "float 4s ease-in-out infinite",
         "shimmer": "shimmer 2s linear infinite",
+        "cyberpunk-pulse": "cyberpunk-pulse 2s ease-in-out infinite",
+        "terminal-blink": "terminal-blink 1s ease-in-out infinite",
+        "glitch": "glitch 0.3s ease-in-out infinite",
       },
     },
   },

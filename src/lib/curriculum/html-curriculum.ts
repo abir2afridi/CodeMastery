@@ -4,6 +4,12 @@ import { htmlCh07, htmlCh08, htmlCh09 } from "./html-deep-7-9";
 import { htmlCh10, htmlCh11, htmlCh12 } from "./html-deep-10-12";
 import { htmlCh13, htmlCh14 } from "./html-deep-13-14";
 import { htmlCh15 } from "./html-deep-15";
+import { htmlCh16, htmlCh17, htmlCh18, htmlCh19, htmlCh20 } from "./html-deep-16-20";
+import { htmlCh21, htmlCh22, htmlCh23, htmlCh24, htmlCh25 } from "./html-deep-21-25";
+import { htmlCh26, htmlCh27, htmlCh28, htmlCh29, htmlCh30 } from "./html-deep-26-30";
+import { htmlCh31, htmlCh32, htmlCh33, htmlCh34, htmlCh35 } from "./html-deep-31-35";
+import { htmlCh36, htmlCh37, htmlCh38, htmlCh39, htmlCh40 } from "./html-deep-36-40";
+import { htmlCh41, htmlCh42, htmlCh43, htmlCh44, htmlCh45, htmlCh46, htmlCh47, htmlCh48, htmlCh49, htmlCh50 } from "./html-deep-41-50";
 
 // ============================================================================
 // HELPERS for stub chapters
@@ -1069,53 +1075,53 @@ const part2: Chapter[] = [
 
 const part3: Chapter[] = [
   htmlCh15,
-  makeStub(16, "iFrames and Embeds", "Embedding YouTube, Maps, security implications.", "Intermediate", "Part 3: Media & Embeds", "html-ch-15"),
-  makeStub(17, "SVG in HTML", "Inline SVG basics, why it matters.", "Intermediate", "Part 3: Media & Embeds", "html-ch-16"),
-  makeStub(18, "Canvas Basics", "Drawing shapes via the <canvas> element.", "Advanced", "Part 3: Media & Embeds", "html-ch-17"),
-  makeStub(19, "HTML5 APIs Preview", "Geolocation, localStorage at a glance.", "Intermediate", "Part 3: Media & Embeds", "html-ch-18"),
-  makeStub(20, "Special Characters & Entities", "&amp;, &lt;, &copy;, and friends.", "Beginner", "Part 3: Media & Embeds", "html-ch-19"),
+  htmlCh16,
+  htmlCh17,
+  htmlCh18,
+  htmlCh19,
+  htmlCh20,
 ];
 
 const part4: Chapter[] = [
-  makeStub(21, "Web Accessibility Basics", "Why a11y matters and who it helps.", "Intermediate", "Part 4: Accessibility", "html-ch-20"),
-  makeStub(22, "ARIA Roles & Attributes", "When to use ARIA (and when not to).", "Advanced", "Part 4: Accessibility", "html-ch-21"),
-  makeStub(23, "Keyboard Navigation", "tabindex, focus management.", "Advanced", "Part 4: Accessibility", "html-ch-22"),
-  makeStub(24, "Screen Readers", "How blind users browse the web.", "Intermediate", "Part 4: Accessibility", "html-ch-23"),
-  makeStub(25, "Forms & Accessibility", "Labels, fieldsets, error messages.", "Advanced", "Part 4: Accessibility", "html-ch-24"),
-  makeStub(26, "Images & Accessibility", "Writing great alt text.", "Intermediate", "Part 4: Accessibility", "html-ch-25"),
+  htmlCh21,
+  htmlCh22,
+  htmlCh23,
+  htmlCh24,
+  htmlCh25,
+  htmlCh26,
 ];
 
 const part5: Chapter[] = [
-  makeStub(27, "How Search Engines Read HTML", "Crawlers, indexing, ranking signals.", "Intermediate", "Part 5: SEO & Performance", "html-ch-26"),
-  makeStub(28, "Meta Tags for SEO", "title, description, robots, canonical.", "Intermediate", "Part 5: SEO & Performance", "html-ch-27"),
-  makeStub(29, "Open Graph & Social", "og:title, og:image, Twitter cards.", "Intermediate", "Part 5: SEO & Performance", "html-ch-28"),
-  makeStub(30, "Structured Data", "Schema.org JSON-LD for rich results.", "Advanced", "Part 5: SEO & Performance", "html-ch-29"),
-  makeStub(31, "HTML Performance", "Critical rendering path, defer/async.", "Advanced", "Part 5: SEO & Performance", "html-ch-30"),
-  makeStub(32, "HTML Validation & Best Practices", "Using the W3C validator.", "Intermediate", "Part 5: SEO & Performance", "html-ch-31"),
+  htmlCh27,
+  htmlCh28,
+  htmlCh29,
+  htmlCh30,
+  htmlCh31,
+  htmlCh32,
+  htmlCh33,
+  htmlCh34,
+  htmlCh35,
 ];
 
 const part6: Chapter[] = [
-  makeStub(33, "Web Components Intro", "Custom elements overview.", "Advanced", "Part 6: Advanced HTML", "html-ch-32"),
-  makeStub(34, "Template & Slot", "<template> and <slot> elements.", "Advanced", "Part 6: Advanced HTML", "html-ch-33"),
-  makeStub(35, "HTML Dialog Element", "Native modals with <dialog>.", "Intermediate", "Part 6: Advanced HTML", "html-ch-34"),
-  makeStub(36, "Details & Summary", "Native disclosure widgets.", "Beginner", "Part 6: Advanced HTML", "html-ch-35"),
-  makeStub(37, "PWAs and Manifest", "manifest.json basics.", "Advanced", "Part 6: Advanced HTML", "html-ch-36"),
-  makeStub(38, "Microdata", "Itemprop, itemscope, itemtype.", "Advanced", "Part 6: Advanced HTML", "html-ch-37"),
-  makeStub(39, "HTML Email Basics", "Why HTML email is its own world.", "Advanced", "Part 6: Advanced HTML", "html-ch-38"),
-  makeStub(40, "HTML Anti-Patterns", "What NOT to do, and why.", "Intermediate", "Part 6: Advanced HTML", "html-ch-39"),
+  htmlCh36,
+  htmlCh37,
+  htmlCh38,
+  htmlCh39,
+  htmlCh40,
+  htmlCh41,
 ];
 
 const part7: Chapter[] = [
-  makeStub(41, "Project: Personal Bio Page", "Pull it all together.", "Beginner", "Part 7: Projects", "html-ch-40"),
-  makeStub(42, "Project: Recipe with Tables & Forms", "Multi-element project.", "Intermediate", "Part 7: Projects", "html-ch-41"),
-  makeStub(43, "Project: Photo Gallery Page", "Images and semantic structure.", "Intermediate", "Part 7: Projects", "html-ch-42"),
-  makeStub(44, "Project: Multi-page Website", "Home, About, Contact linked together.", "Intermediate", "Part 7: Projects", "html-ch-43"),
-  makeStub(45, "Project: Accessible Form", "Real-world a11y form.", "Advanced", "Part 7: Projects", "html-ch-44"),
-  makeStub(46, "Mini Challenges Set 1", "10 small challenges.", "Beginner", "Part 7: Projects", "html-ch-45"),
-  makeStub(47, "Mini Challenges Set 2", "10 medium challenges.", "Intermediate", "Part 7: Projects", "html-ch-46"),
-  makeStub(48, "Mini Challenges Set 3", "10 hard challenges.", "Advanced", "Part 7: Projects", "html-ch-47"),
-  makeStub(49, "HTML Code Review", "Common mistakes deep-dive.", "Advanced", "Part 7: Projects", "html-ch-48"),
-  makeStub(50, "HTML Mastery Recap & Cert Quiz", "Final cumulative quiz.", "Expert", "Part 7: Projects", "html-ch-49"),
+  htmlCh42,
+  htmlCh43,
+  htmlCh44,
+  htmlCh45,
+  htmlCh46,
+  htmlCh47,
+  htmlCh48,
+  htmlCh49,
+  htmlCh50,
 ];
 
 export const htmlChapters: Chapter[] = [

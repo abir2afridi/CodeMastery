@@ -4,6 +4,10 @@ import { cssCh05, cssCh06, cssCh07, cssCh08 } from "./css-deep-5-8";
 import { cssCh09, cssCh10, cssCh11 } from "./css-deep-9-11";
 import { cssCh12 } from "./css-deep-12";
 import { cssCh13, cssCh14 } from "./css-deep-13-14";
+import { cssCh15, cssCh16, cssCh17, cssCh18, cssCh19, cssCh20 } from "./css-deep-15-20";
+import { cssCh21, cssCh22, cssCh23, cssCh24, cssCh25, cssCh26, cssCh27, cssCh28, cssCh29, cssCh30 } from "./css-deep-21-30";
+import { cssCh31, cssCh32, cssCh33, cssCh34, cssCh35, cssCh36, cssCh37, cssCh38, cssCh39, cssCh40, cssCh41, cssCh42, cssCh43, cssCh44 } from "./css-deep-31-44";
+import { cssCh45, cssCh46, cssCh47, cssCh48, cssCh49, cssCh50, cssCh51, cssCh52, cssCh53, cssCh54, cssCh55 } from "./css-deep-45-55";
 
 const stubQuiz = (chapterId: string, topic: string): Quiz => ({
   passingScore: 80,
@@ -294,56 +298,56 @@ const part2: Chapter[] = [
   cssCh12,
   cssCh13,
   cssCh14,
-  makeStub(15, "CSS Grid — Part 1", "Defining the grid.", "Intermediate", "Part 2: Layout", "css-ch-14"),
-  makeStub(16, "CSS Grid — Part 2", "Placing items + advanced.", "Advanced", "Part 2: Layout", "css-ch-15"),
-  makeStub(17, "Responsive Design — Part 1", "Media queries.", "Intermediate", "Part 2: Layout", "css-ch-16"),
-  makeStub(18, "Responsive Design — Part 2", "Fluid typography & containers.", "Advanced", "Part 2: Layout", "css-ch-17"),
-  makeStub(19, "CSS Variables", "--custom properties.", "Intermediate", "Part 2: Layout", "css-ch-18"),
-  makeStub(20, "Float and Clear", "Legacy + still-valid uses.", "Beginner", "Part 2: Layout", "css-ch-19"),
+  cssCh15,
+  cssCh16,
+  cssCh17,
+  cssCh18,
+  cssCh19,
+  cssCh20,
 ];
 
 const part3: Chapter[] = [
-  makeStub(21, "Borders, Shadows, Outlines", "Visual depth and emphasis.", "Beginner", "Part 3: Visual Effects", "css-ch-20"),
-  makeStub(22, "Gradients", "Linear, radial, conic.", "Intermediate", "Part 3: Visual Effects", "css-ch-21"),
-  makeStub(23, "Transforms", "translate, rotate, scale, skew.", "Intermediate", "Part 3: Visual Effects", "css-ch-22"),
-  makeStub(24, "Transitions", "Smooth state changes.", "Intermediate", "Part 3: Visual Effects", "css-ch-23"),
-  makeStub(25, "Animations — Part 1", "@keyframes basics.", "Intermediate", "Part 3: Visual Effects", "css-ch-24"),
-  makeStub(26, "Animations — Part 2", "Performance and complex sequences.", "Advanced", "Part 3: Visual Effects", "css-ch-25"),
-  makeStub(27, "Filters & Backdrop Filter", "blur, brightness, glassmorphism.", "Intermediate", "Part 3: Visual Effects", "css-ch-26"),
-  makeStub(28, "Blend Modes", "mix-blend-mode, background-blend.", "Advanced", "Part 3: Visual Effects", "css-ch-27"),
-  makeStub(29, "Clip-path & Shapes", "Custom element shapes.", "Advanced", "Part 3: Visual Effects", "css-ch-28"),
-  makeStub(30, "Scroll Behavior & Snap", "Smooth scroll + snap points.", "Intermediate", "Part 3: Visual Effects", "css-ch-29"),
+  cssCh21,
+  cssCh22,
+  cssCh23,
+  cssCh24,
+  cssCh25,
+  cssCh26,
+  cssCh27,
+  cssCh28,
+  cssCh29,
+  cssCh30,
 ];
 
 const part4: Chapter[] = [
-  makeStub(31, "Pseudo-elements", "::before, ::after, ::selection.", "Intermediate", "Part 4: Advanced", "css-ch-30"),
-  makeStub(32, "CSS Variables Advanced", "Themes, runtime updates.", "Advanced", "Part 4: Advanced", "css-ch-31"),
-  makeStub(33, "calc(), min(), max(), clamp()", "Math functions in CSS.", "Intermediate", "Part 4: Advanced", "css-ch-32"),
-  makeStub(34, "CSS Architecture: BEM", "Naming convention.", "Intermediate", "Part 4: Advanced", "css-ch-33"),
-  makeStub(35, "ITCSS & @layer", "Cascade layers.", "Advanced", "Part 4: Advanced", "css-ch-34"),
-  makeStub(36, "Dark Mode Implementation", "prefers-color-scheme + variables.", "Intermediate", "Part 4: Advanced", "css-ch-35"),
-  makeStub(37, "CSS Accessibility", "focus styles, reduced motion.", "Intermediate", "Part 4: Advanced", "css-ch-36"),
-  makeStub(38, "Sass/SCSS Intro", "Preprocessors overview.", "Intermediate", "Part 4: Advanced", "css-ch-37"),
-  makeStub(39, "Tailwind CSS Intro", "Utility-first frameworks.", "Intermediate", "Part 4: Advanced", "css-ch-38"),
-  makeStub(40, "CSS Performance", "Selector cost, paint, layout.", "Advanced", "Part 4: Advanced", "css-ch-39"),
-  makeStub(41, "CSS Debugging", "DevTools deep dive.", "Intermediate", "Part 4: Advanced", "css-ch-40"),
-  makeStub(42, "Print Styles", "@media print.", "Intermediate", "Part 4: Advanced", "css-ch-41"),
-  makeStub(43, "Modern CSS", "nesting, :has(), container queries.", "Advanced", "Part 4: Advanced", "css-ch-42"),
-  makeStub(44, "Grid Advanced", "Masonry, magazine layouts.", "Advanced", "Part 4: Advanced", "css-ch-43"),
+  cssCh31,
+  cssCh32,
+  cssCh33,
+  cssCh34,
+  cssCh35,
+  cssCh36,
+  cssCh37,
+  cssCh38,
+  cssCh39,
+  cssCh40,
+  cssCh41,
+  cssCh42,
+  cssCh43,
+  cssCh44,
 ];
 
 const part5: Chapter[] = [
-  makeStub(45, "Project: Portfolio", "Personal portfolio site.", "Intermediate", "Part 5: Projects", "css-ch-44"),
-  makeStub(46, "Project: Blog Layout", "Responsive blog.", "Intermediate", "Part 5: Projects", "css-ch-45"),
-  makeStub(47, "Project: Landing Page", "With animations.", "Advanced", "Part 5: Projects", "css-ch-46"),
-  makeStub(48, "Project: Dashboard UI", "Dark theme.", "Advanced", "Part 5: Projects", "css-ch-47"),
-  makeStub(49, "Project: Product Card", "E-commerce style.", "Intermediate", "Part 5: Projects", "css-ch-48"),
-  makeStub(50, "Project: Pure CSS Art", "Illustration with CSS only.", "Advanced", "Part 5: Projects", "css-ch-49"),
-  makeStub(51, "Mini Challenges Set 1", "10 small challenges.", "Beginner", "Part 5: Projects", "css-ch-50"),
-  makeStub(52, "Mini Challenges Set 2", "10 medium challenges.", "Intermediate", "Part 5: Projects", "css-ch-51"),
-  makeStub(53, "Mini Challenges Set 3", "10 hard challenges.", "Advanced", "Part 5: Projects", "css-ch-52"),
-  makeStub(54, "CSS Code Review", "Common mistakes.", "Advanced", "Part 5: Projects", "css-ch-53"),
-  makeStub(55, "CSS Mastery Recap & Cert Quiz", "Final cumulative quiz.", "Expert", "Part 5: Projects", "css-ch-54"),
+  cssCh45,
+  cssCh46,
+  cssCh47,
+  cssCh48,
+  cssCh49,
+  cssCh50,
+  cssCh51,
+  cssCh52,
+  cssCh53,
+  cssCh54,
+  cssCh55,
 ];
 
 export const cssChapters: Chapter[] = [...part1, ...part2, ...part3, ...part4, ...part5];

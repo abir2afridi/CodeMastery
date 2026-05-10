@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Rock+Salt&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,58 +8,69 @@
 
 @layer base {
   :root {
-    /* Force dark theme always */
-    --background: 222 41% 7%;          /* #0A0E1A */
-    --foreground: 213 31% 91%;          /* #E2E8F0 */
+    /* Cyberpunk Brutalist Color System */
+    --background: 0 0% 4%;              /* #0A0A0A Deep Obsidian */
+    --foreground: 0 0% 100%;            /* #FFFFFF */
+    --foreground-20: 0 0% 80%;           /* #CCCCCC */
+    --foreground-40: 0 0% 60%;           /* #999999 */
 
-    --card: 222 38% 11%;                /* #0F1629 */
-    --card-foreground: 213 31% 91%;
+    --surface: 0 0% 7%;                 /* #121212 Translucent Carbon */
+    --surface-80: 0 0% 7% / 0.8;        /* rgba(18,18,18,0.8) */
 
-    --popover: 222 38% 11%;
-    --popover-foreground: 213 31% 91%;
+    --card: 0 0% 7% / 0.8;              /* Glass surface */
+    --card-foreground: 0 0% 100%;
 
-    --primary: 190 100% 50%;            /* #00D4FF electric blue */
-    --primary-foreground: 222 41% 7%;
-    --primary-glow: 190 100% 65%;
+    --popover: 0 0% 7% / 0.9;
+    --popover-foreground: 0 0% 100%;
 
-    --secondary: 262 83% 58%;           /* #7C3AED violet */
-    --secondary-foreground: 213 31% 95%;
+    --primary: 188 100% 50%;             /* #00D4FF Electric Neon Blue */
+    --primary-foreground: 0 0% 4%;
+    --primary-glow: 188 100% 65%;
 
-    --muted: 222 30% 15%;
-    --muted-foreground: 215 16% 47%;    /* #64748B */
+    --crimson: 348 100% 51%;             /* #FF006E Vibrant Crimson */
+    --crimson-foreground: 0 0% 4%;
 
-    --accent: 190 100% 50%;
-    --accent-foreground: 222 41% 7%;
+    --secondary: 348 100% 51%;           /* Crimson accent */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 47%;        /* #787878 */
+
+    --accent: 188 100% 50%;
+    --accent-foreground: 0 0% 4%;
 
     --success: 158 64% 39%;             /* #10B981 */
-    --success-foreground: 213 31% 95%;
+    --success-foreground: 0 0% 100%;
     --warning: 38 92% 50%;              /* #F59E0B */
-    --warning-foreground: 222 41% 7%;
-    --destructive: 0 84% 60%;           /* #EF4444 */
-    --destructive-foreground: 213 31% 95%;
+    --warning-foreground: 0 0% 4%;
+    --destructive: 348 100% 51%;        /* Crimson */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 39% 20%;              /* #1E2A45 */
-    --input: 220 39% 20%;
-    --ring: 190 100% 50%;
+    --border: 0 0% 20%;                 /* #333333 */
+    --input: 0 0% 15%;
+    --ring: 188 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0rem;                     /* No border radius for brutalist */
 
     /* HTML/CSS/JS track colors */
     --html-color: 17 88% 56%;           /* orange */
     --css-color: 217 91% 60%;           /* blue */
     --js-color: 47 96% 53%;             /* yellow */
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(190 100% 50% / 0.15), hsl(262 83% 58% / 0.15));
+    /* Cyberpunk Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(188 100% 50% / 0.15), hsl(348 100% 51% / 0.15));
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-card: linear-gradient(180deg, hsl(222 38% 13% / 0.8), hsl(222 38% 9% / 0.8));
-    --gradient-violet: linear-gradient(135deg, hsl(262 83% 58%), hsl(190 100% 50%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 7% / 0.8), hsl(0 0% 4% / 0.8));
+    --gradient-violet: linear-gradient(135deg, hsl(348 100% 51%), hsl(188 100% 50%));
+    --gradient-cyberpunk: linear-gradient(45deg, #00D4FF 0%, #FF006E 50%, #00D4FF 100%);
 
-    /* Shadows / glows */
-    --glow-primary: 0 0 32px hsl(var(--primary) / 0.4);
+    /* Cyberpunk Shadows / Glows */
+    --glow-primary: 0 0 20px hsl(188 100% 50% / 0.5);
+    --glow-crimson: 0 0 20px hsl(348 100% 51% / 0.5);
     --glow-violet: 0 0 32px hsl(262 83% 58% / 0.4);
-    --shadow-card: 0 8px 32px -8px hsl(222 50% 2% / 0.8);
-    --shadow-elegant: 0 20px 60px -20px hsl(190 100% 50% / 0.25);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 2% / 0.8);
+    --shadow-elegant: 0 20px 60px -20px hsl(188 100% 50% / 0.25);
+    --glass-border: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 
     /* Sidebar */
     --sidebar-background: 222 40% 9%;
@@ -74,8 +85,136 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  .light {
+    /* Light theme colors */
+    --background: 0 0% 100%;              /* #FFFFFF Pure white */
+    --foreground: 0 0% 9%;              /* #171717 Dark text */
+    --foreground-20: 0 0% 25%;           /* #404040 Medium gray */
+    --foreground-40: 0 0% 45%;           /* #737373 Light gray */
+
+    --surface: 0 0% 96%;                 /* #F5F5F5 Light gray */
+    --surface-80: 0 0% 96% / 0.8;       /* rgba(245,245,245,0.8) */
+
+    --card: 0 0% 100% / 0.9;            /* White glass surface */
+    --card-foreground: 0 0% 9%;
+
+    --popover: 0 0% 100% / 0.95;
+    --popover-foreground: 0 0% 9%;
+
+    --primary: 188 100% 50%;             /* #00D4FF Electric Neon Blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 188 100% 65%;
+
+    --crimson: 348 100% 51%;             /* #FF006E Vibrant Crimson */
+    --crimson-foreground: 0 0% 100%;
+
+    --secondary: 348 100% 51%;           /* Crimson accent */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 96%;                   /* Lighter muted background */
+    --muted-foreground: 0 0% 46%;       /* #757575 Better contrast */
+
+    --accent: 188 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 158 64% 39%;             /* #10B981 */
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;              /* #F59E0B */
+    --warning-foreground: 0 0% 9%;
+    --destructive: 348 100% 51%;        /* Crimson */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 89%;                 /* #E5E5E5 Lighter borders */
+    --input: 0 0% 95%;                  /* Lighter input background */
+    --ring: 188 100% 50%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 9%;
+    --sidebar-primary: 188 100% 50%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 9%;
+    --sidebar-border: 0 0% 89%;
+    --sidebar-ring: 188 100% 50%;
+  }
+
   .dark {
-    /* same tokens (always dark) */
+    /* Dark theme colors (existing) */
+    --background: 0 0% 4%;              /* #0A0A0A Deep Obsidian */
+    --foreground: 0 0% 100%;            /* #FFFFFF */
+    --foreground-20: 0 0% 80%;           /* #CCCCCC */
+    --foreground-40: 0 0% 60%;           /* #999999 */
+
+    --surface: 0 0% 7%;                 /* #121212 Translucent Carbon */
+    --surface-80: 0 0% 7% / 0.8;        /* rgba(18,18,18,0.8) */
+
+    --card: 0 0% 7% / 0.8;              /* Glass surface */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 7% / 0.9;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 188 100% 50%;             /* #00D4FF Electric Neon Blue */
+    --primary-foreground: 0 0% 4%;
+    --primary-glow: 188 100% 65%;
+
+    --crimson: 348 100% 51%;             /* #FF006E Vibrant Crimson */
+    --crimson-foreground: 0 0% 4%;
+
+    --secondary: 348 100% 51%;           /* Crimson accent */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 47%;        /* #787878 */
+
+    --accent: 188 100% 50%;
+    --accent-foreground: 0 0% 4%;
+
+    --success: 158 64% 39%;             /* #10B981 */
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;              /* #F59E0B */
+    --warning-foreground: 0 0% 4%;
+    --destructive: 348 100% 51%;        /* Crimson */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;                 /* #333333 */
+    --input: 0 0% 15%;
+    --ring: 188 100% 50%;
+
+    --radius: 0rem;                     /* No border radius for brutalist */
+
+    /* HTML/CSS/JS track colors */
+    --html-color: 17 88% 56%;           /* orange */
+    --css-color: 217 91% 60%;           /* blue */
+    --js-color: 47 96% 53%;             /* yellow */
+
+    /* Cyberpunk Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(188 100% 50% / 0.15), hsl(348 100% 51% / 0.15));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 7% / 0.8), hsl(0 0% 4% / 0.8));
+    --gradient-violet: linear-gradient(135deg, hsl(348 100% 51%), hsl(188 100% 50%));
+    --gradient-cyberpunk: linear-gradient(45deg, #00D4FF 0%, #FF006E 50%, #00D4FF 100%);
+
+    /* Cyberpunk Shadows / Glows */
+    --glow-primary: 0 0 20px hsl(188 100% 50% / 0.5);
+    --glow-crimson: 0 0 20px hsl(348 100% 51% / 0.5);
+    --glow-violet: 0 0 32px hsl(262 83% 58% / 0.4);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 2% / 0.8);
+    --shadow-elegant: 0 20px 60px -20px hsl(188 100% 50% / 0.25);
+    --glass-border: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+    /* Sidebar */
+    --sidebar-background: 222 40% 9%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 190 100% 50%;
+    --sidebar-primary-foreground: 222 41% 7%;
+    --sidebar-accent: 222 30% 15%;
+    --sidebar-accent-foreground: 213 31% 91%;
+    --sidebar-border: 220 39% 20%;
+    --sidebar-ring: 190 100% 50%;
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -84,23 +223,46 @@
     @apply border-border;
   }
   html {
-    color-scheme: dark;
     scroll-behavior: smooth;
+  }
+  .light html {
+    color-scheme: light;
+  }
+  .dark html {
+    color-scheme: dark;
   }
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
-    background-image:
-      radial-gradient(circle at 20% 10%, hsl(190 100% 50% / 0.06), transparent 50%),
-      radial-gradient(circle at 80% 80%, hsl(262 83% 58% / 0.06), transparent 50%),
-      linear-gradient(hsl(220 39% 20% / 0.15) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(220 39% 20% / 0.15) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
     background-attachment: fixed;
   }
+  .dark body {
+    background-image:
+      radial-gradient(circle at 30% 20%, hsl(188 100% 50% / 0.1), transparent 50%),
+      radial-gradient(circle at 70% 80%, hsl(348 100% 51% / 0.05), transparent 50%),
+      linear-gradient(hsl(0 0% 20% / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(0 0% 20% / 0.1) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  }
+  .light body {
+    background-image:
+      radial-gradient(circle at 30% 20%, hsl(188 100% 50% / 0.03), transparent 50%),
+      radial-gradient(circle at 70% 80%, hsl(348 100% 51% / 0.01), transparent 50%),
+      linear-gradient(hsl(0 0% 89% / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(0 0% 89% / 0.05) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
-    @apply tracking-tight;
+    font-family: 'Outfit', system-ui, sans-serif;
+    @apply tracking-tighter font-black uppercase;
+  }
+  .brutalist-text {
+    font-family: 'Rock Salt', cursive;
+    @apply uppercase tracking-widest;
+  }
+  .terminal-text {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    @apply text-[11px] tracking-[0.2em] uppercase;
   }
   code, pre, .font-mono {
     font-family: 'JetBrains Mono', ui-monospace, monospace;
@@ -113,21 +275,109 @@
 
 @layer components {
   .glass-card {
-    background: var(--gradient-card);
+    background: hsl(0 0% 7% / 0.8);
     backdrop-filter: blur(12px);
-    @apply border border-border rounded-xl shadow-[var(--shadow-card)];
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-card);
+  }
+  .brutalist-card {
+    background: hsl(0 0% 7% / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-card);
+    aspect-ratio: 3/4;
+  }
+  .brutalist-card:hover {
+    transform: scale(1.05);
+    box-shadow: var(--glow-primary);
   }
   .neon-text {
     text-shadow: 0 0 16px hsl(var(--primary) / 0.6);
   }
+  .crimson-text {
+    text-shadow: 0 0 16px hsl(var(--crimson) / 0.6);
+  }
   .neon-border {
     box-shadow: 0 0 0 1px hsl(var(--primary) / 0.5), var(--glow-primary);
   }
+  .crimson-border {
+    box-shadow: 0 0 0 1px hsl(var(--crimson) / 0.5), var(--glow-crimson);
+  }
   .gradient-text {
-    background: var(--gradient-violet);
+    background: var(--gradient-cyberpunk);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+  .brutalist-button {
+    background: hsl(0 0% 100%);
+    color: hsl(0 0% 4%);
+    border: none;
+    padding: 12px 24px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+  }
+  .brutalist-button:hover {
+    background: hsl(var(--primary));
+    color: hsl(0 0% 100%);
+    box-shadow: var(--glow-primary);
+  }
+  .brutalist-button-outline {
+    background: transparent;
+    color: hsl(0 0% 100%);
+    border: 1px solid hsl(0 0% 100%);
+    padding: 12px 24px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+  }
+  .brutalist-button-outline:hover {
+    background: hsl(0 0% 100%);
+    color: hsl(0 0% 4%);
+    box-shadow: var(--glass-border);
+  }
+  .terminal-input {
+    background: hsl(0 0% 15% / 0.5);
+    border: 1px solid hsl(0 0% 20%);
+    color: hsl(0 0% 100%);
+    padding: 12px 16px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease;
+  }
+  .terminal-input:focus {
+    outline: none;
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.3), var(--glow-primary);
+  }
+  .status-badge {
+    background: hsl(var(--primary));
+    color: hsl(0 0% 4%);
+    padding: 4px 12px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+  }
+  .protocol-banner {
+    background: linear-gradient(90deg, hsl(158 64% 39% / 0.1), hsl(158 64% 39% / 0.05));
+    border: 1px solid hsl(158 64% 39% / 0.3);
+    padding: 8px 16px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: hsl(158 64% 39%);
   }
   .scrollbar-thin {
     scrollbar-width: thin;
@@ -137,7 +387,7 @@
   .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
   .scrollbar-thin::-webkit-scrollbar-thumb {
     background: hsl(var(--border));
-    border-radius: 4px;
+    border-radius: 0px;
   }
   .scrollbar-thin::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.5); }
 }
