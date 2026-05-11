@@ -15,7 +15,7 @@ export const CyberpunkInput = React.forwardRef<HTMLInputElement, CyberpunkInputP
         transition={{ duration: 0.2 }}
       >
         {icon && (
-          <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-foreground/40">
+          <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-foreground">
             {icon}
           </div>
         )}

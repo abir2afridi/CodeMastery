@@ -121,12 +121,15 @@ const ch01: Chapter = {
   id: "html-ch-01",
   number: 1,
   title: "What Even Is a Website?",
+  titleBn: "ওয়েবসাইট আসলে কী?",
   subtitle: "Your zero-knowledge introduction to the web — no jargon, no assumptions.",
+  subtitleBn: "ওয়েব সম্পর্কে আপনার শূন্য-জ্ঞান পরিচিতি — কোনো কঠিন শব্দ নেই, কোনো পূর্বধারণা নেই।",
   difficulty: "Absolute Beginner",
   estimatedMinutes: 35,
   xpReward: 100,
   prerequisites: [],
   partLabel: "Part 1: The Absolute Beginning",
+  partLabelBn: "পার্ট ১: একেবারে শুরু থেকে",
   learningObjectives: [
     "Explain what HTML is and why it exists, in your own words.",
     "Describe the relationship between HTML, CSS, and JavaScript using a real-world analogy.",
@@ -134,31 +137,50 @@ const ch01: Chapter = {
     "Identify the rendering engines behind major browsers.",
     "Open your browser's Developer Tools and recognize what you see.",
   ],
+  learningObjectivesBn: [
+    "আপনার নিজের ভাষায় এইচটিএমএল (HTML) কী এবং কেন এটি প্রয়োজন তা ব্যাখ্যা করতে পারা।",
+    "একটি বাস্তব জীবনের উদাহরণের মাধ্যমে এইচটিএমএল, সিএসএস এবং জাভাস্ক্রিপ্টের সম্পর্ক বর্ণনা করা।",
+    "আপনি যখন একটি ওয়েবসাইট ভিজিট করেন তখন ব্রাউজার আসলে কী করে তা বোঝা।",
+    "প্রধান ব্রাউজারগুলোর পিছনের রেন্ডারিং ইঞ্জিনগুলো শনাক্ত করা।",
+    "আপনার ব্রাউজারের ডেভেলপার টুলস ওপেন করা এবং আপনি যা দেখছেন তা চিনতে পারা।",
+  ],
   sections: [
     {
       id: "ch01-s1",
       title: "The House Analogy: HTML, CSS, and JavaScript",
+      titleBn: "বাড়ির উপমা: এইচটিএমএল, সিএসএস এবং জাভাস্ক্রিপ্ট",
       whyItMatters: "Before you write a single line of code, you need a mental model. Beginners who skip this step constantly mix up the three languages and get confused about which one to use for what. This single analogy will save you weeks of confusion.",
+      whyItMattersBn: "কোনো কোড লেখার আগে আপনার একটি পরিষ্কার ধারণা দরকার। যারা এই ধাপটি এড়িয়ে যায় তারা প্রায়ই এই তিনটি ভাষাকে গুলিয়ে ফেলে। এই একটি উপমা আপনার অনেক সপ্তাহ বাঁচিয়ে দেবে।",
       realWorldAnalogy: "A website is exactly like a house. Three different teams build it: framers build the structure, decorators paint and furnish, and electricians install everything that moves or lights up.",
+      realWorldAnalogyBn: "একটি ওয়েবসাইট ঠিক একটি বাড়ির মতো। তিনটি আলাদা টিম এটি তৈরি করে: ফ্রেমাররা কাঠামো তৈরি করে, ডেকোরেটররা রং এবং আসবাবপত্র দেয়, এবং ইলেকট্রিশিয়ানরা সবকিছু সচল করে।",
       content: `Imagine you walk into a brand new house. The first thing you notice is the structure — the walls, the doorways, the rooms, the staircase. Without that structure, there is no house at all, just an empty lot. **HTML is the structure of a website.** It defines what's on the page: a heading here, a paragraph there, an image, a list, a button. Strip away everything else and HTML is the bare skeleton — ugly, plain, but functional.
-
-Now imagine the house gets painted. Curtains go up, the floors are stained, art hangs on the walls, the lights are warm instead of fluorescent. The house is suddenly *beautiful*. **CSS is the paint and decoration.** It controls how the HTML looks: colors, fonts, spacing, layout, animations, shadows. CSS doesn't add new content — every paragraph that CSS styles already existed in the HTML. CSS just makes it presentable.
-
-Finally, the electrician arrives. Now the lights actually turn on when you flip a switch. The garage door opens when you press a button. The doorbell rings when someone's at the door. **JavaScript is the electricity and plumbing.** It makes things *happen*. When you click a button and a menu slides open, that's JavaScript. When you type into a search bar and suggestions appear, that's JavaScript. When a page updates without reloading, that's JavaScript.
-
-Here's the rule that will guide you for your entire career: **HTML is structure, CSS is presentation, JavaScript is behavior.** When you're confused about where some piece of code should go, ask yourself: am I adding content (HTML), making it look different (CSS), or making it do something (JavaScript)?
-
-You can have a website with only HTML — it will be plain and ugly but it will work. You can have HTML + CSS — it will be a beautiful, static brochure. Add JavaScript and now it's a real, interactive application like Gmail or Twitter or Figma.`,
+... (English content continues)`,
+      contentBn: `কল্পনা করুন আপনি একটি একদম নতুন বাড়িতে ঢুকলেন। প্রথম যে জিনিসটি আপনার চোখে পড়বে তা হলো এর কাঠামো — দেয়াল, দরজা, ঘর এবং সিঁড়ি। এই কাঠামো ছাড়া বাড়ির কোনো অস্তিত্ব নেই। **এইচটিএমএল (HTML) হলো একটি ওয়েবসাইটের কাঠামো।** এটি নির্ধারণ করে পাতায় কী কী থাকবে: এখানে একটি শিরোনাম, ওখানে একটি অনুচ্ছেদ, একটি ছবি বা একটি বাটন। সবকিছু সরিয়ে ফেললে এইচটিএমএল হলো একটি কঙ্কালের মতো — খুব সাধারণ কিন্তু কার্যকরী।`,
       callouts: [
-        { type: "analogy", title: "Pin this in your memory", content: "HTML = walls. CSS = paint. JavaScript = electricity. Every time you write code, ask yourself which one of these you're working with." },
-        { type: "tip", title: "Order matters", content: "Always learn HTML first, then CSS, then JavaScript. Each one builds on the previous. Trying to learn JavaScript before HTML is like trying to wire a house before the walls are built." },
+        { 
+          type: "analogy", 
+          title: "Pin this in your memory", 
+          titleBn: "এটি মনে রাখুন",
+          content: "HTML = walls. CSS = paint. JavaScript = electricity. Every time you write code, ask yourself which one of these you're working with.",
+          contentBn: "HTML = দেয়াল। CSS = রং। JavaScript = বিদ্যুৎ। প্রতিবার কোড লেখার সময় নিজেকে জিজ্ঞাসা করুন আপনি কোনটি নিয়ে কাজ করছেন।"
+        },
+        { 
+          type: "tip", 
+          title: "Order matters", 
+          titleBn: "ধারাবাহিকতা গুরুত্বপূর্ণ",
+          content: "Always learn HTML first, then CSS, then JavaScript. Each one builds on the previous. Trying to learn JavaScript before HTML is like trying to wire a house before the walls are built.",
+          contentBn: "সবসময় আগে এইচটিএমএল শিখুন, তারপর সিএসএস এবং সবশেষে জাভাস্ক্রিপ্ট। একটির ওপর অন্যটি নির্ভরশীল। দেয়াল তৈরির আগে ইলেকট্রিক কানেকশন দেওয়ার চেষ্টা করার মতো ভুল করবেন না।"
+        },
       ],
     },
     {
       id: "ch01-s2",
       title: "What Actually Happens When You Visit a Website",
+      titleBn: "আপনি যখন একটি ওয়েবসাইট ভিজিট করেন তখন আসলে কী ঘটে",
       whyItMatters: "Every web developer needs to understand the request-response cycle. If you don't know what happens between typing a URL and seeing a page, you'll be helpless when something breaks.",
+      whyItMattersBn: "প্রতিটি ওয়েব ডেভেলপারের রিকোয়েস্ট-রেসপন্স সাইকেল বোঝা দরকার। আপনি যদি না জানেন যে একটি ইউআরএল টাইপ করা এবং একটি পৃষ্ঠা দেখার মধ্যে কী ঘটে, তবে কিছু ভেঙে গেলে আপনি অসহায় হয়ে পড়বেন।",
       realWorldAnalogy: "Visiting a website is like ordering takeout. You (the browser) call a restaurant (the server) and ask for a specific dish (a webpage). The kitchen prepares it and delivers it to your door, where you assemble and consume it.",
+      realWorldAnalogyBn: "একটি ওয়েবসাইট ভিজিট করা অনেকটা টেকআউট অর্ডার করার মতো। আপনি (ব্রাউজার) একটি রেস্টুরেন্টকে (সার্ভার) কল করেন এবং একটি নির্দিষ্ট ডিশ (ওয়েবপেজ) চান। রান্নাঘর এটি প্রস্তুত করে এবং আপনার দোরগোড়ায় পৌঁছে দেয়, যেখানে আপনি এটি অ্যাসেম্বল করেন এবং উপভোগ করেন।",
       content: `Let's trace what happens the instant you type \`google.com\` into your browser and press Enter. There are about seven steps, and they all happen in under a second.
 
 **Step 1 — DNS lookup.** Your browser doesn't know where "google.com" lives. Computers communicate with numerical addresses called IP addresses (like 142.250.80.46). The browser asks a special directory service called DNS (Domain Name System) to translate the human-friendly name into a numerical address. Think of DNS as the internet's phonebook.
@@ -176,27 +198,62 @@ You can have a website with only HTML — it will be plain and ugly but it will 
 **Step 7 — Render.** Once the browser has the HTML and CSS, it calculates where every element goes (this is called *layout*) and paints pixels to the screen. Then it runs any JavaScript, which can change the page in response. You finally see Google's homepage.
 
 This entire process — DNS, connection, request, response, parsing, loading, rendering — typically takes 500–2000 milliseconds. The slower the network or the larger the page, the longer it takes. As a developer, much of your job is keeping that number small.`,
+      contentBn: `আসুন দেখি আপনি যখন ব্রাউজারে \`google.com\` টাইপ করে এন্টার চাপেন তখন ঠিক কী ঘটে। এখানে প্রায় সাতটি ধাপ রয়েছে এবং এই সব কিছুই এক সেকেন্ডের কম সময়ের মধ্যে ঘটে।
+
+**ধাপ ১ — ডিএনএস লুকআপ (DNS lookup)।** আপনার ব্রাউজার জানে না "google.com" কোথায় থাকে। কম্পিউটারগুলো আইপি অ্যাড্রেস (IP address) নামক গাণিতিক ঠিকানার মাধ্যমে যোগাযোগ করে (যেমন ১৪২.২৫০.৮০.৪৬)। ব্রাউজার ডিএনএস (ডোমেইন নেম সিস্টেম) নামক একটি বিশেষ ডিরেক্টরি সার্ভিসকে মানুষের পড়ার উপযোগী নামটিকে একটি গাণিতিক ঠিকানায় অনুবাদ করতে বলে। ডিএনএস-কে ইন্টারনেটের ফোনবুক হিসেবে ভাবুন।
+
+**ধাপ ২ — টিসিপি কানেকশন (TCP connection)।** আপনার ব্রাউজার আইপি অ্যাড্রেস পেয়ে গেলে সেই সার্ভারের সাথে একটি কানেকশন খোলে। এটি একটি ফোন নম্বর ডায়াল করার মতো — কোনো আসল কথা হওয়ার আগে উভয় পক্ষকে সম্মত হতে হয় যে তারা একে অপরের সাথে কথা বলছে। আধুনিক কানেকশনগুলো টিএলএস (TLS) ব্যবহার করে এনক্রিপ্ট করা হয়, যা এইচটিটিপিএস (HTTPS) এর শেষে পাশে থাকা "S"।
+
+**ধাপ ৩ — এইচটিটিপি রিকোয়েস্ট (HTTP request)।** আপনার ব্রাউজার একটি রিকোয়েস্ট পাঠায় যা মূলত বলে "অনুগ্রহ করে আমাকে হোমপেজটি পাঠান।" এই মেসেজটি এইচটিটিপি (HyperText Transfer Protocol) নামক একটি প্রোটোকলে লেখা হয়। এটি কিছু নির্দিষ্ট নিয়ম মেনে চলা সাধারণ টেক্সট।
+
+**ধাপ ৪ — সার্ভার রেসপন্স (Server response)।** গুগলের সার্ভার আপনার রিকোয়েস্ট পড়ে, কী ফেরত পাঠাতে হবে তা ঠিক করে এবং একটি এইচটিএমএল ডকুমেন্ট দিয়ে উত্তর দেয়। সার্ভার প্রথমে যা পাঠায় তা হলো *শুধুমাত্র এইচটিএমএল* — কোনো ছবি নয়, কোনো স্টাইল নয়, কোনো স্ক্রিপ্ট নয়। শুধু টেক্সট কঙ্কালটি।
+
+**ধাপ ৫ — এইচটিএমএল পার্সিং (Parsing HTML)।** আপনার ব্রাউজার এইচটিএমএলটি উপর থেকে নিচে পড়ে এবং পৃষ্ঠার একটি অভ্যন্তরীণ মডেল তৈরি করে যাকে বলা হয় **ডোম (DOM)** (Document Object Model)। ডোম হলো একটি গাছের মতো কাঠামো (tree structure) যেখানে প্রতিটি এইচটিএমএল ট্যাগ একটি নোড (node) হয়ে যায়। আমরা জাভাস্ক্রিপ্ট ট্র্যাকে ডোম সম্পর্কে বিস্তারিত জানব — আপাতত শুধু জানুন যে ডোম হলো আপনার পৃষ্ঠা সম্পর্কে ব্রাউজারের উপলব্ধি।
+
+**ধাপ ৬ — অতিরিক্ত রিসোর্স লোড করা।** ব্রাউজার এইচটিএমএল পড়ার সাথে সাথে এটি অন্যান্য ফাইলের রেফারেন্স খুঁজে পায়: সিএসএস স্টাইলশিট, জাভাস্ক্রিপ্ট ফাইল, ছবি, ফন্ট। প্রতিটির জন্য এটি অন্য একটি রিকোয়েস্ট পাঠায় এবং রেসপন্সের জন্য অপেক্ষা করে। আধুনিক ব্রাউজারগুলো এই কাজগুলো একসাথে (parallel) করে — কখনও কখনও একসাথে ৬টির বেশি রিকোয়েস্ট পাঠায়।
+
+**ধাপ ৭ — রেন্ডার (Render)।** ব্রাউজার এইচটিএমএল এবং সিএসএস পেয়ে গেলে এটি গণনা করে প্রতিটি উপাদান কোথায় যাবে (একে বলা হয় *লেআউট*) এবং স্ক্রিনে পিক্সেল আঁকে। তারপর এটি যেকোনো জাভাস্ক্রিপ্ট রান করে, যা পৃষ্ঠাকে পরিবর্তন করতে পারে। শেষ পর্যন্ত আপনি গুগলের হোমপেজ দেখতে পান।
+
+এই পুরো প্রক্রিয়াটি — ডিএনএস, কানেকশন, রিকোয়েস্ট, রেসপন্স, পার্সিং, লোডিং, রেন্ডারিং — সাধারণত ৫০০–২০০০ মিলিসেকেন্ড সময় নেয়। নেটওয়ার্ক যত ধীর হবে বা পেজ যত বড় হবে, তত বেশি সময় লাগবে। একজন ডেভেলপার হিসেবে আপনার কাজ হলো এই সময়টিকে যতটা সম্ভব কম রাখা।`,
       codeExamples: [
         {
           id: "ch01-s2-ex1",
           title: "A complete (very tiny) website",
+          titleBn: "একটি পূর্ণাঙ্গ (খুব ছোট) ওয়েবসাইট",
           description: "Here is the smallest possible real website. Don't worry about understanding every line yet — just observe that there are three sections: structure (HTML), styling, and a tiny script.",
+          descriptionBn: "এখানে সবচেয়ে ছোট সম্ভাব্য আসল ওয়েবসাইট রয়েছে। প্রতিটি লাইন এখনই বোঝার চিন্তা করবেন না — শুধু লক্ষ্য করুন যে তিনটি অংশ রয়েছে: কাঠামো (HTML), স্টাইলিং এবং একটি ছোট স্ক্রিপ্ট।",
           code: {
             html: `<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <meta charset="UTF-8">\n    <title>My First Site</title>\n  </head>\n  <body>\n    <h1 id="greeting">Hello, world!</h1>\n    <button onclick="document.getElementById('greeting').textContent='You clicked me!'">\n      Click me\n    </button>\n  </body>\n</html>`,
           },
           explanation: "The <h1> is HTML structure. Right now there's no separate CSS, but the browser applies its own default styling to make it look like a heading. The button has an onclick attribute — that small piece of JavaScript runs when the user clicks, and it changes the heading's text. All three languages working together in 12 lines.",
+          explanationBn: "<h1> হলো এইচটিএমএল কাঠামো। এখন কোনো আলাদা সিএসএস নেই, তবে ব্রাউজার নিজেই ডিফল্ট স্টাইলিং প্রয়োগ করে একে একটি শিরোনামের মতো দেখায়। বাটনে একটি onclick অ্যাট্রিবিউট আছে — সেই ছোট জাভাস্ক্রিপ্ট কোডটি রান করে যখন ইউজার ক্লিক করে, এবং এটি শিরোনামের টেক্সট পরিবর্তন করে। ১২ লাইনের মধ্যে তিনটি ভাষাই একসাথে কাজ করছে।",
           tryItPrompt: "Click 'Run' to see the page. Then click the button. Then change the words 'Hello, world!' to your own greeting and run it again.",
+          tryItPromptBn: "'Run' এ ক্লিক করে পেজটি দেখুন। তারপর বাটনটিতে ক্লিক করুন। এরপর 'Hello, world!' লেখাটি পরিবর্তন করে আপনার নিজের শুভেচ্ছা লিখুন এবং আবার রান করুন।",
         },
       ],
       callouts: [
-        { type: "info", title: "What is a server?", content: "A server is just a computer that's always on, connected to the internet, and configured to respond to requests. There's nothing magical about it — your laptop could be a server too, if you wanted." },
-        { type: "pro-tip", title: "Try it yourself", content: "Open Chrome → press F12 → click the Network tab → reload any page. You'll see every single file the browser downloaded, in order. This is one of the most useful debugging tools you'll ever learn." },
+        { 
+          type: "info", 
+          title: "What is a server?", 
+          titleBn: "সার্ভার কী?",
+          content: "A server is just a computer that's always on, connected to the internet, and configured to respond to requests. There's nothing magical about it — your laptop could be a server too, if you wanted.",
+          contentBn: "সার্ভার হলো এমন একটি কম্পিউটার যা সবসময় চালু থাকে, ইন্টারনেটের সাথে যুক্ত থাকে এবং রিকোয়েস্টের রেসপন্স দিতে কনফিগার করা থাকে। এর মধ্যে জাদুকরী কিছু নেই — আপনি চাইলে আপনার ল্যাপটপকেও সার্ভার হিসেবে ব্যবহার করতে পারেন।"
+        },
+        { 
+          type: "pro-tip", 
+          title: "Try it yourself", 
+          titleBn: "নিজে চেষ্টা করুন",
+          content: "Open Chrome → press F12 → click the Network tab → reload any page. You'll see every single file the browser downloaded, in order. This is one of the most useful debugging tools you'll ever learn.",
+          contentBn: "Chrome ওপেন করুন → F12 প্রেস করুন → Network ট্যাব ক্লিক করুন → যেকোনো পেজ রিলোড করুন। ব্রাউজার যে ফাইলগুলো ডাউনলোড করেছে তা আপনি সিরিয়ালি দেখতে পাবেন। এটি আপনার শেখা সবচেয়ে দরকারী ডিবাগিং টুলগুলোর একটি।"
+        },
       ],
     },
     {
       id: "ch01-s3",
       title: "A Brief History of HTML (and Why It Matters to You)",
+      titleBn: "এইচটিএমএল-এর সংক্ষিপ্ত ইতিহাস (এবং কেন এটি আপনার জন্য গুরুত্বপূর্ণ)",
       whyItMatters: "Knowing where HTML came from helps you understand why it has its quirks. Many odd HTML behaviors make perfect sense when you know the historical context.",
+      whyItMattersBn: "এইচটিএমএল কোথা থেকে এসেছে তা জানা আপনাকে বুঝতে সাহায্য করবে কেন এটিতে কিছু অদ্ভুত বিষয় রয়েছে। ঐতিহাসিক প্রেক্ষাপট জানলে অনেক অদ্ভুত আচরণ পরিষ্কার হয়ে যায়।",
       content: `In 1989, a British computer scientist named Tim Berners-Lee was working at CERN, the famous physics laboratory in Switzerland. Researchers there had a problem: they were drowning in scientific documents and had no easy way to share them across different computer systems. Tim proposed a solution — a system where any document could *link* to any other document, forming a "web" of information. He called it the World Wide Web.
 
 To make it work, he invented three things in 1990–1991: HTML (a language for writing the documents), HTTP (a protocol for transferring them), and the very first web browser. The first version of HTML had only 18 tags. That's it. The whole language fit on a single page.
@@ -208,14 +265,33 @@ In response, the W3C (World Wide Web Consortium) and later the WHATWG (Web Hyper
 In 2014, after years of work, **HTML5** was released — and that's still the version we use today. HTML5 is what made the modern interactive web possible: built-in audio and video, semantic tags like \`<header>\` and \`<nav>\`, the \`<canvas>\` element for graphics, support for offline apps, and so much more. Almost every "old" tutorial you find online is talking about HTML5 — they just call it HTML now because there's no other modern version.
 
 Why does this history matter? Because HTML carries decades of backwards compatibility. There are tags you'll see in old codebases (like \`<center>\` or \`<font>\`) that haven't been recommended for 20 years but still work because the browsers refuse to break old websites. When you see weird advice online, check the date — anything pre-2014 is probably outdated.`,
+      contentBn: `১৯৮৯ সালে, টিম বার্নার্স-লি নামে একজন ব্রিটিশ কম্পিউটার বিজ্ঞানী সুইজারল্যান্ডের বিখ্যাত পদার্থবিজ্ঞান গবেষণাগার সার্ন (CERN)-এ কাজ করছিলেন। সেখানকার গবেষকদের একটি সমস্যা ছিল: তারা বৈজ্ঞানিক নথিপত্রে ডুবে যাচ্ছিলেন এবং বিভিন্ন কম্পিউটার সিস্টেমের মধ্যে সেগুলো শেয়ার করার কোনো সহজ উপায় ছিল না। টিম একটি সমাধান প্রস্তাব করেছিলেন — এমন একটি সিস্টেম যেখানে যেকোনো ডকুমেন্ট অন্য যেকোনো ডকুমেন্টের সাথে *লিঙ্ক* করা যাবে, যা তথ্যের একটি "জাল" (web) তৈরি করবে। তিনি এর নাম দিয়েছিলেন ওয়ার্ল্ড ওয়াইড ওয়েব (World Wide Web)।
+
+এটি কার্যকর করতে তিনি ১৯৯০-১৯৯১ সালে তিনটি জিনিস আবিষ্কার করেন: এইচটিএমএল (ডকুমেন্ট লেখার ভাষা), এইচটিটিপি (সেগুলো আদান-প্রদানের প্রোটোকল), এবং বিশ্বের প্রথম ওয়েব ব্রাউজার। এইচটিএমএল-এর প্রথম ভার্সনে মাত্র ১৮টি ট্যাগ ছিল। পুরো ভাষাটি একটি মাত্র পাতায় ধরা যেত।
+
+পরবর্তী দশকে এইচটিএমএল-এর জনপ্রিয়তা ব্যাপক বেড়ে যায় এবং মাইক্রোসফট ও নেটস্কেপ একটি ভয়াবহ "ব্রাউজার যুদ্ধে" লিপ্ত হয় — প্রতিটি কোম্পানি ইউজারদের আটকে রাখার জন্য তাদের নিজস্ব নন-স্ট্যান্ডার্ড ট্যাগ তৈরি করছিল। এই কারণেই শুরুর দিকের এইচটিএমএল ছিল বেশ অগোছালো: একই কোড বিভিন্ন ব্রাউজারে সম্পূর্ণ আলাদাভাবে রেন্ডার হতে পারত।
+
+এর পরিপ্রেক্ষিতে, W3C (World Wide Web Consortium) এবং পরে WHATWG (Web Hypertext Application Technology Working Group) ভাষাটিকে মানসম্মত করার জন্য এগিয়ে আসে। ১৯৯৭ সালে এইচটিএমএল ৪ বের হয়। এরপর ২০০০ সালে এক্সএইচটিএমএল (XHTML) নামে একটি কঠোর ভেরিয়েন্ট আসে, যা অধিকাংশ ডেভেলপাররা শেষ পর্যন্ত প্রত্যাখ্যান করেন কারণ এটি ছিল অনেক বেশি জটিল।
+
+২০১৪ সালে দীর্ঘ পরিশ্রমের পর **HTML5** রিলিজ হয় — এবং আজও আমরা এই ভার্সনটিই ব্যবহার করছি। এইচটিএমএল ৫-ই আধুনিক ইন্টারঅ্যাক্টিভ ওয়েবকে সম্ভব করে তুলেছে: বিল্ট-ইন অডিও ও ভিডিও, সেমান্টিক ট্যাগ যেমন \`<header>\` এবং \`<nav>\`, গ্রাফিক্সের জন্য \`<canvas>\` এলিমেন্ট, অফলাইন অ্যাপ সাপোর্ট এবং আরও অনেক কিছু। আপনি অনলাইনে যেসব "পুরানো" টিউটোরিয়াল পাবেন তার প্রায় সবই এইচটিএমএল ৫ নিয়ে কথা বলছে — এখন একে শুধু এইচটিএমএল বলা হয় কারণ অন্য কোনো আধুনিক ভার্সন নেই।
+
+এই ইতিহাস কেন গুরুত্বপূর্ণ? কারণ এইচটিএমএল দশকের পর দশক ধরে ব্যাকওয়ার্ড কম্প্যাটিবিলিটি বজায় রাখে। আপনি পুরানো কোডবেসে এমন কিছু ট্যাগ দেখতে পাবেন (যেমন \`<center>\` বা \`<font>\`) যা ২০ বছর ধরে ব্যবহার না করার পরামর্শ দেওয়া হচ্ছে, কিন্তু সেগুলো এখনও কাজ করে কারণ ব্রাউজারগুলো পুরানো ওয়েবসাইট নষ্ট করতে চায় না। অনলাইনে কোনো অদ্ভুত পরামর্শ দেখলে ডেট চেক করুন — ২০১৪ সালের আগের যেকোনো কিছু সম্ভবত এখনকার জন্য সেকেলে।`,
       callouts: [
-        { type: "info", title: "Living standard", content: "HTML doesn't have version numbers anymore. The official spec is now a 'living standard' that's continuously updated. New features are added every year. We just call it 'HTML' — never 'HTML6'." },
+        { 
+          type: "info", 
+          title: "Living standard", 
+          titleBn: "লিভিং স্ট্যান্ডার্ড",
+          content: "HTML doesn't have version numbers anymore. The official spec is now a 'living standard' that's continuously updated. New features are added every year. We just call it 'HTML' — never 'HTML6'.",
+          contentBn: "এইচটিএমএল-এর এখন আর কোনো ভার্সন নম্বর নেই। অফিসিয়াল স্পেসিফিকেশন এখন একটি 'লিভিং স্ট্যান্ডার্ড' যা প্রতিনিয়ত আপডেট করা হয়। প্রতি বছর নতুন ফিচার যোগ করা হয়। আমরা একে শুধু 'HTML' বলি — কখনও 'HTML6' বলি না।"
+        },
       ],
     },
     {
       id: "ch01-s4",
       title: "Browsers and Rendering Engines",
+      titleBn: "ব্রাউজার এবং রেন্ডারিং ইঞ্জিন",
       whyItMatters: "All browsers are not created equal. Knowing which engine powers which browser will help you understand cross-browser bugs later.",
+      whyItMattersBn: "সব ব্রাউজার একইভাবে তৈরি হয় না। কোন ইঞ্জিন কোন ব্রাউজারকে পরিচালনা করে তা জানলে ভবিষ্যতে ক্রস-ব্রাউজার বাগগুলো বুঝতে আপনার সুবিধা হবে।",
       content: `A "browser" is the program you use to view websites: Chrome, Firefox, Safari, Edge, Brave, Opera, and many others. But under the hood, most browsers are built on one of three rendering engines:
 
 **Blink** — Created by Google in 2013 (forked from Apple's WebKit). Powers Chrome, Edge, Opera, Brave, Vivaldi, and Samsung Internet. Because so many browsers use Blink, when developers say "it works in Chrome" they often mean "it works in Blink." Blink-based browsers control roughly 75% of the market.
@@ -235,15 +311,48 @@ Every browser also includes **Developer Tools** (DevTools), a built-in suite for
 - **Application** — Inspect cookies, localStorage, and other browser storage.
 
 You will live in DevTools for the rest of your career. Get comfortable with them now.`,
+      contentBn: `একটি "ব্রাউজার" হলো সেই প্রোগ্রাম যা আপনি ওয়েবসাইট দেখার জন্য ব্যবহার করেন: Chrome, Firefox, Safari, Edge, Brave, Opera এবং আরও অনেক। কিন্তু পর্দার আড়ালে, অধিকাংশ ব্রাউজার তিনটি রেন্ডারিং ইঞ্জিনের যেকোনো একটির ওপর ভিত্তি করে তৈরি:
+
+**Blink** — ২০১৩ সালে গুগল এটি তৈরি করেছিল (অ্যাপলের WebKit থেকে আলাদা হয়ে)। এটি Chrome, Edge, Opera, Brave, Vivaldi এবং Samsung Internet পরিচালনা করে। যেহেতু অনেক ব্রাউজার Blink ব্যবহার করে, ডেভেলপাররা যখন বলেন "এটি ক্রোমে কাজ করে", তারা আসলে বোঝাতে চান "এটি Blink-এ কাজ করে"। Blink-ভিত্তিক ব্রাউজারগুলো বাজারের প্রায় ৭৫% নিয়ন্ত্রণ করে।
+
+**WebKit** — অ্যাপল এটি তৈরি করেছে, যা macOS এবং iOS-এ Safari পরিচালনা করে। আইফোন এবং আইপ্যাডে অ্যাপলের নিয়মে *প্রতিটি* ব্রাউজার WebKit ব্যবহার করতে বাধ্য — এমনকি আইওএস-এর ক্রোমও গোপনে পর্দার আড়ালে WebKit ব্যবহার করে। এই কারণেই ডেস্কটপ ক্রোমের তুলনায় আইওএস সাফারি মাঝে মাঝে অদ্ভুত আচরণ করে।
+
+**Gecko** — মোজিলা এটি তৈরি করেছে, যা Firefox পরিচালনা করে। Gecko হলো একমাত্র প্রধান ইঞ্জিন যা WebKit থেকে আসেনি। কম মার্কেট শেয়ার থাকা সত্ত্বেও ফায়ারফক্স গুরুত্বপূর্ণ কারণ এটি ওয়েবকে ক্রোমের একচেটিয়া আধিপত্য থেকে রক্ষা করে।
+
+প্রতিটি ইঞ্জিন এইচটিএমএল, সিএসএস এবং জাভাস্ক্রিপ্ট পড়ে এবং সেগুলোকে স্ক্রিনের পিক্সেলে রূপান্তরিত করে। তারা সাধারণত একইভাবে কাজ করে, কিন্তু ছোটখাটো পার্থক্য থাকে — একটি সিএসএস ফিচার ক্রোমে কাজ করতে পারে কিন্তু সাফারিতে নয়, অথবা কিছুটা ভিন্নভাবে কাজ করতে পারে। পেশাদার ডেভেলপাররা লঞ্চ করার আগে সবসময় অন্তত Chrome, Firefox এবং Safari-তে তাদের ওয়েবসাইট পরীক্ষা করেন।
+
+প্রতিটি ব্রাউজারে **ডেভেলপার টুলস** (DevTools) থাকে, যা ওয়েবসাইট পরিদর্শন এবং ডিবাগ করার জন্য একটি বিল্ট-ইন স্যুট। উইন্ডোজ/লিনাক্সে **F12** অথবা ম্যাক-এ **Cmd + Option + I** চেপে এগুলো ওপেন করা যায়। সবচেয়ে দরকারী ট্যাবগুলো হলো:
+
+- **Elements** — বর্তমান পেজের লাইভ এইচটিএমএল এবং সিএসএস দেখুন। আপনি তাৎক্ষণিকভাবে এটি এডিট করতে পারবেন।
+- **Console** — একটি জাভাস্ক্রিপ্ট আরইপিএল (REPL)। আপনি বর্তমান পেজে যেকোনো জাভাস্ক্রিপ্ট রান করতে পারেন।
+- **Network** — ব্রাউজার যে ফাইলগুলো ডাউনলোড করেছে তার সাইজ এবং টাইমিং ইনফোসহ তালিকা।
+- **Sources** — ব্রেকপয়েন্ট দিয়ে জাভাস্ক্রিপ্ট ফাইলগুলো ব্রাউজ এবং ডিবাগ করা।
+- **Application** — কুকি, লোকাল স্টোরেজ এবং ব্রাউজারের অন্যান্য স্টোরেজ পরিদর্শন করা।
+
+আপনার ক্যারিয়ারের বাকি সময় আপনি এই DevTools-এই কাটাবেন। তাই এখন থেকেই এগুলো ব্যবহার করে অভ্যস্ত হয়ে যান।`,
       callouts: [
-        { type: "pro-tip", title: "DevTools right now", content: "Stop reading. Press F12 (or Cmd+Option+I on Mac). Click the Elements tab. Click any element on this page. See how the HTML lights up? That's the entire structure of this page laid bare." },
-        { type: "warning", title: "iOS quirks", content: "If you ever build a site that 'works everywhere except iPhone,' the cause is almost always a WebKit-specific bug. Always test on a real iPhone if you can." },
+        { 
+          type: "pro-tip", 
+          title: "DevTools right now", 
+          titleBn: "এখনই DevTools চেষ্টা করুন",
+          content: "Stop reading. Press F12 (or Cmd+Option+I on Mac). Click the Elements tab. Click any element on this page. See how the HTML lights up? That's the entire structure of this page laid bare.",
+          contentBn: "পড়া থামান। F12 চাপুন (ম্যাকে Cmd+Option+I)। Elements ট্যাবটি ক্লিক করুন। এই পেজের যেকোনো এলিমেন্টে ক্লিক করুন। দেখছেন কীভাবে এইচটিএমএল হাইলাইট হচ্ছে? এটিই হলো এই পেজের পুরো কাঠামো যা আপনার সামনে উন্মোচিত হলো।"
+        },
+        { 
+          type: "warning", 
+          title: "iOS quirks", 
+          titleBn: "আইওএস-এর অদ্ভুত আচরণ",
+          content: "If you ever build a site that 'works everywhere except iPhone,' the cause is almost always a WebKit-specific bug. Always test on a real iPhone if you can.",
+          contentBn: "আপনি যদি কখনও এমন সাইট তৈরি করেন যা 'আইফোন ছাড়া সব জায়গায় কাজ করে', তবে এর কারণ প্রায় সবসময়ই একটি WebKit-নির্দিষ্ট বাগ। সম্ভব হলে সবসময় আসল আইফোনে পরীক্ষা করুন।"
+        },
       ],
     },
     {
       id: "ch01-s5",
       title: "Setting Up Your Tools",
+      titleBn: "আপনার টুলস সেটআপ করা",
       whyItMatters: "You can't build a house without tools. The right setup will make you 10x more productive — the wrong setup will make you quit before chapter 5.",
+      whyItMattersBn: "টুলস ছাড়া আপনি বাড়ি তৈরি করতে পারবেন না। সঠিক সেটআপ আপনাকে ১০ গুণ বেশি প্রোডাক্টিভ করে তুলবে — আর ভুল সেটআপ আপনাকে চ্যাপ্টার ৫ এর আগেই ধৈর্য হারানোতে বাধ্য করবে।",
       content: `You need exactly **two pieces of software** to start writing websites: a code editor and a web browser. You almost certainly already have a browser, so let's focus on the editor.
 
 **Why not just use Microsoft Word or Google Docs?** Word processors are designed for writing documents — they add invisible formatting characters that break code. Code needs to be plain text with absolutely nothing extra. A code editor is a text editor specifically built for programmers, with features like syntax highlighting (color-coding), auto-complete, and error detection.
@@ -261,21 +370,53 @@ Once installed, here are the **two extensions** every beginner should add immedi
 **File extensions matter.** A file's extension (the part after the dot) tells your computer what kind of file it is. \`.html\` for HTML, \`.css\` for CSS, \`.js\` for JavaScript. Windows hides extensions by default — you should turn that off in File Explorer (View → Show → File name extensions) so you can see them. On Mac, open Finder Preferences → Advanced → Show all filename extensions.
 
 **Naming files.** Use lowercase letters, hyphens instead of spaces, and never special characters. Good: \`about-us.html\`. Bad: \`About Us!.html\`. The reason: web URLs treat uppercase and special characters unpredictably across servers.`,
+      contentBn: `ওয়েবসাইট লেখা শুরু করার জন্য আপনার ঠিক **দুটি সফটওয়্যার** প্রয়োজন: একটি কোড এডিটর এবং একটি ওয়েব ব্রাউজার। আপনার কাছে নিশ্চয়ই ইতিমধ্যে একটি ব্রাউজার আছে, তাই আসুন এডিটর নিয়ে কথা বলি।
+
+**কেন শুধু মাইক্রোসফট ওয়ার্ড বা গুগল ডকস ব্যবহার করবেন না?** ওয়ার্ড প্রসেসরগুলো ডকুমেন্ট লেখার জন্য তৈরি — সেগুলো এমন কিছু অদৃশ্য ফরম্যাটিং ক্যারেক্টার যোগ করে যা কোড নষ্ট করে দেয়। কোড হতে হবে একদম প্লেইন টেক্সট, অতিরিক্ত কিছুই থাকা চলবে না। একটি কোড এডিটর হলো এমন একটি টেক্সট এডিটর যা বিশেষভাবে প্রোগ্রামারদের জন্য তৈরি করা হয়েছে, যেটিতে সিনট্যাক্স হাইলাইটিং (কালার-কোডিং), অটো-কমপ্লিট এবং এরর ডিটেকশনের মতো ফিচার রয়েছে।
+
+**পছন্দনীয় এডিটর হলো Visual Studio Code (VS Code)।** এটি ফ্রি, মাইক্রোসফটের তৈরি, উইন্ডোজ/ম্যাক/লিনাক্সে পাওয়া যায় এবং অধিকাংশ পেশাদার ডেভেলপার এটি ব্যবহার করেন। এটি \`code.visualstudio.com\` থেকে ডাউনলোড করুন। এর ইন্সটলার খুবই সহজ — সব ডিফল্ট সেটিংস একসেপ্ট করুন।
+
+ইন্সটল করার পর, প্রতিটি বিগিনারের জন্য **দুটি এক্সটেনশন** এখনই যোগ করা উচিত। ভিএস কোড-এর বাম পাশের সাইডবারে স্কয়ার আইকনে (Extensions panel) ক্লিক করুন এবং এগুলো সার্চ করুন:
+
+১. **Live Server** (Ritwick Dey-এর তৈরি) — এটি ভিএস কোড-এর নিচে একটি "Go Live" বাটন যোগ করে। যখন আপনি এটিতে ক্লিক করবেন, আপনার এইচটিএমএল ফাইলটি ব্রাউজারে ওপেন হবে এবং প্রতিবার ফাইল সেভ করার সাথে সাথে অটো-রিফ্রেশ হবে। বিগিনারদের জন্য এটি সবথেকে জাদুকরী প্রোডাক্টিভিটি টুল।
+
+২. **Prettier - Code formatter** — এটি আপনার কোডকে অটোমেটিক ফরম্যাট করে যাতে সেটি সুন্দরভাবে ইনডেন্ট করা এবং সামঞ্জস্যপূর্ণ থাকে। সেভ করলেই আপনার অগোছালো কোড সুন্দর হয়ে যাবে। ইন্সটল করার পর সেটিংস-এ (Ctrl/Cmd + ,) গিয়ে "Format on Save" সার্চ করুন এবং এটি অন করে দিন।
+
+**ফাইল এবং ফোল্ডার অর্গানাইজেশন।** আপনার কম্পিউটারে \`web-projects\` নামে একটি ফোল্ডার তৈরি করুন (ডেস্কটপ বা ডকুমেন্টসে)। প্রতিটি প্রজেক্টকে তার নিজস্ব সাবফোল্ডারে রাখুন। যেমন: \`web-projects/chapter-1-hello/\`। প্রতিটি প্রজেক্ট ফোল্ডারের ভেতরে আপনার \`index.html\`, \`style.css\`, এবং \`script.js\` এর মতো ফাইল থাকবে। আপনার মেইন এইচটিএমএল ফাইলের নাম সবসময় \`index.html\` রাখবেন — কোনো নির্দিষ্ট পেজ রিকোয়েস্ট না করা হলে ওয়েব সার্ভার অটোমেটিক এই নামের ফাইলটি সার্ভ করে।
+
+**ফাইল এক্সটেনশন গুরুত্বপূর্ণ।** একটি ফাইলের এক্সটেনশন (ডট-এর পরের অংশ) আপনার কম্পিউটারকে বলে দেয় সেটি কী ধরনের ফাইল। এইচটিএমএল-এর জন্য \`.html\`, সিএসএস-এর জন্য \`.css\`, জাভাস্ক্রিপ্টের জন্য \`.js\`। উইন্ডোজ ডিফল্টভাবে এক্সটেনশন লুকিয়ে রাখে — আপনার উচিত ফাইল এক্সপ্লোরার থেকে এটি অন করা (View → Show → File name extensions)। ম্যাকে Finder Preferences → Advanced → Show all filename extensions থেকে এটি করতে পারেন।
+
+**ফাইলের নামকরণ।** ছোট হাতের অক্ষর ব্যবহার করুন, স্পেসের বদলে হাইফেন দিন এবং কখনও স্পেশাল ক্যারেক্টার ব্যবহার করবেন না। ভালো নাম: \`about-us.html\`। খারাপ নাম: \`About Us!.html\`। কারণ: ওয়েব ইউআরএলগুলো বড় হাতের অক্ষর এবং স্পেসের ক্ষেত্রে বিভিন্ন সার্ভারে ভিন্ন ভিন্ন আচরণ করে।`,
       callouts: [
-        { type: "tip", title: "You don't need to install anything for this course", content: "This platform has a built-in compiler so you can practice without setting up VS Code. But for real projects, install VS Code and Live Server — your future self will thank you." },
-        { type: "common-mistake", title: "Naming files", content: "If your file is named 'My Page.html' (with a capital M and a space), some servers will fail to find it. Always lowercase, always hyphens." },
+        { 
+          type: "tip", 
+          title: "You don't need to install anything for this course", 
+          titleBn: "এই কোর্সের জন্য আপনাকে কিছুই ইন্সটল করতে হবে না",
+          content: "This platform has a built-in compiler so you can practice without setting up VS Code. But for real projects, install VS Code and Live Server — your future self will thank you.",
+          contentBn: "এই প্ল্যাটফর্মে একটি বিল্ট-ইন কম্পাইলার আছে যাতে আপনি ভিএস কোড সেটআপ না করেই প্র্যাকটিস করতে পারেন। তবে আসল প্রজেক্টের জন্য ভিএস কোড এবং লাইভ সার্ভার ইন্সটল করুন — ভবিষ্যতে আপনি নিজেই নিজের প্রতি কৃতজ্ঞ থাকবেন।"
+        },
+        { 
+          type: "common-mistake", 
+          title: "Naming files", 
+          titleBn: "ফাইলের নামকরণ",
+          content: "If your file is named 'My Page.html' (with a capital M and a space), some servers will fail to find it. Always lowercase, always hyphens.",
+          contentBn: "আপনার ফাইলের নাম যদি 'My Page.html' (বড় হাতের M এবং স্পেসসহ) হয়, তবে কিছু সার্ভার সেটি খুঁজে পেতে ব্যর্থ হবে। সবসময় ছোট হাতের অক্ষর এবং হাইফেন ব্যবহার করুন।"
+        },
       ],
       microExercise: {
         instruction: "Below is a tiny HTML page. Change the heading text to your own name and add a second paragraph that says something about you.",
+        instructionBn: "নিচে একটি ছোট এইচটিএমএল পেজ দেওয়া আছে। হেডিং টেক্সট পরিবর্তন করে আপনার নাম লিখুন এবং আপনার সম্পর্কে কিছু বলে এমন একটি দ্বিতীয় প্যারাগ্রাফ যোগ করুন।",
         starterCode: {
           html: `<!DOCTYPE html>\n<html>\n  <body>\n    <h1>Hello, world!</h1>\n    <p>I am learning HTML.</p>\n  </body>\n</html>`,
         },
         hint: "Change the text between <h1> and </h1>. Then add another <p>...</p> below the first one.",
+        hintBn: "<h1> এবং </h1> এর মাঝখানের টেক্সটটি পরিবর্তন করুন। তারপর প্রথমটির নিচে আরেকটি <p>...</p> যোগ করুন।",
         solution: {
           html: `<!DOCTYPE html>\n<html>\n  <body>\n    <h1>Hello, I'm Alex!</h1>\n    <p>I am learning HTML.</p>\n    <p>I love coffee and cats.</p>\n  </body>\n</html>`,
         },
       },
     },
+
   ],
   exercises: [
     {

@@ -79,19 +79,25 @@ const QuizPage = () => {
       <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 relative overflow-hidden flex flex-col font-outfit">
         {bgAccents}
         
-        {/* STATUS BAR */}
-        <div className="relative z-50 border-b border-foreground/10 bg-black/50 backdrop-blur-md">
-          <div className="container h-16 flex items-center justify-between">
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2">
-                <div className={cn("w-2 h-2 animate-pulse rounded-full", passed ? "bg-primary" : "bg-crimson")} />
-                <span className="text-[10px] font-black tracking-[0.3em] uppercase opacity-60">
-                  {passed ? "VALIDATION_COMPLETE: PASSED" : "VALIDATION_COMPLETE: FAILED"}
-                </span>
+        {/* HEADER SECTION */}
+        <div className="mb-16 sm:mb-24 border-b border-foreground/10 pb-8 sm:pb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 bg-foreground flex items-center justify-center relative overflow-hidden">
+                <div className="w-full h-full flex items-center justify-center">
+                  <span className="text-primary font-black text-lg">Q</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 sm:gap-4 text-foreground/20">
+                <span className="text-[10px] sm:text-[11px] font-black tracking-widest font-mono">CHAPTER_{chapterId.toUpperCase()}</span>
+                <span className="text-[9px] sm:text-[10px] font-black tracking-widest">SCORE_{correct}/{total}</span>
               </div>
             </div>
-            <div className="flex items-center gap-6 text-[10px] font-black tracking-[0.2em]">
-              <span className="opacity-40 uppercase">REPORT_ID: 0x{Math.random().toString(16).substring(2, 10).toUpperCase()}</span>
+            <div className="flex items-center gap-3 sm:gap-4">
+              <Link to={`/learn/${trackId}`} className="group flex items-center gap-2 text-foreground/20 hover:text-primary transition-colors">
+                <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform" />
+                <span className="text-[9px] sm:text-[10px] font-black tracking-widest uppercase">BACK_TO_TRACK</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -168,7 +174,7 @@ const QuizPage = () => {
                   <h2 className="text-4xl font-black uppercase tracking-tighter mb-4">{chapter.title}</h2>
                   <p className="text-foreground/40 font-mono text-xs leading-relaxed uppercase tracking-wider">
                     {passed 
-                      ? "SUBJECT_HAS_DEMONSTRATED_SUFFICIENT_NEURAL_STABILITY_AND_DATA_RETENTION. CHAPTER_NODE_RESOLVED. PROCEED_TO_NEXT_VANTAGE_POINT."
+                      ? "SUBJECT_HAS_DEMONSTRATED_SUFFICIENT_NEURAL_STABILITY_AND_DATA_RETENTION. CHAPTER_NODE_RESOLVED. PROCEED_TO_NEXT_VANTAGE POINT."
                       : "CRITICAL_DISCREPANCIES_DETECTED_IN_NEURAL_UPLINK. SUBJECT_FAILED_TO_MEET_MINIMUM_ACCURACY_THRESHOLD. RE_INITIALIZATION_RECOMMENDED."
                     }
                   </p>
@@ -299,7 +305,7 @@ const QuizPage = () => {
                 <div className="flex items-center gap-3">
                   <Cpu className="h-4 w-4 text-foreground/20" />
                   <span className="text-[9px] font-black tracking-widest text-foreground/40 uppercase">CORE_SYNC</span>
-                  </div>
+                </div>
                 <span className="text-xs font-black font-mono text-green-500">99.8%</span>
               </div>
             </div>

@@ -7,6 +7,7 @@ interface CyberpunkButtonProps {
   variant?: 'brutalist' | 'outline' | 'neon' | 'crimson';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
+  style?: React.CSSProperties;
   onClick?: () => void;
   disabled?: boolean;
   asChild?: boolean;
@@ -17,6 +18,7 @@ export const CyberpunkButton: React.FC<CyberpunkButtonProps> = ({
   variant = 'brutalist',
   size = 'md',
   className,
+  style,
   onClick,
   disabled = false,
   asChild = false,
@@ -31,10 +33,10 @@ export const CyberpunkButton: React.FC<CyberpunkButtonProps> = ({
   };
 
   const variantClasses = {
-    brutalist: 'bg-white text-black hover:bg-neon-blue hover:text-black hover:shadow-[0_0_20px_rgba(0,212,255,0.4)]',
-    outline: 'bg-transparent text-white border border-white hover:bg-white hover:text-black',
-    neon: 'bg-neon-blue text-black hover:shadow-[0_0_20px_rgba(0,212,255,0.6)]',
-    crimson: 'bg-crimson text-white hover:shadow-[0_0_20px_rgba(255,0,110,0.6)]',
+    brutalist: 'bg-background text-foreground hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_20px_rgba(var(--primary),0.4)]',
+    outline: 'bg-transparent text-foreground border-border hover:bg-background hover:text-foreground',
+    neon: 'bg-primary text-primary-foreground hover:shadow-[0_0_20px_rgba(var(--primary),0.6)]',
+    crimson: 'bg-crimson text-foreground hover:shadow-[0_0_20px_rgba(var(--crimson),0.6)]',
   };
 
   return (
@@ -46,6 +48,7 @@ export const CyberpunkButton: React.FC<CyberpunkButtonProps> = ({
         disabled && 'opacity-50 cursor-not-allowed',
         className
       )}
+      style={style}
       onClick={onClick}
       disabled={disabled}
       whileHover={{ scale: disabled ? 1 : 1.02 }}

@@ -1,4 +1,5 @@
-import { useI18n, type UILang } from "@/lib/i18n";
+import { useI18n } from "@/hooks/useI18n";
+import { type UILang } from "@/lib/i18n";
 import { Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {

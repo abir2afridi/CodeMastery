@@ -4,7 +4,7 @@ import {
   CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator,
 } from "@/components/ui/command";
 import { tracks } from "@/lib/curriculum";
-import { useI18n } from "@/lib/i18n";
+import { useI18n } from "@/hooks/useI18n";
 import { Layout, Terminal, User, BookOpen, Code2 } from "lucide-react";
 
 export function CommandPalette() {

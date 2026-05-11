@@ -39,11 +39,14 @@ const TrackOverview = () => {
   });
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 pb-24 relative overflow-hidden font-inter">
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 pb-24 relative font-inter">
       {/* BACKGROUND ACCENTS */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:32px_32px]" />
-        <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-primary/5 blur-[120px] rounded-full" />
+        <div
+          className="absolute top-0 right-0 w-[50%] h-[50%] blur-[120px] rounded-full opacity-10"
+          style={{ backgroundColor: track.brandColor }}
+        />
       </div>
 
       <div className="container relative z-10 pt-8 max-w-7xl">
@@ -55,47 +58,92 @@ const TrackOverview = () => {
           </Link>
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
-              <Database className="h-3 w-3 text-primary" />
+              <Database className="h-3 w-3" style={{ color: track.brandColor }} />
               <span className="text-[10px] font-black tracking-[0.3em] uppercase">DOSSIER_ID: {track.id.toUpperCase()}</span>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* LEFT COLUMN: TRACK INFO */}
-          <div className="lg:col-span-5 space-y-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* LEFT COLUMN: TRACK INFO (HUD) */}
+          <div className="lg:col-span-5 lg:sticky lg:top-24 h-fit space-y-12">
             <header className="relative space-y-8">
-              <div className="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-primary z-20" />
-              
-              <div className="space-y-4">
+              {/* HUD Frame Decorations */}
+              <div
+                className="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 z-20"
+                style={{ borderColor: track.brandColor }}
+              />
+              <div
+                className="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 z-20 opacity-20"
+                style={{ borderColor: track.brandColor }}
+              />
+
+              <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="h-[2px] w-8 bg-primary" />
-                  <span className="terminal-label text-primary">TRACK_CLASSIFICATION</span>
+                  <div className="h-[2px] w-8" style={{ backgroundColor: track.brandColor }} />
+                  <span className="terminal-label" style={{ color: track.brandColor }}>TRACK_CLASSIFICATION</span>
                 </div>
-                <h1 className="text-7xl font-black uppercase tracking-tighter leading-[0.8] font-outfit">
-                  {track.title}
-                </h1>
+
+                <div className="flex items-center gap-6">
+                  <div
+                    className="w-20 h-20 p-4 border-2 flex items-center justify-center shrink-0"
+                    style={{
+                      borderColor: `${track.brandColor}33`,
+                      backgroundColor: `${track.brandColor}1A`,
+                      boxShadow: `0 0 20px ${track.glowColor}`
+                    }}
+                  >
+                    <img src={track.icon} alt="" className="w-full h-full object-contain" />
+                  </div>
+                  <h1 className="text-7xl font-black uppercase tracking-tighter leading-[0.8] font-outfit">
+                    {track.title}
+                  </h1>
+                </div>
+
                 <p className="text-sm font-black tracking-widest text-foreground/40 uppercase leading-relaxed max-w-md">
                   {track.tagline}
                 </p>
               </div>
 
-              <div className="p-8 border-2 border-foreground/10 bg-foreground/[0.02] space-y-8">
-                <div className="space-y-4">
+              <div className="p-8 border-2 border-foreground/10 bg-foreground/[0.02] space-y-8 relative overflow-hidden group">
+                {/* Scanning Line Effect */}
+                <motion.div
+                  className="absolute inset-x-0 h-[1px] z-30 opacity-30"
+                  style={{ backgroundColor: track.brandColor }}
+                  animate={{
+                    top: ["0%", "100%", "0%"],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                />
+
+                <div className="space-y-4 relative z-10">
                   <div className="flex justify-between items-end">
                     <span className="terminal-label">SYNC_PROGRESS</span>
-                    <span className="text-3xl font-black font-outfit text-primary">{Math.round(pct)}%</span>
+                    <span
+                      className="text-3xl font-black font-outfit"
+                      style={{ color: track.brandColor }}
+                    >
+                      {Math.round(pct)}%
+                    </span>
                   </div>
                   <div className="h-2 w-full bg-foreground/5 relative overflow-hidden">
-                    <motion.div 
+                    <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${pct}%` }}
-                      className="absolute inset-y-0 left-0 bg-primary shadow-[0_0_15px_rgba(0,212,255,0.4)]"
+                      className="absolute inset-y-0 left-0"
+                      style={{
+                        backgroundColor: track.brandColor,
+                        boxShadow: `0 0 15px ${track.glowColor}`
+                      }}
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-8">
+                <div className="grid grid-cols-2 gap-8 relative z-10">
                   <div className="space-y-1">
                     <span className="text-[8px] font-black tracking-widest text-foreground/20 uppercase">TIME_ESTIMATE</span>
                     <p className="text-xl font-black">{track.estimatedHours}H</p>
@@ -112,17 +160,23 @@ const TrackOverview = () => {
                   <div className="h-[2px] w-8 bg-foreground/20" />
                   <span className="terminal-label">MISSION_OBJECTIVES</span>
                 </div>
-                <ul className="space-y-3">
+                <div className="space-y-3 font-mono">
                   {track.chapters.slice(0, 3).map((ch, i) => (
-                    <li key={i} className="flex items-center gap-3 text-[10px] font-black tracking-widest text-foreground/60 uppercase">
-                      <div className="w-1 h-1 bg-primary" />
-                      SECURE_NODE: {ch.title}
-                    </li>
+                    <div key={i} className="flex items-start gap-3 group/obj">
+                      <span className="text-foreground/20 text-[10px] pt-1">[{i.toString().padStart(2, '0')}]</span>
+                      <p className="text-[10px] font-black tracking-widest text-foreground/60 uppercase leading-relaxed group-hover/obj:text-foreground transition-colors">
+                        SECURE_NODE: <span className="text-foreground/80">{ch.title}</span>
+                      </p>
+                    </div>
                   ))}
-                  <li className="text-[10px] font-black tracking-widest text-primary uppercase animate-pulse">
+                  <div
+                    className="flex items-center gap-3 text-[10px] font-black tracking-widest uppercase animate-pulse"
+                    style={{ color: track.brandColor }}
+                  >
+                    <span className="opacity-40">--</span>
                     [...MORE_OBJECTIVES_IN_DEEP_MEMORY]
-                  </li>
-                </ul>
+                  </div>
+                </div>
               </div>
             </header>
           </div>
@@ -144,27 +198,40 @@ const TrackOverview = () => {
                     const isInProgress = cp.status === "in_progress";
 
                     return (
-                      <Link 
-                        key={ch.id} 
+                      <Link
+                        key={ch.id}
                         to={unlocked ? `/learn/${track.id}/${ch.id}` : "#"}
                         className={cn(
                           "group block relative border-2 transition-all duration-300",
-                          !unlocked ? "border-foreground/5 opacity-40 cursor-not-allowed" : "border-foreground/10 hover:border-primary bg-foreground/[0.02]"
+                          !unlocked ? "border-foreground/5 opacity-40 cursor-not-allowed" : "border-foreground/10 bg-foreground/[0.02]"
                         )}
+                        style={unlocked ? { borderColor: `${track.brandColor}1A` } : {}}
                       >
+                        {/* Hover Border Effect */}
+                        {unlocked && (
+                          <div
+                            className="absolute inset-0 border-2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                            style={{ borderColor: track.brandColor }}
+                          />
+                        )}
+
                         <div className="p-6 flex items-center gap-6">
                           {/* Status Icon Box */}
                           <div className={cn(
                             "w-12 h-12 border-2 flex items-center justify-center shrink-0 transition-all",
                             !unlocked ? "border-foreground/10" :
-                            isDone ? "border-primary bg-primary/10 text-primary" :
-                            isInProgress ? "border-foreground bg-foreground/10 animate-pulse" :
-                            "border-foreground/20 group-hover:border-primary/40"
-                          )}>
+                              isDone ? "border-primary bg-primary/10 text-primary" :
+                                isInProgress ? "border-foreground bg-foreground/10 animate-pulse" :
+                                  "border-foreground/20 group-hover:border-opacity-100"
+                          )}
+                            style={unlocked && !isDone && !isInProgress ? { borderColor: `${track.brandColor}33` } :
+                              isDone ? { borderColor: track.brandColor, backgroundColor: `${track.brandColor}1A`, color: track.brandColor } :
+                                {}}
+                          >
                             {!unlocked ? <Lock className="h-4 w-4" /> :
-                             isDone ? <Check className="h-5 w-5" /> :
-                             isInProgress ? <Play className="h-4 w-4" /> :
-                             <div className="w-1.5 h-1.5 bg-foreground/20 group-hover:bg-primary/40" />}
+                              isDone ? <Check className="h-5 w-5" /> :
+                                isInProgress ? <Play className="h-4 w-4" /> :
+                                  <div className="w-1.5 h-1.5 bg-foreground/20 group-hover:bg-primary/40" style={{ backgroundColor: `${track.brandColor}66` }} />}
                           </div>
 
                           <div className="flex-1 min-w-0">
@@ -185,12 +252,17 @@ const TrackOverview = () => {
                             <ChevronRight className={cn(
                               "h-4 w-4 transition-transform group-hover:translate-x-1",
                               unlocked ? "text-primary/40 group-hover:text-primary" : "text-foreground/10"
-                            )} />
+                            )}
+                              style={unlocked ? { color: track.brandColor } : {}}
+                            />
                           </div>
                         </div>
 
                         {/* Hover Overlay */}
-                        <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                        <div
+                          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                          style={{ backgroundColor: `${track.brandColor}0D` }}
+                        />
                       </Link>
                     );
                   })}

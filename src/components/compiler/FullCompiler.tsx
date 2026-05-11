@@ -7,7 +7,7 @@ import { oneDark } from "@codemirror/theme-one-dark";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Monitor, Tablet, Smartphone, RotateCcw, Trash2, ExternalLink, ArrowLeft } from "lucide-react";
-import { useI18n } from "@/lib/i18n";
+import { useI18n } from "@/hooks/useI18n";
 
 const DEFAULT_HTML = `<!DOCTYPE html>
 <html>

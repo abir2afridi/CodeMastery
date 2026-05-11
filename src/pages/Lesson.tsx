@@ -15,7 +15,7 @@ import { useEffect, useState, useRef } from "react";
 import confetti from "canvas-confetti";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { useI18n } from "@/lib/i18n";
+import { useI18n } from "@/hooks/useI18n";
 
 // Cyberpunk Brutalist Typography:
 // Headings: 'Outfit', sans-serif;
@@ -40,7 +40,8 @@ const Lesson = () => {
     restDelta: 0.001
   });
 
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  const isBn = lang === "bn";
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -93,53 +94,6 @@ const Lesson = () => {
       </div>
 
       <div className="mx-auto w-full max-w-[1800px] px-4 lg:px-8 pt-12 relative z-10">
-        {/* GLOBAL STATUS HEADER */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b-2 border-border/20 pb-8 gap-8">
-          <div className="space-y-4">
-            <Link 
-              to={`/learn/${trackId}`} 
-              className="inline-flex items-center gap-3 px-4 py-2 bg-foreground/5 border border-border hover:bg-foreground/10 hover:border-primary transition-all group"
-            >
-              <ArrowLeft className="h-4 w-4 text-foreground/40 group-hover:text-primary transition-colors" />
-              <span className="text-[10px] font-black tracking-[0.3em] uppercase">{t("system.return")}</span>
-            </Link>
-            
-            <div className="flex items-baseline gap-4">
-              <span className="text-[10px] font-black tracking-[0.4em] text-primary uppercase">{t("system.nodeStatus")}</span>
-              <div className="flex items-center gap-2">
-                <span className="h-2 w-2 bg-primary animate-pulse" />
-                <span className="text-2xl font-black tracking-widest uppercase">{t("system.syncActive")}</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="flex flex-wrap items-center gap-12">
-            <div className="space-y-2">
-              <div className="flex justify-between items-center text-[9px] font-black tracking-[0.2em] text-foreground/20 uppercase">
-                <span>{t("system.neuralBitrate")}</span>
-                <span className="text-primary">{Math.round(scrollPct)}%</span>
-              </div>
-              <div className="w-48 h-[6px] bg-foreground/5 border border-border relative overflow-hidden">
-                <motion.div 
-                   initial={{ width: 0 }}
-                   animate={{ width: `${scrollPct}%` }}
-                   className="absolute inset-y-0 left-0 bg-primary shadow-[0_0_10px_rgba(0,163,255,0.5)]"
-                 />
-               </div>
-            </div>
-
-            <div className="px-6 py-3 border-2 border-border bg-foreground/[0.02] flex items-center gap-4">
-              <div className="p-2 bg-primary/10 border border-primary/20">
-                <Activity className="h-4 w-4 text-primary" />
-              </div>
-              <div>
-                <p className="text-[9px] font-black tracking-[0.2em] text-foreground/40 uppercase">{t("system.syncIdentity")}</p>
-                <p className="text-sm font-black tracking-wider uppercase">CH_{chapter.number.toString().padStart(2, '0')}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div className={cn(
           "grid gap-16 transition-all duration-300",
           isLeftSidebarExpanded ? "lg:grid-cols-[280px_1fr_260px]" : "lg:grid-cols-[60px_1fr_260px]"
@@ -196,7 +150,7 @@ const Lesson = () => {
                               {cps.status === "completed" && <CheckCircle2 className={cn("h-3 w-3", isCurrent ? "text-background" : "text-primary")} />}
                             </div>
                             <span className="text-[11px] font-black uppercase tracking-[0.1em] block leading-tight truncate">
-                              {c.title}
+                              {isBn && c.titleBn ? c.titleBn : c.title}
                             </span>
                           </>
                         ) : (
@@ -261,14 +215,14 @@ const Lesson = () => {
 
                 <div className="space-y-4">
                   <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.8] mb-6 text-foreground">
-                    {chapter.title.split(' ').map((word, i) => (
+                    {(isBn && chapter.titleBn ? chapter.titleBn : chapter.title).split(' ').map((word, i) => (
                       <span key={i} className={cn("block", i % 2 === 1 && "text-primary")}>
                         {word}
                       </span>
                     ))}
                   </h1>
                   <p className="text-xl md:text-2xl font-bold tracking-tight text-foreground/40 uppercase max-w-3xl leading-tight">
-                    {chapter.subtitle}
+                    {isBn && chapter.subtitleBn ? chapter.subtitleBn : chapter.subtitle}
                   </p>
                 </div>
 
@@ -279,7 +233,9 @@ const Lesson = () => {
                     </div>
                     <div>
                       <p className="text-[8px] font-black tracking-[0.2em] text-foreground/20 uppercase">{t("system.difficulty")}</p>
-                      <p className="text-xs font-black tracking-widest uppercase">{chapter.difficulty}</p>
+                      <p className="text-xs font-black tracking-widest uppercase">
+                        {isBn ? t(`difficulty.${chapter.difficulty}`) : chapter.difficulty}
+                      </p>
                     </div>
                   </div>
 
@@ -315,7 +271,7 @@ const Lesson = () => {
 
               {/* OBJECTIVES GRID */}
               <div className="grid md:grid-cols-2 gap-px bg-border border border-border">
-                {chapter.learningObjectives.map((o, i) => (
+                {(isBn && chapter.learningObjectivesBn ? chapter.learningObjectivesBn : chapter.learningObjectives).map((o, i) => (
                   <div key={i} className="p-8 bg-background hover:bg-foreground/[0.02] transition-colors group">
                     <div className="flex items-start gap-4">
                       <span className="text-[10px] font-black tracking-widest text-primary bg-primary/5 border border-primary/20 px-2 py-0.5">
@@ -331,7 +287,7 @@ const Lesson = () => {
 
               <div className="space-y-24 py-16">
                 {chapter.sections.map((s) => (
-                  <SectionView key={s.id} section={s} />
+                  <SectionView key={s.id} section={s} trackId={trackId as TrackId} />
                 ))}
               </div>
 
@@ -351,9 +307,11 @@ const Lesson = () => {
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                       {chapter.cheatSheet.map((c, i) => (
                         <div key={i} className="p-5 border border-border bg-foreground/[0.01] space-y-3 hover:border-primary/30 transition-all group">
-                          <p className="text-[9px] font-black tracking-[0.2em] text-foreground/20 uppercase group-hover:text-primary/60 transition-colors">{c.label}</p>
+                          <p className="text-[9px] font-black tracking-[0.2em] text-foreground/20 uppercase group-hover:text-primary/60 transition-colors">
+                            {isBn && c.labelBn ? c.labelBn : c.label}
+                          </p>
                           <code className="text-xs font-black text-primary tracking-widest block bg-primary/5 p-2 border-l-2 border-primary">
-                            {c.value}
+                            {isBn && c.valueBn ? c.valueBn : c.value}
                           </code>
                         </div>
                       ))}
@@ -484,7 +442,7 @@ const Lesson = () => {
                         <div className="mt-1 w-2 h-2 border border-border group-hover:border-primary group-hover:bg-primary/20 transition-all" />
                         <div>
                           <p className="text-[10px] font-black uppercase tracking-widest text-foreground/40 group-hover:text-primary transition-colors">
-                            {s.title}
+                            {isBn && s.titleBn ? s.titleBn : s.title}
                           </p>
                           <div className="h-[1px] w-0 bg-primary/30 group-hover:w-full transition-all duration-500 mt-1" />
                         </div>
@@ -503,7 +461,7 @@ const Lesson = () => {
                 <div className="p-6 bg-foreground/[0.02] border border-border/10 font-mono space-y-4">
                   <div className="flex justify-between items-center border-b border-border pb-2">
                     <span className="text-[8px] text-foreground/20 uppercase">{t("system.coreVer")}</span>
-                    <span className="text-[8px] text-foreground/60">3.9.2-STABLE</span>
+                    <span className="text-[8px] text-foreground/60">3.9.2-{t("system.stable")}</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-border pb-2">
                     <span className="text-[8px] text-foreground/20 uppercase">{t("system.syncLatency")}</span>
@@ -511,7 +469,7 @@ const Lesson = () => {
                   </div>
                   <div className="flex justify-between items-center border-b border-border pb-2">
                     <span className="text-[8px] text-foreground/20 uppercase">{t("system.dataParity")}</span>
-                    <span className="text-[8px] text-foreground/60">NOMINAL</span>
+                    <span className="text-[8px] text-foreground/60">{t("system.nominal")}</span>
                   </div>
                   <div className="pt-2">
                     <div className="flex justify-between text-[8px] text-foreground/20 uppercase mb-2">
