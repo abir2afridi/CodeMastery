@@ -11,6 +11,9 @@ const Courses = () => {
   const { t } = useI18n();
   const { progress } = useProgress();
 
+  console.log('All tracks:', tracks);
+  console.log('Track IDs:', tracks.map(t => t.id));
+
   return (
     <div className="min-h-screen bg-background p-8 md:p-12 lg:p-16 relative overflow-hidden">
       {/* Background Accents */}

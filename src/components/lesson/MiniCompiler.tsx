@@ -4,6 +4,7 @@ import CodeMirror from "@uiw/react-codemirror";
 import { html as htmlLang } from "@codemirror/lang-html";
 import { css as cssLang } from "@codemirror/lang-css";
 import { javascript as jsLang } from "@codemirror/lang-javascript";
+import { python } from "@codemirror/lang-python";
 import { oneDark } from "@codemirror/theme-one-dark";
 import { EditorView } from "@codemirror/view";
 import { CyberpunkButton } from "@/components/ui/cyberpunk/Button";
@@ -12,6 +13,7 @@ import { Link } from "react-router-dom";
 import type { CodeSnippet } from "@/lib/curriculum/types";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { PythonMiniCompiler } from "./PythonMiniCompiler";
 
 interface Props {
   initial: CodeSnippet;
@@ -49,21 +51,27 @@ function buildSrcDoc(snippet: CodeSnippet) {
 export function MiniCompiler({ initial, height = 240, autoRun = true }: Props) {
   const [snippet, setSnippet] = useState<CodeSnippet>(initial);
   const [logs, setLogs] = useState<{ level: string; text: string; time: string }[]>([]);
-  const [tab, setTab] = useState<"html" | "css" | "javascript">(
-    initial.html ? "html" : initial.css ? "css" : "javascript",
+  const [tab, setTab] = useState<"html" | "css" | "javascript" | "python">(
+    initial.html ? "html" : initial.css ? "css" : initial.javascript ? "javascript" : "python",
   );
   const [running, setRunning] = useState(autoRun);
   const [isCompiling, setIsCompiling] = useState(false);
   const [copied, setCopied] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  const tabs: ("html" | "css" | "javascript")[] = useMemo(() => {
-    const t: ("html" | "css" | "javascript")[] = [];
+  const tabs: ("html" | "css" | "javascript" | "python")[] = useMemo(() => {
+    const t: ("html" | "css" | "javascript" | "python")[] = [];
     if (initial.html !== undefined) t.push("html");
     if (initial.css !== undefined) t.push("css");
     if (initial.javascript !== undefined) t.push("javascript");
+    if (initial.python !== undefined) t.push("python");
     return t.length ? t : ["html"];
   }, [initial]);
+
+  // If it's Python-only, use PythonMiniCompiler
+  if (tabs.length === 1 && tabs[0] === "python") {
+    return <PythonMiniCompiler initialCode={initial.python || ""} height={height} autoRun={autoRun} />;
+  }
 
   const srcDoc = useMemo(() => buildSrcDoc(snippet), [snippet]);
 
@@ -107,8 +115,10 @@ export function MiniCompiler({ initial, height = 240, autoRun = true }: Props) {
   };
 
   const { theme } = useTheme();
-  const langExt = tab === "html" ? htmlLang() : tab === "css" ? cssLang() : jsLang();
-  const fullCompilerHref = `/compiler?h=${encodeURIComponent(snippet.html ?? "")}&c=${encodeURIComponent(snippet.css ?? "")}&j=${encodeURIComponent(snippet.javascript ?? "")}`;
+  const langExt = tab === "html" ? htmlLang() : tab === "css" ? cssLang() : tab === "python" ? python() : jsLang();
+  const fullCompilerHref = tab === "python" 
+    ? `/compiler?track=python&code=${encodeURIComponent(snippet.python ?? "")}`
+    : `/compiler?h=${encodeURIComponent(snippet.html ?? "")}&c=${encodeURIComponent(snippet.css ?? "")}&j=${encodeURIComponent(snippet.javascript ?? "")}`;
 
   return (
     <div className="my-10 relative border border-border bg-background group overflow-hidden shadow-2xl">

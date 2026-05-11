@@ -64,6 +64,7 @@ const trackIcons: Record<string, any> = {
   html: Code2,
   css: Palette,
   javascript: Zap,
+  python: Activity,
   default: FileCode2
 };
 

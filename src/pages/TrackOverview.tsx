@@ -16,7 +16,7 @@ const TrackOverview = () => {
   const { progress, refresh } = useProgress();
 
   useEffect(() => {
-    if (progress && track && !progress.tracks[track.id].started) {
+    if (progress && track && !progress.tracks[track.id]) {
       startTrackFor(progress, track.id);
       saveProgress(progress);
       refresh();
@@ -27,6 +27,8 @@ const TrackOverview = () => {
   if (!progress) return null;
 
   const tp = progress.tracks[track.id];
+  if (!tp) return null;
+
   const completed = Object.values(tp.chapters).filter((c) => c.status === "completed").length;
   const pct = (completed / track.chapters.length) * 100;
 

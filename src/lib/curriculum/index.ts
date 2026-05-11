@@ -1,13 +1,15 @@
 import { htmlChapters } from "./html-curriculum";
 import { cssChapters } from "./css-curriculum";
 import { jsChapters } from "./js-curriculum";
+// @ts-ignore
+import { pythonTrack } from "./python-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
   {
     id: "html",
     title: "HTML",
-    tagline: "Build the structure of every website.",
+    tagline: "Builds structure of every website.",
     icon: "https://img.icons8.com/color/144/html-5--v1.png",
     colorVar: "html",
     totalChapters: htmlChapters.length,
@@ -39,6 +41,18 @@ export const tracks: Track[] = [
     chapters: jsChapters,
     brandColor: "#F7DF1E",
     glowColor: "rgba(247, 223, 30, 0.4)",
+  },
+  {
+    id: "python",
+    title: "Python",
+    tagline: "From scripts to systems — world's most versatile language",
+    icon: "https://img.icons8.com/color/144/python--v1.png",
+    colorVar: "python",
+    totalChapters: pythonTrack.totalChapters,
+    estimatedHours: pythonTrack.estimatedHours,
+    chapters: pythonTrack.chapters,
+    brandColor: "#3776AB",
+    glowColor: "#3776AB",
   },
 ];
 

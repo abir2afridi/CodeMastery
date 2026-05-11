@@ -40,6 +40,12 @@
     --glow-crimson: 0 0 20px rgba(255, 0, 110, 0.1);
 
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Track Colors */
+    --html-color: 9 100% 48%;
+    --css-color: 204 100% 50%;
+    --js-color: 48 100% 50%;
+    --python-color: 207 90% 54%;
   }
 
   .dark {

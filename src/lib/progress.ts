@@ -11,7 +11,15 @@ export function loadProgress(): UserProgress | null {
   try {
     const raw = localStorage.getItem(KEY);
     if (!raw) return null;
-    return JSON.parse(raw) as UserProgress;
+    const progress = JSON.parse(raw) as UserProgress;
+
+    // Migration: Add Python track if missing
+    if (!progress.tracks.python) {
+      progress.tracks.python = emptyTrack();
+      saveProgress(progress);
+    }
+
+    return progress;
   } catch { return null; }
 }
 
@@ -34,6 +42,7 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       html: emptyTrack(),
       css: emptyTrack(),
       javascript: emptyTrack(),
+      python: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);

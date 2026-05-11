@@ -1,7 +1,7 @@
-export type TrackId = "html" | "css" | "javascript";
+export type TrackId = "html" | "css" | "javascript" | "python";
 export type Difficulty = "Absolute Beginner" | "Beginner" | "Intermediate" | "Advanced" | "Expert";
 
-export interface CodeSnippet { html?: string; css?: string; javascript?: string; }
+export interface CodeSnippet { html?: string; css?: string; javascript?: string; python?: string; }
 
 export interface Callout {
   type: "tip" | "warning" | "error" | "info" | "analogy" | "common-mistake" | "pro-tip";
