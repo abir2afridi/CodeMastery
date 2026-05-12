@@ -49,36 +49,48 @@ export function PythonCompiler({ initialCode }: Props) {
   const [device, setDevice] = useState<"desktop" | "tablet" | "mobile">("desktop");
   const [logs, setLogs] = useState<{ level: string; text: string }[]>([]);
   const [isRunning, setIsRunning] = useState(false);
-  const [isPyodideLoading, setIsPyodideLoading] = useState(true);
+  const [pyodideReady, setPyodideReady] = useState(false);
   const [output, setOutput] = useState("");
   const [matplotlibImages, setMatplotlibImages] = useState<string[]>([]);
   const pyodideRef = useRef<any>(null);
 
   // Initialize Pyodide
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js';
-    script.async = true;
-    
-    script.onload = () => {
-      window.pyodide.loadPyodide().then((pyodide: any) => {
+    const loadPyodide = async () => {
+      try {
+        // Try to load Pyodide from CDN
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js';
+        script.async = true;
+
+        await new Promise((resolve, reject) => {
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
+
+        if (!window.pyodide) {
+          throw new Error('Pyodide not loaded');
+        }
+
+        const pyodide = await window.pyodide.loadPyodide();
         pyodideRef.current = pyodide;
-        setIsPyodideLoading(false);
-        
-        // Pre-install common packages
-        pyodide.runPythonAsync(`
-          import micropip
-          micropip.install(['numpy', 'pandas', 'matplotlib'])
-        `);
-      });
-    };
-    
-    document.head.appendChild(script);
-    
-    return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
+        setPyodideReady(true);
+        setLogs([{ level: 'info', text: 'Python runtime loaded successfully' }]);
+
+        // Clear any loading state that might be stuck
+        // Note: Using pyodideReady instead of isPyodideLoading
+        setPyodideReady(false);
+      } catch (err: any) {
+        console.error('Failed to load Pyodide:', err);
+        setLogs([{ level: 'error', text: `Failed to load Python runtime: ${err.message}` }]);
       }
+    };
+
+    loadPyodide();
+
+    return () => {
+      // Cleanup if needed
     };
   }, []);
 
@@ -95,7 +107,7 @@ export function PythonCompiler({ initialCode }: Props) {
       const pyodide = pyodideRef.current;
       
       // Redirect print statements
-      pyodide.runPythonAsync(`
+      await pyodide.runPythonAsync(`
         import sys
         from io import StringIO
         
@@ -125,11 +137,11 @@ export function PythonCompiler({ initialCode }: Props) {
           buf.seek(0)
           img_str = base64.b64encode(buf.read()).decode()
           print(f"__MATPLOTLIB_IMG__:{img_str}")
-          plt.clf()  # Clear figure for next plot
+          plt.clf()  // Clear figure for next plot
         
         plt.show = custom_show
       `);
-
+      
       // Run user code
       await pyodide.runPythonAsync(code);
       
@@ -241,7 +253,7 @@ export function PythonCompiler({ initialCode }: Props) {
               <Button 
                 size="sm" 
                 onClick={runCode}
-                disabled={isRunning || isPyodideLoading}
+                disabled={isRunning || !pyodideReady}
                 className="bg-green-600 hover:bg-green-700 text-white"
               >
                 <Play className="h-4 w-4 mr-1" />
@@ -253,23 +265,14 @@ export function PythonCompiler({ initialCode }: Props) {
             </div>
           </div>
           <div className="flex-1 overflow-hidden">
-            {isPyodideLoading ? (
-              <div className="flex items-center justify-center h-full text-white">
-                <div className="text-center">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white border-t-transparent border-t-2 mx-auto mb-2"></div>
-                  <div>Loading Python runtime...</div>
-                </div>
-              </div>
-            ) : (
-              <CodeMirror 
-                value={code} 
-                height="100%" 
-                theme={oneDark} 
-                extensions={[python()]} 
-                onChange={setCode} 
-                className="h-full font-mono"
-              />
-            )}
+            <CodeMirror 
+              value={code} 
+              height="100%" 
+              theme={oneDark} 
+              extensions={[python()]} 
+              onChange={setCode} 
+              className="h-full font-mono"
+            />
           </div>
         </div>
 
