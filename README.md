@@ -5,8 +5,8 @@
 CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, and JavaScript. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
 
 ## 🌟 Key Features
-- **Interactive 4-Panel Compiler**: Live code editing with HTML, CSS, JavaScript panels and real-time preview
-- **Comprehensive Curriculum**: 175+ chapters covering everything from basics to advanced concepts
+- **Interactive 4-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, and Python panels and real-time preview
+- **Comprehensive Curriculum**: 255+ chapters covering everything from basics to advanced concepts
 - **Progress Tracking**: XP system, streaks, achievements, and detailed progress analytics
 - **Certificate Generation**: Beautiful certificates upon track completion
 - **Project-Based Learning**: Real-world projects at every skill level
@@ -81,6 +81,31 @@ CodeMastery is a comprehensive web development learning platform designed to tak
 **Part 7: Projects (Chapters 66-70)**
 - Todo App, Weather App, Quiz Game, Kanban Board, Mastery Recap
 
+### Python Track (80 Chapters - ~40 hours)
+**Part 1: Python Fundamentals (Chapters 1-10)**
+- What is Python?, First Python Program, Variables & Data Types, Operators, Conditionals, Loops, Functions (2 parts), Input/Output, Comments & Documentation
+
+**Part 2: Data Structures (Chapters 11-20)**
+- Strings, Lists, Tuples, Dictionaries, Sets, List Comprehensions, Lambda Functions, Map/Filter/Reduce, Generators, Decorators
+
+**Part 3: Object-Oriented Programming (Chapters 21-30)**
+- Classes & Objects, Inheritance, Polymorphism, Encapsulation, Class Methods, Static Methods, Magic Methods, Abstract Classes, Multiple Inheritance, Composition
+
+**Part 4: Advanced OOP & Error Handling (Chapters 31-40)**
+- Property Decorators, Context Managers, Iterators, Exceptions (2 parts), Custom Exceptions, Logging, Debugging, Testing Basics, Code Organization
+
+**Part 5: Advanced Python Features (Chapters 41-50)**
+- Modules & Packages, Virtual Environments, pip Package Manager, File I/O, JSON Handling, Regular Expressions, Date/Time, Collections Module, itertools, functools
+
+**Part 6: Testing, Debugging & Ecosystem (Chapters 51-60)**
+- Unit Testing with unittest, pytest Framework, Mocking, Code Coverage, Profiling, Performance Optimization, Documentation, Type Hints, Code Quality, CI/CD Basics
+
+**Part 7: Data Science & Web (Chapters 61-70)**
+- NumPy Basics, Pandas DataFrames, Matplotlib Visualization, HTTP Requests, Flask Web Framework, REST APIs, SQLAlchemy ORM, Web Scraping, API Authentication, WebSockets
+
+**Part 8: Projects & Challenges (Chapters 71-80)**
+- Task Manager CLI, Web Scraper, Data Analysis Project, API Integration, File Organizer, Log Analyzer, Password Generator, URL Shortener, Quiz Application, Weather App
+
 ## 🎯 Learning Philosophy
 - **Zero Prior Knowledge Assumed**: Every chapter starts from scratch
 - **Real-World Analogies First**: Technical concepts explained through relatable examples
@@ -139,10 +164,11 @@ src/
 │   ├── lesson/          # Lesson content and interactions
 │   └── quiz/            # Quiz system components
 ├── lib/
-│   ├── curriculum/      # All course content (175+ chapters)
+│   ├── curriculum/      # All course content (255+ chapters)
 │   │   ├── html-curriculum.ts
 │   │   ├── css-curriculum.ts
 │   │   ├── js-curriculum.ts
+│   │   ├── python-curriculum.ts
 │   │   └── index.ts
 │   ├── progress.ts      # User progress tracking
 │   ├── certificate.ts   # Certificate generation
