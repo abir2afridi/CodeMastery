@@ -1,4 +1,4 @@
-export type TrackId = "html" | "css" | "javascript" | "python";
+export type TrackId = "html" | "css" | "javascript" | "python" | "typescript";
 export type Difficulty = "Absolute Beginner" | "Beginner" | "Intermediate" | "Advanced" | "Expert";
 
 export interface CodeSnippet { html?: string; css?: string; javascript?: string; python?: string; }
@@ -20,7 +20,7 @@ export interface CodeExample {
   code: CodeSnippet;
   explanation: string;
   explanationBn?: string;
-  tryItPrompt: string;
+  tryItPrompt?: string;
   tryItPromptBn?: string;
 }
 
@@ -77,7 +77,7 @@ export interface QuizQuestion {
   code?: string;
   options?: string[];
   optionsBn?: string[];
-  correctAnswer: string | number;
+  correctAnswer: string | number | boolean;
   explanation: string;
   explanationBn?: string;
   difficulty: 1 | 2 | 3;
@@ -104,7 +104,7 @@ export interface Chapter {
   learningObjectives: string[];
   learningObjectivesBn?: string[];
   sections: Section[];
-  exercises: Exercise[];
+  exercises?: Exercise[];
   quiz: Quiz;
   cheatSheet: CheatSheetItem[];
   partLabel?: string; // e.g. "Part 1: The Absolute Beginning"

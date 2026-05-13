@@ -16,8 +16,13 @@ export function loadProgress(): UserProgress | null {
     // Migration: Add Python track if missing
     if (!progress.tracks.python) {
       progress.tracks.python = emptyTrack();
-      saveProgress(progress);
     }
+    // Migration: Add TypeScript track if missing
+    if (!progress.tracks.typescript) {
+      progress.tracks.typescript = emptyTrack();
+    }
+
+    saveProgress(progress);
 
     return progress;
   } catch { return null; }
@@ -43,6 +48,7 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       css: emptyTrack(),
       javascript: emptyTrack(),
       python: emptyTrack(),
+      typescript: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);
@@ -51,12 +57,15 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
 }
 
 export function startTrackFor(p: UserProgress, trackId: TrackId) {
+  if (!p.tracks[trackId]) {
+    p.tracks[trackId] = emptyTrack();
+  }
   const t = p.tracks[trackId];
   if (!t.started) {
     t.started = true;
     t.startedAt = new Date().toISOString();
-    const track = tracks.find((x) => x.id === trackId)!;
-    if (track.chapters[0]) t.currentChapterId = track.chapters[0].id;
+    const track = tracks.find((x) => x.id === trackId);
+    if (track?.chapters[0]) t.currentChapterId = track.chapters[0].id;
   }
 }
 

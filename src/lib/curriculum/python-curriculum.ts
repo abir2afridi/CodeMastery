@@ -1,4 +1,3 @@
-// @ts-nocheck - Disable TypeScript checking for this file due to Python code in template literals
 import { Track, Chapter, Section, Exercise, Quiz, QuizQuestion, CodeExample, MicroExercise, Callout, CheatSheetItem } from './types';
 
 export const pythonTrack: Track = {
@@ -1158,7 +1157,7 @@ for fruit in fruits:
 
 For loop with enumerate:
 for index, value in enumerate(fruits):
-    print(f\"{index}: {value}\")`,
+    print(f"{index}: {value}")`,
           codeExamples: [
             {
               id: "ch9-for",
@@ -1593,15 +1592,15 @@ print(add_all(1, 2, 3, 4, 5))  # 15
 **kwargs - Variable keyword arguments:
 def print_info(**info):
     for key, value in info.items():
-        print(f\"{key}: {value}\")
+        print(f"{key}: {value}")
 
 print_info(name="Alice", age=25, city="NYC")
 
 Combining parameters:
 def func(a, b, *args, **kwargs):
-    print(f\"a: {a}, b: {b}\")
-    print(f\"args: {args}\")
-    print(f\"kwargs: {kwargs}\")
+    print(f"a: {a}, b: {b}")
+    print(f"args: {args}")
+    print(f"kwargs: {kwargs}")
 
 Lambda functions:
 square = lambda x: x ** 2
@@ -3939,7 +3938,7 @@ class MyError(Exception):
 class InvalidAgeError(Exception):
     def __init__(self, age):
         self.age = age
-        super().__init__(f\"Invalid age: {age}\")
+        super().__init__(f"Invalid age: {age}")
 
 Raising custom exceptions:
 def set_age(age):
@@ -5010,9 +5009,9 @@ re.findall(r'l', 'hello')           # Find all matches
 
 Character classes:
 . - Any character
-\d - Digit
-\w - Word character
-\s - Whitespace
+\\d - Digit
+\\w - Word character
+\\s - Whitespace
 [a-z] - Range`,
           codeExamples: [
             {
@@ -6928,7 +6927,7 @@ def read_only(self):
           realWorldAnalogy: "Class attributes are like shared resources — everyone has access. Instance attributes are personal belongings — each person has their own.",
           content: `Class attribute:
 class Dog:
-    species = \"Canis familiaris\"  # Shared
+    species = "Canis familiaris"  # Shared
 
 Instance attribute:
 class Dog:
@@ -7832,7 +7831,7 @@ class Subject:
 python -m venv myenv
 
 Activate (Windows):
-myenv\Scripts\activate
+myenv\\Scripts\\activate
 
 Activate (Mac/Linux):
 source myenv/bin/activate
@@ -8496,7 +8495,7 @@ finally:
     # always runs
 
 Raise with context:
-raise ValueError(\"Invalid input\") from None`,
+raise ValueError("Invalid input") from None`,
           codeExamples: [
             {
               id: "ch64-error-handling",
@@ -8608,24 +8607,24 @@ raise ValueError(\"Invalid input\") from None`,
           realWorldAnalogy: "Documentation is like instruction manuals — they explain how things work.",
           content: `Function docstring:
 def greet(name):
-    \"\"\"Greet the person.
-    
+    """Greet the person.
+
     Args:
         name (str): The person's name.
-    
+
     Returns:
         str: A greeting message.
-    \"\"\"
-    return f\"Hello, {name}\"
+    """
+    return f"Hello, {name}"
 
 Class docstring:
 class Person:
-    \"\"\"Represents a person.
-    
+    """Represents a person.
+
     Attributes:
         name (str): The person's name.
         age (int): The person's age.
-    \"\"\"
+    """
     pass
 
 Type hints:
@@ -10185,7 +10184,7 @@ def add(a: int, b: int) -> int:
         {
           id: "ch79-project9",
           title: "Expense Tracker",
-          whyItMattering: "Expense tracking teaches data aggregation, calculations, and reporting.",
+          whyItMatters: "Expense tracking teaches data aggregation, calculations, and reporting.",
           realWorldAnalogy: "An expense tracker is like a financial ledger — it records and summarizes spending.",
           content: "Expense data:\nexpense = {\n    'date': '2024-01-01',\n    'category': 'Food',\n    'amount': 25.50\n}\n\nAdd expense:\nexpenses.append(expense)\n\nCalculate totals:\ntotal = sum(e['amount'] for e in expenses)\n\nGroup by category:\nfrom collections import defaultdict\ncategory_totals = defaultdict(float)\nfor e in expenses:\n    category_totals[e['category']] += e['amount']",
           codeExamples: [

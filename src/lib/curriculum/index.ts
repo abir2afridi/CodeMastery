@@ -3,6 +3,8 @@ import { cssChapters } from "./css-curriculum";
 import { jsChapters } from "./js-curriculum";
 // @ts-ignore
 import { pythonTrack } from "./python-curriculum";
+// @ts-ignore
+import { typescriptTrack } from "./typescript-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -53,6 +55,18 @@ export const tracks: Track[] = [
     chapters: pythonTrack.chapters,
     brandColor: "#3776AB",
     glowColor: "#3776AB",
+  },
+  {
+    id: "typescript",
+    title: "TypeScript",
+    tagline: "JavaScript, but with superpowers",
+    icon: "https://img.icons8.com/color/144/typescript--v1.png",
+    colorVar: "typescript",
+    totalChapters: typescriptTrack.totalChapters,
+    estimatedHours: typescriptTrack.estimatedHours,
+    chapters: typescriptTrack.chapters,
+    brandColor: "#3178C6",
+    glowColor: "#3178C6",
   },
 ];
 

@@ -24,7 +24,6 @@ export default {
         'obsidian': '#0A0A0A',
         'carbon': '#121212',
         'neon-blue': '#00D4FF',
-        'crimson': '#FF006E',
         'terminal-green': '#00FF41',
         'warning-amber': '#FFB700',
         'glass': 'rgba(18, 18, 18, 0.8)',
@@ -32,7 +31,7 @@ export default {
           DEFAULT: "hsl(var(--surface) / <alpha-value>)",
           80: "hsl(var(--surface-80))",
         },
-        
+
         // System Colors (mapped to CSS variables)
         border: "hsl(var(--border) / <alpha-value>)",
         input: "hsl(var(--input) / <alpha-value>)",
@@ -86,6 +85,8 @@ export default {
         html: "hsl(var(--html-color))",
         css: "hsl(var(--css-color))",
         js: "hsl(var(--js-color))",
+        python: "hsl(var(--python-color))",
+        typescript: "hsl(var(--typescript-color))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
