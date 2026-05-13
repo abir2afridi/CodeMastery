@@ -114,7 +114,9 @@ export interface Chapter {
 export interface Track {
   id: TrackId;
   title: string;
+  titleBn?: string;
   tagline: string;
+  taglineBn?: string;
   icon: string;
   colorVar: string; // tailwind color name (html|css|js)
   totalChapters: number;

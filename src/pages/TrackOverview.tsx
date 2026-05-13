@@ -9,11 +9,14 @@ import { useEffect } from "react";
 import { CyberpunkButton, CyberpunkCard } from "@/components/ui/cyberpunk";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/hooks/useI18n";
 
 const TrackOverview = () => {
   const { trackId } = useParams<{ trackId: TrackId }>();
   const track = trackId ? getTrack(trackId) : undefined;
   const { progress, refresh } = useProgress();
+  const { t, lang } = useI18n();
+  const isBn = lang === "bn";
 
   useEffect(() => {
     if (progress && track && !progress.tracks[track.id]) {
@@ -98,12 +101,12 @@ const TrackOverview = () => {
                     <img src={track.icon} alt="" className="w-full h-full object-contain" />
                   </div>
                   <h1 className="text-7xl font-black uppercase tracking-tighter leading-[0.8] font-outfit">
-                    {track.title}
+                    {isBn && track.titleBn ? track.titleBn : track.title}
                   </h1>
                 </div>
 
                 <p className="text-sm font-black tracking-widest text-foreground/40 uppercase leading-relaxed max-w-md">
-                  {track.tagline}
+                  {isBn && track.taglineBn ? track.taglineBn : track.tagline}
                 </p>
               </div>
 
@@ -167,7 +170,7 @@ const TrackOverview = () => {
                     <div key={i} className="flex items-start gap-3 group/obj">
                       <span className="text-foreground/20 text-[10px] pt-1">[{i.toString().padStart(2, '0')}]</span>
                       <p className="text-[10px] font-black tracking-widest text-foreground/60 uppercase leading-relaxed group-hover/obj:text-foreground transition-colors">
-                        SECURE_NODE: <span className="text-foreground/80">{ch.title}</span>
+                        SECURE_NODE: <span className="text-foreground/80">{isBn && ch.titleBn ? ch.titleBn : ch.title}</span>
                       </p>
                     </div>
                   ))}
@@ -188,7 +191,13 @@ const TrackOverview = () => {
             {[...groups.entries()].map(([part, chapters], groupIdx) => (
               <div key={part} className="space-y-8">
                 <div className="flex items-center justify-between border-b border-foreground/10 pb-4">
-                  <h2 className="text-xl font-black tracking-[0.3em] text-foreground uppercase font-outfit">{part}</h2>
+                  <h2 className="text-xl font-black tracking-[0.3em] text-foreground uppercase font-outfit">
+                    {(() => {
+                      const firstChapter = chapters[0];
+                      const bnPart = isBn && firstChapter?.partLabelBn ? firstChapter.partLabelBn : part;
+                      return bnPart;
+                    })()}
+                  </h2>
                   <span className="text-[9px] font-black tracking-widest opacity-20 uppercase">{chapters.length} NODES</span>
                 </div>
 
@@ -239,10 +248,10 @@ const TrackOverview = () => {
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-4 mb-1">
                               <span className="text-[8px] font-black tracking-widest text-foreground/20 uppercase font-mono">NODE_{ch.number.toString().padStart(2, '0')}</span>
-                              <h3 className="text-xl font-black uppercase tracking-tight truncate font-outfit">{ch.title}</h3>
+                              <h3 className="text-xl font-black uppercase tracking-tight truncate font-outfit">{isBn && ch.titleBn ? ch.titleBn : ch.title}</h3>
                             </div>
                             <p className="text-[10px] font-black tracking-widest text-foreground/40 uppercase truncate">
-                              {ch.subtitle}
+                              {isBn && ch.subtitleBn ? ch.subtitleBn : ch.subtitle}
                             </p>
                           </div>
 

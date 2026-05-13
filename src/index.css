@@ -47,6 +47,16 @@
     --js-color: 48 100% 50%;
     --python-color: 207 90% 54%;
     --typescript-color: 212 100% 48%;
+
+    /* Sidebar Colors */
+    --sidebar-background: 264 59% 23%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 188 100% 50%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 264 45% 35%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 100% / 0.1;
+    --sidebar-ring: 188 100% 50%;
   }
 
   .dark {
@@ -73,6 +83,28 @@
 
     --glow-primary: 0 0 20px rgba(0, 212, 255, 0.2);
     --glow-crimson: 0 0 20px rgba(255, 0, 110, 0.2);
+
+    /* Sidebar Colors - Same for both themes */
+    --sidebar-background: 264 59% 23%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 188 100% 50%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 264 45% 35%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 100% / 0.15;
+    --sidebar-ring: 188 100% 50%;
+  }
+
+  .dark {
+    /* Keep same sidebar colors in dark mode */
+    --sidebar-background: 264 59% 23%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 188 100% 50%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 264 45% 35%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 100% / 0.15;
+    --sidebar-ring: 188 100% 50%;
   }
 }
 

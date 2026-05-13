@@ -31,26 +31,37 @@ const stubExercises = (chapterId: string): Exercise[] => [{
   solutionExplanation: "A minimal example demonstrating the chapter's concept.",
 }];
 
-const makeStub = (number: number, title: string, subtitle: string, difficulty: Chapter["difficulty"], partLabel: string, prevId?: string): Chapter => {
+const makeStub = (number: number, title: string, subtitle: string, difficulty: Chapter["difficulty"], partLabel: string, prevId?: string, titleBn?: string, subtitleBn?: string): Chapter => {
   const id = `js-ch-${String(number).padStart(2, "0")}`;
   return {
     id, number, title, subtitle, difficulty,
     estimatedMinutes: 30, xpReward: 100,
     prerequisites: prevId ? [prevId] : [],
     learningObjectives: [`Understand ${title}.`, `Apply ${title} in real code.`, `Recognize common pitfalls.`],
+    learningObjectivesBn: titleBn ? [`${titleBn} বুঝতে পারবেন।`, `${titleBn} প্রকৃত কোডে প্রয়োগ করতে পারবেন।`, `সাধারণ ভুলগুলো চিনতে পারবেন।`] : undefined,
     partLabel,
+    partLabelBn: partLabel.replace("PART", "অংশ"),
+    titleBn,
+    subtitleBn,
     sections: [{
       id: `${id}-s1`,
       title: `Introduction to ${title}`,
+      titleBn: titleBn ? `${titleBn} পরিচিতি` : undefined,
       whyItMatters: `${title} is a core JavaScript topic. Mastering it makes you a stronger developer.`,
+      whyItMattersBn: titleBn ? `${titleBn} জাভাস্ক্রিপ্টের একটি মূল বিষয়। এটি আয়ত্ত করা আপনাকে আরও দক্ষ ডেভেলপার করে তুলবে।` : undefined,
       content: `This chapter covers ${title}. Detailed lesson content is being expanded chapter by chapter — the platform, compiler, and quiz system are fully functional. Use the in-page mini compiler to experiment freely.\n\nFor in-depth coverage right now, refer to MDN Web Docs while we expand this chapter's written content.`,
+      contentBn: titleBn ? `এই অধ্যায়ে ${titleBn} আছে। প্ল্যাটফর্ম, কম্পাইলার এবং কুইজ সিস্টেম সম্পূর্ণ কার্যকরী। পেজের মধ্যে মিনি কম্পাইলার ব্যবহার করে পরীক্ষা করুন।` : undefined,
       codeExamples: [{
         id: `${id}-ex1`,
         title: `${title} — quick example`,
+        titleBn: titleBn ? `${titleBn} — দ্রুত উদাহরণ` : undefined,
         description: `A minimal demo of ${title}.`,
+        descriptionBn: titleBn ? `${titleBn}-এর একটি সংক্ষিপ্ত ডেমো।` : undefined,
         code: { html: `<div id="out">Watch the console</div>`, javascript: `console.log('Learning ${title}');\ndocument.getElementById('out').textContent = 'Hello from JS!';` },
         explanation: "Logs a message and updates the page text.",
+        explanationBn: "একটি মেসেজ লগ করে এবং পেজের টেক্সট আপডেট করে।",
         tryItPrompt: "Change the strings and re-run.",
+        tryItPromptBn: "স্ট্রিংগুলো পরিবর্তন করে আবার চালান।",
       }],
     }],
     exercises: stubExercises(id),
@@ -341,11 +352,11 @@ const part6: Chapter[] = [
 ];
 
 const part7: Chapter[] = [
-  makeStub(66, "Project: Todo App", "CRUD + localStorage.", "Intermediate", "Part 7: Projects", "js-ch-65"),
-  makeStub(67, "Project: Weather App", "Fetch API + DOM.", "Intermediate", "Part 7: Projects", "js-ch-66"),
-  makeStub(68, "Project: Quiz Game", "Timer and score.", "Intermediate", "Part 7: Projects", "js-ch-67"),
-  makeStub(69, "Project: Kanban Board", "Drag & drop + IndexedDB.", "Advanced", "Part 7: Projects", "js-ch-68"),
-  makeStub(70, "JS Mastery Recap & Cert Quiz", "Final cumulative quiz.", "Expert", "Part 7: Projects", "js-ch-69"),
+  makeStub(66, "Project: Todo App", "CRUD + localStorage.", "Intermediate", "Part 7: Projects", "js-ch-65", "প্রজেক্ট: টোডো অ্যাপ", "CRUD + লোকাল স্টোরেজ।"),
+  makeStub(67, "Project: Weather App", "Fetch API + DOM.", "Intermediate", "Part 7: Projects", "js-ch-66", "প্রজেক্ট: ওয়েদার অ্যাপ", "ফেচ API + DOM।"),
+  makeStub(68, "Project: Quiz Game", "Timer and score.", "Intermediate", "Part 7: Projects", "js-ch-67", "প্রজেক্ট: কুইজ গেম", "টাইমার এবং স্কোর।"),
+  makeStub(69, "Project: Kanban Board", "Drag & drop + IndexedDB.", "Advanced", "Part 7: Projects", "js-ch-68", "প্রজেক্ট: কানবান বোর্ড", "ড্র্যাগ ও ড্রপ + IndexedDB।"),
+  makeStub(70, "JS Mastery Recap & Cert Quiz", "Final cumulative quiz.", "Expert", "Part 7: Projects", "js-ch-69", "JS মাস্ট্রি রিভিউ ও সার্টিফিকেট কুইজ", "চূড়ান্ত সমন্বিত কুইজ।"),
 ];
 
 export const jsChapters: Chapter[] = [...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...part7];

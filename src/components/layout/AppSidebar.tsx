@@ -75,7 +75,7 @@ export function AppSidebar() {
   const isCollapsed = state === "collapsed";
 
   return (
-    <Sidebar className="border-r border-foreground/5 bg-background/80 backdrop-blur-xl transition-all duration-300">
+    <Sidebar className="border-r border-sidebar-border bg-sidebar text-sidebar-foreground">
       <SidebarHeader className="p-6">
         <Link to="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 bg-primary flex items-center justify-center shrink-0 relative overflow-hidden">
@@ -104,7 +104,7 @@ export function AppSidebar() {
 
       <SidebarContent className="px-3 py-4 space-y-6">
         <SidebarGroup>
-          <SidebarGroupLabel className="px-4 text-[10px] font-black tracking-[0.3em] text-foreground/30 uppercase mb-4">
+          <SidebarGroupLabel className="px-4 text-[10px] font-black tracking-[0.3em] text-sidebar-foreground/30 uppercase mb-4">
             {t("system.segmentIndex")}
           </SidebarGroupLabel>
           <SidebarGroupContent>
@@ -118,9 +118,9 @@ export function AppSidebar() {
                       isActive={isActive}
                       className={cn(
                         "h-12 px-4 transition-all duration-300 rounded-none border-l-2",
-                        isActive 
-                          ? "bg-primary/10 border-primary text-foreground shadow-[0_0_20px_rgba(0,163,255,0.1)]" 
-                          : "bg-transparent border-transparent text-foreground/40 hover:bg-foreground/5 hover:text-foreground/70"
+                        isActive
+                          ? "bg-primary/10 border-primary text-sidebar-foreground"
+                          : "bg-transparent border-transparent text-sidebar-foreground/40 hover:bg-sidebar-accent hover:text-sidebar-foreground/70"
                       )}
                     >
                       <Link to={item.url} className="flex items-center gap-4">

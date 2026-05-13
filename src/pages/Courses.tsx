@@ -8,8 +8,9 @@ import { useProgress } from "@/hooks/useProgress";
 import { cn } from "@/lib/utils";
 
 const Courses = () => {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const { progress } = useProgress();
+  const isBn = lang === "bn";
 
   console.log('All tracks:', tracks);
   console.log('Track IDs:', tracks.map(t => t.id));
@@ -103,15 +104,15 @@ const Courses = () => {
  
                       <div className="space-y-3">
                         <div className="flex items-center gap-3">
-                           <h2 
+                           <h2
                              className="text-4xl font-black uppercase tracking-tighter"
                              style={{ color: track.brandColor }}
                            >
-                            {track.title}
+                            {isBn && track.titleBn ? track.titleBn : track.title}
                           </h2>
                         </div>
                         <p className="text-xs font-black uppercase tracking-widest text-foreground/40 leading-relaxed">
-                          {track.tagline}
+                          {isBn && track.taglineBn ? track.taglineBn : track.tagline}
                         </p>
                       </div>
  

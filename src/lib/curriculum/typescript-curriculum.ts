@@ -13,9 +13,93 @@ const makeExercise = (id: string, title: string, desc: string, reqs: string[], s
   solutionExplanation: "Solution provided."
 });
 
+// Bengali translations map (key = chapter id)
+const bnTitles: Record<string, { title: string; subtitle: string }> = {
+  "ts-ch-1": { title: "টাইপস্ক্রিপ্ট কী এবং কেন এটি আছে?", subtitle: "টাইপস্ক্রিপ্ট কোন সমস্যা সমাধান করে তা বুঝুন" },
+  "ts-ch-2": { title: "বেসিক টাইপস — ভিত্তি", subtitle: "primitive types, arrays, এবং special types বুঝুন" },
+  "ts-ch-3": { title: "টাইপ ইনফারেন্স — টাইপস্ক্রিপ্ট অনুমান করে", subtitle: "কখন টাইপ ইনফার হয় এবং কখন অ্যানোটেশন দরকার" },
+  "ts-ch-4": { title: "ইন্টারফেস — কাস্টম টাইপ তৈরি", subtitle: "অবজেক্টের জন্য টাইপ স্ট্রাকচার সংজ্ঞায়িত করুন" },
+  "ts-ch-5": { title: "অ্যারে এবং অবজেক্ট টাইপ", subtitle: "complex ডেটা স্ট্রাকচার টাইপ করুন" },
+  "ts-ch-6": { title: "অ্যালায়াস এবং ইন্টারসেকশন", subtitle: "টাইপ রিইউজ এবং কম্বিন করুন" },
+  "ts-ch-7": { title: "ইউনিয়ন এবং টাইপ গার্ড", subtitle: "একাধিক টাইপ একসাথে ব্যবহার করুন" },
+  "ts-ch-8": { title: "any, unknown, never, এবং void", subtitle: "বিশেষ টাইপগুলো বুঝুন" },
+  "ts-ch-9": { title: "ফাংশন টাইপস — পারামিটার এবং রিটার্ন", subtitle: "ফাংশনের জন্য টাইপ সংজ্ঞায়িত করুন" },
+  "ts-ch-10": { title: "অপশনাল এবং ডিফল্ট পারামিটার", subtitle: "flexible ফাংশন পারামিটার" },
+  "ts-ch-11": { title: "রেস্ট পারামিটার এবং ফাংশন ওভারলোডিং", subtitle: "উন্নত ফাংশন প্যাটার্ন" },
+  "ts-ch-12": { title: "ফাংশন টাইপ এবং কলব্যাক", subtitle: "ফাংশনকে টাইপ হিসেবে ব্যবহার করুন" },
+  "ts-ch-13": { title: "this ইন ফাংশনস", subtitle: "this কনটেক্সট সঠিকভাবে হ্যান্ডেল করুন" },
+  "ts-ch-14": { title: "জেনেরিক ফাংশনস — রিইউজেবল কোড", subtitle: "টাইপ-সেফ ফাংশন যা যেকোনো ডেটার সাথে কাজ করে" },
+  "ts-ch-15": { title: "জেনেরিক কনস্ট্রেইন্টস", subtitle: "জেনেরিক টাইপকে সীমাবদ্ধ করুন" },
+  "ts-ch-16": { title: "ক্লাসেস — অবজেক্ট-ওরিয়েন্টেড প্রোগ্রামিং", subtitle: "ক্লাস দিয়ে অবজেক্ট তৈরি করুন" },
+  "ts-ch-17": { title: "অ্যাক্সেস মডিফায়ারস — public, private, protected", subtitle: "প্রপার্টি এবং মেথডের দৃশ্যমানতা নিয়ন্ত্রণ" },
+  "ts-ch-18": { title: "ইনহেরিটেন্স — প্যারেন্ট থেকে চাইল্ড", subtitle: "ক্লাস প্রসারিত করুন" },
+  "ts-ch-19": { title: "অ্যাবস্ট্রাক্ট ক্লাস এবং মেথড", subtitle: "বেস ক্লাস যা ইমপ্লিমেন্ট করতে হবে" },
+  "ts-ch-20": { title: "ইন্টারফেস বনাম ক্লাস", subtitle: "কখন কোন ব্যবহার করবেন" },
+  "ts-ch-21": { title: "জেনেরিক ক্লাসেস", subtitle: "পুনরায় ব্যবহারযোগ্য ক্লাস টেমপ্লেট" },
+  "ts-ch-22": { title: "ডেকোরেটরস", subtitle: "ক্লাস এবং মেথড পরিবর্তন" },
+  "ts-ch-23": { title: "ইন্টারফেস মার্জিং এবং মিক্সিনস", subtitle: "উন্নত প্যাটার্ন" },
+  "ts-ch-24": { title: "ডিজাইন প্যাটার্নস", subtitle: "টাইপস্ক্রিপ্টে কমন প্যাটার্ন" },
+  "ts-ch-25": { title: "ইউনিয়ন টাইপস — যখন একটি ভ্যালু একাধিক টাইপ হতে পারে", subtitle: "এক ভ্যারিয়েবল, একাধিক সম্ভাব্য টাইপ" },
+  "ts-ch-26": { title: "টাইপ অ্যালায়াস — টাইপে নাম দিন", subtitle: "নিজের টাইপ নাম তৈরি করুন" },
+  "ts-ch-27": { title: "লিটারাল টাইপস — নির্দিষ্ট স্ট্রিং, নম্বর, বা বুলিয়ান", subtitle: "সঠিক ভ্যালু হিসেবে টাইপ" },
+  "ts-ch-28": { title: "never টাইপ — যে ফাংশন কখনো রিটার্ন করে না", subtitle: "never এবং void বুঝুন" },
+  "ts-ch-29": { title: "unknown টাইপ — নিরাপদ any", subtitle: "type-safe any রিপ্লেসমেন্ট" },
+  "ts-ch-30": { title: "টাইপ গার্ডস — কাস্টম টাইপ চেক", subtitle: "কাস্টম টাইপ ন্যারোইং" },
+  "ts-ch-31": { title: "ডিসক্রিমিনেটেড ইউনিয়নস — ট্যাগড ইউনিয়ন টাইপস", subtitle: "প্যাটার্ন ম্যাচিং with টাইপ সেফটি" },
+  "ts-ch-32": { title: "ইন্টারসেকশন টাইপস — টাইপ কম্বিন করা", subtitle: "একাধিক টাইপ একসাথে" },
+  "ts-ch-33": { title: "ইউটিলিটি টাইপস — বিল্ট-ইন টাইপ ট্রান্সফর্মেশনস", subtitle: "কমন টাইপ হেল্পারস" },
+  "ts-ch-34": { title: "জেনেরিক কনস্ট্রেইন্টস — টাইপ পারামিটার সীমাবদ্ধ করা", subtitle: "কোন টাইপ ব্যবহার করা যাবে তা সীমিত করুন" },
+  "ts-ch-35": { title: "ম্যাপড টাইপস — টাইপ থেকে টাইপ তৈরি", subtitle: "ডায়নামিক্যালি টাইপ ট্রান্সফর্ম" },
+  "ts-ch-36": { title: "টেমপ্লেট লিটারাল টাইপস — স্ট্রিং টাইপস স্টেরয়েডস", subtitle: "প্যাটার্ন-ভিত্তিক স্ট্রিং টাইপস" },
+  "ts-ch-37": { title: "কন্ডিশনাল টাইপস — টাইপ-লেভেল ইফ স্টেটমেন্টস", subtitle: "শর্তের ভিত্তিতে টাইপ পরিবর্তন" },
+  "ts-ch-38": { title: "infer কীওয়ার্ড — টাইপ এক্সট্রাক্ট", subtitle: "প্যাটার্ন ম্যাচিং for টাইপস" },
+  "ts-ch-39": { title: "ডিক্লারেশন মার্জিং — ইন্টারফেস এক্সটেনশন", subtitle: "কিভাবে ইন্টারফেস মার্জ হয়" },
+  "ts-ch-40": { title: "মডিউল অগমেন্টেশন — বিল্ট-ইন টাইপস এক্সটেন্ড", subtitle: "বিদ্যমান টাইপসে যোগ করুন" },
+  "ts-ch-41": { title: "প্রোডাকশন টাইপস্ক্রিপ্ট প্রজেক্ট সেটআপ", subtitle: "প্রজেক্ট কনফিগারেশন ডিপ ডাইভ" },
+  "ts-ch-42": { title: "থার্ড-পার্টি জাভাস্ক্রিপ্ট লাইব্রেরির সাথে কাজ করা", subtitle: "আনটাইপড কোড টাইপিং" },
+  "ts-ch-43": { title: "এরর হ্যান্ডলিং ইথ রেজাল্ট টাইপস", subtitle: "স্পষ্ট এরর হ্যান্ডলিং" },
+  "ts-ch-44": { title: "ইভেন্ট-ড্রিভেন টাইপস — টাইপ-সেফ ইভেন্ট সিস্টেমস", subtitle: "টাইপড ইভেন্ট হ্যান্ডলিং" },
+  "ts-ch-45": { title: "স্টেট ম্যানেজমেন্ট ইথ টাইপস্ক্রিপ্ট", subtitle: "টাইপড স্টেট কন্টেইনারস" },
+  "ts-ch-46": { title: "API টাইপস — JSON থেকে টাইপস্ক্রিপ্ট", subtitle: "API রেসপন্স টাইপিং" },
+  "ts-ch-47": { title: "টেস্টিং টাইপস্ক্রিপ্ট — টাইপ টেস্টিং টেকনিকস", subtitle: "আপনার টাইপস কাজ করছে তা যাচাই করুন" },
+  "ts-ch-48": { title: "রিঅ্যাক্ট ইথ টাইপস্ক্রিপ্ট — কম্পোনেন্ট টাইপস", subtitle: "টাইপড রিঅ্যাক্ট কম্পোনেন্টস" },
+  "ts-ch-49": { title: "নোড.জেএস ইথ টাইপস্ক্রিপ্ট — ব্যাকএন্ড টাইপস", subtitle: "সার্ভার-সাইড টাইপস্ক্রিপ্ট" },
+  "ts-ch-50": { title: "ডাটাবেস টাইপস — টাইপ-সেফ ডাটাবেস অপারেশনস", subtitle: "SQL এবং NoSQL এর জন্য টাইপস" },
+  "ts-ch-51": { title: "টাইপ-সেফ API ক্লায়েন্টস — ফেচ র‍্যাপারস", subtitle: "টাইপড HTTP রিকোয়েস্টস" },
+  "ts-ch-52": { title: "কনফিগারেশন টাইপস — টাইপ-সেফ কনফিগ অবজেক্টস", subtitle: "টাইপড কনফিগারেশন" },
+  "ts-ch-53": { title: "এরর বাউন্ডারিস — সেন্ট্রালাইজড এরর হ্যান্ডলিং", subtitle: "টাইপড এরর হ্যান্ডলিং" },
+  "ts-ch-54": { title: "টাইপ-সেফ রাউটিং — পারামিটার এবং কোয়েরি টাইপস", subtitle: "টাইপড রাউট পারামিটারস" },
+  "ts-ch-55": { title: "বিল্ড এবং ডিপ্লয়মেন্ট — প্রোডাকশন টাইপস্ক্রিপ্ট", subtitle: "প্রোডাকশনের জন্য অপ্টিমাইজ" },
+  "ts-ch-56": { title: "প্রজেক্ট: টাইপ-সেফ টোডো অ্যাপ্লিকেশন", subtitle: "সম্পূর্ণ টোডো অ্যাপ বানান" },
+  "ts-ch-57": { title: "প্রজেক্ট: REST API ক্লায়েন্ট লাইব্রেরি", subtitle: "টাইপ-সেফ HTTP র‍্যাপার" },
+  "ts-ch-58": { title: "প্রজেক্ট: স্টেট ম্যানেজমেন্ট লাইব্রেরি", subtitle: "নিজের স্টোর বানান" },
+  "ts-ch-59": { title: "প্রজেক্ট: ফর্ম ভ্যালিডেশন লাইব্রেরি", subtitle: "টাইপ-সেফ ফর্ম হ্যান্ডলিং" },
+  "ts-ch-60": { title: "প্রজেক্ট: টাইপ-সেফ রাউটার", subtitle: "রাউটিং সিস্টেম বানান" },
+  "ts-ch-61": { title: "প্রজেক্ট: ডেটা ট্রান্সফর্ম পাইপলাইন", subtitle: "টাইপ-সেফ ডেটা প্রসেসিং" },
+  "ts-ch-62": { title: "প্রজেক্ট: ডিপেন্ডেন্সি ইনজেকশন কন্টেইনার", subtitle: "টাইপ-সেফ DI সিস্টেম" },
+  "ts-ch-63": { title: "প্রজেক্ট: ইভেন্ট বাস সিস্টেম", subtitle: "টাইপ-সেফ পাব/সাব" },
+  "ts-ch-64": { title: "প্রজেক্ট: টাইপ-সেফ API স্কিমা ভ্যালিডেটর", subtitle: "স্কিমার বিরুদ্ধে ভ্যালিডেট" },
+  "ts-ch-65": { title: "ফাইনাল প্রজেক্ট: টাইপ-সেফ কম্পোনেন্ট লাইব্রেরি", subtitle: "সম্পূর্ণ কম্পোনেন্ট লাইব্রেরি" },
+};
+
+// Function to add Bn fields to chapters
+function addBnTranslations(chapters: Chapter[]): Chapter[] {
+  return chapters.map(ch => {
+    const bn = bnTitles[ch.id];
+    if (!bn) return ch;
+    return {
+      ...ch,
+      titleBn: bn.title,
+      subtitleBn: bn.subtitle,
+      learningObjectivesBn: ch.learningObjectives.map(o => `[BN] ${o}`),
+    };
+  });
+}
+
 export const typescriptTrack: Track = {
   id: "typescript",
   title: "TypeScript",
+  titleBn: "টাইপস্ক্রিপ্ট",
   tagline: "JavaScript, but with superpowers",
   icon: "https://img.icons8.com/color/144/typescript--v1.png",
   colorVar: "typescript",
@@ -5620,7 +5704,8 @@ async function createUser(data: UserInsert): Promise<DatabaseUser {
             question: "What type represents data for creating a record?",
             options: ["Omit<Model, \"id\">", "Required<Model>", "Model", "Partial<Model>"],
             correctAnswer: 0,
-            explanation: "Omit removes generated fields like id from the model."
+            explanation: "Omit removes generated fields like id from the model.",
+            difficulty: 1
           }
         ],
         passingScore: 1

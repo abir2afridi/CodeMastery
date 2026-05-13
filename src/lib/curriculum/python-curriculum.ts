@@ -1,16 +1,158 @@
 import { Track, Chapter, Section, Exercise, Quiz, QuizQuestion, CodeExample, MicroExercise, Callout, CheatSheetItem } from './types';
 
+// Helper function to add Bn translations
+function addBnTranslations(chapters: Chapter[]): Chapter[] {
+  return chapters.map(ch => ({
+    ...ch,
+    titleBn: getBnTitle(ch.id),
+    subtitleBn: getBnSubtitle(ch.id),
+    partLabelBn: ch.partLabel?.replace("PART", "অংশ").replace("ABSOLUTE PYTHON BASICS", "মৌলিক পাইথন").replace("PYTHON FUNDAMENTALS", "পাইথন মূল বিষয়").replace("INTERMEDIATE PYTHON", "মধ্যবর্তী পাইথন").replace("ADVANCED PYTHON", "উন্নত পাইথন").replace("EXPERT PYTHON", "বিশেষজ্ঞ পাইথন"),
+    learningObjectivesBn: ch.learningObjectives.map((o, i) => getBnObjective(ch.id, i)),
+    sections: ch.sections.map(s => ({
+      ...s,
+      titleBn: getBnSectionTitle(ch.id, s.id),
+      whyItMattersBn: getBnWhyMatters(ch.id, s.id),
+      contentBn: getBnContent(ch.id),
+    })),
+  }));
+}
+
+function getBnTitle(id: string): string {
+  const titles: Record<string, string> = {
+    "python-ch-1": "পাইথন কী এবং কেন এটি শিখবেন?",
+    "python-ch-2": "ভেরিয়েবল এবং ডেটা টাইপ",
+    "python-ch-3": "স্ট্রিংস",
+    "python-ch-4": "সংখ্যা এবং গাণিতিক অপারেশন",
+    "python-ch-5": "লিস্ট এবং টাপলস",
+  };
+  return titles[id] || "";
+}
+
+function getBnSubtitle(id: string): string {
+  const subtitles: Record<string, string> = {
+    "python-ch-1": "পাইথন প্রোগ্রামিংয়ে পরিচিতি",
+    "python-ch-2": "ডেটা সংরক্ষণ এবং টাইপ বুঝুন",
+    "python-ch-3": "টেক্সট ডেটা নিয়ে কাজ করা",
+    "python-ch-4": "গাণিতিক হিসাব-নিকাশ",
+    "python-ch-5": "ডেটা সংগ্রহ",
+  };
+  return subtitles[id] || "";
+}
+
+function getBnObjective(id: string, idx: number): string {
+  const objectives: Record<string, string[]> = {
+    "python-ch-1": ["পাইথন কী তা বুঝতে পারবেন", "কেন পাইথন জনপ্রিয় তা জানবেন", "পাইথন সেটআপ করতে পারবেন", "প্রথম পাইথন প্রোগ্রাম লিখবেন"],
+    "python-ch-2": ["ভেরিয়েবল তৈরি করতে পারবেন", "বিভিন্ন ডেটা টাইপ চিনতে পারবেন", "টাইপ পরিবর্তন করতে পারবেন"],
+    "python-ch-3": ["স্ট্রিং তৈরি করতে পারবেন", "স্ট্রিং মেথড ব্যবহার করতে পারবেন", "স্ট্রিং ফরম্যাটিং করতে পারবেন"],
+    "python-ch-4": ["সংখ্যা নিয়ে কাজ করতে পারবেন", "গাণিতিক অপারেশন করতে পারবেন", "মডিউলাস এবং ফ্লোর ডিভিশন বুঝবেন"],
+    "python-ch-5": ["লিস্ট তৈরি এবং ব্যবহার করতে পারবেন", "লিস্ট মেথড ব্যবহার করতে পারবেন", "টাপল এবং লিস্টের পার্থক্য বুঝবেন"],
+  };
+  return objectives[id]?.[idx] || "";
+}
+
+function getBnSectionTitle(chId: string, sId: string): string {
+  return "";
+}
+
+function getBnWhyMatters(chId: string, sId: string): string {
+  return "";
+}
+
+function getBnContent(chId: string): string {
+  const contents: Record<string, string> = {
+    "python-ch-1": `পাইথন কী?
+
+পাইথন হলো একটি high-level, interpreted প্রোগ্রামিং ল্যাঙ্গুয়েজ যা এর সহজ, পাঠযোগ্য সিনট্যাক্সের জন্য পরিচিত। এটি গুইডো ভ্যান রসাম তৈরি করেছিলেন এবং প্রথম 1991 সালে প্রকাশিত হয়েছিল।
+
+কেন পাইথন?
+
+- শেখা সহজ এবং পড়তে সুন্দর
+- বহুমুখী - ওয়েব, ডেটা সায়েন্স, AI, অটোমেশনে ব্যবহৃত
+- বড় কমিউনিটি এবং ইকোসিস্টেম
+- ক্রস-প্ল্যাটফর্ম সামঞ্জস্যপূর্ণ
+
+আপনার প্রথম প্রোগ্রাম
+
+print("Hello, World!")`,
+
+    "python-ch-2": `ভেরিয়েবল কী?
+
+ভেরিয়েবল হলো ডেটা সংরক্ষণের জন্য নামকরণ করা কontainer। পাইথনে ভেরিয়েবল তৈরি করা very সহজ।
+
+ভেরিয়েবল তৈরি করা
+
+\`\`\`python
+name = "Alice"
+age = 25
+is_student = True
+\`\`\`
+
+ডেটা টাইপ
+
+- str: টেক্সট ("Hello")
+- int: পূর্ণসংখ্যা (42)
+- float: দশমিক সংখ্যা (3.14)
+- bool: সত্য/মিথ্যা (True/False)
+
+টাইপ পরিবর্তন
+
+\`\`\`python
+number = "42"      # str
+number = int("42") # int
+number = str(42)    # str আবার
+\`\`\``,
+
+    "python-ch-3": `স্ট্রিং কী?
+
+স্ট্রিং হলো কোটেশনে আবদ্ধ অক্ষরের সিকোয়েন্স।
+
+স্ট্রিং তৈরি
+
+\`\`\`python
+# সিঙ্গেল কোট
+name = 'Alice'
+
+# ডাবল কোট
+greeting = "Hello, World!"
+
+# ট্রিপল কোট (মাল্টি-লাইন)
+message = '''এটি একাধিক
+লাইনের স্ট্রিং'''
+\`\`\`
+
+স্ট্রিং ইনডেক্সিং
+
+প্রতিটি অক্ষরের একটি ইনডেক্স থাকে (0 থেকে শুরু):
+
+\`\`\`python
+text = "Python"
+text[0]  # 'P'
+text[5]  # 'n'
+text[-1] # 'n' (শেষ অক্ষর)
+\`\`\`
+
+নেগেটিভ ইনডেক্স শেষ থেকে গণনা করে:
+
+\`\`\`python
+text[-2] # 'o' (শেষ থেকে দ্বিতীয়)
+\`\`\``,
+  };
+  return contents[chId] || "";
+}
+
 export const pythonTrack: Track = {
   id: "python",
   title: "Python",
+  titleBn: "পাইথন",
   tagline: "From scripts to systems — the world's most versatile language",
+  taglineBn: "স্ক্রিপ্ট থেকে সিস্টেম — বিশ্বের সবচেয়ে বহুমুখী ভাষা",
   icon: "https://img.icons8.com/color/144/python--v1.png",
   colorVar: "python",
   brandColor: "#3776AB",
   glowColor: "#3776AB",
   totalChapters: 80,
   estimatedHours: 120,
-  chapters: [
+  chapters: addBnTranslations([
     {
       id: "python-ch-1",
       number: 1,
@@ -1363,11 +1505,11 @@ else doesn't run if loop was broken out of.`,
             type: "mcq",
             question: "What does continue do in a loop?",
             options: [
-            "Exits the loop",
-            "Skips to next iteration",
-            "Does nothing",
-            "Restarts the loop"
-          ],
+              "Exits the loop",
+              "Skips to next iteration",
+              "Does nothing",
+              "Restarts the loop"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "continue skips the rest of the current iteration and moves to the next iteration."
@@ -1377,11 +1519,11 @@ else doesn't run if loop was broken out of.`,
             type: "mcq",
             question: "When does a loop's else clause NOT execute?",
             options: [
-            "When loop runs 0 times",
-            "When loop is broken out of",
-            "When loop completes normally",
-            "Always executes"
-          ],
+              "When loop runs 0 times",
+              "When loop is broken out of",
+              "When loop completes normally",
+              "Always executes"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "The else clause doesn't execute if the loop was broken out of with break."
@@ -1391,11 +1533,11 @@ else doesn't run if loop was broken out of.`,
             type: "mcq",
             question: "What does pass do?",
             options: [
-            "Exits the loop",
-            "Skips iteration",
-            "Does nothing (placeholder)",
-            "Raises an error"
-          ],
+              "Exits the loop",
+              "Skips iteration",
+              "Does nothing (placeholder)",
+              "Raises an error"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "pass is a null operation - it does nothing. It's used as a placeholder when code is required syntactically."
@@ -1507,11 +1649,11 @@ Return statement:
             type: "mcq",
             question: "What keyword defines a function?",
             options: [
-            "function",
-            "def",
-            "fn",
-            "define"
-          ],
+              "function",
+              "def",
+              "fn",
+              "define"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "def is the keyword to define a function in Python."
@@ -1521,11 +1663,11 @@ Return statement:
             type: "mcq",
             question: "What does a function return if no return statement?",
             options: [
-            "0",
-            "True",
-            "None",
-            "Error"
-          ],
+              "0",
+              "True",
+              "None",
+              "Error"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "Functions without an explicit return statement return None by default."
@@ -1643,11 +1785,11 @@ print(square(5))  # 25`,
             type: "mcq",
             question: "What does *args collect?",
             options: [
-            "Keyword arguments",
-            "Positional arguments",
-            "Functions",
-            "Classes"
-          ],
+              "Keyword arguments",
+              "Positional arguments",
+              "Functions",
+              "Classes"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "*args collects extra positional arguments into a tuple."
@@ -1657,11 +1799,11 @@ print(square(5))  # 25`,
             type: "mcq",
             question: "What does **kwargs collect?",
             options: [
-            "Positional arguments",
-            "Keyword arguments",
-            "Lists",
-            "Tuples"
-          ],
+              "Positional arguments",
+              "Keyword arguments",
+              "Lists",
+              "Tuples"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "**kwargs collects extra keyword arguments into a dictionary."
@@ -1671,11 +1813,11 @@ print(square(5))  # 25`,
             type: "mcq",
             question: "What keyword creates an anonymous function?",
             options: [
-            "def",
-            "function",
-            "lambda",
-            "anon"
-          ],
+              "def",
+              "function",
+              "lambda",
+              "anon"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "lambda creates anonymous (unnamed) functions in Python."
@@ -1804,11 +1946,11 @@ reverse()      - Reverse in place`,
             type: "mcq",
             question: "What does list[-1] return?",
             options: [
-            "First element",
-            "Last element",
-            "Error",
-            "Empty string"
-          ],
+              "First element",
+              "Last element",
+              "Error",
+              "Empty string"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Negative indices count from the end. -1 is the last element."
@@ -1818,11 +1960,11 @@ reverse()      - Reverse in place`,
             type: "mcq",
             question: "What does list.append(x) do?",
             options: [
-            "Adds x to beginning",
-            "Adds x to end",
-            "Removes x",
-            "Returns x"
-          ],
+              "Adds x to beginning",
+              "Adds x to end",
+              "Removes x",
+              "Returns x"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "append() adds an element to the end of the list."
@@ -1832,11 +1974,11 @@ reverse()      - Reverse in place`,
             type: "mcq",
             question: "What does list.pop() return?",
             options: [
-            "First element",
-            "Last element",
-            "None",
-            "Index"
-          ],
+              "First element",
+              "Last element",
+              "None",
+              "Index"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "pop() without arguments removes and returns the last element."
@@ -1978,11 +2120,11 @@ lst = list(t)  # [1, 2, 3]`,
             type: "mcq",
             question: "How do you create a single-element tuple?",
             options: [
-            "(42)",
-            "(42,)",
-            "[42]",
-            "tuple(42)"
-          ],
+              "(42)",
+              "(42,)",
+              "[42]",
+              "tuple(42)"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Single-element tuples need a trailing comma to distinguish from parentheses."
@@ -2000,11 +2142,11 @@ lst = list(t)  # [1, 2, 3]`,
             type: "mcq",
             question: "Can tuples be dictionary keys?",
             options: [
-            "Yes",
-            "No",
-            "Only if they contain numbers",
-            "Only if they're empty"
-          ],
+              "Yes",
+              "No",
+              "Only if they contain numbers",
+              "Only if they're empty"
+            ],
             correctAnswer: 0,
             difficulty: 1,
             explanation: "Tuples are hashable and can be used as dictionary keys. Lists cannot."
@@ -2139,11 +2281,11 @@ for key, value in dict.items():`,
             type: "mcq",
             question: "How do you safely access a dictionary key with a default?",
             options: [
-            "dict[key]",
-            "dict.get(key, default)",
-            "dict.key",
-            "dict.find(key)"
-          ],
+              "dict[key]",
+              "dict.get(key, default)",
+              "dict.key",
+              "dict.find(key)"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: ".get() returns the value if key exists, or the default if not."
@@ -2153,11 +2295,11 @@ for key, value in dict.items():`,
             type: "mcq",
             question: "What does dict.items() return?",
             options: [
-            "Only keys",
-            "Only values",
-            "Key-value pairs",
-            "Dictionary length"
-          ],
+              "Only keys",
+              "Only values",
+              "Key-value pairs",
+              "Dictionary length"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "items() returns a view of key-value pairs as tuples."
@@ -2306,11 +2448,11 @@ x in list # O(n) average case (slower)`,
             type: "mcq",
             question: "What happens if you add a duplicate to a set?",
             options: [
-            "Error",
-            "It's added again",
-            "Nothing (ignored)",
-            "Set becomes list"
-          ],
+              "Error",
+              "It's added again",
+              "Nothing (ignored)",
+              "Set becomes list"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "Sets only store unique values. Duplicates are silently ignored."
@@ -2320,11 +2462,11 @@ x in list # O(n) average case (slower)`,
             type: "mcq",
             question: "Which operator finds common elements?",
             options: [
-            "|",
-            "&",
-            "-",
-            "^"
-          ],
+              "|",
+              "&",
+              "-",
+              "^"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "& is the intersection operator, finding elements common to both sets."
@@ -2440,11 +2582,11 @@ Format specifiers:
             type: "mcq",
             question: "How do you format a float to 2 decimal places?",
             options: [
-            "{:.2d}",
-            "{:.2f}",
-            "{:2f}",
-            "{:2.0f}"
-          ],
+              "{:.2d}",
+              "{:.2f}",
+              "{:2f}",
+              "{:2.0f}"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: ":.2f formats a float to 2 decimal places."
@@ -2454,11 +2596,11 @@ Format specifiers:
             type: "mcq",
             question: "What does :>10 do?",
             options: [
-            "Left align in 10 chars",
-            "Right align in 10 chars",
-            "Center in 10 chars",
-            "Pad with zeros"
-          ],
+              "Left align in 10 chars",
+              "Right align in 10 chars",
+              "Center in 10 chars",
+              "Pad with zeros"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: ":>10 right-aligns text in a field of 10 characters."
@@ -2572,11 +2714,11 @@ p.x  # 1`,
             type: "mcq",
             question: "What does Counter do?",
             options: [
-            "Sorts elements",
-            "Counts occurrences",
-            "Removes duplicates",
-            "Finds minimum"
-          ],
+              "Sorts elements",
+              "Counts occurrences",
+              "Removes duplicates",
+              "Finds minimum"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Counter counts the occurrences of elements in an iterable."
@@ -2586,11 +2728,11 @@ p.x  # 1`,
             type: "mcq",
             question: "What is deque good for?",
             options: [
-            "Sorting",
-            "Efficient append/pop at both ends",
-            "Counting",
-            "Default values"
-          ],
+              "Sorting",
+              "Efficient append/pop at both ends",
+              "Counting",
+              "Default values"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "deque (double-ended queue) is optimized for adding/removing from both ends."
@@ -2701,11 +2843,11 @@ Syntax:
             type: "mcq",
             question: "What does this create? [x*2 for x in range(3)]",
             options: [
-            "[0, 2, 4]",
-            "[1, 2, 3]",
-            "[2, 4, 6]",
-            "[0, 1, 2]"
-          ],
+              "[0, 2, 4]",
+              "[1, 2, 3]",
+              "[2, 4, 6]",
+              "[0, 1, 2]"
+            ],
             correctAnswer: 0,
             difficulty: 1,
             explanation: "range(3) gives 0, 1, 2. Multiplying each by 2 gives 0, 2, 4."
@@ -2715,11 +2857,11 @@ Syntax:
             type: "mcq",
             question: "How do you add a condition to a comprehension?",
             options: [
-            "[x if condition]",
-            "[x for x in iterable if condition]",
-            "[x where condition]",
-            "[x when condition]"
-          ],
+              "[x if condition]",
+              "[x for x in iterable if condition]",
+              "[x where condition]",
+              "[x when condition]"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Add if condition after the iterable: [expr for item in iterable if condition]."
@@ -2829,11 +2971,11 @@ sorted(words, key=len)       # By length`,
             type: "mcq",
             question: "What's the difference between sorted() and sort()?",
             options: [
-            "No difference",
-            "sorted() returns new list, sort() modifies in place",
-            "sorted() is faster",
-            "sort() only works on numbers"
-          ],
+              "No difference",
+              "sorted() returns new list, sort() modifies in place",
+              "sorted() is faster",
+              "sort() only works on numbers"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "sorted() returns a new sorted list. sort() modifies the original list in place."
@@ -2843,11 +2985,11 @@ sorted(words, key=len)       # By length`,
             type: "mcq",
             question: "How do you sort in descending order?",
             options: [
-            "sorted(lst, desc=True)",
-            "sorted(lst, reverse=True)",
-            "sorted(lst, down=True)",
-            "lst.sort(descending=True)"
-          ],
+              "sorted(lst, desc=True)",
+              "sorted(lst, reverse=True)",
+              "sorted(lst, down=True)",
+              "lst.sort(descending=True)"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Use reverse=True parameter to sort in descending order."
@@ -2959,11 +3101,11 @@ future = today + delta`,
             type: "mcq",
             question: "What does date.today() return?",
             options: [
-            "Current time",
-            "Current date",
-            "Current datetime",
-            "Unix timestamp"
-          ],
+              "Current time",
+              "Current date",
+              "Current datetime",
+              "Unix timestamp"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "date.today() returns the current date (without time)."
@@ -2973,11 +3115,11 @@ future = today + delta`,
             type: "mcq",
             question: "What class represents time differences?",
             options: [
-            "datetime",
-            "time",
-            "timedelta",
-            "date"
-          ],
+              "datetime",
+              "time",
+              "timedelta",
+              "date"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "timedelta represents a duration or difference between two dates/times."
@@ -3088,11 +3230,11 @@ Common patterns:
             type: "mcq",
             question: "What does \\d match in regex?",
             options: [
-            "Any character",
-            "Digit (0-9)",
-            "Whitespace",
-            "Letter"
-          ],
+              "Any character",
+              "Digit (0-9)",
+              "Whitespace",
+              "Letter"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "\\d matches any digit (0-9)."
@@ -3102,11 +3244,11 @@ Common patterns:
             type: "mcq",
             question: "What does re.findall() return?",
             options: [
-            "First match",
-            "All matches as list",
-            "Match object",
-            "Boolean"
-          ],
+              "First match",
+              "All matches as list",
+              "Match object",
+              "Boolean"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "re.findall() returns a list of all non-overlapping matches."
@@ -3217,11 +3359,11 @@ Use cases:
             type: "mcq",
             question: "What is a closure?",
             options: [
-            "A closed function",
-            "Function with access to enclosing scope",
-            "A private function",
-            "A deleted function"
-          ],
+              "A closed function",
+              "Function with access to enclosing scope",
+              "A private function",
+              "A deleted function"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "A closure is a function that remembers and accesses variables from its enclosing scope."
@@ -3231,11 +3373,11 @@ Use cases:
             type: "mcq",
             question: "What does a closure remember?",
             options: [
-            "Only global variables",
-            "Only local variables",
-            "Variables from enclosing scope",
-            "Nothing"
-          ],
+              "Only global variables",
+              "Only local variables",
+              "Variables from enclosing scope",
+              "Nothing"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "Closures remember variables from the enclosing (outer) scope where they were defined."
@@ -3345,11 +3487,11 @@ from functools import wraps
             type: "mcq",
             question: "What does @decorator do?",
             options: [
-            "Deletes the function",
-            "Applies decorator to function",
-            "Imports the function",
-            "Comments out the function"
-          ],
+              "Deletes the function",
+              "Applies decorator to function",
+              "Imports the function",
+              "Comments out the function"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "The @ syntax applies a decorator to the function defined below it."
@@ -3359,11 +3501,11 @@ from functools import wraps
             type: "mcq",
             question: "What do decorators return?",
             options: [
-            "The original function",
-            "A wrapper function",
-            "None",
-            "The function result"
-          ],
+              "The original function",
+              "A wrapper function",
+              "None",
+              "The function result"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Decorators return a wrapper function that replaces or extends the original function."
@@ -3471,11 +3613,11 @@ Use iteration for very deep recursion to avoid stack overflow.`,
             type: "mcq",
             question: "What is a base case in recursion?",
             options: [
-            "The recursive call",
-            "The condition that stops recursion",
-            "The function name",
-            "The return type"
-          ],
+              "The recursive call",
+              "The condition that stops recursion",
+              "The function name",
+              "The return type"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "The base case is the condition that stops the recursion from continuing indefinitely."
@@ -3485,11 +3627,11 @@ Use iteration for very deep recursion to avoid stack overflow.`,
             type: "mcq",
             question: "What happens without a base case?",
             options: [
-            "Returns None",
-            "Infinite recursion / stack overflow",
-            "Syntax error",
-            "Returns 0"
-          ],
+              "Returns None",
+              "Infinite recursion / stack overflow",
+              "Syntax error",
+              "Returns 0"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Without a base case, recursion continues until it hits Python's recursion limit, causing a stack overflow."
@@ -3598,11 +3740,11 @@ squares = (x**2 for x in range(10))
             type: "mcq",
             question: "What keyword creates a generator?",
             options: [
-            "return",
-            "yield",
-            "send",
-            "next"
-          ],
+              "return",
+              "yield",
+              "send",
+              "next"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "yield turns a function into a generator that produces values lazily."
@@ -3612,11 +3754,11 @@ squares = (x**2 for x in range(10))
             type: "mcq",
             question: "What is the main benefit of generators?",
             options: [
-            "Faster execution",
-            "Memory efficiency",
-            "Easier syntax",
-            "More features"
-          ],
+              "Faster execution",
+              "Memory efficiency",
+              "Easier syntax",
+              "More features"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Generators are memory efficient because they produce one value at a time instead of storing all values."
@@ -3728,11 +3870,11 @@ def my_context():
             type: "mcq",
             question: "What does with automatically do?",
             options: [
-            "Nothing",
-            "Closes resources",
-            "Creates variables",
-            "Imports modules"
-          ],
+              "Nothing",
+              "Closes resources",
+              "Creates variables",
+              "Imports modules"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "with statements automatically handle resource cleanup (like closing files) even if errors occur."
@@ -3742,11 +3884,11 @@ def my_context():
             type: "mcq",
             question: "Which methods define a context manager?",
             options: [
-            "open/close",
-            "start/stop",
-            "__enter__/__exit__",
-            "begin/end"
-          ],
+              "open/close",
+              "start/stop",
+              "__enter__/__exit__",
+              "begin/end"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "Context managers implement __enter__ for setup and __exit__ for cleanup."
@@ -3860,11 +4002,11 @@ finally:
             type: "mcq",
             question: "What block always runs in try/except?",
             options: [
-            "else",
-            "except",
-            "finally",
-            "try"
-          ],
+              "else",
+              "except",
+              "finally",
+              "try"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "finally always runs regardless of whether an exception occurred or not."
@@ -3874,11 +4016,11 @@ finally:
             type: "mcq",
             question: "When does else block run?",
             options: [
-            "Always",
-            "Only on error",
-            "Only if no error",
-            "Never"
-          ],
+              "Always",
+              "Only on error",
+              "Only if no error",
+              "Never"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "else runs only if no exception was raised in the try block."
@@ -3989,11 +4131,11 @@ except InvalidAgeError as e:
             type: "mcq",
             question: "What should custom exceptions inherit from?",
             options: [
-            "Error",
-            "Exception",
-            "BaseException",
-            "object"
-          ],
+              "Error",
+              "Exception",
+              "BaseException",
+              "object"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Custom exceptions should inherit from Exception (not Error which doesn't exist as a base class)."
@@ -4003,11 +4145,11 @@ except InvalidAgeError as e:
             type: "mcq",
             question: "Why create custom exceptions?",
             options: [
-            "For fun",
-            "More specific error handling",
-            "Faster execution",
-            "Required by Python"
-          ],
+              "For fun",
+              "More specific error handling",
+              "Faster execution",
+              "Required by Python"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Custom exceptions provide more specific, meaningful error handling for your application's domain."
@@ -4117,11 +4259,11 @@ Modes:
             type: "mcq",
             question: "What does 'w' mode do?",
             options: [
-            "Read only",
-            "Write (overwrites)",
-            "Append",
-            "Read and write"
-          ],
+              "Read only",
+              "Write (overwrites)",
+              "Append",
+              "Read and write"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "'w' mode opens for writing and overwrites existing file contents."
@@ -4131,11 +4273,11 @@ Modes:
             type: "mcq",
             question: "Why use with statement for files?",
             options: [
-            "Faster",
-            "Automatic closing",
-            "Required",
-            "More features"
-          ],
+              "Faster",
+              "Automatic closing",
+              "Required",
+              "More features"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "with automatically closes the file even if an exception occurs."
@@ -4248,11 +4390,11 @@ path.unlink()      # Delete file`,
             type: "mcq",
             question: "What does pathlib provide?",
             options: [
-            "Database operations",
-            "Object-oriented path handling",
-            "Network operations",
-            "GUI tools"
-          ],
+              "Database operations",
+              "Object-oriented path handling",
+              "Network operations",
+              "GUI tools"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Pathlib provides object-oriented, cross-platform path manipulation."
@@ -4262,11 +4404,11 @@ path.unlink()      # Delete file`,
             type: "mcq",
             question: "What does Path.home() return?",
             options: [
-            "Current directory",
-            "User home directory",
-            "Root directory",
-            "Temp directory"
-          ],
+              "Current directory",
+              "User home directory",
+              "Root directory",
+              "Temp directory"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Path.home() returns the current user's home directory."
@@ -4387,11 +4529,11 @@ with open('data.csv', 'w', newline='') as f:
             type: "mcq",
             question: "What does json.dumps() do?",
             options: [
-            "Parses JSON string",
-            "Converts to JSON string",
-            "Writes to file",
-            "Reads from file"
-          ],
+              "Parses JSON string",
+              "Converts to JSON string",
+              "Writes to file",
+              "Reads from file"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "json.dumps() converts Python objects to JSON strings."
@@ -4401,11 +4543,11 @@ with open('data.csv', 'w', newline='') as f:
             type: "mcq",
             question: "What does csv.DictReader do?",
             options: [
-            "Reads as dictionary",
-            "Reads as list",
-            "Writes CSV",
-            "Validates CSV"
-          ],
+              "Reads as dictionary",
+              "Reads as list",
+              "Writes CSV",
+              "Validates CSV"
+            ],
             correctAnswer: 0,
             difficulty: 1,
             explanation: "DictReader reads CSV rows as dictionaries using headers as keys."
@@ -4521,11 +4663,11 @@ def process(value: Union[int, str]) -> str:
             type: "mcq",
             question: "What does -> indicate?",
             options: [
-            "Input type",
-            "Return type",
-            "Arrow function",
-            "Pointer"
-          ],
+              "Input type",
+              "Return type",
+              "Arrow function",
+              "Pointer"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "-> indicates the return type of a function."
@@ -4535,11 +4677,11 @@ def process(value: Union[int, str]) -> str:
             type: "mcq",
             question: "What module provides complex types?",
             options: [
-            "types",
-            "typing",
-            "hints",
-            "annotations"
-          ],
+              "types",
+              "typing",
+              "hints",
+              "annotations"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "The typing module provides complex types like List, Dict, Optional, Union."
@@ -4660,11 +4802,11 @@ mypackage/
             type: "mcq",
             question: "What makes a directory a package?",
             options: [
-            "README.md",
-            "__init__.py",
-            "setup.py",
-            "package.json"
-          ],
+              "README.md",
+              "__init__.py",
+              "setup.py",
+              "package.json"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "A directory becomes a package when it contains an __init__.py file."
@@ -4674,11 +4816,11 @@ mypackage/
             type: "mcq",
             question: "When is __name__ == '__main__' true?",
             options: [
-            "When importing",
-            "When running directly",
-            "Always",
-            "Never"
-          ],
+              "When importing",
+              "When running directly",
+              "Always",
+              "Never"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "__name__ == '__main__' is true only when the script is run directly, not when imported."
@@ -4790,11 +4932,11 @@ pip install package_name`,
             type: "mcq",
             question: "What command creates a venv?",
             options: [
-            "venv create",
-            "python -m venv",
-            "pip venv",
-            "virtualenv create"
-          ],
+              "venv create",
+              "python -m venv",
+              "pip venv",
+              "virtualenv create"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "python -m venv creates a virtual environment."
@@ -4804,11 +4946,11 @@ pip install package_name`,
             type: "mcq",
             question: "What does requirements.txt contain?",
             options: [
-            "Python code",
-            "Package list with versions",
-            "Configuration",
-            "Documentation"
-          ],
+              "Python code",
+              "Package list with versions",
+              "Configuration",
+              "Documentation"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "requirements.txt lists all packages and their versions for reproducible installs."
@@ -4924,11 +5066,11 @@ pip install -r requirements.txt`,
             type: "mcq",
             question: "What does pip install do?",
             options: [
-            "Creates packages",
-            "Installs packages",
-            "Searches packages",
-            "Lists packages"
-          ],
+              "Creates packages",
+              "Installs packages",
+              "Searches packages",
+              "Lists packages"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "pip install downloads and installs packages from PyPI."
@@ -4938,11 +5080,11 @@ pip install -r requirements.txt`,
             type: "mcq",
             question: "What does pip freeze do?",
             options: [
-            "Freezes Python",
-            "Lists installed packages",
-            "Creates requirements.txt",
-            "Uninstalls packages"
-          ],
+              "Freezes Python",
+              "Lists installed packages",
+              "Creates requirements.txt",
+              "Uninstalls packages"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "pip freeze outputs installed packages in requirements.txt format for reproducibility."
@@ -5051,11 +5193,11 @@ Character classes:
             type: "mcq",
             question: "What module provides regex?",
             options: [
-            "regex",
-            "re",
-            "pattern",
-            "string"
-          ],
+              "regex",
+              "re",
+              "pattern",
+              "string"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "The re module provides regular expression operations in Python."
@@ -5065,11 +5207,11 @@ Character classes:
             type: "mcq",
             question: "What does \\d match?",
             options: [
-            "Any character",
-            "Digit",
-            "Word character",
-            "Whitespace"
-          ],
+              "Any character",
+              "Digit",
+              "Word character",
+              "Whitespace"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "\\d matches any digit (0-9)."
@@ -5182,11 +5324,11 @@ re.sub(pattern, replacement, text)`,
             type: "mcq",
             question: "What does + mean in regex?",
             options: [
-            "Zero or more",
-            "One or more",
-            "Zero or one",
-            "Exactly one"
-          ],
+              "Zero or more",
+              "One or more",
+              "Zero or one",
+              "Exactly one"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "+ means one or more occurrences."
@@ -5196,11 +5338,11 @@ re.sub(pattern, replacement, text)`,
             type: "mcq",
             question: "What does ^ anchor to?",
             options: [
-            "End of string",
-            "Start of string",
-            "Word boundary",
-            "Any position"
-          ],
+              "End of string",
+              "Start of string",
+              "Word boundary",
+              "Any position"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "^ anchors the pattern to the start of the string."
@@ -5313,11 +5455,11 @@ Limitations:
             type: "mcq",
             question: "What keyword creates lambda?",
             options: [
-            "lambda",
-            "anon",
-            "func",
-            "def"
-          ],
+              "lambda",
+              "anon",
+              "func",
+              "def"
+            ],
             correctAnswer: 0,
             difficulty: 1,
             explanation: "lambda keyword creates anonymous functions."
@@ -5327,11 +5469,11 @@ Limitations:
             type: "mcq",
             question: "Can lambda have multiple statements?",
             options: [
-            "Yes",
-            "No",
-            "Only if simple",
-            "With semicolons"
-          ],
+              "Yes",
+              "No",
+              "Only if simple",
+              "With semicolons"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Lambda can only contain a single expression, not statements."
@@ -5436,11 +5578,11 @@ List comprehensions often preferred:
             type: "mcq",
             question: "What does map do?",
             options: [
-            "Filters elements",
-            "Transforms each element",
-            "Reduces elements",
-            "Sorts elements"
-          ],
+              "Filters elements",
+              "Transforms each element",
+              "Reduces elements",
+              "Sorts elements"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "map applies a function to each element, transforming them."
@@ -5450,11 +5592,11 @@ List comprehensions often preferred:
             type: "mcq",
             question: "Where is reduce located?",
             options: [
-            "builtins",
-            "functools",
-            "itertools",
-            "operator"
-          ],
+              "builtins",
+              "functools",
+              "itertools",
+              "operator"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "reduce is in the functools module."
@@ -5561,11 +5703,11 @@ chain([1,2], [3,4]) -> 1, 2, 3, 4`,
             type: "mcq",
             question: "What does itertools provide?",
             options: [
-            "GUI tools",
-            "Iterator building blocks",
-            "Database tools",
-            "Network tools"
-          ],
+              "GUI tools",
+              "Iterator building blocks",
+              "Database tools",
+              "Network tools"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "itertools provides efficient iterator tools for looping and combining."
@@ -5575,11 +5717,11 @@ chain([1,2], [3,4]) -> 1, 2, 3, 4`,
             type: "mcq",
             question: "What does combinations() do?",
             options: [
-            "All permutations",
-            "All unique combinations",
-            "Repeated elements",
-            "Sorted output"
-          ],
+              "All permutations",
+              "All unique combinations",
+              "Repeated elements",
+              "Sorted output"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "combinations() returns all unique combinations of a given length."
@@ -5689,11 +5831,11 @@ diff = date2 - date1`,
             type: "mcq",
             question: "What gets current time?",
             options: [
-            "datetime.current()",
-            "datetime.now()",
-            "datetime.today()",
-            "datetime.time()"
-          ],
+              "datetime.current()",
+              "datetime.now()",
+              "datetime.today()",
+              "datetime.time()"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "datetime.now() returns the current local date and time."
@@ -5703,11 +5845,11 @@ diff = date2 - date1`,
             type: "mcq",
             question: "What represents time difference?",
             options: [
-            "datetime",
-            "timedelta",
-            "timespan",
-            "duration"
-          ],
+              "datetime",
+              "timedelta",
+              "timespan",
+              "duration"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "timedelta represents the difference between two datetime objects."
@@ -5821,11 +5963,11 @@ os.getenv('HOME')`,
             type: "mcq",
             question: "What gets current directory?",
             options: [
-            "os.pwd()",
-            "os.getcwd()",
-            "os.dir()",
-            "os.path()"
-          ],
+              "os.pwd()",
+              "os.getcwd()",
+              "os.dir()",
+              "os.path()"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "os.getcwd() returns the current working directory."
@@ -5835,11 +5977,11 @@ os.getenv('HOME')`,
             type: "mcq",
             question: "What does os.listdir() do?",
             options: [
-            "List all directories",
-            "List files in directory",
-            "List environment variables",
-            "List processes"
-          ],
+              "List all directories",
+              "List files in directory",
+              "List environment variables",
+              "List processes"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "os.listdir() returns a list of files and directories in a path."
@@ -5956,11 +6098,11 @@ logging.basicConfig(
             type: "mcq",
             question: "What is the highest log level?",
             options: [
-            "ERROR",
-            "CRITICAL",
-            "FATAL",
-            "EMERGENCY"
-          ],
+              "ERROR",
+              "CRITICAL",
+              "FATAL",
+              "EMERGENCY"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "CRITICAL is the highest log level in Python's logging module."
@@ -5970,11 +6112,11 @@ logging.basicConfig(
             type: "mcq",
             question: "What function configures logging?",
             options: [
-            "logging.setup()",
-            "logging.config()",
-            "logging.basicConfig()",
-            "logging.configure()"
-          ],
+              "logging.setup()",
+              "logging.config()",
+              "logging.basicConfig()",
+              "logging.configure()"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "logging.basicConfig() configures the root logger."
@@ -6081,11 +6223,11 @@ self is automatically passed to methods.`,
             type: "mcq",
             question: "What does __init__ do?",
             options: [
-            "Deletes object",
-            "Initializes object",
-            "Returns object",
-            "Validates object"
-          ],
+              "Deletes object",
+              "Initializes object",
+              "Returns object",
+              "Validates object"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "__init__ is called when creating a new instance to initialize its attributes."
@@ -6095,11 +6237,11 @@ self is automatically passed to methods.`,
             type: "mcq",
             question: "What does self represent?",
             options: [
-            "The class",
-            "The instance",
-            "The module",
-            "The method"
-          ],
+              "The class",
+              "The instance",
+              "The module",
+              "The method"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "self refers to the current instance of the class being operated on."
@@ -6208,11 +6350,11 @@ Use super() to call parent implementation.`,
             type: "mcq",
             question: "What keyword enables inheritance?",
             options: [
-            "inherits",
-            "extends",
-            "(Parent)",
-            "parent:"
-          ],
+              "inherits",
+              "extends",
+              "(Parent)",
+              "parent:"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "Parentheses with parent class name (Parent) enable inheritance."
@@ -6222,11 +6364,11 @@ Use super() to call parent implementation.`,
             type: "mcq",
             question: "What does super() do?",
             options: [
-            "Returns parent class",
-            "Calls parent method",
-            "Creates super object",
-            "Skips method"
-          ],
+              "Returns parent class",
+              "Calls parent method",
+              "Creates super object",
+              "Skips method"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "super() returns a proxy object to access parent class methods."
@@ -6338,11 +6480,11 @@ class Circle:
             type: "mcq",
             question: "What prefix makes attributes private?",
             options: [
-            "_",
-            "__",
-            "private_",
-            "#"
-          ],
+              "_",
+              "__",
+              "private_",
+              "#"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Double underscore __ makes attributes name-mangled for privacy (convention)."
@@ -6352,11 +6494,11 @@ class Circle:
             type: "mcq",
             question: "What does @property do?",
             options: [
-            "Deletes property",
-            "Creates getter",
-            "Creates setter",
-            "Makes private"
-          ],
+              "Deletes property",
+              "Creates getter",
+              "Creates setter",
+              "Makes private"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "@property decorator turns a method into a read-only attribute (getter)."
@@ -6471,11 +6613,11 @@ class Shape(ABC):
             type: "mcq",
             question: "What is polymorphism?",
             options: [
-            "Multiple classes",
-            "Same interface, different behavior",
-            "Private methods",
-            "Static typing"
-          ],
+              "Multiple classes",
+              "Same interface, different behavior",
+              "Private methods",
+              "Static typing"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Polymorphism means different classes implement the same interface with different behaviors."
@@ -6485,11 +6627,11 @@ class Shape(ABC):
             type: "mcq",
             question: "What is duck typing?",
             options: [
-            "Type checking",
-            "If it walks like a duck",
-            "Static typing",
-            "Class checking"
-          ],
+              "Type checking",
+              "If it walks like a duck",
+              "Static typing",
+              "Class checking"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Duck typing means if an object has the needed methods, it can be used regardless of type."
@@ -6599,11 +6741,11 @@ __mul__ *`,
             type: "mcq",
             question: "What does __str__ do?",
             options: [
-            "Returns length",
-            "Returns string representation",
-            "Returns type",
-            "Returns dict"
-          ],
+              "Returns length",
+              "Returns string representation",
+              "Returns type",
+              "Returns dict"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "__str__ returns a user-friendly string representation of the object."
@@ -6613,11 +6755,11 @@ __mul__ *`,
             type: "mcq",
             question: "What enables + operator?",
             options: [
-            "__plus__",
-            "__add__",
-            "__sum__",
-            "__operator__"
-          ],
+              "__plus__",
+              "__add__",
+              "__sum__",
+              "__operator__"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "__add__ enables the + operator for objects."
@@ -6722,11 +6864,11 @@ Regular - Access to self (instance)`,
             type: "mcq",
             question: "What does @staticmethod do?",
             options: [
-            "Creates static variable",
-            "No self/cls parameter",
-            "Creates class variable",
-            "Makes method private"
-          ],
+              "Creates static variable",
+              "No self/cls parameter",
+              "Creates class variable",
+              "Makes method private"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "@staticmethod creates methods that don't receive self or cls parameters."
@@ -6736,11 +6878,11 @@ Regular - Access to self (instance)`,
             type: "mcq",
             question: "What does @classmethod receive?",
             options: [
-            "self",
-            "cls",
-            "instance",
-            "object"
-          ],
+              "self",
+              "cls",
+              "instance",
+              "object"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "@classmethod receives cls (the class itself) as the first parameter."
@@ -6854,11 +6996,11 @@ def read_only(self):
             type: "mcq",
             question: "What does @property do?",
             options: [
-            "Makes attribute private",
-            "Creates getter method",
-            "Deletes attribute",
-            "Creates static method"
-          ],
+              "Makes attribute private",
+              "Creates getter method",
+              "Deletes attribute",
+              "Creates static method"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "@property decorator turns a method into a read-only attribute (getter)."
@@ -6868,11 +7010,11 @@ def read_only(self):
             type: "mcq",
             question: "What does @x.setter do?",
             options: [
-            "Creates getter",
-            "Creates setter",
-            "Creates deleter",
-            "Makes private"
-          ],
+              "Creates getter",
+              "Creates setter",
+              "Creates deleter",
+              "Makes private"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "@x.setter creates a setter method for the property."
@@ -6979,11 +7121,11 @@ Instance shadows class if same name.`,
             type: "mcq",
             question: "Where are class attributes defined?",
             options: [
-            "In __init__",
-            "In class body",
-            "In methods",
-            "In main"
-          ],
+              "In __init__",
+              "In class body",
+              "In methods",
+              "In main"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Class attributes are defined in the class body, outside any methods."
@@ -6993,11 +7135,11 @@ Instance shadows class if same name.`,
             type: "mcq",
             question: "What does __slots__ do?",
             options: [
-            "Creates methods",
-            "Restricts attributes",
-            "Makes private",
-            "Adds methods"
-          ],
+              "Creates methods",
+              "Restricts attributes",
+              "Makes private",
+              "Adds methods"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "__slots__ restricts the attributes an object can have for memory optimization."
@@ -7111,11 +7253,11 @@ class Point:
             type: "mcq",
             question: "What does @dataclass do?",
             options: [
-            "Makes class private",
-            "Auto-generates methods",
-            "Creates database",
-            "Validates data"
-          ],
+              "Makes class private",
+              "Auto-generates methods",
+              "Creates database",
+              "Validates data"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "@dataclass automatically generates __init__, __repr__, __eq__, and other methods."
@@ -7125,11 +7267,11 @@ class Point:
             type: "mcq",
             question: "What module provides dataclass?",
             options: [
-            "classes",
-            "dataclasses",
-            "typing",
-            "models"
-          ],
+              "classes",
+              "dataclasses",
+              "typing",
+              "models"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "The dataclasses module provides the @dataclass decorator."
@@ -7238,11 +7380,11 @@ Benefits:
             type: "mcq",
             question: "Composition is what relationship?",
             options: [
-            "is-a",
-            "has-a",
-            "uses-a",
-            "creates-a"
-          ],
+              "is-a",
+              "has-a",
+              "uses-a",
+              "creates-a"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Composition represents a has-a relationship between classes."
@@ -7252,11 +7394,11 @@ Benefits:
             type: "mcq",
             question: "What should you favor over inheritance?",
             options: [
-            "Static methods",
-            "Composition",
-            "Class methods",
-            "Magic methods"
-          ],
+              "Static methods",
+              "Composition",
+              "Class methods",
+              "Magic methods"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Favor composition over inheritance for more flexible and maintainable code."
@@ -7371,11 +7513,11 @@ super() calls next in MRO`,
             type: "mcq",
             question: "What does MRO stand for?",
             options: [
-            "Method Resolution Order",
-            "Multiple Return Object",
-            "Method Reference Order",
-            "Module Resolution Order"
-          ],
+              "Method Resolution Order",
+              "Multiple Return Object",
+              "Method Reference Order",
+              "Module Resolution Order"
+            ],
             correctAnswer: 0,
             difficulty: 1,
             explanation: "MRO stands for Method Resolution Order, determining the order Python searches for methods."
@@ -7385,11 +7527,11 @@ super() calls next in MRO`,
             type: "mcq",
             question: "How do you inherit from multiple classes?",
             options: [
-            "class Child(Parent1, Parent2)",
-            "class Child(Parent1)(Parent2)",
-            "class Child(Parent1, Parent2):",
-            "class Child extends Parent1, Parent2"
-          ],
+              "class Child(Parent1, Parent2)",
+              "class Child(Parent1)(Parent2)",
+              "class Child(Parent1, Parent2):",
+              "class Child extends Parent1, Parent2"
+            ],
             correctAnswer: 0,
             difficulty: 1,
             explanation: "Multiple inheritance: class Child(Parent1, Parent2) with comma-separated parents."
@@ -7502,11 +7644,11 @@ Cannot instantiate ABCs directly.`,
             type: "mcq",
             question: "What does @abstractmethod do?",
             options: [
-            "Makes method private",
-            "Requires implementation in subclass",
-            "Makes method static",
-            "Creates default implementation"
-          ],
+              "Makes method private",
+              "Requires implementation in subclass",
+              "Makes method static",
+              "Creates default implementation"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "@abstractmethod requires subclasses to implement the method."
@@ -7516,11 +7658,11 @@ Cannot instantiate ABCs directly.`,
             type: "mcq",
             question: "Can you instantiate abstract classes?",
             options: [
-            "Yes",
-            "No",
-            "Only if static",
-            "Only with default values"
-          ],
+              "Yes",
+              "No",
+              "Only if static",
+              "Only with default values"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Abstract classes with abstract methods cannot be instantiated directly."
@@ -7560,7 +7702,7 @@ Cannot instantiate ABCs directly.`,
       difficulty: "Advanced",
       estimatedMinutes: 45,
       xpReward: 130,
-            prerequisites: ["python-ch-56"],
+      prerequisites: ["python-ch-56"],
       learningObjectives: [
         "Implement arithmetic operators",
         "Implement comparison operators",
@@ -7628,11 +7770,11 @@ __setitem__ obj[key] = value`,
             type: "mcq",
             question: "What enables + operator?",
             options: [
-            "__plus__",
-            "__add__",
-            "__sum__",
-            "__operator__"
-          ],
+              "__plus__",
+              "__add__",
+              "__sum__",
+              "__operator__"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "__add__ enables the + operator for custom classes."
@@ -7642,11 +7784,11 @@ __setitem__ obj[key] = value`,
             type: "mcq",
             question: "What enables == operator?",
             options: [
-            "__equal__",
-            "__eq__",
-            "__compare__",
-            "__same__"
-          ],
+              "__equal__",
+              "__eq__",
+              "__compare__",
+              "__same__"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "__eq__ enables the == equality operator."
@@ -7756,11 +7898,11 @@ class Subject:
             type: "mcq",
             question: "What does Singleton pattern ensure?",
             options: [
-            "Multiple instances",
-            "One instance",
-            "No instances",
-            "Factory creation"
-          ],
+              "Multiple instances",
+              "One instance",
+              "No instances",
+              "Factory creation"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Singleton pattern ensures only one instance of a class can exist."
@@ -7770,11 +7912,11 @@ class Subject:
             type: "mcq",
             question: "What method controls instantiation?",
             options: [
-            "__init__",
-            "__new__",
-            "__create__",
-            "__instance__"
-          ],
+              "__init__",
+              "__new__",
+              "__create__",
+              "__instance__"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "__new__ controls instance creation before __init__ is called."
@@ -7884,11 +8026,11 @@ Why use venv:
             type: "mcq",
             question: "What does venv provide?",
             options: [
-            "Faster Python",
-            "Isolated environment",
-            "Better syntax",
-            "Automatic testing"
-          ],
+              "Faster Python",
+              "Isolated environment",
+              "Better syntax",
+              "Automatic testing"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "venv provides an isolated environment for project dependencies."
@@ -7898,11 +8040,11 @@ Why use venv:
             type: "mcq",
             question: "How do you create a venv?",
             options: [
-            "venv create myenv",
-            "python -m venv myenv",
-            "pip install venv",
-            "virtualenv myenv"
-          ],
+              "venv create myenv",
+              "python -m venv myenv",
+              "pip install venv",
+              "virtualenv myenv"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "python -m venv myenv creates a virtual environment."
@@ -8011,11 +8153,11 @@ pip install -r requirements.txt`,
             type: "mcq",
             question: "What is pip?",
             options: [
-            "Python interpreter",
-            "Package manager",
-            "Code editor",
-            "Test framework"
-          ],
+              "Python interpreter",
+              "Package manager",
+              "Code editor",
+              "Test framework"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "pip is Python's package manager for installing and managing libraries."
@@ -8025,11 +8167,11 @@ pip install -r requirements.txt`,
             type: "mcq",
             question: "What lists installed packages?",
             options: [
-            "pip show",
-            "pip list",
-            "pip packages",
-            "pip installed"
-          ],
+              "pip show",
+              "pip list",
+              "pip packages",
+              "pip installed"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "pip list shows all installed packages and their versions."
@@ -8142,11 +8284,11 @@ assertRaises(Exception)`,
             type: "mcq",
             question: "What module provides unit testing?",
             options: [
-            "test",
-            "unittest",
-            "pytest",
-            "testing"
-          ],
+              "test",
+              "unittest",
+              "pytest",
+              "testing"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "The unittest module provides Python's built-in testing framework."
@@ -8156,11 +8298,11 @@ assertRaises(Exception)`,
             type: "mcq",
             question: "How do you run unittest tests?",
             options: [
-            "python test.py",
-            "python -m unittest test.py",
-            "pytest test.py",
-            "run test.py"
-          ],
+              "python test.py",
+              "python -m unittest test.py",
+              "pytest test.py",
+              "run test.py"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "python -m unittest test.py runs unittest test files."
@@ -8273,11 +8415,11 @@ assert exception in context`,
             type: "mcq",
             question: "How do you install pytest?",
             options: [
-            "pip install unittest",
-            "pip install pytest",
-            "python -m pytest",
-            "apt install pytest"
-          ],
+              "pip install unittest",
+              "pip install pytest",
+              "python -m pytest",
+              "apt install pytest"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "pip install pytest installs the pytest testing framework."
@@ -8287,11 +8429,11 @@ assert exception in context`,
             type: "mcq",
             question: "What does pytest use for assertions?",
             options: [
-            "self.assertEqual",
-            "assert",
-            "verify",
-            "check"
-          ],
+              "self.assertEqual",
+              "assert",
+              "verify",
+              "check"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "pytest uses standard Python assert statements for testing."
@@ -8403,11 +8545,11 @@ Inspect variables`,
             type: "mcq",
             question: "What does pdb stand for?",
             options: [
-            "Python debugger",
-            "Program debugger",
-            "Process debugger",
-            "Print debugger"
-          ],
+              "Python debugger",
+              "Program debugger",
+              "Process debugger",
+              "Print debugger"
+            ],
             correctAnswer: 0,
             difficulty: 1,
             explanation: "pdb stands for Python debugger."
@@ -8417,11 +8559,11 @@ Inspect variables`,
             type: "mcq",
             question: "What pdb command continues execution?",
             options: [
-            "n",
-            "s",
-            "c",
-            "p"
-          ],
+              "n",
+              "s",
+              "c",
+              "p"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "c (continue) resumes program execution in pdb."
@@ -8534,11 +8676,11 @@ raise ValueError("Invalid input") from None`,
             type: "mcq",
             question: "What does 'from None' do?",
             options: [
-            "Creates new exception",
-            "Cleans exception chain",
-            "Ignores exception",
-            "Logs exception"
-          ],
+              "Creates new exception",
+              "Cleans exception chain",
+              "Ignores exception",
+              "Logs exception"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "from None removes the exception context for cleaner tracebacks."
@@ -8548,11 +8690,11 @@ raise ValueError("Invalid input") from None`,
             type: "mcq",
             question: "When does finally run?",
             options: [
-            "Only on error",
-            "Only on success",
-            "Always",
-            "Never"
-          ],
+              "Only on error",
+              "Only on success",
+              "Always",
+              "Never"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "finally block always runs, regardless of whether an exception occurred."
@@ -8668,11 +8810,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What are docstrings?",
             options: [
-            "Comments in code",
-            "String literals for documentation",
-            "Type hints",
-            "Variable names"
-          ],
+              "Comments in code",
+              "String literals for documentation",
+              "Type hints",
+              "Variable names"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Docstrings are string literals used to document code."
@@ -8682,11 +8824,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What does -> indicate?",
             options: [
-            "Function call",
-            "Return type hint",
-            "Import statement",
-            "Exception"
-          ],
+              "Function call",
+              "Return type hint",
+              "Import statement",
+              "Exception"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "-> indicates the return type hint in a function definition."
@@ -8779,11 +8921,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What naming for functions?",
             options: [
-            "camelCase",
-            "PascalCase",
-            "snake_case",
-            "UPPER_CASE"
-          ],
+              "camelCase",
+              "PascalCase",
+              "snake_case",
+              "UPPER_CASE"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "Functions and variables use snake_case naming convention in PEP 8."
@@ -8793,11 +8935,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What naming for classes?",
             options: [
-            "camelCase",
-            "PascalCase",
-            "snake_case",
-            "UPPER_CASE"
-          ],
+              "camelCase",
+              "PascalCase",
+              "snake_case",
+              "UPPER_CASE"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Classes use PascalCase naming convention in PEP 8."
@@ -8889,11 +9031,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What is set lookup complexity?",
             options: [
-            "O(n)",
-            "O(1)",
-            "O(n²)",
-            "O(log n)"
-          ],
+              "O(n)",
+              "O(1)",
+              "O(n²)",
+              "O(log n)"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Set lookup is O(1) constant time."
@@ -8903,11 +9045,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What is list append complexity?",
             options: [
-            "O(n)",
-            "O(1)",
-            "O(n²)",
-            "O(log n)"
-          ],
+              "O(n)",
+              "O(1)",
+              "O(n²)",
+              "O(log n)"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "List append is O(1) amortized constant time."
@@ -8999,11 +9141,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What library makes HTTP requests?",
             options: [
-            "http",
-            "requests",
-            "urllib",
-            "api"
-          ],
+              "http",
+              "requests",
+              "urllib",
+              "api"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "The requests library is the most popular for making HTTP requests in Python."
@@ -9013,11 +9155,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What does response.json() do?",
             options: [
-            "Returns URL",
-            "Parses JSON response",
-            "Returns status",
-            "Returns headers"
-          ],
+              "Returns URL",
+              "Parses JSON response",
+              "Returns status",
+              "Returns headers"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "response.json() parses the JSON response body into a Python dictionary."
@@ -9109,11 +9251,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What does BeautifulSoup do?",
             options: [
-            "Makes HTTP requests",
-            "Parses HTML/XML",
-            "Executes JavaScript",
-            "Stores data"
-          ],
+              "Makes HTTP requests",
+              "Parses HTML/XML",
+              "Executes JavaScript",
+              "Stores data"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "BeautifulSoup parses HTML and XML documents for web scraping."
@@ -9123,11 +9265,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What extracts text from element?",
             options: [
-            "element.content",
-            "element.text",
-            "element.value",
-            "element.data"
-          ],
+              "element.content",
+              "element.text",
+              "element.value",
+              "element.data"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "element.text extracts the text content from a BeautifulSoup element."
@@ -9219,11 +9361,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What module accesses env vars?",
             options: [
-            "env",
-            "os",
-            "config",
-            "settings"
-          ],
+              "env",
+              "os",
+              "config",
+              "settings"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "The os module provides access to environment variables."
@@ -9233,11 +9375,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What provides default value?",
             options: [
-            "os.environ.get('KEY', 'default')",
-            "os.getenv('KEY', 'default')",
-            "os.env.get('KEY', 'default')",
-            "os.get('KEY', 'default')"
-          ],
+              "os.environ.get('KEY', 'default')",
+              "os.getenv('KEY', 'default')",
+              "os.env.get('KEY', 'default')",
+              "os.get('KEY', 'default')"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "os.getenv('KEY', 'default') provides a default if the variable doesn't exist."
@@ -9331,11 +9473,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What does random.randint do?",
             options: [
-            "Generates float",
-            "Generates random integer",
-            "Shuffles list",
-            "Picks random element"
-          ],
+              "Generates float",
+              "Generates random integer",
+              "Shuffles list",
+              "Picks random element"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "random.randint(a, b) returns a random integer between a and b inclusive."
@@ -9345,11 +9487,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What loop type for games?",
             options: [
-            "for loop",
-            "while loop",
-            "do-while",
-            "foreach"
-          ],
+              "for loop",
+              "while loop",
+              "do-while",
+              "foreach"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "while loops are ideal for games since they continue until a condition is met."
@@ -9443,11 +9585,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What adds to a list?",
             options: [
-            "list.add()",
-            "list.push()",
-            "list.append()",
-            "list.insert()"
-          ],
+              "list.add()",
+              "list.push()",
+              "list.append()",
+              "list.insert()"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "list.append() adds an item to the end of a list."
@@ -9457,11 +9599,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What removes from list?",
             options: [
-            "list.remove()",
-            "list.delete()",
-            "list.pop()",
-            "list.erase()"
-          ],
+              "list.remove()",
+              "list.delete()",
+              "list.pop()",
+              "list.erase()"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "list.pop() removes and returns the last item from a list."
@@ -9555,11 +9697,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What does string.ascii_letters contain?",
             options: [
-            "All characters",
-            "A-Z and a-z",
-            "0-9",
-            "Special chars"
-          ],
+              "All characters",
+              "A-Z and a-z",
+              "0-9",
+              "Special chars"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "string.ascii_letters contains all uppercase and lowercase letters."
@@ -9569,11 +9711,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What does random.choices do?",
             options: [
-            "One random choice",
-            "Multiple with replacement",
-            "Shuffle list",
-            "Unique choices"
-          ],
+              "One random choice",
+              "Multiple with replacement",
+              "Shuffle list",
+              "Unique choices"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "random.choices() selects k items with possible duplicates."
@@ -9667,11 +9809,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What does eval() do?",
             options: [
-            "Evaluate string as code",
-            "Evaluate string length",
-            "Evaluate type",
-            "Evaluate value"
-          ],
+              "Evaluate string as code",
+              "Evaluate string length",
+              "Evaluate type",
+              "Evaluate value"
+            ],
             correctAnswer: 0,
             difficulty: 1,
             explanation: "eval() evaluates a string as Python code and returns the result."
@@ -9681,11 +9823,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What error for division by zero?",
             options: [
-            "ValueError",
-            "TypeError",
-            "ZeroDivisionError",
-            "RuntimeError"
-          ],
+              "ValueError",
+              "TypeError",
+              "ZeroDivisionError",
+              "RuntimeError"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "ZeroDivisionError is raised when dividing by zero."
@@ -9779,11 +9921,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What does 'r' mode do?",
             options: [
-            "Write",
-            "Read",
-            "Append",
-            "Read/write"
-          ],
+              "Write",
+              "Read",
+              "Append",
+              "Read/write"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "'r' mode opens a file for reading."
@@ -9793,11 +9935,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What splits text by newline?",
             options: [
-            "split()",
-            "split('\\n')",
-            "splitlines()",
-            "partition()"
-          ],
+              "split()",
+              "split('\\n')",
+              "splitlines()",
+              "partition()"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "split('\\n') splits text into lines based on newline characters."
@@ -9891,11 +10033,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What makes HTTP requests?",
             options: [
-            "http",
-            "urllib",
-            "requests",
-            "api"
-          ],
+              "http",
+              "urllib",
+              "requests",
+              "api"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "The requests library is the most popular for making HTTP requests."
@@ -9905,11 +10047,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What parses JSON?",
             options: [
-            "json.loads()",
-            "json.parse()",
-            "response.json()",
-            "response.load()"
-          ],
+              "json.loads()",
+              "json.parse()",
+              "response.json()",
+              "response.load()"
+            ],
             correctAnswer: 2,
             difficulty: 1,
             explanation: "response.json() parses the JSON response body into a Python dictionary."
@@ -10003,11 +10145,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What serializes to JSON?",
             options: [
-            "json.serialize()",
-            "json.dump()",
-            "json.save()",
-            "json.write()"
-          ],
+              "json.serialize()",
+              "json.dump()",
+              "json.save()",
+              "json.write()"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "json.dump() serializes Python objects to JSON format."
@@ -10017,11 +10159,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What deserializes JSON?",
             options: [
-            "json.deserialize()",
-            "json.load()",
-            "json.read()",
-            "json.parse()"
-          ],
+              "json.deserialize()",
+              "json.load()",
+              "json.read()",
+              "json.parse()"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "json.load() deserializes JSON data into Python objects."
@@ -10115,11 +10257,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What tracks iteration index?",
             options: [
-            "range()",
-            "enumerate()",
-            "index()",
-            "count()"
-          ],
+              "range()",
+              "enumerate()",
+              "index()",
+              "count()"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "enumerate() returns both index and value when iterating."
@@ -10129,11 +10271,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What does int() do?",
             options: [
-            "Converts to integer",
-            "Converts to string",
-            "Converts to float",
-            "Converts to boolean"
-          ],
+              "Converts to integer",
+              "Converts to string",
+              "Converts to float",
+              "Converts to boolean"
+            ],
             correctAnswer: 0,
             difficulty: 1,
             explanation: "int() converts a value to an integer."
@@ -10227,11 +10369,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What does defaultdict do?",
             options: [
-            "Removes keys",
-            "Default values for missing keys",
-            "Sorts dictionary",
-            "Filters dictionary"
-          ],
+              "Removes keys",
+              "Default values for missing keys",
+              "Sorts dictionary",
+              "Filters dictionary"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "defaultdict provides default values for keys that don't exist."
@@ -10241,11 +10383,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What sums a list?",
             options: [
-            "sum()",
-            "total()",
-            "add()",
-            "aggregate()"
-          ],
+              "sum()",
+              "total()",
+              "add()",
+              "aggregate()"
+            ],
             correctAnswer: 0,
             difficulty: 1,
             explanation: "sum() adds all elements in an iterable."
@@ -10340,11 +10482,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What organizes related code?",
             options: [
-            "Functions",
-            "Classes",
-            "Lists",
-            "Dictionaries"
-          ],
+              "Functions",
+              "Classes",
+              "Lists",
+              "Dictionaries"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Classes organize related data and behavior into cohesive units."
@@ -10354,11 +10496,11 @@ def add(a: int, b: int) -> int:
             type: "mcq",
             question: "What does planning help with?",
             options: [
-            "Write faster",
-            "Organize thoughts",
-            "Skip testing",
-            "Remove errors"
-          ],
+              "Write faster",
+              "Organize thoughts",
+              "Skip testing",
+              "Remove errors"
+            ],
             correctAnswer: 1,
             difficulty: 1,
             explanation: "Planning helps organize thoughts and structure the implementation."
@@ -10389,5 +10531,5 @@ def add(a: int, b: int) -> int:
         }
       ]
     }
-  ]
+  ])
 };

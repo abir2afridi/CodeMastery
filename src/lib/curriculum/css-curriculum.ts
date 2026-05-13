@@ -30,31 +30,42 @@ const stubExercises = (chapterId: string): Exercise[] => [{
   solutionExplanation: "A minimal example demonstrating the chapter's concept.",
 }];
 
-const makeStub = (number: number, title: string, subtitle: string, difficulty: Chapter["difficulty"], partLabel: string, prevId?: string): Chapter => {
+const makeStub = (number: number, title: string, subtitle: string, difficulty: Chapter["difficulty"], partLabel: string, prevId?: string, titleBn?: string, subtitleBn?: string): Chapter => {
   const id = `css-ch-${String(number).padStart(2, "0")}`;
   return {
     id, number, title, subtitle, difficulty,
     estimatedMinutes: 25, xpReward: 100,
     prerequisites: prevId ? [prevId] : [],
     learningObjectives: [`Understand ${title}.`, `Apply ${title} in real layouts.`, `Recognize common pitfalls.`],
+    learningObjectivesBn: titleBn ? [`${titleBn} বুঝতে পারবেন।`, `${titleBn} প্রকৃত লেআউটে প্রয়োগ করতে পারবেন।`, `সাধারণ ভুল চিনতে পারবেন।`] : undefined,
     partLabel,
+    partLabelBn: partLabel.replace("PART", "অংশ"),
+    titleBn,
+    subtitleBn,
     sections: [{
       id: `${id}-s1`,
       title: `Introduction to ${title}`,
+      titleBn: titleBn ? `${titleBn} পরিচিতি` : undefined,
       whyItMatters: `${title} is a fundamental CSS topic. Master it and your designs become consistent and maintainable.`,
+      whyItMattersBn: titleBn ? `${titleBn} CSS-এর একটি মৌলিক বিষয়। এটি আয়ত্ত করলে আপনার ডিজাইন সামঞ্জস্যপূর্ণ এবং রক্ষণাবেক্ষণযোগ্য হবে।` : undefined,
       content: `This chapter covers ${title}. Detailed lesson content is being expanded chapter by chapter — the platform, compiler, and quiz system are fully functional. Use the in-page mini compiler to experiment freely.\n\nFor in-depth coverage right now, refer to MDN Web Docs while we expand this chapter's written content.`,
+      contentBn: titleBn ? `এই অধ্যায়ে ${titleBn} আছে। প্ল্যাটফর্ম, কম্পাইলার এবং কুইজ সিস্টেম সম্পূর্ণ কার্যকরী।` : undefined,
       codeExamples: [{
         id: `${id}-ex1`,
         title: `${title} — quick example`,
+        titleBn: titleBn ? `${titleBn} — দ্রুত উদাহরণ` : undefined,
         description: `A minimal demo of ${title}.`,
+        descriptionBn: titleBn ? `${titleBn}-এর সংক্ষিপ্ত ডেমো।` : undefined,
         code: { html: `<div class="demo">Demo</div>`, css: `.demo {\n  padding: 1rem;\n  background: linear-gradient(135deg, #00D4FF, #7C3AED);\n  color: white;\n  border-radius: 8px;\n}` },
         explanation: "A simple element with gradient background and rounded corners.",
+        explanationBn: "গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড এবং রাউন্ডেড কোর্নার সহ একটি সাধারণ এলিমেন্ট।",
         tryItPrompt: "Change the gradient colors and the padding value.",
+        tryItPromptBn: "গ্রেডিয়েন্ট রঙ এবং প্যাডিং ভ্যালু পরিবর্তন করুন।",
       }],
     }],
     exercises: stubExercises(id),
     quiz: stubQuiz(id, title),
-    cheatSheet: [{ label: "Topic", value: title }],
+    cheatSheet: [{ label: title, value: "CSS property", labelBn: titleBn, valueBn: "CSS প্রপার্টি" }],
   };
 };
 
