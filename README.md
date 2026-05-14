@@ -2,12 +2,12 @@
 🚀 Zero-to-Pro Web Development Learning Platform
 
 ## Overview
-CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, and Java. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
+CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, and Web Colors. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
 
 ## 🌟 Key Features
 
-- **Interactive Multi-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, Python, TypeScript, C, C++, and Java panels with real-time preview
-- **Comprehensive Curriculum**: 585+ chapters covering everything from basics to advanced concepts
+- **Interactive Multi-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, and Web Colors panels with real-time preview
+- **Comprehensive Curriculum**: 775+ chapters covering everything from basics to advanced concepts
 - **Progress Tracking**: XP system, streaks, achievements, and detailed progress analytics
 - **Certificate Generation**: Beautiful certificates upon track completion
 - **Project-Based Learning**: Real-world projects at every skill level
@@ -130,6 +130,9 @@ CodeMastery is a comprehensive web development learning platform designed to tak
 ### C Programming Track (85 Chapters - ~130 hours)
 ### C++ Programming Track (90 Chapters - ~145 hours)
 ### Java Programming Track (90 Chapters - ~140 hours)
+### C# Programming Track (85 Chapters - ~135 hours)
+### W3.CSS Track (55 Chapters - ~45 hours)
+### Web Colors Track (50 Chapters - ~40 hours)
 **Part 1: Absolute Beginning (Chapters 1-8)**
 - What is C?, Variables & Data Types, Operators, Input/Output, Conditionals, Loops, Functions, Scope & Storage Classes
 

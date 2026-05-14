@@ -48,6 +48,11 @@
     --python-color: 207 90% 54%;
     --typescript-color: 212 100% 48%;
     --c-color: 200 10% 65%;
+    --cpp-color: 205 100% 37%;
+    --java-color: 35 100% 47%;
+    --csharp-color: 292 31% 42%;
+    --w3css-color: 158 64% 36%;
+    --colors-color: 340 82% 52%;
 
     /* Sidebar Colors */
     --sidebar-background: 264 59% 23%;

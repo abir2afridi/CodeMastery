@@ -5,6 +5,7 @@ import { TypeScriptCompiler } from "@/components/compiler/TypeScriptCompiler";
 import { CCompiler } from "@/components/compiler/CCompiler";
 import { CppCompiler } from "@/components/compiler/CppCompiler";
 import { JavaCompiler } from "@/components/compiler/JavaCompiler";
+import { CSharpCompiler } from "@/components/compiler/CSharpCompiler";
 
 const CompilerPage = () => {
   const [params] = useSearchParams();
@@ -28,6 +29,10 @@ const CompilerPage = () => {
 
   if (track === "java") {
     return <JavaCompiler initialCode={params.get("code") || undefined} />;
+  }
+
+  if (track === "csharp") {
+    return <CSharpCompiler initialCode={params.get("code") || undefined} />;
   }
 
   return (

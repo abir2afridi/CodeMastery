@@ -6,6 +6,9 @@ import { typescriptTrack } from "./typescript-curriculum";
 import { cTrack } from "./c-curriculum";
 import { cppTrack } from "./cpp-curriculum";
 import { javaTrack } from "./java-curriculum";
+import { csharpTrack } from "./csharp-curriculum";
+import { w3cssTrack } from "./w3css-curriculum";
+import { colorsTrack } from "./colors-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -120,6 +123,48 @@ export const tracks: Track[] = [
     chapters: javaTrack.chapters,
     brandColor: "#ED8B00",
     glowColor: "#ED8B00",
+  },
+  {
+    id: "csharp",
+    title: "C#",
+    titleBn: "সি#",
+    tagline: "Elegant, powerful, and backed by .NET",
+    taglineBn: "সুন্দর, শক্তিশালী, .NET দ্বারা সমর্থিত",
+    icon: "https://img.icons8.com/color/144/c-sharp-logo.png",
+    colorVar: "csharp",
+    totalChapters: csharpTrack.totalChapters,
+    estimatedHours: csharpTrack.estimatedHours,
+    chapters: csharpTrack.chapters,
+    brandColor: "#9B4993",
+    glowColor: "rgba(155, 73, 147, 0.4)",
+  },
+  {
+    id: "w3css",
+    title: "W3.CSS",
+    titleBn: "W3.CSS",
+    tagline: "Style anything. No JavaScript needed.",
+    taglineBn: "যেকোনো কিছুতে স্টাইল করুন।",
+    icon: "https://img.icons8.com/?size=160&id=7m3rDKCASMFx&format=png",
+    colorVar: "w3css",
+    totalChapters: w3cssTrack.totalChapters,
+    estimatedHours: w3cssTrack.estimatedHours,
+    chapters: w3cssTrack.chapters,
+    brandColor: "#04AA6D",
+    glowColor: "rgba(4, 170, 109, 0.4)",
+  },
+  {
+    id: "colors",
+    title: "Web Colors",
+    titleBn: "ওয়েব রঙ",
+    tagline: "From hex codes to harmony — master color for the web",
+    taglineBn: "হেক্স থেকে হারমনি — ওয়েব রঙ মাস্টার করুন",
+    icon: "https://img.icons8.com/color/144/color-palette.png",
+    colorVar: "colors",
+    totalChapters: colorsTrack.totalChapters,
+    estimatedHours: colorsTrack.estimatedHours,
+    chapters: colorsTrack.chapters,
+    brandColor: "#E91E63",
+    glowColor: "rgba(233, 30, 99, 0.4)",
   },
 ];
 

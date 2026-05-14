@@ -64,7 +64,7 @@ const TrackOverview = () => {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <Database className="h-3 w-3" style={{ color: track.brandColor }} />
-              <span className="text-[10px] font-black tracking-[0.3em] uppercase">DOSSIER_ID: {track.id.toUpperCase()}</span>
+              <span className="text-[10px] font-black tracking-[0.3em] uppercase">Lesson: {track.id.toUpperCase()}</span>
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@ const TrackOverview = () => {
 
                 <div className="space-y-4 relative z-10">
                   <div className="flex justify-between items-end">
-                    <span className="terminal-label">SYNC_PROGRESS</span>
+                    <span className="terminal-label">Learning Progress</span>
                     <span
                       className="text-3xl font-black font-outfit"
                       style={{ color: track.brandColor }}
@@ -154,7 +154,7 @@ const TrackOverview = () => {
                     <p className="text-xl font-black">{track.estimatedHours}H</p>
                   </div>
                   <div className="space-y-1">
-                    <span className="text-[8px] font-black tracking-widest text-foreground/20 uppercase">NODE_COUNT</span>
+                    <span className="text-[8px] font-black tracking-widest text-foreground/20 uppercase">Total Unit</span>
                     <p className="text-xl font-black">{track.totalChapters}</p>
                   </div>
                 </div>
@@ -247,7 +247,7 @@ const TrackOverview = () => {
 
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-4 mb-1">
-                              <span className="text-[8px] font-black tracking-widest text-foreground/20 uppercase font-mono">NODE_{ch.number.toString().padStart(2, '0')}</span>
+                              <span className="text-[8px] font-black tracking-widest text-foreground/20 uppercase font-mono">Unit_{ch.number.toString().padStart(2, '0')}</span>
                               <h3 className="text-xl font-black uppercase tracking-tight truncate font-outfit">{isBn && ch.titleBn ? ch.titleBn : ch.title}</h3>
                             </div>
                             <p className="text-[10px] font-black tracking-widest text-foreground/40 uppercase truncate">

@@ -1,8 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { 
-  LayoutDashboard, 
-  Terminal, 
-  User, 
+import {
+  LayoutDashboard,
+  Terminal,
+  User,
   ChevronRight,
   Zap,
   Shield,
@@ -11,7 +11,8 @@ import {
   Code2,
   Palette,
   FileCode2,
-  Library
+  Library,
+  LucideIcon
 } from "lucide-react";
 import { 
   Sidebar, 
@@ -60,7 +61,7 @@ const navItems = [
   }
 ];
 
-const trackIcons: Record<string, any> = {
+const trackIcons: Record<string, LucideIcon> = {
   html: Code2,
   css: Palette,
   javascript: Zap,

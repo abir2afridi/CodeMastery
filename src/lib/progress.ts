@@ -33,6 +33,18 @@ export function loadProgress(): UserProgress | null {
     if (!progress.tracks.java) {
       progress.tracks.java = emptyTrack();
     }
+    // Migration: Add C# track if missing
+    if (!progress.tracks.csharp) {
+      progress.tracks.csharp = emptyTrack();
+    }
+    // Migration: Add W3.CSS track if missing
+    if (!progress.tracks.w3css) {
+      progress.tracks.w3css = emptyTrack();
+    }
+    // Migration: Add Colors track if missing
+    if (!progress.tracks.colors) {
+      progress.tracks.colors = emptyTrack();
+    }
 
     saveProgress(progress);
 
@@ -64,6 +76,9 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       c: emptyTrack(),
       cpp: emptyTrack(),
       java: emptyTrack(),
+      csharp: emptyTrack(),
+      w3css: emptyTrack(),
+      colors: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);

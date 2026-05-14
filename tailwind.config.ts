@@ -88,6 +88,11 @@ export default {
         python: "hsl(var(--python-color))",
         typescript: "hsl(var(--typescript-color))",
         c: "hsl(var(--c-color))",
+        cpp: "hsl(var(--cpp-color))",
+        java: "hsl(var(--java-color))",
+        csharp: "hsl(var(--csharp-color))",
+        w3css: "hsl(var(--w3css-color))",
+        colors: "hsl(var(--colors-color))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
