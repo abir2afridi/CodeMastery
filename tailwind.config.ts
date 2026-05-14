@@ -87,6 +87,7 @@ export default {
         js: "hsl(var(--js-color))",
         python: "hsl(var(--python-color))",
         typescript: "hsl(var(--typescript-color))",
+        c: "hsl(var(--c-color))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

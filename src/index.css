@@ -9,8 +9,8 @@
 @layer base {
   :root {
     /* Cyberpunk Solar (Light) Color System */
-    --background: 0 0% 98%;
-    /* Off-white */
+    --background: 30 18% 93%;
+    /* #f1eeea warm off-white */
     --foreground: 0 0% 4%;
     /* Deep Obsidian */
     --foreground-20: 0 0% 20%;
@@ -47,6 +47,7 @@
     --js-color: 48 100% 50%;
     --python-color: 207 90% 54%;
     --typescript-color: 212 100% 48%;
+    --c-color: 200 10% 65%;
 
     /* Sidebar Colors */
     --sidebar-background: 264 59% 23%;

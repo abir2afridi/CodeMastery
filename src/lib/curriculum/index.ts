@@ -1,10 +1,11 @@
 import { htmlChapters } from "./html-curriculum";
 import { cssChapters } from "./css-curriculum";
 import { jsChapters } from "./js-curriculum";
-// @ts-ignore
 import { pythonTrack } from "./python-curriculum";
-// @ts-ignore
 import { typescriptTrack } from "./typescript-curriculum";
+import { cTrack } from "./c-curriculum";
+import { cppTrack } from "./cpp-curriculum";
+import { javaTrack } from "./java-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -61,7 +62,7 @@ export const tracks: Track[] = [
     totalChapters: pythonTrack.totalChapters,
     estimatedHours: pythonTrack.estimatedHours,
     chapters: pythonTrack.chapters,
-    brandColor: "#3776AB",
+    brandColor: "#F7DF1E",
     glowColor: "#3776AB",
   },
   {
@@ -77,6 +78,48 @@ export const tracks: Track[] = [
     chapters: typescriptTrack.chapters,
     brandColor: "#3178C6",
     glowColor: "#3178C6",
+  },
+  {
+    id: "c",
+    title: "C Programming",
+    titleBn: "C প্রোগ্রামিং",
+    tagline: "The language that built the modern world",
+    taglineBn: "আধুনিক বিশ্ব যে ভাষায় তৈরি",
+    icon: "https://img.icons8.com/color/144/c-programming.png",
+    colorVar: "c",
+    totalChapters: cTrack.totalChapters,
+    estimatedHours: cTrack.estimatedHours,
+    chapters: cTrack.chapters,
+    brandColor: "#A8B9CC",
+    glowColor: "#A8B9CC",
+  },
+  {
+    id: "cpp",
+    title: "C++ Programming",
+    titleBn: "C++ প্রোগ্রামিং",
+    tagline: "Zero-cost abstractions. Maximum power.",
+    taglineBn: "শূন্য-খরচ বিমূর্ততা। সর্বোচ্চ শক্তি।",
+    icon: "https://img.icons8.com/?size=96&id=40669&format=png",
+    colorVar: "cpp",
+    totalChapters: cppTrack.totalChapters,
+    estimatedHours: cppTrack.estimatedHours,
+    chapters: cppTrack.chapters,
+    brandColor: "#00599C",
+    glowColor: "#00599C",
+  },
+  {
+    id: "java",
+    title: "Java",
+    titleBn: "জাভা",
+    tagline: "Write once, run anywhere — the enterprise standard",
+    taglineBn: "একবার লিখুন, সব জায়গায় চালান",
+    icon: "https://img.icons8.com/?size=160&id=mQ01rhdaQzyT&format=png",
+    colorVar: "java",
+    totalChapters: javaTrack.totalChapters,
+    estimatedHours: javaTrack.estimatedHours,
+    chapters: javaTrack.chapters,
+    brandColor: "#ED8B00",
+    glowColor: "#ED8B00",
   },
 ];
 

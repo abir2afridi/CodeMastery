@@ -21,6 +21,18 @@ export function loadProgress(): UserProgress | null {
     if (!progress.tracks.typescript) {
       progress.tracks.typescript = emptyTrack();
     }
+    // Migration: Add C track if missing
+    if (!progress.tracks.c) {
+      progress.tracks.c = emptyTrack();
+    }
+    // Migration: Add C++ track if missing
+    if (!progress.tracks.cpp) {
+      progress.tracks.cpp = emptyTrack();
+    }
+    // Migration: Add Java track if missing
+    if (!progress.tracks.java) {
+      progress.tracks.java = emptyTrack();
+    }
 
     saveProgress(progress);
 
@@ -49,6 +61,9 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       javascript: emptyTrack(),
       python: emptyTrack(),
       typescript: emptyTrack(),
+      c: emptyTrack(),
+      cpp: emptyTrack(),
+      java: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);

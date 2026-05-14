@@ -1,17 +1,19 @@
 # CodeMastery
-🚀 Zero-to-Pro HTML, CSS & JavaScript Learning Platform
+🚀 Zero-to-Pro Web Development Learning Platform
 
 ## Overview
-CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, and JavaScript. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
+CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, and Java. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
 
 ## 🌟 Key Features
-- **Interactive 4-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, and Python panels and real-time preview
-- **Comprehensive Curriculum**: 255+ chapters covering everything from basics to advanced concepts
+
+- **Interactive Multi-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, Python, TypeScript, C, C++, and Java panels with real-time preview
+- **Comprehensive Curriculum**: 585+ chapters covering everything from basics to advanced concepts
 - **Progress Tracking**: XP system, streaks, achievements, and detailed progress analytics
 - **Certificate Generation**: Beautiful certificates upon track completion
 - **Project-Based Learning**: Real-world projects at every skill level
 - **Comprehensive Quiz System**: 8+ questions per chapter with multiple question types
 - **Dark Mode Interface**: Modern space/terminal aesthetic with smooth animations
+- **Bengali Language Support**: Full Bangla translations for all curriculum content
 - **Mobile Responsive**: Learn on any device with optimized layouts
 
 ## 📚 Curriculum Structure
@@ -106,6 +108,52 @@ CodeMastery is a comprehensive web development learning platform designed to tak
 **Part 8: Projects & Challenges (Chapters 71-80)**
 - Task Manager CLI, Web Scraper, Data Analysis Project, API Integration, File Organizer, Log Analyzer, Password Generator, URL Shortener, Quiz Application, Weather App
 
+### TypeScript Track (65 Chapters - ~90 hours)
+**Part 1: Introduction to TypeScript (Chapters 1-8)**
+- What is TypeScript?, Basic Types, Type Inference, Interfaces, Arrays & Objects, Type Aliases, Union Types, any, unknown, never, void
+
+**Part 2: Functions in TypeScript (Chapters 9-15)**
+- Function Types, Parameters & Return, Optional & Default, Rest Parameters, Function Overloading, Callbacks, this Keyword
+
+**Part 3: Classes and OOP (Chapters 16-24)**
+- Classes, Access Modifiers, Inheritance, Abstract Classes, Interfaces vs Classes, Generic Classes, Decorators, Mixins, Design Patterns
+
+**Part 4: Advanced Type System (Chapters 25-40)**
+- Union Types, Type Aliases, Literal Types, never Type, unknown Type, Type Guards, Discriminated Unions, Intersection Types, Utility Types, Generic Constraints, Mapped Types, Template Literal Types, Conditional Types, infer Keyword
+
+**Part 5: TypeScript in Practice (Chapters 41-55)**
+- Project Setup, Third-Party Libraries, Error Handling, Event-Driven Types, State Management, API Types, Testing Types, React with TypeScript, Node.js with TypeScript, Database Types
+
+**Part 6: Projects (Chapters 56-65)**
+- Todo App, REST API Client, State Management Library, Form Validation Library, Type-Safe Router, Data Pipeline, Dependency Injection, Event Bus, API Schema Validator, Component Library
+
+### C Programming Track (85 Chapters - ~130 hours)
+### C++ Programming Track (90 Chapters - ~145 hours)
+### Java Programming Track (90 Chapters - ~140 hours)
+**Part 1: Absolute Beginning (Chapters 1-8)**
+- What is C?, Variables & Data Types, Operators, Input/Output, Conditionals, Loops, Functions, Scope & Storage Classes
+
+**Part 2: Arrays and Strings (Chapters 9-16)**
+- 1D Arrays, 2D Arrays, Strings Part 1, Strings Part 2, String Processing, Arrays of Strings, Command Line Arguments, Array Algorithms
+
+**Part 3: Pointers — The Heart of C (Chapters 17-28)**
+- What Is a Pointer?, Pointer Arithmetic, Pointers and Arrays, Double Pointers, Pointers and Functions, Function Pointers, Void Pointers, NULL Pointer, Common Pointer Bugs, Const Pointers, Pointer Review
+
+**Part 4: Memory Management (Chapters 29-36)**
+- Stack vs Heap, malloc/calloc/realloc/free, Memory Leaks, Buffer Overflows, Dynamic Arrays, Valgrind, Safe Memory Patterns, Memory Practice Project
+
+**Part 5: Structures and Unions (Chapters 37-44)**
+- Structures Part 1, Structures Part 2, Structures and Pointers, Passing Structs, typedef, Unions, Bit Fields, Struct Alignment
+
+**Part 6: File I/O and Preprocessor (Chapters 45-52)**
+- File I/O Part 1-3, Error Handling, Preprocessor, Macros, Header Files, Conditional Compilation
+
+**Part 7: Data Structures (Chapters 53-68)**
+- Linked Lists (Singly, Doubly, Circular), Stack, Queue, Binary Trees, Hash Tables, Sorting Algorithms, Searching, Graphs, Recursion, Dynamic Programming, Big O Notation
+
+**Part 8: Advanced C and Projects (Chapters 69-85)**
+- Standard Library, Math Functions, Time/Date, Signals, Multithreading, Socket Programming, Portable Code, Interview Questions, and 6 Comprehensive Projects
+
 ## 🎯 Learning Philosophy
 - **Zero Prior Knowledge Assumed**: Every chapter starts from scratch
 - **Real-World Analogies First**: Technical concepts explained through relatable examples
@@ -159,20 +207,21 @@ npm run dev
 src/
 ├── components/
 │   ├── certificate/     # Certificate generation components
-│   ├── compiler/        # 4-panel live code editor
-│   ├── layout/          # Navigation and layout components
-│   ├── lesson/          # Lesson content and interactions
-│   └── quiz/            # Quiz system components
+│   ├── compiler/       # Multi-panel live code editor (HTML, CSS, JS, Python, TypeScript)
+│   ├── layout/         # Navigation and layout components
+│   ├── lesson/         # Lesson content and interactions
+│   └── quiz/           # Quiz system components
 ├── lib/
-│   ├── curriculum/      # All course content (255+ chapters)
+│   ├── curriculum/     # All course content (585+ chapters)
 │   │   ├── html-curriculum.ts
 │   │   ├── css-curriculum.ts
 │   │   ├── js-curriculum.ts
 │   │   ├── python-curriculum.ts
+│   │   ├── typescript-curriculum.ts
 │   │   └── index.ts
 │   ├── progress.ts      # User progress tracking
-│   ├── certificate.ts   # Certificate generation
-│   ├── xp.ts           # XP calculation system
+│   ├── certificate.ts  # Certificate generation
+│   ├── i18n/           # Internationalization (English & Bengali)
 │   └── utils.ts        # Utility functions
 ├── pages/              # Page components
 │   ├── Dashboard.tsx   # Main learning dashboard

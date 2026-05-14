@@ -2,6 +2,9 @@ import { useSearchParams } from "react-router-dom";
 import { FullCompiler } from "@/components/compiler/FullCompiler";
 import { PythonCompiler } from "@/components/compiler/PythonCompiler";
 import { TypeScriptCompiler } from "@/components/compiler/TypeScriptCompiler";
+import { CCompiler } from "@/components/compiler/CCompiler";
+import { CppCompiler } from "@/components/compiler/CppCompiler";
+import { JavaCompiler } from "@/components/compiler/JavaCompiler";
 
 const CompilerPage = () => {
   const [params] = useSearchParams();
@@ -13,6 +16,18 @@ const CompilerPage = () => {
 
   if (track === "typescript") {
     return <TypeScriptCompiler initialCode={params.get("code") || undefined} />;
+  }
+
+  if (track === "c") {
+    return <CCompiler initialCode={params.get("code") || undefined} />;
+  }
+
+  if (track === "cpp") {
+    return <CppCompiler initialCode={params.get("code") || undefined} />;
+  }
+
+  if (track === "java") {
+    return <JavaCompiler initialCode={params.get("code") || undefined} />;
   }
 
   return (
