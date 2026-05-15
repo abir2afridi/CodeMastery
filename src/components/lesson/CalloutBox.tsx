@@ -12,6 +12,10 @@ const styles: Record<Callout["type"], { icon: LucideIcon; accent: string; bg: st
   analogy: { icon: BookOpen, accent: "border-purple-400", bg: "bg-purple-400/5", label: "NEURAL_ANALOGY", text: "text-purple-400" },
   "common-mistake": { icon: Bug, accent: "border-orange-500", bg: "bg-orange-500/5", label: "GLITCH_DETECTED", text: "text-orange-500" },
   "pro-tip": { icon: Sparkles, accent: "border-primary", bg: "bg-primary/10 shadow-[0_0_20px_rgba(var(--primary),0.1)]", label: "ELITE_PROTOCOL", text: "text-primary" },
+  "c-connection": { icon: BookOpen, accent: "border-blue-500", bg: "bg-blue-500/5", label: "C_CONNECTION", text: "text-blue-500" },
+  "modern-cpp": { icon: Zap, accent: "border-purple-500", bg: "bg-purple-500/5", label: "MODERN_CPP", text: "text-purple-500" },
+  "csharp-bridge": { icon: BookOpen, accent: "border-purple-400", bg: "bg-purple-400/5", label: "CSHARP_BRIDGE", text: "text-purple-400" },
+  "php-bridge": { icon: BookOpen, accent: "border-php", bg: "bg-php/5", label: "PHP_BRIDGE", text: "text-php" },
 };
 
 export function CalloutBox({ callout }: { callout: Callout }) {

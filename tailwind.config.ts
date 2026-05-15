@@ -93,6 +93,7 @@ export default {
         csharp: "hsl(var(--csharp-color))",
         w3css: "hsl(var(--w3css-color))",
         colors: "hsl(var(--colors-color))",
+        php: "hsl(var(--php-color))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

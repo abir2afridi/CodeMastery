@@ -1,10 +1,10 @@
-export type TrackId = "html" | "css" | "javascript" | "python" | "typescript" | "c" | "cpp" | "java" | "csharp" | "w3css" | "colors";
+export type TrackId = "html" | "css" | "javascript" | "python" | "typescript" | "c" | "cpp" | "java" | "csharp" | "w3css" | "colors" | "php";
 export type Difficulty = "Absolute Beginner" | "Beginner" | "Intermediate" | "Advanced" | "Expert";
 
-export interface CodeSnippet { html?: string; css?: string; javascript?: string; python?: string; c?: string; cpp?: string; java?: string; csharp?: string; }
+export interface CodeSnippet { html?: string; css?: string; javascript?: string; python?: string; c?: string; cpp?: string; java?: string; csharp?: string; php?: string; }
 
 export interface Callout {
-  type: "tip" | "warning" | "error" | "info" | "analogy" | "common-mistake" | "pro-tip" | "c-connection" | "modern-cpp" | "csharp-bridge";
+  type: "tip" | "warning" | "error" | "info" | "analogy" | "common-mistake" | "pro-tip" | "c-connection" | "modern-cpp" | "csharp-bridge" | "php-bridge";
   title: string;
   titleBn?: string;
   content: string;

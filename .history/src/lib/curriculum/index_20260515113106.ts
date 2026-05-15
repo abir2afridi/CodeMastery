@@ -173,7 +173,7 @@ export const tracks: Track[] = [
     titleBn: phpTrack.titleBn,
     tagline: phpTrack.tagline,
     taglineBn: phpTrack.taglineBn,
-    icon: "https://img.icons8.com/?size=160&id=YrKoPXb4jv9l&format=png",
+    icon: phpTrack.icon,
     colorVar: phpTrack.colorVar,
     totalChapters: phpTrack.totalChapters,
     estimatedHours: phpTrack.estimatedHours,
