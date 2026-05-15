@@ -53,6 +53,18 @@ export function loadProgress(): UserProgress | null {
     if (!progress.tracks.htmldom) {
       progress.tracks.htmldom = emptyTrack();
     }
+    // Migration: Add Bootstrap 3 track if missing
+    if (!progress.tracks.bootstrap3) {
+      progress.tracks.bootstrap3 = emptyTrack();
+    }
+    // Migration: Add Bootstrap 4 track if missing
+    if (!progress.tracks.bootstrap4) {
+      progress.tracks.bootstrap4 = emptyTrack();
+    }
+    // Migration: Add Bootstrap 5 track if missing
+    if (!progress.tracks.bootstrap5) {
+      progress.tracks.bootstrap5 = emptyTrack();
+    }
 
     saveProgress(progress);
 
@@ -89,6 +101,9 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       colors: emptyTrack(),
       php: emptyTrack(),
       htmldom: emptyTrack(),
+      bootstrap3: emptyTrack(),
+      bootstrap4: emptyTrack(),
+      bootstrap5: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);

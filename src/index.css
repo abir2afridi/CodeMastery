@@ -55,6 +55,9 @@
     --colors-color: 340 82% 52%;
     --php-color: 233 41% 60%; /* PHP elephant blue #8892BF */
     --htmldom-color: 48 92% 56%; /* JS/DOM yellow #F0DB4F */
+    --bootstrap3-color: 262 52% 36%; /* Bootstrap 3 purple #563D7C */
+    --bootstrap4-color: 262 43% 51%; /* Bootstrap 4 violet #7952B3 */
+    --bootstrap5-color: 216 100% 50%; /* Bootstrap 5 blue #0D6EFD */
 
     /* Sidebar Colors */
     --sidebar-background: 264 59% 23%;

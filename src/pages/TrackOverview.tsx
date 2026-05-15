@@ -58,7 +58,7 @@ const TrackOverview = () => {
         {/* NAVIGATION & META */}
         <div className="flex items-center justify-between mb-12 border-b-2 border-foreground/10 pb-4">
           <Link to="/learn" className="group flex items-center gap-3">
-            <ArrowLeft className="h-4 w-4 text-foreground/40 group-hover:text-primary transition-colors" />
+            <ArrowLeft className="h-4 w-4 text-foreground-40 group-hover:text-primary transition-colors" />
             <span className="text-[10px] font-black tracking-[0.3em] uppercase opacity-40 group-hover:opacity-100 transition-opacity">RETURN_TO_BASE</span>
           </Link>
           <div className="flex items-center gap-6">
@@ -105,12 +105,12 @@ const TrackOverview = () => {
                   </h1>
                 </div>
 
-                <p className="text-sm font-black tracking-widest text-foreground/40 uppercase leading-relaxed max-w-md">
+                <p className="text-sm font-black tracking-widest text-foreground-40 uppercase leading-relaxed max-w-md">
                   {isBn && track.taglineBn ? track.taglineBn : track.tagline}
                 </p>
               </div>
 
-              <div className="p-8 border-2 border-foreground/10 bg-foreground/[0.02] space-y-8 relative overflow-hidden group">
+              <div className="p-4 border-2 border-foreground/10 bg-foreground/[0.02] space-y-4 relative overflow-hidden group">
                 {/* Scanning Line Effect */}
                 <motion.div
                   className="absolute inset-x-0 h-[1px] z-30 opacity-30"
@@ -150,11 +150,11 @@ const TrackOverview = () => {
 
                 <div className="grid grid-cols-2 gap-8 relative z-10">
                   <div className="space-y-1">
-                    <span className="text-[8px] font-black tracking-widest text-foreground/20 uppercase">TIME_ESTIMATE</span>
+                    <span className="text-[8px] font-black tracking-widest text-foreground-20 uppercase">TIME_ESTIMATE</span>
                     <p className="text-xl font-black">{track.estimatedHours}H</p>
                   </div>
                   <div className="space-y-1">
-                    <span className="text-[8px] font-black tracking-widest text-foreground/20 uppercase">Total Unit</span>
+                    <span className="text-[8px] font-black tracking-widest text-foreground-20 uppercase">Total Unit</span>
                     <p className="text-xl font-black">{track.totalChapters}</p>
                   </div>
                 </div>
@@ -168,9 +168,9 @@ const TrackOverview = () => {
                 <div className="space-y-3 font-mono">
                   {track.chapters.slice(0, 3).map((ch, i) => (
                     <div key={i} className="flex items-start gap-3 group/obj">
-                      <span className="text-foreground/20 text-[10px] pt-1">[{i.toString().padStart(2, '0')}]</span>
-                      <p className="text-[10px] font-black tracking-widest text-foreground/60 uppercase leading-relaxed group-hover/obj:text-foreground transition-colors">
-                        SECURE_NODE: <span className="text-foreground/80">{isBn && ch.titleBn ? ch.titleBn : ch.title}</span>
+                      <span className="text-foreground-20 text-[10px] pt-1">[{i.toString().padStart(2, '0')}]</span>
+                      <p className="text-[10px] font-black tracking-widest text-foreground-60 uppercase leading-relaxed group-hover/obj:text-foreground transition-colors">
+                        SECURE_NODE: <span className="text-foreground-80">{isBn && ch.titleBn ? ch.titleBn : ch.title}</span>
                       </p>
                     </div>
                   ))}
@@ -214,9 +214,12 @@ const TrackOverview = () => {
                         to={unlocked ? `/learn/${track.id}/${ch.id}` : "#"}
                         className={cn(
                           "group block relative border-2 transition-all duration-300",
-                          !unlocked ? "border-foreground/5 opacity-40 cursor-not-allowed" : "border-foreground/10 bg-foreground/[0.02]"
+                          !unlocked ? "border-foreground/5 opacity-40 cursor-not-allowed" : "border-foreground/10"
                         )}
-                        style={unlocked ? { borderColor: `${track.brandColor}1A` } : {}}
+                        style={unlocked ? {
+                          borderColor: `${track.brandColor}33`,
+                          background: `linear-gradient(135deg, ${track.brandColor}08 0%, transparent 60%)`
+                        } : {}}
                       >
                         {/* Hover Border Effect */}
                         {unlocked && (
@@ -247,22 +250,22 @@ const TrackOverview = () => {
 
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-4 mb-1">
-                              <span className="text-[8px] font-black tracking-widest text-foreground/20 uppercase font-mono">Unit_{ch.number.toString().padStart(2, '0')}</span>
+                              <span className="text-[8px] font-black tracking-widest text-foreground-20 uppercase font-mono">Unit_{ch.number.toString().padStart(2, '0')}</span>
                               <h3 className="text-xl font-black uppercase tracking-tight truncate font-outfit">{isBn && ch.titleBn ? ch.titleBn : ch.title}</h3>
                             </div>
-                            <p className="text-[10px] font-black tracking-widest text-foreground/40 uppercase truncate">
+                            <p className="text-[10px] font-black tracking-widest text-foreground-40 uppercase truncate">
                               {isBn && ch.subtitleBn ? ch.subtitleBn : ch.subtitle}
                             </p>
                           </div>
 
                           <div className="hidden sm:flex items-center gap-8 text-right shrink-0">
                             <div className="space-y-1">
-                              <span className="text-[8px] font-black tracking-widest text-foreground/20 uppercase block">XP_VAL</span>
+                              <span className="text-[8px] font-black tracking-widest text-foreground-20 uppercase block">XP_VAL</span>
                               <span className="text-xs font-black tracking-widest uppercase">{ch.xpReward}</span>
                             </div>
                             <ChevronRight className={cn(
                               "h-4 w-4 transition-transform group-hover:translate-x-1",
-                              unlocked ? "text-primary/40 group-hover:text-primary" : "text-foreground/10"
+                              unlocked ? "text-primary/40 group-hover:text-primary" : "text-foreground-10"
                             )}
                               style={unlocked ? { color: track.brandColor } : {}}
                             />

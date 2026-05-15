@@ -95,6 +95,9 @@ export default {
         colors: "hsl(var(--colors-color))",
         php: "hsl(var(--php-color))",
         htmldom: "hsl(var(--htmldom-color))",
+        bootstrap3: "hsl(var(--bootstrap3-color))",
+        bootstrap4: "hsl(var(--bootstrap4-color))",
+        bootstrap5: "hsl(var(--bootstrap5-color))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

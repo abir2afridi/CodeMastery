@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 function renderParagraph(text: string, key: string, brandColor?: string) {
   const parts = text.split(/(`[^`]+`)/g);
   return (
-    <p key={key} className="text-zinc-400 leading-relaxed mb-8 text-[17px] font-medium tracking-normal selection:bg-primary/30">
+    <p key={key} className="text-foreground leading-relaxed mb-8 text-[17px] font-medium tracking-normal selection:bg-primary/30">
       {parts.map((p, i) =>
         p.startsWith("`") && p.endsWith("`") ? (
           <code 
@@ -55,7 +55,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
       />
       <div 
         style={{ borderColor: `${brandColor}66` }}
-        className="absolute -left-[35px] md:-left-[67px] top-0 w-4 h-4 bg-zinc-950 border flex items-center justify-center"
+        className="absolute -left-[35px] md:-left-[67px] top-0 w-4 h-4 bg-background border flex items-center justify-center"
       >
         <div style={{ backgroundColor: brandColor }} className="w-1.5 h-1.5 animate-pulse" />
       </div>
@@ -66,9 +66,9 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
             <span style={{ color: brandColor }} className="text-[9px] font-black tracking-[0.3em] uppercase">{t("system.section")}_{section.id.toUpperCase()}</span>
           </div>
           <div className="h-px flex-1 bg-gradient-to-r from-border/40 to-transparent" />
-          <span className="text-[10px] font-mono text-zinc-600 tracking-tighter">{t("system.coordinate")}: {Math.floor(Math.random() * 999)}.{Math.floor(Math.random() * 999)}</span>
+          <span className="text-[10px] font-mono text-foreground-20 tracking-tighter">{t("system.coordinate")}: {Math.floor(Math.random() * 999)}.{Math.floor(Math.random() * 999)}</span>
         </div>
-        <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] text-zinc-100 italic">
+        <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] text-foreground italic">
           {isBn && section.titleBn ? section.titleBn : section.title}
         </h2>
       </div>
@@ -77,7 +77,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
       <div className="grid md:grid-cols-2 gap-4 mb-16">
         <div 
           style={{ borderColor: `${brandColor}33` }}
-          className="p-8 bg-zinc-900/40 border relative overflow-hidden group/card hover:border-primary/40 transition-colors"
+          className="p-8 bg-surface/50 border relative overflow-hidden group/card hover:border-primary/40 transition-colors"
         >
           <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover/card:opacity-[0.07] transition-opacity rotate-12">
             {track?.icon ? (
@@ -94,13 +94,13 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
               {t("lesson.whyMatters")}
             </span>
           </div>
-          <p className="text-lg font-bold uppercase tracking-tight text-zinc-300 leading-tight">
+          <p className="text-lg font-bold uppercase tracking-tight text-foreground-80 leading-tight">
             {isBn && section.whyItMattersBn ? section.whyItMattersBn : section.whyItMatters}
           </p>
         </div>
 
         {section.realWorldAnalogy && (
-          <div className="p-8 bg-zinc-900/40 border border-border/40 relative overflow-hidden group/card hover:border-blue-500/40 transition-colors">
+          <div className="p-8 bg-surface/50 border border-border/40 relative overflow-hidden group/card hover:border-blue-500/40 transition-colors">
             <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover/card:opacity-[0.07] transition-opacity -rotate-12">
               <Globe className="h-24 w-24" />
             </div>
@@ -112,7 +112,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
                 {t("lesson.analogy")}
               </span>
             </div>
-            <p className="text-lg font-bold uppercase tracking-tight text-zinc-400 leading-tight">
+            <p className="text-lg font-bold uppercase tracking-tight text-foreground-40 leading-tight">
               {isBn && section.realWorldAnalogyBn ? section.realWorldAnalogyBn : section.realWorldAnalogy}
             </p>
           </div>
@@ -122,7 +122,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
       <div className="max-w-4xl mb-16 relative">
         {(isBn && section.contentBn ? section.contentBn : section.content).split("\n\n").map((para, i) => renderParagraph(para, `${section.id}-p-${i}`, brandColor))}
         {/* Sub-border */}
-        <div className="absolute -left-4 top-0 bottom-0 w-0.5 bg-zinc-800" />
+        <div className="absolute -left-4 top-0 bottom-0 w-0.5 bg-foreground/10" />
       </div>
 
       <div className="space-y-16">
@@ -138,23 +138,23 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
                 <div style={{ backgroundColor: brandColor }} className="w-2 h-2" />
                 <span style={{ color: brandColor }} className="text-[10px] font-black tracking-[0.4em] uppercase italic">{t("system.exhibit")}_{ex.id.toUpperCase()}</span>
               </div>
-              <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-zinc-100">
+              <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-foreground">
                 {isBn && ex.titleBn ? ex.titleBn : ex.title}
               </h3>
             </div>
             <div className="flex flex-col items-end gap-1 opacity-20 hidden sm:flex">
               <span className="text-[8px] font-mono tracking-widest">TIMESTAMP: {Date.now()}</span>
-              <div className="h-px w-32 bg-zinc-700" />
+              <div className="h-px w-32 bg-foreground/10" />
             </div>
           </div>
           
-          <div className="bg-zinc-900/20 border border-border/40 p-1">
+          <div className="bg-surface/30 border border-border/40 p-1">
              <div className="bg-[#080808] border border-border/20 p-6 md:p-10 space-y-10">
                 <div className="flex items-start gap-4">
                    <div style={{ backgroundColor: `${brandColor}0D`, borderColor: `${brandColor}33` }} className="p-3 border shrink-0">
                       <Terminal style={{ color: brandColor }} className="h-5 w-5" />
                    </div>
-                   <p className="text-[15px] font-medium text-zinc-400 leading-relaxed max-w-3xl">
+                   <p className="text-[15px] font-medium text-foreground-40 leading-relaxed max-w-3xl">
                       {isBn && ex.descriptionBn ? ex.descriptionBn : ex.description}
                    </p>
                 </div>
@@ -165,12 +165,12 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
                     <MiniCompiler initial={ex.code} />
                   </div>
                   <div className="relative group/anno">
-                    <div className="absolute -top-3 left-6 px-2 py-0.5 bg-zinc-800 text-zinc-400 text-[8px] font-black uppercase tracking-[0.2em] z-20">{t("system.annotationMap")}</div>
+                    <div className="absolute -top-3 left-6 px-2 py-0.5 bg-foreground/10 text-foreground-40 text-[8px] font-black uppercase tracking-[0.2em] z-20">{t("system.annotationMap")}</div>
                     <AnnotatedCode code={ex.code} />
                   </div>
                 </div>
 
-                <div style={{ borderColor: `${brandColor}66` }} className="p-6 bg-zinc-950 border-t-2 relative overflow-hidden group/analysis">
+                <div style={{ borderColor: `${brandColor}66` }} className="p-6 bg-background border-t-2 relative overflow-hidden group/analysis">
                   <div className="absolute top-0 right-0 p-4 opacity-[0.02] group-hover/analysis:opacity-[0.05] transition-opacity">
                     <Activity style={{ color: brandColor }} className="h-16 w-16" />
                   </div>
@@ -178,7 +178,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
                     <Activity style={{ color: brandColor }} className="h-4 w-4 animate-pulse" />
                     <span style={{ color: brandColor }} className="text-[10px] font-black tracking-[0.3em] uppercase">{t("system.analysisLog")}</span>
                   </div>
-                  <p className="text-base text-zinc-300 leading-relaxed font-medium">
+                  <p className="text-base text-foreground-80 leading-relaxed font-medium">
                     {isBn && ex.explanationBn ? ex.explanationBn : ex.explanation}
                   </p>
                 </div>
@@ -192,7 +192,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
                     <div className="p-2 bg-yellow-500/10 border border-yellow-500/20">
                       <Zap className="h-4 w-4 text-yellow-400 fill-yellow-400" />
                     </div>
-                    <span className="text-sm font-bold uppercase tracking-wide text-zinc-400 italic">
+                    <span className="text-sm font-bold uppercase tracking-wide text-foreground-40 italic">
                       {isBn && ex.tryItPromptBn ? ex.tryItPromptBn : ex.tryItPrompt}
                     </span>
                   </motion.div>
@@ -205,7 +205,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
       {section.microExercise && (
         <div className="my-32 relative group">
           <div style={{ background: `linear-gradient(to right, ${brandColor}33, #3b82f61a, ${brandColor}33)` }} className="absolute -inset-1 opacity-40 blur-xl group-hover:opacity-60 transition-opacity" />
-          <div style={{ borderColor: `${brandColor}4D` }} className="relative bg-zinc-950 border p-8 md:p-16 overflow-hidden">
+          <div style={{ borderColor: `${brandColor}4D` }} className="relative bg-background border p-8 md:p-16 overflow-hidden">
             <div className="absolute top-0 right-0 p-12 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity rotate-12">
               <Zap style={{ color: brandColor }} className="h-64 w-64" />
             </div>
@@ -215,7 +215,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
                 <Zap className="h-4 w-4 fill-black" />
                 {t("lesson.microExercise")}
               </div>
-              <h4 className="text-4xl md:text-5xl font-black uppercase tracking-tighter max-w-3xl leading-[0.95] text-zinc-100">
+              <h4 className="text-4xl md:text-5xl font-black uppercase tracking-tighter max-w-3xl leading-[0.95] text-foreground">
                 {isBn && section.microExercise.instructionBn ? section.microExercise.instructionBn : section.microExercise.instruction}
               </h4>
             </div>
@@ -248,7 +248,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
                        <p className="text-[11px] font-black uppercase tracking-[0.3em] text-yellow-500 mb-2 flex items-center gap-2">
                           <Shield className="h-3.5 w-3.5" /> {t("system.hintEncrypted")}
                        </p>
-                       <p className="text-lg font-bold text-zinc-300 italic">
+                       <p className="text-lg font-bold text-foreground-80 italic">
                           {isBn && section.microExercise.hintBn ? section.microExercise.hintBn : section.microExercise.hint}
                        </p>
                     </div>
@@ -276,8 +276,8 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
                         </div>
                       </div>
                       <div className="relative">
-                        <div className="absolute -top-3 left-6 px-2 py-0.5 bg-zinc-800 text-zinc-400 text-[8px] font-black uppercase tracking-[0.2em] z-20">{t("system.solutionWalkthrough")}</div>
-                        <div className="p-1 bg-zinc-900/40 border border-border/20">
+                        <div className="absolute -top-3 left-6 px-2 py-0.5 bg-foreground/10 text-foreground-40 text-[8px] font-black uppercase tracking-[0.2em] z-20">{t("system.solutionWalkthrough")}</div>
+                        <div className="p-1 bg-surface/50 border border-border/20">
                           <AnnotatedCode code={section.microExercise.solution} />
                         </div>
                       </div>
@@ -306,19 +306,19 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
             >
               <ChevronDown className={cn(
                 "h-6 w-6 transition-transform",
-                showDeep ? "rotate-180 text-black" : "text-zinc-600 group-hover:text-primary"
+                showDeep ? "rotate-180 text-black" : "text-foreground-20 group-hover:text-primary"
               )} />
             </div>
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-1">
-                <Hash className="h-3 w-3 text-zinc-700" />
-                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-600">OPTIONAL_RESOURCES_v2.0</p>
+                <Hash className="h-3 w-3 text-foreground-20" />
+                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-foreground-20">OPTIONAL_RESOURCES_v2.0</p>
               </div>
               <span 
                 style={{ color: showDeep ? brandColor : undefined }}
                 className={cn(
                   "text-2xl md:text-3xl font-black uppercase tracking-tighter transition-colors",
-                  !showDeep && "text-zinc-500 group-hover:text-zinc-300"
+                  !showDeep && "text-foreground-40 group-hover:text-foreground-80"
                 )}
               >
                 {t("lesson.deepDive")}
@@ -334,7 +334,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
                 exit={{ opacity: 0, height: 0 }}
                 className="overflow-hidden"
               >
-                <div className="mt-12 p-10 md:p-16 bg-zinc-950 border border-border/40 relative">
+                <div className="mt-12 p-10 md:p-16 bg-background border border-border/40 relative">
                   <div className="absolute top-6 right-6 text-[9px] font-black text-zinc-800 tracking-[0.5em] uppercase">{t("system.accessGranted")}</div>
                   <div className="max-w-4xl relative">
                     {(isBn && section.deepDiveBn ? section.deepDiveBn : section.deepDive).split("\n\n").map((p, i) => renderParagraph(p, `${section.id}-d-${i}`, brandColor))}

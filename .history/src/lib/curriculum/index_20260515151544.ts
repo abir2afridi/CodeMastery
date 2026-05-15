@@ -11,9 +11,6 @@ import { w3cssTrack } from "./w3css-curriculum";
 import { colorsTrack } from "./colors-curriculum";
 import { phpTrack } from "./php-curriculum";
 import { htmldomTrack } from "./htmldom-curriculum";
-import { bootstrap3Track } from "./bootstrap3-curriculum";
-import { bootstrap4Track } from "./bootstrap4-curriculum";
-import { bootstrap5Track } from "./bootstrap5-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -198,61 +195,6 @@ export const tracks: Track[] = [
     chapters: htmldomTrack.chapters,
     brandColor: htmldomTrack.brandColor,
     glowColor: htmldomTrack.glowColor,
-  },
-  {
-    id: bootstrap3Track.id,
-    title: bootstrap3Track.title,
-    titleBn: bootstrap3Track.titleBn,
-    tagline: bootstrap3Track.tagline,
-    taglineBn: bootstrap3Track.taglineBn,
-    icon: "https://img.icons8.com/?size=96&id=EzPCiQUqWWEa&format=png",
-    colorVar: bootstrap3Track.colorVar,
-    totalChapters: bootstrap3Track.totalChapters,
-    estimatedHours: bootstrap3Track.estimatedHours,
-    chapters: bootstrap3Track.chapters,
-    brandColor: bootstrap3Track.brandColor,
-    glowColor: bootstrap3Track.glowColor,
-  },
-  {
-    id: bootstrap4Track.id,
-    title: bootstrap4Track.title,
-    titleBn: bootstrap4Track.titleBn,
-    tagline: bootstrap4Track.tagline,
-    taglineBn: bootstrap4Track.taglineBn,
-    icon: "https://img.icons8.com/?size=96&id=EzPCiQUqWWEa&format=png",
-    colorVar: bootstrap4Track.colorVar,
-    totalChapters: bootstrap4Track.totalChapters,
-    estimatedHours: bootstrap4Track.estimatedHours,
-    chapters: bootstrap4Track.chapters,
-    brandColor: bootstrap4Track.brandColor,
-    glowColor: bootstrap4Track.glowColor,
-  },
-  {
-    id: bootstrap5Track.id,
-    title: bootstrap5Track.title,
-    titleBn: bootstrap5Track.titleBn,
-    tagline: bootstrap5Track.tagline,
-    taglineBn: bootstrap5Track.taglineBn,
-    icon: "https://img.icons8.com/?size=96&id=EzPCiQUqWWEa&format=png",
-    colorVar: bootstrap5Track.colorVar,
-    totalChapters: bootstrap5Track.totalChapters,
-    estimatedHours: bootstrap5Track.estimatedHours,
-    chapters: bootstrap5Track.chapters,
-    brandColor: bootstrap5Track.brandColor,
-    glowColor: bootstrap5Track.glowColor,
-  },
-  {id: "sql",
-    title: "SQL",
-    titleBn: "এসকিউএল",
-    tagline: "Master the language of databases",
-    taglineBn: "ডাটাবেসের ভাষা মাস্টার করুন",
-    icon: "https://img.icons8.com/?size=96&id=J6KcaRLsTgpZ&format=png",
-    colorVar: "sql",
-    totalChapters: 0,
-    estimatedHours: 0,
-    chapters: [],
-    brandColor: "#4479A1",
-    glowColor: "rgba(68, 121, 161, 0.4)",
   },
 ];
 

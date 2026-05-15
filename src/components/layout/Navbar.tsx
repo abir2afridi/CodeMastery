@@ -1,16 +1,32 @@
 import { Link, useLocation } from "react-router-dom";
-import { Code2, Search, Activity } from "lucide-react";
+import { Code2, Search, Activity, Clock, Calendar } from "lucide-react";
 import { useProgress } from "@/hooks/useProgress";
 import { getLevel } from "@/lib/progress";
 import { useI18n } from "@/hooks/useI18n";
 import { motion } from "framer-motion";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import { useState, useEffect } from "react";
 
 export function Navbar() {
   const { progress } = useProgress();
   const location = useLocation();
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const lvl = progress ? getLevel(progress.totalXP) : null;
+
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = () => {
+    return time.toLocaleTimeString("en-US", { hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit" });
+  };
+
+  const formatDate = () => {
+    return time.toLocaleDateString(lang === "bn" ? "bn-BD" : "en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" });
+  };
 
   if (location.pathname === "/" || location.pathname.startsWith("/setup") || location.pathname.startsWith("/certificate") || location.pathname === "/compiler") {
     return null;
@@ -48,6 +64,20 @@ export function Navbar() {
 
         {/* Right: Actions */}
         <div className="flex items-center gap-4">
+          {/* Date & Time Display */}
+          <div className="hidden lg:flex items-center gap-3 px-3 py-1.5 border border-white/10 bg-muted/30">
+            <div className="flex items-center gap-1.5">
+              <Calendar className="h-3 w-3 text-primary" />
+              <span className="font-mono text-[10px] tracking-wide text-foreground">{formatDate()}</span>
+            </div>
+            <div className="h-4 w-px bg-white/20" />
+            <div className="flex items-center gap-1.5">
+              <Clock className="h-3 w-3 text-primary animate-pulse" />
+              <span className="font-mono text-[10px] tracking-wider text-foreground font-bold">{formatTime()}</span>
+            </div>
+          </div>
+
+          <div className="h-6 w-px bg-white/10" />
           <button
             onClick={openPalette}
             className="hidden md:flex items-center gap-3 px-4 py-2 border border-white/10 bg-muted/50 hover:bg-muted transition-all group/search"

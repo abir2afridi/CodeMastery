@@ -106,12 +106,12 @@ const Lesson = () => {
                   <div className="flex items-center gap-3">
                     <div className="h-4 w-1 bg-primary" />
                     {isLeftSidebarExpanded && (
-                      <span className="text-[10px] font-black tracking-[0.4em] uppercase text-foreground/40">{t("system.segmentIndex")}</span>
+                      <span className="text-[10px] font-black tracking-[0.4em] uppercase text-foreground-40">{t("system.segmentIndex")}</span>
                     )}
                   </div>
                   <button 
                     onClick={() => setIsLeftSidebarExpanded(!isLeftSidebarExpanded)}
-                    className="p-1 hover:bg-foreground/10 text-foreground/40 hover:text-foreground transition-colors flex-shrink-0"
+                    className="p-1 hover:bg-foreground/10 text-foreground-40 hover:text-foreground transition-colors flex-shrink-0"
                   >
                     {isLeftSidebarExpanded ? <ChevronLeft className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
                   </button>
@@ -143,7 +143,7 @@ const Lesson = () => {
                             <div className="flex items-center justify-between mb-2">
                               <span className={cn(
                                 "text-[8px] font-black tracking-[0.2em] uppercase",
-                                isCurrent ? "text-background/40" : "text-foreground/20"
+                                isCurrent ? "text-background/40" : "text-foreground-20"
                               )}>
                                 SEC_{c.number.toString().padStart(2, '0')}
                               </span>
@@ -157,7 +157,7 @@ const Lesson = () => {
                           <div className="flex flex-col items-center gap-2">
                             <span className={cn(
                               "text-[10px] font-black tracking-widest",
-                              isCurrent ? "text-background" : "text-foreground/40"
+                              isCurrent ? "text-background" : "text-foreground-40"
                             )}>
                               {c.number.toString().padStart(2, '0')}
                             </span>
@@ -183,7 +183,7 @@ const Lesson = () => {
                     <Shield className="h-4 w-4" />
                     <span className="text-[10px] font-black tracking-[0.2em] uppercase">{t("system.securityProtocol")}</span>
                   </div>
-                  <p className="text-[10px] font-medium leading-relaxed text-foreground/40 uppercase">
+                  <p className="text-[10px] font-medium leading-relaxed text-foreground-40 uppercase">
                     SESSION_ENCRYPTED. DATA_INTEGRITY_VERIFIED BY CODEMASTERY_CORE.
                   </p>
                 </div>
@@ -206,11 +206,11 @@ const Lesson = () => {
                       <Cpu className="h-4 w-4 text-primary-foreground" />
                     </div>
                     <div className="w-8 h-8 bg-background flex items-center justify-center border border-border">
-                      <Globe className="h-4 w-4 text-foreground/40" />
+                      <Globe className="h-4 w-4 text-foreground-40" />
                     </div>
                   </div>
                   <div className="h-[2px] flex-1 bg-foreground/5" />
-                  <span className="text-[10px] font-black tracking-[0.5em] text-foreground/20 uppercase">{t("system.dataStream")}</span>
+                  <span className="text-[10px] font-black tracking-[0.5em] text-foreground-20 uppercase">{t("system.dataStream")}</span>
                 </div>
 
                 <div className="space-y-4">
@@ -221,7 +221,7 @@ const Lesson = () => {
                       </span>
                     ))}
                   </h1>
-                  <p className="text-xl md:text-2xl font-bold tracking-tight text-foreground/40 uppercase max-w-3xl leading-tight">
+                  <p className="text-xl md:text-2xl font-bold tracking-tight text-foreground-40 uppercase max-w-3xl leading-tight">
                     {isBn && chapter.subtitleBn ? chapter.subtitleBn : chapter.subtitle}
                   </p>
                 </div>
@@ -232,7 +232,7 @@ const Lesson = () => {
                       <Layers className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <p className="text-[8px] font-black tracking-[0.2em] text-foreground/20 uppercase">{t("system.difficulty")}</p>
+                      <p className="text-[8px] font-black tracking-[0.2em] text-foreground-20 uppercase">{t("system.difficulty")}</p>
                       <p className="text-xs font-black tracking-widest uppercase">
                         {isBn ? t(`difficulty.${chapter.difficulty}`) : chapter.difficulty}
                       </p>
@@ -244,7 +244,7 @@ const Lesson = () => {
                       <Zap className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <p className="text-[8px] font-black tracking-[0.2em] text-foreground/20 uppercase">{t("system.reward")}</p>
+                      <p className="text-[8px] font-black tracking-[0.2em] text-foreground-20 uppercase">{t("system.reward")}</p>
                       <p className="text-xs font-black tracking-widest uppercase">{chapter.xpReward} XP</p>
                     </div>
                   </div>
@@ -254,7 +254,7 @@ const Lesson = () => {
                       <Clock className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <p className="text-[8px] font-black tracking-[0.2em] text-foreground/20 uppercase">{t("system.estLoad")}</p>
+                      <p className="text-[8px] font-black tracking-[0.2em] text-foreground-20 uppercase">{t("system.estLoad")}</p>
                       <p className="text-xs font-black tracking-widest uppercase">{chapter.estimatedMinutes} MIN</p>
                     </div>
                   </div>
@@ -277,7 +277,7 @@ const Lesson = () => {
                       <span className="text-[10px] font-black tracking-widest text-primary bg-primary/5 border border-primary/20 px-2 py-0.5">
                         OBJ_{String(i + 1).padStart(2, '0')}
                       </span>
-                      <p className="text-[13px] font-black uppercase tracking-wider leading-relaxed text-foreground/60 group-hover:text-foreground transition-colors">
+                      <p className="text-[13px] font-black uppercase tracking-wider leading-relaxed text-foreground-60 group-hover:text-foreground transition-colors">
                         {o}
                       </p>
                     </div>
@@ -301,13 +301,13 @@ const Lesson = () => {
                         <Hash className="h-6 w-6 text-primary" />
                         {t("system.commandBuffer")}
                       </h3>
-                      <span className="text-[10px] font-black tracking-[0.4em] text-foreground/20 uppercase">{t("system.readOnly")}</span>
+                      <span className="text-[10px] font-black tracking-[0.4em] text-foreground-20 uppercase">{t("system.readOnly")}</span>
                     </div>
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                       {chapter.cheatSheet.map((c, i) => (
                         <div key={i} className="p-5 border border-border bg-foreground/[0.01] space-y-3 hover:border-primary/30 transition-all group">
-                          <p className="text-[9px] font-black tracking-[0.2em] text-foreground/20 uppercase group-hover:text-primary/60 transition-colors">
+                          <p className="text-[9px] font-black tracking-[0.2em] text-foreground-20 uppercase group-hover:text-primary/60 transition-colors">
                             {isBn && c.labelBn ? c.labelBn : c.label}
                           </p>
                           <code className="text-xs font-black text-primary tracking-widest block bg-primary/5 p-2 border-l-2 border-primary">
@@ -343,7 +343,7 @@ const Lesson = () => {
                         
                         <div className="space-y-4">
                           <h3 className="text-4xl font-black uppercase tracking-tighter text-foreground">{t("system.syncSuccess")}</h3>
-                          <p className="text-[10px] font-black tracking-[0.5em] text-foreground/40 uppercase">{t("system.packetsCaptured")}</p>
+                          <p className="text-[10px] font-black tracking-[0.5em] text-foreground-40 uppercase">{t("system.packetsCaptured")}</p>
                         </div>
 
                         <div className="flex flex-wrap gap-4 justify-center pt-8">
@@ -374,7 +374,7 @@ const Lesson = () => {
                       >
                         <div className="space-y-4">
                           <h3 className="text-4xl font-black uppercase tracking-tighter text-foreground">{t("system.syncProgress")}</h3>
-                          <p className="text-[10px] font-black tracking-[0.5em] text-foreground/40 uppercase">
+                          <p className="text-[10px] font-black tracking-[0.5em] text-foreground-40 uppercase">
                             {canComplete 
                               ? t("system.readyHandshake")
                               : `${t("system.insufficientData")}: ${Math.round(scrollPct)}%`}
@@ -404,7 +404,7 @@ const Lesson = () => {
               <div className="flex flex-col sm:flex-row justify-between gap-6 pt-16 border-t-4 border-foreground/5">
                 {prev ? (
                   <Link to={`/learn/${trackId}/${prev.id}`} className="group">
-                    <div className="text-[9px] font-black tracking-[0.2em] text-foreground/20 uppercase mb-2 group-hover:text-foreground/40 transition-colors">{t("system.prevNode")}</div>
+                    <div className="text-[9px] font-black tracking-[0.2em] text-foreground-20 uppercase mb-2 group-hover:text-foreground-40 transition-colors">{t("system.prevNode")}</div>
                     <CyberpunkButton variant="outline" className="w-full sm:w-auto px-8 border-border group-hover:border-foreground/40">
                       <ArrowLeft className="h-4 w-4 mr-3" /> SEC_{prev.number.toString().padStart(2, '0')}
                     </CyberpunkButton>
@@ -413,7 +413,7 @@ const Lesson = () => {
                 
                 {next ? (
                   <Link to={`/learn/${trackId}/${next.id}`} className="group text-right">
-                    <div className="text-[9px] font-black tracking-[0.2em] text-foreground/20 uppercase mb-2 group-hover:text-foreground/40 transition-colors">{t("system.nextNode")}</div>
+                    <div className="text-[9px] font-black tracking-[0.2em] text-foreground-20 uppercase mb-2 group-hover:text-foreground-40 transition-colors">{t("system.nextNode")}</div>
                     <CyberpunkButton variant="outline" className="w-full sm:w-auto px-8 border-border group-hover:border-foreground/40">
                       SEC_{next.number.toString().padStart(2, '0')} <ArrowRight className="h-4 w-4 ml-3" />
                     </CyberpunkButton>
@@ -429,7 +429,7 @@ const Lesson = () => {
               <div>
                 <div className="flex items-center gap-3 mb-8">
                   <div className="h-4 w-1 bg-primary" />
-                  <span className="text-[10px] font-black tracking-[0.4em] uppercase text-foreground/40">{t("system.nodeMap")}</span>
+                  <span className="text-[10px] font-black tracking-[0.4em] uppercase text-foreground-40">{t("system.nodeMap")}</span>
                 </div>
                 
                 <ul className="space-y-6">
@@ -441,7 +441,7 @@ const Lesson = () => {
                       >
                         <div className="mt-1 w-2 h-2 border border-border group-hover:border-primary group-hover:bg-primary/20 transition-all" />
                         <div>
-                          <p className="text-[10px] font-black uppercase tracking-widest text-foreground/40 group-hover:text-primary transition-colors">
+                          <p className="text-[10px] font-black uppercase tracking-widest text-foreground-40 group-hover:text-primary transition-colors">
                             {isBn && s.titleBn ? s.titleBn : s.title}
                           </p>
                           <div className="h-[1px] w-0 bg-primary/30 group-hover:w-full transition-all duration-500 mt-1" />
@@ -455,24 +455,24 @@ const Lesson = () => {
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="h-4 w-1 bg-foreground/20" />
-                  <span className="text-[10px] font-black tracking-[0.4em] uppercase text-foreground/20">{t("system.metrics")}</span>
+                  <span className="text-[10px] font-black tracking-[0.4em] uppercase text-foreground-20">{t("system.metrics")}</span>
                 </div>
                 
                 <div className="p-6 bg-foreground/[0.02] border border-border/10 font-mono space-y-4">
                   <div className="flex justify-between items-center border-b border-border pb-2">
-                    <span className="text-[8px] text-foreground/20 uppercase">{t("system.coreVer")}</span>
-                    <span className="text-[8px] text-foreground/60">3.9.2-{t("system.stable")}</span>
+                    <span className="text-[8px] text-foreground-20 uppercase">{t("system.coreVer")}</span>
+                    <span className="text-[8px] text-foreground-60">3.9.2-{t("system.stable")}</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-border pb-2">
-                    <span className="text-[8px] text-foreground/20 uppercase">{t("system.syncLatency")}</span>
+                    <span className="text-[8px] text-foreground-20 uppercase">{t("system.syncLatency")}</span>
                     <span className="text-[8px] text-green-500/60">12MS</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-border pb-2">
-                    <span className="text-[8px] text-foreground/20 uppercase">{t("system.dataParity")}</span>
-                    <span className="text-[8px] text-foreground/60">{t("system.nominal")}</span>
+                    <span className="text-[8px] text-foreground-20 uppercase">{t("system.dataParity")}</span>
+                    <span className="text-[8px] text-foreground-60">{t("system.nominal")}</span>
                   </div>
                   <div className="pt-2">
-                    <div className="flex justify-between text-[8px] text-foreground/20 uppercase mb-2">
+                    <div className="flex justify-between text-[8px] text-foreground-20 uppercase mb-2">
                       <span>{t("system.bufferUsage")}</span>
                       <span>{Math.round(scrollPct)}%</span>
                     </div>

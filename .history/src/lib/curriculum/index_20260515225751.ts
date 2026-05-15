@@ -241,19 +241,6 @@ export const tracks: Track[] = [
     brandColor: bootstrap5Track.brandColor,
     glowColor: bootstrap5Track.glowColor,
   },
-  {id: "sql",
-    title: "SQL",
-    titleBn: "এসকিউএল",
-    tagline: "Master the language of databases",
-    taglineBn: "ডাটাবেসের ভাষা মাস্টার করুন",
-    icon: "https://img.icons8.com/?size=96&id=J6KcaRLsTgpZ&format=png",
-    colorVar: "sql",
-    totalChapters: 0,
-    estimatedHours: 0,
-    chapters: [],
-    brandColor: "#4479A1",
-    glowColor: "rgba(68, 121, 161, 0.4)",
-  },
 ];
 
 export const getTrack = (id: TrackId): Track | undefined => tracks.find((t) => t.id === id);

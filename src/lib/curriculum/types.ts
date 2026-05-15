@@ -1,4 +1,4 @@
-export type TrackId = "html" | "css" | "javascript" | "python" | "typescript" | "c" | "cpp" | "java" | "csharp" | "w3css" | "colors" | "php" | "htmldom";
+export type TrackId = "html" | "css" | "javascript" | "python" | "typescript" | "c" | "cpp" | "java" | "csharp" | "w3css" | "colors" | "php" | "htmldom" | "bootstrap3" | "bootstrap4" | "bootstrap5" | "sql";
 export type Difficulty = "Absolute Beginner" | "Beginner" | "Intermediate" | "Advanced" | "Expert";
 
 export interface CodeSnippet { html?: string; css?: string; javascript?: string; python?: string; c?: string; cpp?: string; java?: string; csharp?: string; php?: string; }

@@ -246,7 +246,7 @@ export const tracks: Track[] = [
     titleBn: "এসকিউএল",
     tagline: "Master the language of databases",
     taglineBn: "ডাটাবেসের ভাষা মাস্টার করুন",
-    icon: "https://img.icons8.com/?size=96&id=J6KcaRLsTgpZ&format=png",
+    icon: "https://img.icons8.com/?size=96&id=Yl2n9sXoLh5i&format=png",
     colorVar: "sql",
     totalChapters: 0,
     estimatedHours: 0,
