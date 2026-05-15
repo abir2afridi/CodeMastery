@@ -49,6 +49,10 @@ export function loadProgress(): UserProgress | null {
     if (!progress.tracks.php) {
       progress.tracks.php = emptyTrack();
     }
+    // Migration: Add HTML DOM track if missing
+    if (!progress.tracks.htmldom) {
+      progress.tracks.htmldom = emptyTrack();
+    }
 
     saveProgress(progress);
 
@@ -84,6 +88,7 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       w3css: emptyTrack(),
       colors: emptyTrack(),
       php: emptyTrack(),
+      htmldom: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);

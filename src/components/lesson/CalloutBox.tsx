@@ -16,6 +16,7 @@ const styles: Record<Callout["type"], { icon: LucideIcon; accent: string; bg: st
   "modern-cpp": { icon: Zap, accent: "border-purple-500", bg: "bg-purple-500/5", label: "MODERN_CPP", text: "text-purple-500" },
   "csharp-bridge": { icon: BookOpen, accent: "border-purple-400", bg: "bg-purple-400/5", label: "CSHARP_BRIDGE", text: "text-purple-400" },
   "php-bridge": { icon: BookOpen, accent: "border-php", bg: "bg-php/5", label: "PHP_BRIDGE", text: "text-php" },
+  "dom-bridge": { icon: BookOpen, accent: "border-yellow-500", bg: "bg-yellow-500/5", label: "DOM_BRIDGE", text: "text-yellow-500" },
 };
 
 export function CalloutBox({ callout }: { callout: Callout }) {

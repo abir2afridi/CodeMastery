@@ -188,7 +188,7 @@ export const tracks: Track[] = [
     titleBn: htmldomTrack.titleBn,
     tagline: htmldomTrack.tagline,
     taglineBn: htmldomTrack.taglineBn,
-    icon: "https://img.icons8.com/?size=96&id=ITAVJ2SvdgZx&format=png",
+    icon: "https://img.icons8.com/?size=160&id=QXnzA1HXKu6u&format=png",
     colorVar: htmldomTrack.colorVar,
     totalChapters: htmldomTrack.totalChapters,
     estimatedHours: htmldomTrack.estimatedHours,

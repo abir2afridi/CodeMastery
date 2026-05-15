@@ -10,7 +10,6 @@ import { csharpTrack } from "./csharp-curriculum";
 import { w3cssTrack } from "./w3css-curriculum";
 import { colorsTrack } from "./colors-curriculum";
 import { phpTrack } from "./php-curriculum";
-import { htmldomTrack } from "./htmldom-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -181,20 +180,6 @@ export const tracks: Track[] = [
     chapters: phpTrack.chapters,
     brandColor: phpTrack.brandColor,
     glowColor: phpTrack.glowColor,
-  },
-  {
-    id: "htmldom",
-    title: htmldomTrack.title,
-    titleBn: htmldomTrack.titleBn,
-    tagline: htmldomTrack.tagline,
-    taglineBn: htmldomTrack.taglineBn,
-    icon: "https://img.icons8.com/?size=96&id=ITAVJ2SvdgZx&format=png",
-    colorVar: htmldomTrack.colorVar,
-    totalChapters: htmldomTrack.totalChapters,
-    estimatedHours: htmldomTrack.estimatedHours,
-    chapters: htmldomTrack.chapters,
-    brandColor: htmldomTrack.brandColor,
-    glowColor: htmldomTrack.glowColor,
   },
 ];
 

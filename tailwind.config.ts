@@ -94,6 +94,7 @@ export default {
         w3css: "hsl(var(--w3css-color))",
         colors: "hsl(var(--colors-color))",
         php: "hsl(var(--php-color))",
+        htmldom: "hsl(var(--htmldom-color))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
