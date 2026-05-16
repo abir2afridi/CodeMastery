@@ -7,6 +7,7 @@ import { CppCompiler } from "@/components/compiler/CppCompiler";
 import { JavaCompiler } from "@/components/compiler/JavaCompiler";
 import { CSharpCompiler } from "@/components/compiler/CSharpCompiler";
 import { PhpCompiler } from "@/components/compiler/PhpCompiler";
+import SQLCompiler from "@/components/compiler/SQLCompiler";
 
 const CompilerPage = () => {
   const [params] = useSearchParams();
@@ -38,6 +39,10 @@ const CompilerPage = () => {
 
   if (track === "php") {
     return <PhpCompiler initialCode={params.get("code") || undefined} />;
+  }
+
+  if (track === "sql") {
+    return <SQLCompiler />;
   }
 
   return (

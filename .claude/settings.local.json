@@ -5,7 +5,8 @@
       "Bash(npx tsc *)",
       "Bash(powershell -Command \"\\(Get-Content 'd:\\\\GitHub Project\\\\CodeMastery\\\\src\\\\lib\\\\curriculum\\\\typescript-curriculum.ts'\\).Count\")",
       "Bash(npm run *)",
-      "Bash(grep -E \"^\\\\s*\\\\{$\" src/lib/curriculum/typescript-curriculum.ts)"
+      "Bash(grep -E \"^\\\\s*\\\\{$\" src/lib/curriculum/typescript-curriculum.ts)",
+      "Bash(npm install *)"
     ]
   }
 }
