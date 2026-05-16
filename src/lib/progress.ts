@@ -69,6 +69,10 @@ export function loadProgress(): UserProgress | null {
     if (!progress.tracks.sql) {
       progress.tracks.sql = emptyTrack();
     }
+    // Migration: Add MySQL track if missing
+    if (!progress.tracks.mysql) {
+      progress.tracks.mysql = emptyTrack();
+    }
 
     saveProgress(progress);
 
@@ -109,6 +113,7 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       bootstrap4: emptyTrack(),
       bootstrap5: emptyTrack(),
       sql: emptyTrack(),
+      mysql: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);

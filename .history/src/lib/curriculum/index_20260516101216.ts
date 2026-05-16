@@ -15,7 +15,6 @@ import { bootstrap3Track } from "./bootstrap3-curriculum";
 import { bootstrap4Track } from "./bootstrap4-curriculum";
 import { bootstrap5Track } from "./bootstrap5-curriculum";
 import { sqlTrack } from "./sql-curriculum";
-import { mysqlTrack } from "./mysql-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -257,19 +256,18 @@ export const tracks: Track[] = [
     brandColor: sqlTrack.brandColor,
     glowColor: sqlTrack.glowColor,
   },
-  {
-    id: mysqlTrack.id,
-    title: mysqlTrack.title,
-    titleBn: mysqlTrack.titleBn,
-    tagline: mysqlTrack.tagline,
-    taglineBn: mysqlTrack.taglineBn,
-    icon: "https://img.icons8.com/?size=160&id=QeIg9siFKGgp&format=png",
-    colorVar: mysqlTrack.colorVar,
-    totalChapters: mysqlTrack.totalChapters,
-    estimatedHours: mysqlTrack.estimatedHours,
-    chapters: mysqlTrack.chapters,
-    brandColor: mysqlTrack.brandColor,
-    glowColor: mysqlTrack.glowColor,
+  {id: "mysql",
+    title: "MySQL",
+    titleBn: "MySQL",
+    tagline: "The world's most popular open-source database",
+    taglineBn: "বিশ্বের সবচেয়ে জনপ্রিয় ওপেন-সোর্স ডাটাবেস",
+    icon: "https://img.icons8.com/?size=96&id=J6KcaRLsTgpZ&format=png",
+    colorVar: "mysql",
+    totalChapters: 0,
+    estimatedHours: 0,
+    chapters: [],
+    brandColor: "#4479A1",
+    glowColor: "rgba(68, 121, 161, 0.4)",
   },
 ];
 
