@@ -73,6 +73,10 @@ export function loadProgress(): UserProgress | null {
     if (!progress.tracks.mysql) {
       progress.tracks.mysql = emptyTrack();
     }
+    // Migration: Add Angular track if missing
+    if (!progress.tracks.angular) {
+      progress.tracks.angular = emptyTrack();
+    }
 
     saveProgress(progress);
 
@@ -114,6 +118,7 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       bootstrap5: emptyTrack(),
       sql: emptyTrack(),
       mysql: emptyTrack(),
+      angular: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);

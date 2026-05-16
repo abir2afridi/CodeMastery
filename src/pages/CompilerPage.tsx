@@ -9,6 +9,7 @@ import { CSharpCompiler } from "@/components/compiler/CSharpCompiler";
 import { PhpCompiler } from "@/components/compiler/PhpCompiler";
 import SQLCompiler from "@/components/compiler/SQLCompiler";
 import MySQLCompiler from "@/components/compiler/MySQLCompiler";
+import AngularCompiler from "@/components/compiler/AngularCompiler";
 
 const CompilerPage = () => {
   const [params] = useSearchParams();
@@ -48,6 +49,10 @@ const CompilerPage = () => {
 
   if (track === "mysql") {
     return <MySQLCompiler />;
+  }
+
+  if (track === "angular") {
+    return <AngularCompiler />;
   }
 
   return (

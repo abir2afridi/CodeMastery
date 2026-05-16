@@ -16,7 +16,6 @@ import { bootstrap4Track } from "./bootstrap4-curriculum";
 import { bootstrap5Track } from "./bootstrap5-curriculum";
 import { sqlTrack } from "./sql-curriculum";
 import { mysqlTrack } from "./mysql-curriculum";
-import { angularTrack } from "./angular-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -272,19 +271,18 @@ export const tracks: Track[] = [
     brandColor: mysqlTrack.brandColor,
     glowColor: mysqlTrack.glowColor,
   },
-  {
-    id: angularTrack.id,
-    title: angularTrack.title,
-    titleBn: angularTrack.titleBn,
-    tagline: angularTrack.tagline,
-    taglineBn: angularTrack.taglineBn,
-    icon: "https://img.icons8.com/?size=160&id=6SWtW8hxZWSo&format=png",
-    colorVar: angularTrack.colorVar,
-    totalChapters: angularTrack.totalChapters,
-    estimatedHours: angularTrack.estimatedHours,
-    chapters: angularTrack.chapters,
-    brandColor: angularTrack.brandColor,
-    glowColor: angularTrack.glowColor,
+  {    id: "angular",
+    title: "Angular",
+    titleBn: "অ্যাঙ্গুলার",
+    tagline: "One framework. Mobile & desktop.",
+    taglineBn: "একটি ফ্রেমওয়ার্ক। মোবাইল এবং ডেস্কটপ।",
+    icon: "https://img.icons8.com/color/144/angularjs.png",
+    colorVar: "angular",
+    totalChapters: 0,
+    estimatedHours: 0,
+    chapters: [],
+    brandColor: "#DD0031",
+    glowColor: "rgba(221, 0, 49, 0.4)",
   },
 ];
 
