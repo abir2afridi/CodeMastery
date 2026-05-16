@@ -2,12 +2,12 @@
 🚀 Zero-to-Pro Web Development Learning Platform
 
 ## Overview
-CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, and Web Colors. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
+CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, Web Colors, PHP, SQL, MySQL, Angular, and Vue. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
 
 ## 🌟 Key Features
 
-- **Interactive Multi-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, and Web Colors panels with real-time preview
-- **Comprehensive Curriculum**: 775+ chapters covering everything from basics to advanced concepts
+- **Interactive Multi-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, PHP, SQL, MySQL, Angular, and Vue panels with real-time preview
+- **Comprehensive Curriculum**: 850+ chapters covering everything from basics to advanced concepts
 - **Progress Tracking**: XP system, streaks, achievements, and detailed progress analytics
 - **Certificate Generation**: Beautiful certificates upon track completion
 - **Project-Based Learning**: Real-world projects at every skill level
@@ -157,6 +157,38 @@ CodeMastery is a comprehensive web development learning platform designed to tak
 **Part 8: Advanced C and Projects (Chapters 69-85)**
 - Standard Library, Math Functions, Time/Date, Signals, Multithreading, Socket Programming, Portable Code, Interview Questions, and 6 Comprehensive Projects
 
+### Angular Track (70+ Chapters - ~115 hours)
+**Part 1: Angular Fundamentals**
+- What Is Angular and Why Use It?, Angular CLI Setup, Angular Project Structure, TypeScript Refresher, Components and Templates, Data Binding, Event Handling, Directives
+
+**Part 2: Components Deep Dive**
+- Component Communication, Pipes, Forms (Template-driven & Reactive), Dependency Injection, Services and HTTP, Routing, RxJS Fundamentals
+
+**Part 3: State Management & Advanced**
+- Angular Signals, Standalone Components, Server-Side Rendering (SSR), Testing, Performance Optimization, Deployment
+
+### Vue Track (75 Chapters - ~125 hours)
+**Part 1: Vue Fundamentals (Chapters 1-12)**
+- What Is Vue and Why Developers Love It?, Vue 3 Setup with Vite, Vue Project Structure, Reactivity System, Templates and Directives, Data Binding, Event Handling, Computed Properties, Watchers, Conditional Rendering, List Rendering, Component Basics
+
+**Part 2: Components & Composition API (Chapters 13-24)**
+- Props, Emits, Slots, Dynamic Components, Lifecycle Hooks, Composition API Fundamentals, setup() Function, Reactive vs Ref, Composables, Dependency Injection, Teleport, Suspense
+
+**Part 3: Routing & State Management (Chapters 25-36)**
+- Vue Router, Nested Routes, Dynamic Routes, Route Guards, Lazy Loading, Pinia Introduction, State Management, Actions and Getters, Store Architecture, Persisted State, API Data Stores, Authentication State
+
+**Part 4: Forms, APIs & Real Apps (Chapters 37-48)**
+- Forms in Vue, Form Validation, Async Operations, Fetch API, Axios with Vue, Error Handling, Authentication Systems, Protected Routes, File Uploads, Realtime Features, Vue Transitions, Animations
+
+**Part 5: Advanced Vue (Chapters 49-60)**
+- Vue Performance Optimization, Code Splitting, Async Components, Vue SSR, Nuxt.js Introduction, Vue with TypeScript, Accessibility, Vue Testing, Vitest, Component Testing, Security Best Practices, Vue Architecture Patterns
+
+**Part 6: Deployment & Ecosystem (Chapters 61-68)**
+- Vite Build System, Environment Variables, Production Builds, Deploying Vue Apps, CI/CD Workflows, PWA with Vue, Vue DevTools, Vue Ecosystem Overview
+
+**Part 7: Projects (Chapters 69-75)**
+- Project: Todo App, Project: Weather Dashboard, Project: Ecommerce Frontend, Project: Chat Application, Project: Admin Dashboard, Vue Challenge Set, Vue Mastery Recap + Certificate Prep
+
 ## 🎯 Learning Philosophy
 - **Zero Prior Knowledge Assumed**: Every chapter starts from scratch
 - **Real-World Analogies First**: Technical concepts explained through relatable examples
@@ -215,7 +247,7 @@ src/
 │   ├── lesson/         # Lesson content and interactions
 │   └── quiz/           # Quiz system components
 ├── lib/
-│   ├── curriculum/     # All course content (585+ chapters)
+│   ├── curriculum/     # All course content (850+ chapters)
 │   │   ├── html-curriculum.ts
 │   │   ├── css-curriculum.ts
 │   │   ├── js-curriculum.ts

@@ -77,6 +77,10 @@ export function loadProgress(): UserProgress | null {
     if (!progress.tracks.angular) {
       progress.tracks.angular = emptyTrack();
     }
+    // Migration: Add Vue track if missing
+    if (!progress.tracks.vue) {
+      progress.tracks.vue = emptyTrack();
+    }
 
     saveProgress(progress);
 
@@ -119,6 +123,7 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       sql: emptyTrack(),
       mysql: emptyTrack(),
       angular: emptyTrack(),
+      vue: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);

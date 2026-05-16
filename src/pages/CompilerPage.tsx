@@ -10,6 +10,7 @@ import { PhpCompiler } from "@/components/compiler/PhpCompiler";
 import SQLCompiler from "@/components/compiler/SQLCompiler";
 import MySQLCompiler from "@/components/compiler/MySQLCompiler";
 import AngularCompiler from "@/components/compiler/AngularCompiler";
+import VueCompiler from "@/components/compiler/VueCompiler";
 
 const CompilerPage = () => {
   const [params] = useSearchParams();
@@ -53,6 +54,10 @@ const CompilerPage = () => {
 
   if (track === "angular") {
     return <AngularCompiler />;
+  }
+
+  if (track === "vue") {
+    return <VueCompiler />;
   }
 
   return (
