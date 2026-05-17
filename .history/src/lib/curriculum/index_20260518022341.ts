@@ -19,7 +19,6 @@ import { mysqlTrack } from "./mysql-curriculum";
 import { angularTrack } from "./angular-curriculum";
 import { vueTrack } from "./vue-curriculum";
 import { reactTrack } from "./react-curriculum";
-import { kotlinTrack } from "./kotlin-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -303,33 +302,19 @@ export const tracks: Track[] = [
     brandColor: vueTrack.brandColor,
     glowColor: vueTrack.glowColor,
   },
-{
+  {
     id: reactTrack.id,
     title: reactTrack.title,
     titleBn: reactTrack.titleBn,
     tagline: reactTrack.tagline,
     taglineBn: reactTrack.taglineBn,
-    icon: "https://img.icons8.com/?size=128&id=p57acgidi9bj&format=png",
+    icon: "https://img.icons8.com/?size=96&id=123603&format=png",
     colorVar: reactTrack.colorVar,
     totalChapters: reactTrack.totalChapters,
     estimatedHours: reactTrack.estimatedHours,
     chapters: reactTrack.chapters,
     brandColor: reactTrack.brandColor,
     glowColor: reactTrack.glowColor,
-  },
-  {
-    id: kotlinTrack.id,
-    title: kotlinTrack.title,
-    titleBn: kotlinTrack.titleBn,
-    tagline: kotlinTrack.tagline,
-    taglineBn: kotlinTrack.taglineBn,
-    icon: "https://img.icons8.com/?size=96&id=ZoxjA0jZDdFZ&format=png",
-    colorVar: kotlinTrack.colorVar,
-    totalChapters: kotlinTrack.totalChapters,
-    estimatedHours: kotlinTrack.estimatedHours,
-    chapters: kotlinTrack.chapters,
-    brandColor: kotlinTrack.brandColor,
-    glowColor: kotlinTrack.glowColor,
   },
 ];
 

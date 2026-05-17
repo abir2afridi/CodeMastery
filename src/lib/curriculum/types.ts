@@ -1,7 +1,7 @@
-export type TrackId = "html" | "css" | "javascript" | "python" | "typescript" | "c" | "cpp" | "java" | "csharp" | "w3css" | "colors" | "php" | "htmldom" | "bootstrap3" | "bootstrap4" | "bootstrap5" | "sql" | "mysql" | "angular";
+export type TrackId = "html" | "css" | "javascript" | "python" | "typescript" | "c" | "cpp" | "java" | "csharp" | "w3css" | "colors" | "php" | "htmldom" | "bootstrap3" | "bootstrap4" | "bootstrap5" | "sql" | "mysql" | "angular" | "vue" | "react" | "kotlin";
 export type Difficulty = "Absolute Beginner" | "Beginner" | "Intermediate" | "Advanced" | "Expert";
 
-export interface CodeSnippet { html?: string; css?: string; javascript?: string; python?: string; c?: string; cpp?: string; java?: string; csharp?: string; php?: string; }
+export interface CodeSnippet { html?: string; css?: string; javascript?: string; python?: string; c?: string; cpp?: string; java?: string; csharp?: string; php?: string; kotlin?: string; }
 
 export interface Callout {
   type: "tip" | "warning" | "error" | "info" | "analogy" | "common-mistake" | "pro-tip" | "c-connection" | "modern-cpp" | "csharp-bridge" | "php-bridge" | "dom-bridge";

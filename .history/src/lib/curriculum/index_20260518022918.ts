@@ -323,7 +323,7 @@ export const tracks: Track[] = [
     titleBn: kotlinTrack.titleBn,
     tagline: kotlinTrack.tagline,
     taglineBn: kotlinTrack.taglineBn,
-    icon: "https://img.icons8.com/?size=96&id=ZoxjA0jZDdFZ&format=png",
+    icon: kotlinTrack.icon,
     colorVar: kotlinTrack.colorVar,
     totalChapters: kotlinTrack.totalChapters,
     estimatedHours: kotlinTrack.estimatedHours,
