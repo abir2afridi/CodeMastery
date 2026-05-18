@@ -119,6 +119,12 @@ export default {
         dsa: "hsl(var(--dsa-color))",
         xml: "hsl(var(--xml-color))",
         json: "hsl(var(--json-color))",
+        nodejs: "hsl(var(--nodejs-color))",
+        asp: "hsl(var(--asp-color))",
+        cybersecurity: "hsl(var(--cybersecurity-color))",
+        aws: "hsl(var(--aws-color))",
+        machinelearning: "hsl(var(--machinelearning-color))",
+        statistic: "hsl(var(--statistic-color))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

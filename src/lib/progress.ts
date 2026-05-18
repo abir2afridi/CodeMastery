@@ -149,6 +149,27 @@ export function loadProgress(): UserProgress | null {
     if (!progress.tracks.json) {
       progress.tracks.json = emptyTrack();
     }
+    // Migration: Add NodeJS track if missing
+    if (!progress.tracks.nodejs) {
+      progress.tracks.nodejs = emptyTrack();
+    }
+    // Migration: Add ASP track if missing
+    if (!progress.tracks.asp) {
+      progress.tracks.asp = emptyTrack();
+    }
+    // Migration: Add CyberSecurity track if missing
+    if (!progress.tracks.cybersecurity) {
+      progress.tracks.cybersecurity = emptyTrack();
+    }
+    if (!progress.tracks.aws) {
+      progress.tracks.aws = emptyTrack();
+    }
+    if (!progress.tracks.machinelearning) {
+      progress.tracks.machinelearning = emptyTrack();
+    }
+    if (!progress.tracks.statistic) {
+      progress.tracks.statistic = emptyTrack();
+    }
 
     saveProgress(progress);
 
@@ -209,6 +230,12 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       dsa: emptyTrack(),
       xml: emptyTrack(),
       json: emptyTrack(),
+      nodejs: emptyTrack(),
+      asp: emptyTrack(),
+      cybersecurity: emptyTrack(),
+      aws: emptyTrack(),
+      machinelearning: emptyTrack(),
+      statistic: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);

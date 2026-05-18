@@ -79,6 +79,12 @@
     --dsa-color: 18 94% 58%; /* DSA orange #FF6B35 */
     --xml-color: 24 100% 50%; /* XML orange #FF6600 */
     --json-color: 48 100% 50%; /* JSON yellow #F7DF1E */
+    --nodejs-color: 111 26% 51%; /* NodeJS green #68A063 */
+    --asp-color: 210 100% 40%; /* ASP blue #0066CC */
+    --cybersecurity-color: 140 100% 39%; /* CyberSecurity green #00C853 */
+    --aws-color: 34 100% 50%; /* AWS orange #FF9900 */
+    --machinelearning-color: 262 100% 69%; /* ML purple #7B61FF */
+    --statistic-color: 187 100% 38%; /* Stats cyan #00ACC1 */
 
     /* Sidebar Colors */
     --sidebar-background: 264 59% 23%;

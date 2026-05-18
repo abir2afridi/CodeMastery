@@ -35,6 +35,12 @@ import { excelTrack } from "./excel-curriculum";
 import { dsaTrack } from "./dsa-curriculum";
 import { xmlTrack } from "./xml-curriculum";
 import { jsonTrack } from "./json-curriculum";
+import { nodejsTrack } from "./nodejs-curriculum";
+import { aspTrack } from "./asp-curriculum";
+import { cybersecurityTrack } from "./cybersecurity-curriculum";
+import { awsTrack } from "./aws-curriculum";
+import { machinelearningTrack } from "./machinelearning-curriculum";
+import { statisticTrack } from "./statistic-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -555,6 +561,90 @@ export const tracks: Track[] = [
     chapters: jsonTrack.chapters,
     brandColor: jsonTrack.brandColor,
     glowColor: jsonTrack.glowColor,
+  },
+  {
+    id: nodejsTrack.id,
+    title: nodejsTrack.title,
+    titleBn: nodejsTrack.titleBn,
+    tagline: nodejsTrack.tagline,
+    taglineBn: nodejsTrack.taglineBn,
+    icon: nodejsTrack.icon,
+    colorVar: nodejsTrack.colorVar,
+    totalChapters: nodejsTrack.totalChapters,
+    estimatedHours: nodejsTrack.estimatedHours,
+    chapters: nodejsTrack.chapters,
+    brandColor: nodejsTrack.brandColor,
+    glowColor: nodejsTrack.glowColor,
+  },
+  {
+    id: aspTrack.id,
+    title: aspTrack.title,
+    titleBn: aspTrack.titleBn,
+    tagline: aspTrack.tagline,
+    taglineBn: aspTrack.taglineBn,
+    icon: aspTrack.icon,
+    colorVar: aspTrack.colorVar,
+    totalChapters: aspTrack.totalChapters,
+    estimatedHours: aspTrack.estimatedHours,
+    chapters: aspTrack.chapters,
+    brandColor: aspTrack.brandColor,
+    glowColor: aspTrack.glowColor,
+  },
+  {
+    id: cybersecurityTrack.id,
+    title: cybersecurityTrack.title,
+    titleBn: cybersecurityTrack.titleBn,
+    tagline: cybersecurityTrack.tagline,
+    taglineBn: cybersecurityTrack.taglineBn,
+    icon: cybersecurityTrack.icon,
+    colorVar: cybersecurityTrack.colorVar,
+    totalChapters: cybersecurityTrack.totalChapters,
+    estimatedHours: cybersecurityTrack.estimatedHours,
+    chapters: cybersecurityTrack.chapters,
+    brandColor: cybersecurityTrack.brandColor,
+    glowColor: cybersecurityTrack.glowColor,
+  },
+  {
+    id: awsTrack.id,
+    title: awsTrack.title,
+    titleBn: awsTrack.titleBn,
+    tagline: awsTrack.tagline,
+    taglineBn: awsTrack.taglineBn,
+    icon: awsTrack.icon,
+    colorVar: awsTrack.colorVar,
+    totalChapters: awsTrack.totalChapters,
+    estimatedHours: awsTrack.estimatedHours,
+    chapters: awsTrack.chapters,
+    brandColor: awsTrack.brandColor,
+    glowColor: awsTrack.glowColor,
+  },
+  {
+    id: machinelearningTrack.id,
+    title: machinelearningTrack.title,
+    titleBn: machinelearningTrack.titleBn,
+    tagline: machinelearningTrack.tagline,
+    taglineBn: machinelearningTrack.taglineBn,
+    icon: machinelearningTrack.icon,
+    colorVar: machinelearningTrack.colorVar,
+    totalChapters: machinelearningTrack.totalChapters,
+    estimatedHours: machinelearningTrack.estimatedHours,
+    chapters: machinelearningTrack.chapters,
+    brandColor: machinelearningTrack.brandColor,
+    glowColor: machinelearningTrack.glowColor,
+  },
+  {
+    id: statisticTrack.id,
+    title: statisticTrack.title,
+    titleBn: statisticTrack.titleBn,
+    tagline: statisticTrack.tagline,
+    taglineBn: statisticTrack.taglineBn,
+    icon: statisticTrack.icon,
+    colorVar: statisticTrack.colorVar,
+    totalChapters: statisticTrack.totalChapters,
+    estimatedHours: statisticTrack.estimatedHours,
+    chapters: statisticTrack.chapters,
+    brandColor: statisticTrack.brandColor,
+    glowColor: statisticTrack.glowColor,
   },
 ];
 

@@ -28,6 +28,12 @@ import ExcelStudio from "@/components/compiler/ExcelStudio";
 import DSAVisualizerLab from "@/components/compiler/DSAVisualizerLab";
 import XMLPlayground from "@/components/compiler/XMLPlayground";
 import JSONPlayground from "@/components/compiler/JSONPlayground";
+import NodeJSPlayground from "@/components/compiler/NodeJSPlayground";
+import ASPPlayground from "@/components/compiler/ASPPlayground";
+import SecurityLab from "@/components/compiler/SecurityLab";
+import AwsConsoleLab from "@/components/compiler/AwsConsoleLab";
+import MachineLearningLab from "@/components/compiler/MachineLearningLab";
+import StatisticsLab from "@/components/compiler/StatisticsLab";
 
 const CompilerPage = () => {
   const [params] = useSearchParams();
@@ -143,6 +149,30 @@ const CompilerPage = () => {
 
   if (track === "json") {
     return <JSONPlayground />;
+  }
+
+  if (track === "nodejs") {
+    return <NodeJSPlayground />;
+  }
+
+  if (track === "asp") {
+    return <ASPPlayground />;
+  }
+
+  if (track === "cybersecurity") {
+    return <SecurityLab />;
+  }
+
+  if (track === "aws") {
+    return <AwsConsoleLab />;
+  }
+
+  if (track === "machinelearning") {
+    return <MachineLearningLab />;
+  }
+
+  if (track === "statistic") {
+    return <StatisticsLab />;
   }
 
   return (
