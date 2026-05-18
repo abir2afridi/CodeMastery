@@ -2,12 +2,12 @@
 🚀 Zero-to-Pro Web Development Learning Platform
 
 ## Overview
-CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, Web Colors, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, Kotlin, and jQuery. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
+CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, Web Colors, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, Kotlin, jQuery, and NumPy. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
 
 ## 🌟 Key Features
 
-- **Interactive Multi-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, Kotlin, and jQuery panels with real-time preview
-- **Comprehensive Curriculum**: 985+ chapters covering everything from basics to advanced concepts
+- **Interactive Multi-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, Kotlin, jQuery, and NumPy panels with real-time preview
+- **Comprehensive Curriculum**: 1050+ chapters covering everything from basics to advanced concepts
 - **Progress Tracking**: XP system, streaks, achievements, and detailed progress analytics
 - **Certificate Generation**: Beautiful certificates upon track completion
 - **Project-Based Learning**: Real-world projects at every skill level
@@ -176,6 +176,10 @@ CodeMastery is a comprehensive web development learning platform designed to tak
 **Part 6: Projects (Chapters 53-60)**
 - Interactive Todo App, Image Gallery, AJAX Weather App, Dynamic Form Builder, Admin Dashboard, Mini Challenge Sets, jQuery Mastery Recap + Certificate
 
+### NumPy Track (10 Chapters - ~5 hours)
+**Part 1: NumPy Fundamentals (Chapters 1-10)**
+- What Is NumPy and Why It Matters?, Installing NumPy, NumPy Arrays vs Python Lists, Creating Arrays, Array Attributes and Shapes, Indexing and Slicing, Array Operations, Data Types in NumPy, Reshaping Arrays, Array Iteration
+
 ### W3.CSS Track (55 Chapters - ~45 hours)
 ### Web Colors Track (50 Chapters - ~40 hours)
 **Part 1: Absolute Beginning (Chapters 1-8)**
@@ -292,7 +296,7 @@ src/
 │   ├── lesson/         # Lesson content and interactions
 │   └── quiz/           # Quiz system components
 ├── lib/
-│   ├── curriculum/     # All course content (985+ chapters)
+│   ├── curriculum/     # All course content (1050+ chapters)
 │   │   ├── html-curriculum.ts
 │   │   ├── css-curriculum.ts
 │   │   ├── js-curriculum.ts
@@ -301,6 +305,7 @@ src/
 │   │   ├── kotlin-curriculum.ts
 │   │   ├── postgresql-curriculum.ts
 │   │   ├── jquery-curriculum.ts
+│   │   ├── numpy-curriculum.ts
 │   │   └── index.ts
 │   ├── progress.ts      # User progress tracking
 │   ├── certificate.ts  # Certificate generation

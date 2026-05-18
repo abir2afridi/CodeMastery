@@ -22,6 +22,7 @@ import { reactTrack } from "./react-curriculum";
 import { kotlinTrack } from "./kotlin-curriculum";
 import { postgresqlTrack } from "./postgresql-curriculum";
 import { jqueryTrack } from "./jquery-curriculum";
+import { numpyTrack } from "./numpy-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -360,6 +361,20 @@ export const tracks: Track[] = [
     chapters: jqueryTrack.chapters,
     brandColor: jqueryTrack.brandColor,
     glowColor: jqueryTrack.glowColor,
+  },
+  {
+    id: numpyTrack.id,
+    title: numpyTrack.title,
+    titleBn: numpyTrack.titleBn,
+    tagline: numpyTrack.tagline,
+    taglineBn: numpyTrack.taglineBn,
+    icon: numpyTrack.icon,
+    colorVar: numpyTrack.colorVar,
+    totalChapters: numpyTrack.totalChapters,
+    estimatedHours: numpyTrack.estimatedHours,
+    chapters: numpyTrack.chapters,
+    brandColor: numpyTrack.brandColor,
+    glowColor: numpyTrack.glowColor,
   },
 ];
 
