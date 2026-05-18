@@ -26,6 +26,8 @@ import SciPyLab from "@/components/compiler/SciPyLab";
 import MongoDBStudio from "@/components/compiler/MongoDBStudio";
 import ExcelStudio from "@/components/compiler/ExcelStudio";
 import DSAVisualizerLab from "@/components/compiler/DSAVisualizerLab";
+import XMLPlayground from "@/components/compiler/XMLPlayground";
+import JSONPlayground from "@/components/compiler/JSONPlayground";
 
 const CompilerPage = () => {
   const [params] = useSearchParams();
@@ -133,6 +135,14 @@ const CompilerPage = () => {
 
   if (track === "dsa") {
     return <DSAVisualizerLab />;
+  }
+
+  if (track === "xml") {
+    return <XMLPlayground />;
+  }
+
+  if (track === "json") {
+    return <JSONPlayground />;
   }
 
   return (

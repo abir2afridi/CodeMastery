@@ -33,6 +33,8 @@ import { scipyTrack } from "./scipy-curriculum";
 import { mongodbTrack } from "./mongodb-curriculum";
 import { excelTrack } from "./excel-curriculum";
 import { dsaTrack } from "./dsa-curriculum";
+import { xmlTrack } from "./xml-curriculum";
+import { jsonTrack } from "./json-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -525,6 +527,34 @@ export const tracks: Track[] = [
     chapters: bashTrack.chapters,
     brandColor: bashTrack.brandColor,
     glowColor: bashTrack.glowColor,
+  },
+  {
+    id: xmlTrack.id,
+    title: xmlTrack.title,
+    titleBn: xmlTrack.titleBn,
+    tagline: xmlTrack.tagline,
+    taglineBn: xmlTrack.taglineBn,
+    icon: xmlTrack.icon,
+    colorVar: xmlTrack.colorVar,
+    totalChapters: xmlTrack.totalChapters,
+    estimatedHours: xmlTrack.estimatedHours,
+    chapters: xmlTrack.chapters,
+    brandColor: xmlTrack.brandColor,
+    glowColor: xmlTrack.glowColor,
+  },
+  {
+    id: jsonTrack.id,
+    title: jsonTrack.title,
+    titleBn: jsonTrack.titleBn,
+    tagline: jsonTrack.tagline,
+    taglineBn: jsonTrack.taglineBn,
+    icon: jsonTrack.icon,
+    colorVar: jsonTrack.colorVar,
+    totalChapters: jsonTrack.totalChapters,
+    estimatedHours: jsonTrack.estimatedHours,
+    chapters: jsonTrack.chapters,
+    brandColor: jsonTrack.brandColor,
+    glowColor: jsonTrack.glowColor,
   },
 ];
 

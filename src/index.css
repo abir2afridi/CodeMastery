@@ -77,6 +77,8 @@
     --mongodb-color: 147 50% 47%; /* MongoDB green #47A248 */
     --excel-color: 146 50% 37%; /* Excel green #217346 */
     --dsa-color: 18 94% 58%; /* DSA orange #FF6B35 */
+    --xml-color: 24 100% 50%; /* XML orange #FF6600 */
+    --json-color: 48 100% 50%; /* JSON yellow #F7DF1E */
 
     /* Sidebar Colors */
     --sidebar-background: 264 59% 23%;

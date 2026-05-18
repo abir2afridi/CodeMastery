@@ -117,6 +117,8 @@ export default {
         mongodb: "hsl(var(--mongodb-color))",
         excel: "hsl(var(--excel-color))",
         dsa: "hsl(var(--dsa-color))",
+        xml: "hsl(var(--xml-color))",
+        json: "hsl(var(--json-color))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

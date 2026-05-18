@@ -234,6 +234,10 @@ export const en: Dict = {
   "track.excel.tagline": "Master spreadsheets, analytics, dashboards, and automation",
   "track.dsa.title": "Data Structures & Algorithms",
   "track.dsa.tagline": "Master problem solving and algorithmic thinking",
+  "track.xml.title": "XML",
+  "track.xml.tagline": "Structured data for systems, APIs, and enterprise applications",
+  "track.json.title": "JSON",
+  "track.json.tagline": "The language of APIs and modern applications",
 
   // Courses Page
   "courses.title": "Programming Languages",
@@ -546,6 +550,10 @@ export const bn: Dict = {
   "track.excel.tagline": "স্প্রেডশিট, বিশ্লেষণ, ড্যাশবোর্ড এবং অটোমেশন আয়ত্ত করুন",
   "track.dsa.title": "ডেটা স্ট্রাকচার ও অ্যালগরিদম",
   "track.dsa.tagline": "সমস্যা সমাধান এবং অ্যালগরিদমিক চিন্তাভাবনা আয়ত্ত করুন",
+  "track.xml.title": "এক্সএমএল",
+  "track.xml.tagline": "সিস্টেম, API এবং এন্টারপ্রাইজ অ্যাপ্লিকেশনের জন্য স্ট্রাকচার্ড ডেটা",
+  "track.json.title": "জেসন",
+  "track.json.tagline": "API এবং আধুনিক অ্যাপ্লিকেশনের ভাষা",
   "courses.title": "প্রোগ্রামিং ল্যাঙ্গুয়েজ",
   "courses.selectTrack": "আপনার শেখার যাত্রা শুরু করতে একটি ট্র্যাক নির্বাচন করুন",
   "courses.totalChapters": "মোট অধ্যায়",

@@ -141,6 +141,14 @@ export function loadProgress(): UserProgress | null {
     if (!progress.tracks.dsa) {
       progress.tracks.dsa = emptyTrack();
     }
+    // Migration: Add XML track if missing
+    if (!progress.tracks.xml) {
+      progress.tracks.xml = emptyTrack();
+    }
+    // Migration: Add JSON track if missing
+    if (!progress.tracks.json) {
+      progress.tracks.json = emptyTrack();
+    }
 
     saveProgress(progress);
 
@@ -199,6 +207,8 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       mongodb: emptyTrack(),
       excel: emptyTrack(),
       dsa: emptyTrack(),
+      xml: emptyTrack(),
+      json: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);
