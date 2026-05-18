@@ -21,6 +21,7 @@ import { vueTrack } from "./vue-curriculum";
 import { reactTrack } from "./react-curriculum";
 import { kotlinTrack } from "./kotlin-curriculum";
 import { postgresqlTrack } from "./postgresql-curriculum";
+import { jqueryTrack } from "./jquery-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -345,6 +346,20 @@ export const tracks: Track[] = [
     chapters: postgresqlTrack.chapters,
     brandColor: postgresqlTrack.brandColor,
     glowColor: postgresqlTrack.glowColor,
+  },
+  {
+    id: jqueryTrack.id,
+    title: jqueryTrack.title,
+    titleBn: jqueryTrack.titleBn,
+    tagline: jqueryTrack.tagline,
+    taglineBn: jqueryTrack.taglineBn,
+    icon: jqueryTrack.icon,
+    colorVar: jqueryTrack.colorVar,
+    totalChapters: jqueryTrack.totalChapters,
+    estimatedHours: jqueryTrack.estimatedHours,
+    chapters: jqueryTrack.chapters,
+    brandColor: jqueryTrack.brandColor,
+    glowColor: jqueryTrack.glowColor,
   },
 ];
 

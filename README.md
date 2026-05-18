@@ -2,12 +2,12 @@
 🚀 Zero-to-Pro Web Development Learning Platform
 
 ## Overview
-CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, Web Colors, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, and Kotlin. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
+CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, Web Colors, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, Kotlin, and jQuery. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
 
 ## 🌟 Key Features
 
-- **Interactive Multi-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, and Kotlin panels with real-time preview
-- **Comprehensive Curriculum**: 925+ chapters covering everything from basics to advanced concepts
+- **Interactive Multi-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, Kotlin, and jQuery panels with real-time preview
+- **Comprehensive Curriculum**: 985+ chapters covering everything from basics to advanced concepts
 - **Progress Tracking**: XP system, streaks, achievements, and detailed progress analytics
 - **Certificate Generation**: Beautiful certificates upon track completion
 - **Project-Based Learning**: Real-world projects at every skill level
@@ -157,6 +157,25 @@ CodeMastery is a comprehensive web development learning platform designed to tak
 **Part 3: Projects (Chapters 17-22)**
 - Command-Line Application, REST API with Ktor, Android App Project, Kotlin Challenge Set, Mastery Recap
 
+### jQuery Track (60 Chapters - ~35 hours)
+**Part 1: jQuery Fundamentals (Chapters 1-10)**
+- What Is jQuery and Why Was It Created?, Setting Up jQuery, jQuery Syntax, Selectors, Events, DOM Manipulation, CSS Manipulation, Traversing Elements, Chaining Methods, Debugging jQuery
+
+**Part 2: Effects and Animations (Chapters 11-20)**
+- show(), hide(), toggle(), fadeIn(), fadeOut(), fadeToggle(), slideDown(), slideUp(), animate(), Callback Functions, Method Chaining, Queue System, Timing Functions, Building Interactive UI, Animation Performance
+
+**Part 3: Advanced DOM + Events (Chapters 21-32)**
+- Event Delegation, Dynamic DOM Manipulation, Forms with jQuery, Validation Systems, Data Attributes, DOM Traversal Deep Dive, Filtering Elements, AJAX Introduction, $.get() and $.post(), AJAX JSON APIs, Loading External Content, Error Handling
+
+**Part 4: jQuery Ecosystem (Chapters 33-44)**
+- jQuery UI, Sliders and Accordions, Datepickers, Drag and Drop, Modal Systems, Building Plugins, Plugin Architecture, Third-Party Plugins, DataTables, Carousels and Sliders, Form Libraries, Legacy Enterprise Applications
+
+**Part 5: Modern Frontend + jQuery (Chapters 45-52)**
+- jQuery vs Vanilla JavaScript, jQuery with Bootstrap, jQuery in WordPress, Migrating Away from jQuery, Performance Optimization, Accessibility, Security Best Practices, Maintaining Legacy Applications
+
+**Part 6: Projects (Chapters 53-60)**
+- Interactive Todo App, Image Gallery, AJAX Weather App, Dynamic Form Builder, Admin Dashboard, Mini Challenge Sets, jQuery Mastery Recap + Certificate
+
 ### W3.CSS Track (55 Chapters - ~45 hours)
 ### Web Colors Track (50 Chapters - ~40 hours)
 **Part 1: Absolute Beginning (Chapters 1-8)**
@@ -273,7 +292,7 @@ src/
 │   ├── lesson/         # Lesson content and interactions
 │   └── quiz/           # Quiz system components
 ├── lib/
-│   ├── curriculum/     # All course content (925+ chapters)
+│   ├── curriculum/     # All course content (985+ chapters)
 │   │   ├── html-curriculum.ts
 │   │   ├── css-curriculum.ts
 │   │   ├── js-curriculum.ts
@@ -281,6 +300,7 @@ src/
 │   │   ├── typescript-curriculum.ts
 │   │   ├── kotlin-curriculum.ts
 │   │   ├── postgresql-curriculum.ts
+│   │   ├── jquery-curriculum.ts
 │   │   └── index.ts
 │   ├── progress.ts      # User progress tracking
 │   ├── certificate.ts  # Certificate generation
