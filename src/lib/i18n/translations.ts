@@ -250,6 +250,10 @@ export const en: Dict = {
   "track.machinelearning.tagline": "Build intelligent systems with AI and data",
   "track.statistic.title": "Statistics",
   "track.statistic.tagline": "Master data, probability, and analytical thinking",
+  "track.rwd.title": "Responsive Web Design",
+  "track.rwd.tagline": "Build websites that look perfect on every screen",
+  "track.ajax.title": "AJAX",
+  "track.ajax.tagline": "Build dynamic websites without page reloads",
 
   // Courses Page
   "courses.title": "Programming Languages",
@@ -578,6 +582,10 @@ export const bn: Dict = {
   "track.machinelearning.tagline": "AI এবং ডেটা দিয়ে বুদ্ধিমান সিস্টেম তৈরি করুন",
   "track.statistic.title": "স্ট্যাটিস্টিকস",
   "track.statistic.tagline": "ডেটা, সম্ভাবনা এবং বিশ্লেষণাত্মক চিন্তা আয়ত্ত করুন",
+  "track.rwd.title": "রেসপনসিভ ওয়েব ডিজাইন",
+  "track.rwd.tagline": "প্রতিটি স্ক্রিনে নিখুঁত দেখায় এমন ওয়েবসাইট তৈরি করুন",
+  "track.ajax.title": "AJAX",
+  "track.ajax.tagline": "পৃষ্ঠা রিলোড ছাড়াই ডায়নামিক ওয়েবসাইট তৈরি করুন",
   "courses.title": "প্রোগ্রামিং ল্যাঙ্গুয়েজ",
   "courses.selectTrack": "আপনার শেখার যাত্রা শুরু করতে একটি ট্র্যাক নির্বাচন করুন",
   "courses.totalChapters": "মোট অধ্যায়",

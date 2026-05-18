@@ -85,6 +85,8 @@
     --aws-color: 34 100% 50%; /* AWS orange #FF9900 */
     --machinelearning-color: 262 100% 69%; /* ML purple #7B61FF */
     --statistic-color: 187 100% 38%; /* Stats cyan #00ACC1 */
+    --rwd-color: 187 94% 43%; /* RWD cyan #06B6D4 */
+    --ajax-color: 37 100% 50%; /* AJAX amber #F59E0B */
 
     /* Sidebar Colors */
     --sidebar-background: 264 59% 23%;

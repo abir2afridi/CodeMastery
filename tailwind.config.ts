@@ -125,6 +125,8 @@ export default {
         aws: "hsl(var(--aws-color))",
         machinelearning: "hsl(var(--machinelearning-color))",
         statistic: "hsl(var(--statistic-color))",
+        rwd: "hsl(var(--rwd-color))",
+        ajax: "hsl(var(--ajax-color))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

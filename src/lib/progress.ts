@@ -170,6 +170,12 @@ export function loadProgress(): UserProgress | null {
     if (!progress.tracks.statistic) {
       progress.tracks.statistic = emptyTrack();
     }
+    if (!progress.tracks.rwd) {
+      progress.tracks.rwd = emptyTrack();
+    }
+    if (!progress.tracks.ajax) {
+      progress.tracks.ajax = emptyTrack();
+    }
 
     saveProgress(progress);
 
@@ -236,6 +242,8 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       aws: emptyTrack(),
       machinelearning: emptyTrack(),
       statistic: emptyTrack(),
+      rwd: emptyTrack(),
+      ajax: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);

@@ -41,6 +41,8 @@ import { cybersecurityTrack } from "./cybersecurity-curriculum";
 import { awsTrack } from "./aws-curriculum";
 import { machinelearningTrack } from "./machinelearning-curriculum";
 import { statisticTrack } from "./statistic-curriculum";
+import { rwdTrack } from "./rwd-curriculum";
+import { ajaxTrack } from "./ajax-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -645,6 +647,34 @@ export const tracks: Track[] = [
     chapters: statisticTrack.chapters,
     brandColor: statisticTrack.brandColor,
     glowColor: statisticTrack.glowColor,
+  },
+  {
+    id: rwdTrack.id,
+    title: rwdTrack.title,
+    titleBn: rwdTrack.titleBn,
+    tagline: rwdTrack.tagline,
+    taglineBn: rwdTrack.taglineBn,
+    icon: rwdTrack.icon,
+    colorVar: rwdTrack.colorVar,
+    totalChapters: rwdTrack.totalChapters,
+    estimatedHours: rwdTrack.estimatedHours,
+    chapters: rwdTrack.chapters,
+    brandColor: rwdTrack.brandColor,
+    glowColor: rwdTrack.glowColor,
+  },
+  {
+    id: ajaxTrack.id,
+    title: ajaxTrack.title,
+    titleBn: ajaxTrack.titleBn,
+    tagline: ajaxTrack.tagline,
+    taglineBn: ajaxTrack.taglineBn,
+    icon: ajaxTrack.icon,
+    colorVar: ajaxTrack.colorVar,
+    totalChapters: ajaxTrack.totalChapters,
+    estimatedHours: ajaxTrack.estimatedHours,
+    chapters: ajaxTrack.chapters,
+    brandColor: ajaxTrack.brandColor,
+    glowColor: ajaxTrack.glowColor,
   },
 ];
 

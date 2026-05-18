@@ -34,6 +34,8 @@ import SecurityLab from "@/components/compiler/SecurityLab";
 import AwsConsoleLab from "@/components/compiler/AwsConsoleLab";
 import MachineLearningLab from "@/components/compiler/MachineLearningLab";
 import StatisticsLab from "@/components/compiler/StatisticsLab";
+import RWDPlayground from "@/components/compiler/RWDPlayground";
+import AJAXPlayground from "@/components/compiler/AJAXPlayground";
 
 const CompilerPage = () => {
   const [params] = useSearchParams();
@@ -173,6 +175,14 @@ const CompilerPage = () => {
 
   if (track === "statistic") {
     return <StatisticsLab />;
+  }
+
+  if (track === "rwd") {
+    return <RWDPlayground />;
+  }
+
+  if (track === "ajax") {
+    return <AJAXPlayground />;
   }
 
   return (
