@@ -43,6 +43,10 @@ import { machinelearningTrack } from "./machinelearning-curriculum";
 import { statisticTrack } from "./statistic-curriculum";
 import { rwdTrack } from "./rwd-curriculum";
 import { ajaxTrack } from "./ajax-curriculum";
+import { rustTrack } from "./rust-curriculum";
+import { matplotlibTrack } from "./matplotlib-curriculum";
+import { utf8Track } from "./utf8-curriculum";
+import { piTrack } from "./pi-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -675,6 +679,62 @@ export const tracks: Track[] = [
     chapters: ajaxTrack.chapters,
     brandColor: ajaxTrack.brandColor,
     glowColor: ajaxTrack.glowColor,
+  },
+  {
+    id: rustTrack.id,
+    title: rustTrack.title,
+    titleBn: rustTrack.titleBn,
+    tagline: rustTrack.tagline,
+    taglineBn: rustTrack.taglineBn,
+    icon: rustTrack.icon,
+    colorVar: rustTrack.colorVar,
+    totalChapters: rustTrack.totalChapters,
+    estimatedHours: rustTrack.estimatedHours,
+    chapters: rustTrack.chapters,
+    brandColor: rustTrack.brandColor,
+    glowColor: rustTrack.glowColor,
+  },
+  {
+    id: matplotlibTrack.id,
+    title: matplotlibTrack.title,
+    titleBn: matplotlibTrack.titleBn,
+    tagline: matplotlibTrack.tagline,
+    taglineBn: matplotlibTrack.taglineBn,
+    icon: matplotlibTrack.icon,
+    colorVar: matplotlibTrack.colorVar,
+    totalChapters: matplotlibTrack.totalChapters,
+    estimatedHours: matplotlibTrack.estimatedHours,
+    chapters: matplotlibTrack.chapters,
+    brandColor: matplotlibTrack.brandColor,
+    glowColor: matplotlibTrack.glowColor,
+  },
+  {
+    id: utf8Track.id,
+    title: utf8Track.title,
+    titleBn: utf8Track.titleBn,
+    tagline: utf8Track.tagline,
+    taglineBn: utf8Track.taglineBn,
+    icon: utf8Track.icon,
+    colorVar: utf8Track.colorVar,
+    totalChapters: utf8Track.totalChapters,
+    estimatedHours: utf8Track.estimatedHours,
+    chapters: utf8Track.chapters,
+    brandColor: utf8Track.brandColor,
+    glowColor: utf8Track.glowColor,
+  },
+  {
+    id: piTrack.id,
+    title: piTrack.title,
+    titleBn: piTrack.titleBn,
+    tagline: piTrack.tagline,
+    taglineBn: piTrack.taglineBn,
+    icon: piTrack.icon,
+    colorVar: piTrack.colorVar,
+    totalChapters: piTrack.totalChapters,
+    estimatedHours: piTrack.estimatedHours,
+    chapters: piTrack.chapters,
+    brandColor: piTrack.brandColor,
+    glowColor: piTrack.glowColor,
   },
 ];
 

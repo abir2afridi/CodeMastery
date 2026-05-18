@@ -176,6 +176,18 @@ export function loadProgress(): UserProgress | null {
     if (!progress.tracks.ajax) {
       progress.tracks.ajax = emptyTrack();
     }
+    if (!progress.tracks.rust) {
+      progress.tracks.rust = emptyTrack();
+    }
+    if (!progress.tracks.matplotlib) {
+      progress.tracks.matplotlib = emptyTrack();
+    }
+    if (!progress.tracks.unicode_utf8) {
+      progress.tracks.unicode_utf8 = emptyTrack();
+    }
+    if (!progress.tracks.raspberry_pi) {
+      progress.tracks.raspberry_pi = emptyTrack();
+    }
 
     saveProgress(progress);
 
@@ -244,6 +256,10 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       statistic: emptyTrack(),
       rwd: emptyTrack(),
       ajax: emptyTrack(),
+      rust: emptyTrack(),
+      matplotlib: emptyTrack(),
+      unicode_utf8: emptyTrack(),
+      raspberry_pi: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);

@@ -127,6 +127,10 @@ export default {
         statistic: "hsl(var(--statistic-color))",
         rwd: "hsl(var(--rwd-color))",
         ajax: "hsl(var(--ajax-color))",
+        rust: "hsl(var(--rust-color))",
+        matplotlib: "hsl(var(--matplotlib-color))",
+        unicode_utf8: "hsl(var(--unicode_utf8-color))",
+        raspberry_pi: "hsl(var(--raspberry_pi-color))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

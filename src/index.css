@@ -87,6 +87,10 @@
     --statistic-color: 187 100% 38%; /* Stats cyan #00ACC1 */
     --rwd-color: 187 94% 43%; /* RWD cyan #06B6D4 */
     --ajax-color: 37 100% 50%; /* AJAX amber #F59E0B */
+    --rust-color: 12 64% 70%; /* Rust orange #DEA584 */
+    --matplotlib-color: 202 76% 28%; /* Matplotlib blue #11557C */
+    --unicode_utf8-color: 261 85% 62%; /* UTF-8 violet #8B5CF6 */
+    --raspberry_pi-color: 344 77% 44%; /* Raspberry red #C51A4A */
 
     /* Sidebar Colors */
     --sidebar-background: 264 59% 23%;

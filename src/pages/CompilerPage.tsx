@@ -36,6 +36,10 @@ import MachineLearningLab from "@/components/compiler/MachineLearningLab";
 import StatisticsLab from "@/components/compiler/StatisticsLab";
 import RWDPlayground from "@/components/compiler/RWDPlayground";
 import AJAXPlayground from "@/components/compiler/AJAXPlayground";
+import RustPlayground from "@/components/compiler/RustPlayground";
+import MatplotlibLab from "@/components/compiler/MatplotlibLab";
+import EncodingLab from "@/components/compiler/EncodingLab";
+import RaspberryPiLab from "@/components/compiler/RaspberryPiLab";
 
 const CompilerPage = () => {
   const [params] = useSearchParams();
@@ -183,6 +187,22 @@ const CompilerPage = () => {
 
   if (track === "ajax") {
     return <AJAXPlayground />;
+  }
+
+  if (track === "rust") {
+    return <RustPlayground />;
+  }
+
+  if (track === "matplotlib") {
+    return <MatplotlibLab />;
+  }
+
+  if (track === "unicode_utf8") {
+    return <EncodingLab />;
+  }
+
+  if (track === "raspberry_pi") {
+    return <RaspberryPiLab />;
   }
 
   return (

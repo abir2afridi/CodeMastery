@@ -2,12 +2,12 @@
 🚀 Zero-to-Pro Web Development Learning Platform
 
 ## Overview
-CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, Web Colors, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, Kotlin, jQuery, NumPy, Pandas, Django, R, Go, Swift, Bash, SciPy, MongoDB, Excel, and DSA. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
+CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, Web Colors, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, React, Kotlin, jQuery, NumPy, Pandas, Django, R, Go, Swift, Bash, SciPy, MongoDB, Excel, DSA, XML, JSON, Node.js, ASP, Cybersecurity, AWS, Machine Learning, Statistics, RWD, AJAX, Rust, Matplotlib, UTF-8 & Character Encoding, and Raspberry Pi & IoT. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
 
 ## 🌟 Key Features
 
-- **Interactive Multi-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, Kotlin, jQuery, NumPy, Pandas, Django, R, Go, Swift, Bash, SciPy, MongoDB, Excel, and DSA panels with real-time preview
-- **Comprehensive Curriculum**: 1525+ chapters covering everything from basics to advanced concepts
+- **Interactive Multi-Panel Compiler**: Live code editing with 49 language-specific compilers including HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, React, Kotlin, jQuery, NumPy, Pandas, Django, R, Go, Swift, Bash, SciPy, MongoDB, Excel, DSA, XML, JSON, Node.js, ASP, Cybersecurity, AWS, Machine Learning, Statistics, RWD, AJAX, Rust, Matplotlib, UTF-8 & Character Encoding, and Raspberry Pi & IoT with real-time preview
+- **Comprehensive Curriculum**: 2848+ chapters across 49 tracks covering everything from basics to advanced concepts
 - **Progress Tracking**: XP system, streaks, achievements, and detailed progress analytics
 - **Certificate Generation**: Beautiful certificates upon track completion
 - **Project-Based Learning**: Real-world projects at every skill level
@@ -383,6 +383,173 @@ CodeMastery is a comprehensive web development learning platform designed to tak
 **Part 7: Projects (Chapters 69-75)**
 - Project: Todo App, Project: Weather Dashboard, Project: Ecommerce Frontend, Project: Chat Application, Project: Admin Dashboard, Vue Challenge Set, Vue Mastery Recap + Certificate Prep
 
+### XML Track (50 Chapters - ~70 hours)
+**Part 1: XML Fundamentals (Chapters 1-14)**
+- What Is XML?, XML Syntax, Elements & Attributes, Well-Formed XML, DTD & Validation, XML Namespaces, XML Schema (XSD), XSLT, XPath, XQuery, XLink, XPointer, DOM with XML, SAX Parsing
+
+**Part 2: Advanced XML & Projects (Chapters 15-30)**
+- JSON vs XML, RSS/Atom Feeds, SOAP & XML-RPC, SVG, XML Security, XML Databases, XML in Web APIs, XML Signatures, XSL-FO, XML in Configuration, Android XML, Office Open XML
+
+**Part 3: Projects (Chapters 31-50)**
+- RSS Reader, XML Configuration System, SVG Viewer, SOAP Client, XSLT Transform Engine, Podcast Feed Aggregator, XML Data Migration Tool, XML Challenge Sets, Mastery Recap
+
+### JSON Track (55 Chapters - ~75 hours)
+**Part 1: JSON Fundamentals (Chapters 1-16)**
+- What Is JSON?, JSON Syntax, JSON Data Types, JSON Objects, JSON Arrays, Nested Structures, JSON Schema, JSON Path, JSON vs XML, JSON in JavaScript, JSON.parse/stringify, JSON in Python, JSON in Java, JSON in C#, JSON in PHP, JSON in Go
+
+**Part 2: Advanced JSON & Applications (Chapters 17-34)**
+- JSON Web Tokens (JWT), JSON REST APIs, JSON-RPC, JSON Serialization, JSON Databases, JSON with MongoDB, JSON in Configuration, JSON Localization, JSON in Machine Learning, JSON Streaming, JSON Patch, JSON Schema Validation, JSON Performance, Binary JSON (BSON), JSON in NoSQL, JSON Compression
+
+**Part 3: Projects (Chapters 35-55)**
+- REST API Client, JWT Auth System, Config Manager, Data Migration Tool, JSON Schema Validator, Real-time Data Pipeline, API Gateway, Challenge Sets, Mastery Recap
+
+### Node.js Track (85 Chapters - ~140 hours)
+**Part 1: Node.js Foundations (Chapters 1-12)**
+- What Is Node.js?, Installing Node.js & npm, Node REPL & CLI, Modules & require(), CommonJS vs ES Modules, Event Loop, Buffers & Streams, File System Module, Path Module, Process & Environment, Global Objects, Debugging Node.js
+
+**Part 2: Core APIs & Async (Chapters 13-26)**
+- HTTP Module, Creating Servers, Express.js, Routing, Middleware, Error Handling, Async Patterns, Promises & Callbacks, Event Emitter, Child Processes, Cluster Module, OS Module, Crypto Module, Zlib Compression
+
+**Part 3: Databases & Authentication (Chapters 27-40)**
+- PostgreSQL with Node.js, MongoDB with Mongoose, Redis Integration, SQLite, Authentication, JWT, OAuth 2.0, Sessions & Cookies, bcrypt & Hashing, Role-Based Access, Rate Limiting, Helmet & Security, HTTPS & SSL, Environment Configuration
+
+**Part 4: Real-World APIs (Chapters 41-54)**
+- REST API Design, GraphQL APIs, WebSockets, File Uploads, Pagination & Filtering, API Versioning, Testing with Jest, Supertest, Integration Tests, CI/CD, Docker, Logging with Winston, Monitoring, Performance Profiling
+
+**Part 5: Advanced Node.js (Chapters 55-70)**
+- Streams Deep Dive, Worker Threads, Addons with N-API, TypeScript with Node.js, Microservices, Message Queues (Bull/RabbitMQ), Caching Strategies, Serverless, GraphQL Subscriptions, Real-Time Systems, WebSocket Chat, Load Balancing, API Gateways, gRPC, Event Sourcing, Production Readiness
+
+**Part 6: Projects (Chapters 71-85)**
+- REST API Server, Real-Time Chat, E-Commerce API, URL Shortener, File Upload Service, Task Queue System, Authentication Service, Challenge Sets, Mastery Recap
+
+### ASP Track (60 Chapters - ~100 hours)
+**Part 1: ASP.NET Foundations (Chapters 1-12)**
+- What Is ASP.NET?, .NET SDK & CLI, Project Structure, MVC Pattern, Controllers & Actions, Views & Razor, Models & Validation, Entity Framework Core, Database Migrations, CRUD Operations, Dependency Injection, Configuration & Options
+
+**Part 2: Advanced ASP.NET (Chapters 13-28)**
+- Authentication & Identity, Authorization & Policies, JWT & API Security, Web API, Minimal APIs, Middleware Pipeline, Caching & Response Caching, SignalR Real-Time, Background Services, File Uploads, Email Integration, Logging with Serilog, Health Checks, API Versioning, OpenAPI/Swagger, Performance Optimization
+
+**Part 3: Data & Architecture (Chapters 29-44)**
+- EF Core Advanced, Raw SQL & Dapper, Repository Pattern, Unit of Work, CQRS with MediatR, Fluent Validation, AutoMapper, Blazor Server, Blazor WebAssembly, Razor Pages, Tag Helpers, View Components, Partial Views, Areas, Client-Side Validation, Globalization
+
+**Part 4: Projects (Chapters 45-60)**
+- Blog Engine, E-Commerce API, Task Management App, Real-Time Dashboard, Authentication Server, Challenge Sets, Mastery Recap
+
+### Cybersecurity Track (90 Chapters - ~150 hours)
+### AWS Track (85 Chapters - ~140 hours)
+**Part 1: AWS Foundations (Chapters 1-12)**
+- What Is Cloud Computing?, AWS Global Infrastructure, IAM Users & Roles, IAM Policies & Permissions, AWS CLI & SDK, Billing & Cost Management, AWS Organizations, Service Quotas, CloudTrail, Trusted Advisor, AWS Support Plans, AWS Free Tier
+
+**Part 2: Core Services (Chapters 13-28)**
+- EC2 Fundamentals, EC2 Instance Types, Security Groups & NACLs, Elastic Load Balancing, Auto Scaling, S3 Basics, S3 Storage Classes, S3 Security & Encryption, VPC Fundamentals, Subnets & Routing, NAT Gateways, VPN & Direct Connect, Route 53, CloudFront CDN, RDS Databases, ElastiCache
+
+**Part 3: Containers & Serverless (Chapters 29-44)**
+- Docker on AWS, ECS & Fargate, ECR Container Registry, EKS Kubernetes, Lambda Fundamentals, Lambda Triggers, API Gateway, Step Functions, DynamoDB, SQS & SNS, EventBridge, Kinesis, SAM Framework, Serverless Architecture, CloudFormation, CDK Infrastructure
+
+**Part 4: DevOps & Architecture (Chapters 45-60)**
+- CloudWatch Monitoring, CloudWatch Logs & Alarms, X-Ray Tracing, AWS Config, Systems Manager, CodeCommit & CodeBuild, CodeDeploy & CodePipeline, Elastic Beanstalk, OpsWorks, AWS Backup, Disaster Recovery, High Availability, Well-Architected Framework, Cost Optimization, Security Best Practices, Migration Strategies
+
+**Part 5: Advanced Services & Projects (Chapters 61-85)**
+- Machine Learning with SageMaker, Athena & Glue, Redshift Data Warehouse, EMR Big Data, IoT Core, Cognito Auth, AppSync, WAF & Shield, AWS Organizations Advanced, Control Tower, Landing Zone, Multi-Account Strategy, Project: Serverless API, Project: Scalable Web App, Project: Data Lake, Project: CI/CD Pipeline, Challenge Sets, Certificate Prep
+
+### Machine Learning Track (100 Chapters - ~220 hours)
+### Statistics Track (85 Chapters - ~160 hours)
+### RWD Track (55 Chapters - ~85 hours)
+**Part 1: Responsive Fundamentals (Chapters 1-12)**
+- What Is Responsive Design?, Viewport & Meta Tags, Fluid Layouts, CSS Units (rem, em, vw, vh), Percentages & Max-Width, Media Queries Intro, Breakpoint Strategy, Mobile-First Design, Desktop-First Design, Responsive Typography, Responsive Images, Responsive Navigation
+
+**Part 2: Layout Systems (Chapters 13-26)**
+- Flexbox for RWD, Grid for RWD, Responsive Grid Systems, Holy Grail Layout, Card Layouts, Responsive Tables, Responsive Forms, Responsive Embeds, Responsive Media, Multi-Column Layout, Container Queries, CSS Containment, Responsive Patterns (Mostly Fluid, Column Drop), Responsive Accessibility
+
+**Part 3: Advanced RWD (Chapters 27-40)**
+- Performance & RWD, Responsive Images (srcset/sizes), Art Direction, Lazy Loading Responsive Images, Responsive SVGs, Responsive Typography Scales, Dark Mode Adaptation, Orientation Handling, Responsive Data Viz, Touch vs Mouse, Responsive Testing, Device Emulation, Print Styles, Hybrid Apps
+
+**Part 4: Projects (Chapters 41-55)**
+- Responsive Portfolio, E-Commerce Site, Blog Platform, Dashboard, Landing Page, Challenge Sets, Mastery Recap
+
+### AJAX Track (50 Chapters - ~75 hours)
+**Part 1: AJAX Fundamentals (Chapters 1-12)**
+- What Is AJAX?, XMLHttpRequest, GET vs POST, Response Formats (JSON, XML, Text), Ready States & Status Codes, Callbacks, Error Handling, Timeouts, CORS, Same-Origin Policy, Synchronous vs Asynchronous, Browser Support & Fallbacks
+
+**Part 2: Fetch API & Modern AJAX (Chapters 13-26)**
+- Fetch API Basics, GET Requests with Fetch, POST Requests, PUT/PATCH/DELETE, Request Headers, Response Objects, Error Handling with Fetch, AbortController, Fetch vs XHR, Async/Await with Fetch, FormData & File Uploads, Streaming Responses, Service Workers, WebSockets
+
+**Part 3: Real-World AJAX (Chapters 27-40)**
+- REST API Integration, Authentication with AJAX, JWT in Headers, Rate Limiting & Retry, Caching Responses, Debouncing Requests, Loading States, Optimistic Updates, Pagination, Infinite Scroll, Autocomplete Systems, Real-Time Updates, API Design Patterns, Security (XSS, CSRF)
+
+**Part 4: Projects (Chapters 41-50)**
+- Live Search, Infinite Feed, Comment System, Dashboard, Chat Client, Challenge Sets, Mastery Recap
+
+### Rust Track (75 Chapters - ~130 hours)
+**Part 1: Rust Foundations (Chapters 1-12)**
+- What Is Rust?, Installing Rust + Cargo, Variables & Mutability, Data Types, Functions, Control Flow, Ownership Basics, References & Borrowing, Slices, Structs, Enums & Pattern Matching, Collections
+
+**Part 2: Ownership Masterclass (Chapters 13-22)**
+- Ownership Deep Dive, Move Semantics, Borrow Checker Internals, Mutable vs Immutable References, Lifetimes Introduction, Advanced Lifetimes, Smart Pointers, Rc/Arc/RefCell, Interior Mutability, Memory Management Patterns
+
+**Part 3: Advanced Rust (Chapters 23-40)**
+- Error Handling, Result & Option, Traits, Generics, Trait Bounds, Closures, Iterators, Modules & Crates, Cargo Deep Dive, Testing, Macros, Unsafe Rust, FFI, Concurrency, Threads, Async Rust, Tokio Runtime, Channels & Synchronization
+
+**Part 4: Systems Programming (Chapters 41-52)**
+- File Systems, Networking, TCP/UDP Programming, HTTP Servers, Serde Serialization, Databases, CLI Development, Logging & Observability, WebAssembly, Embedded Rust, Performance Optimization, Benchmarking
+
+**Part 5: Rust Ecosystem (Chapters 53-64)**
+- Axum Framework, Actix Web, Diesel ORM, SQLx, Clap CLI, Tauri Desktop, Game Development, Async Ecosystem, Security Best Practices, API Design, Production Deployment, Architecture Patterns
+
+**Part 6: Projects (Chapters 65-75)**
+- CLI Task Manager, Multi-threaded Downloader, REST API Server, WebSocket Chat, File Encryption Tool, Mini Database Engine, WASM Browser App, Challenge Sets, Interview Prep, Mastery + Certificate
+
+### Matplotlib Track (50 Chapters - ~70 hours)
+**Part 1: Matplotlib Foundations (Chapters 1-10)**
+- What Is Matplotlib?, Installation, First Plot, Figure vs Axes, Line Charts, Markers & Styles, Labels & Titles, Legends, Grid Systems, Saving Charts
+
+**Part 2: Core Visualization Types (Chapters 11-22)**
+- Bar Charts, Horizontal Bar, Histograms, Pie Charts, Scatter Plots, Bubble Charts, Box Plots, Violin Plots, Heatmaps, Area Charts, Stack Plots, Error Bars
+
+**Part 3: Advanced Visualization (Chapters 23-34)**
+- Subplots, Figure Layouts, Twin Axes, Secondary Axes, Date/Time Visualization, Financial Charts, Scientific Visualization, Polar Charts, 3D Plotting, Animations, Interactive Charts, Real-Time Updating
+
+**Part 4: Data Science Visualization (Chapters 35-42)**
+- NumPy Integration, Pandas Integration, Statistical Visualization, ML Visualization, Correlation Analysis, Dashboard Design, Data Storytelling, Publication-Quality Charts
+
+**Part 5: Projects (Chapters 43-50)**
+- Stock Market Dashboard, Weather Analytics System, ML Visualizer, Real-Time Monitoring, Scientific Research Charts, Visualization Challenges, Data Storytelling, Mastery + Certificate Prep
+
+### UTF-8 & Character Encoding Track (55 Chapters - ~85 hours)
+**Part 1: Text Encoding Foundations (Chapters 1-10)**
+- What Is Character Encoding?, Binary Text Representation, ASCII Standard, Extended ASCII, Unicode Introduction, Code Points, UTF-8 Basics, UTF-16 and UTF-32, Encoding Detection, Text Rendering Pipeline
+
+**Part 2: UTF-8 Masterclass (Chapters 11-20)**
+- UTF-8 Byte Structure, Variable-Length Encoding, Multi-byte Characters, Encoding Algorithms, BOM (Byte Order Mark), Unicode Normalization, Combining Characters, Grapheme Clusters, Surrogate Pairs, Encoding Performance
+
+**Part 3: Emojis & Modern Text (Chapters 21-30)**
+- Emoji Internals, Emoji Unicode Standards, Emoji Modifiers, Skin Tone System, ZWJ Sequences, Emoji Rendering Engines, Platform Emoji Differences, Flags & Regional Indicators, Emoji Accessibility, Custom Emoji Systems
+
+**Part 4: Web & Software Encoding (Chapters 31-42)**
+- HTML Character Sets, Meta Charset Tags, JavaScript Unicode, Database Encodings, API Encoding Systems, File Encoding Detection, URL Encoding, Base64, JSON Unicode, XML Encodings, Encoding Bugs & Security, Mojibake Debugging
+
+**Part 5: Internationalization (Chapters 43-48)**
+- RTL Languages, CJK Systems, Font Fallback, Localization Pipelines, Multi-language UI, Unicode in Mobile Apps
+
+**Part 6: Projects (Chapters 49-55)**
+- Unicode Inspector Tool, Emoji Analyzer, Encoding Converter, Corrupted Text Recovery, Mini Unicode Challenges, Internationalization Dashboard, Mastery + Certificate
+
+### Raspberry Pi & IoT Track (60 Chapters - ~95 hours)
+**Part 1: Raspberry Pi Foundations (Chapters 1-10)**
+- What Is Raspberry Pi?, Hardware Overview, Installing Pi OS, Linux Basics for Pi, SSH & Remote Access, File System Basics, Networking Basics, Package Management, Pi Performance Optimization, Pi Security
+
+**Part 2: GPIO Programming (Chapters 11-22)**
+- GPIO Introduction, GPIO Safety Rules, LEDs & Buttons, PWM Basics, Sensors Overview, Temperature Sensors, Motion Sensors, Distance Sensors, Displays & LCDs, Motors & Servos, Relays & Automation, GPIO with Python & Node.js
+
+**Part 3: IoT Systems (Chapters 23-34)**
+- IoT Fundamentals, MQTT Protocol, REST APIs for IoT, Real-Time Communication, Smart Home Systems, Remote Monitoring, Cloud-connected Devices, Edge Computing, Device Authentication, IoT Security, Sensor Data Pipelines, Automation Workflows
+
+**Part 4: Advanced Pi (Chapters 35-46)**
+- Pi Camera, Audio Systems, OpenCV on Pi, AI on Pi, Docker on Pi, Hosting Web Servers, NAS & File Servers, Pi Clusters, Robotics Basics, Drone & Robot Control, Real-Time Streaming, Hardware Troubleshooting
+
+**Part 5: Projects (Chapters 47-60)**
+- Smart Home Dashboard, Weather Station, Security Camera System, Motion Alarm, IoT Plant Monitor, Voice Assistant, Smart Lighting, Pi NAS, Robot Car, Mini Hardware Challenges, Automation Challenge Set, IoT System Design, Deployment & Maintenance, Mastery + Certificate
+
 ## 🎯 Learning Philosophy
 - **Zero Prior Knowledge Assumed**: Every chapter starts from scratch
 - **Real-World Analogies First**: Technical concepts explained through relatable examples
@@ -436,12 +603,12 @@ npm run dev
 src/
 ├── components/
 │   ├── certificate/     # Certificate generation components
-│   ├── compiler/       # Multi-panel live code editor (HTML, CSS, JS, Python, TypeScript, Go, Swift, Bash, SciPy, MongoDB, Excel, DSA)
+│   ├── compiler/       # Multi-panel live code editor (49 compilers: HTML through Raspberry Pi)
 │   ├── layout/         # Navigation and layout components
 │   ├── lesson/         # Lesson content and interactions
 │   └── quiz/           # Quiz system components
 ├── lib/
-│   ├── curriculum/     # All course content (1570+ chapters)
+│   ├── curriculum/     # All course content (2848+ chapters across 49 tracks)
 │   │   ├── html-curriculum.ts
 │   │   ├── css-curriculum.ts
 │   │   ├── js-curriculum.ts
@@ -460,6 +627,20 @@ src/
 │   │   ├── mongodb-curriculum.ts
 │   │   ├── excel-curriculum.ts
 │   │   ├── dsa-curriculum.ts
+│   │   ├── xml-curriculum.ts
+│   │   ├── json-curriculum.ts
+│   │   ├── nodejs-curriculum.ts
+│   │   ├── asp-curriculum.ts
+│   │   ├── cybersecurity-curriculum.ts
+│   │   ├── aws-curriculum.ts
+│   │   ├── machinelearning-curriculum.ts
+│   │   ├── statistic-curriculum.ts
+│   │   ├── rwd-curriculum.ts
+│   │   ├── ajax-curriculum.ts
+│   │   ├── rust-curriculum.ts
+│   │   ├── matplotlib-curriculum.ts
+│   │   ├── utf8-curriculum.ts
+│   │   ├── pi-curriculum.ts
 │   │   └── index.ts
 │   ├── progress.ts      # User progress tracking
 │   ├── certificate.ts  # Certificate generation
