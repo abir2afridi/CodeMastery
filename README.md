@@ -2,12 +2,12 @@
 🚀 Zero-to-Pro Web Development Learning Platform
 
 ## Overview
-CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, Web Colors, PHP, SQL, MySQL, Angular, and Vue. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
+CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, Web Colors, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, and Kotlin. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
 
 ## 🌟 Key Features
 
-- **Interactive Multi-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, PHP, SQL, MySQL, Angular, and Vue panels with real-time preview
-- **Comprehensive Curriculum**: 850+ chapters covering everything from basics to advanced concepts
+- **Interactive Multi-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, and Kotlin panels with real-time preview
+- **Comprehensive Curriculum**: 925+ chapters covering everything from basics to advanced concepts
 - **Progress Tracking**: XP system, streaks, achievements, and detailed progress analytics
 - **Certificate Generation**: Beautiful certificates upon track completion
 - **Project-Based Learning**: Real-world projects at every skill level
@@ -131,6 +131,32 @@ CodeMastery is a comprehensive web development learning platform designed to tak
 ### C++ Programming Track (90 Chapters - ~145 hours)
 ### Java Programming Track (90 Chapters - ~140 hours)
 ### C# Programming Track (85 Chapters - ~135 hours)
+### PostgreSQL Track (75 Chapters - ~50 hours)
+**Part 1: PostgreSQL Fundamentals (Chapters 1-12)**
+- What Is PostgreSQL and Why Use It?, Installing & Setup, PostgreSQL Architecture, Databases & Schemas, Tables & Data Types, CRUD Operations, Filtering & Sorting, Aggregate Functions, GROUP BY & HAVING, Constraints, Keys & Relationships, Database Normalization
+
+**Part 2: Advanced Queries & Performance (Chapters 13-24)**
+- Joins (INNER, LEFT, RIGHT, FULL), Subqueries & CTEs, Window Functions, Indexes & Optimization, Views & Materialized Views, Stored Procedures, Triggers & Events, Transactions & Locking, JSON & JSONB, Full-Text Search, Arrays & Range Types
+
+**Part 3: Database Design & Administration (Chapters 25-36)**
+- Advanced Normalization, Partitioning, Replication & High Availability, Backup & Restore, User Management & Security, Performance Tuning, Query Planning & EXPLAIN, Extensions (PostGIS, pgvector), Monitoring & Logging, Migration Strategies
+
+**Part 4: Real-World Projects (Chapters 37-50)**
+- E-commerce Database Design, User Authentication System, Analytics Dashboard Backend, API with PostgreSQL, Full-Stack Project Integration, and more
+
+**Part 5: PostgreSQL Ecosystem (Chapters 51-75)**
+- PostgreSQL with Node.js, Python & PostgreSQL, ORMs (Prisma, Sequelize, SQLAlchemy), Docker & PostgreSQL, Cloud PostgreSQL (Supabase, Neon, RDS), pgAdmin & Management Tools, Best Practices & Performance Tips
+
+### Kotlin Track (22 Chapters - ~35 hours)
+**Part 1: Kotlin Fundamentals (Chapters 1-8)**
+- What is Kotlin?, Variables & Data Types, Operators, Conditionals & Loops, Functions, Object-Oriented Programming, Null Safety, Extension Functions
+
+**Part 2: Advanced Kotlin (Chapters 9-16)**
+- Collections & Generics, Coroutines, Data Classes & Sealed Classes, DSL & Builders, Interoperability with Java, Android Development Basics, Testing in Kotlin
+
+**Part 3: Projects (Chapters 17-22)**
+- Command-Line Application, REST API with Ktor, Android App Project, Kotlin Challenge Set, Mastery Recap
+
 ### W3.CSS Track (55 Chapters - ~45 hours)
 ### Web Colors Track (50 Chapters - ~40 hours)
 **Part 1: Absolute Beginning (Chapters 1-8)**
@@ -247,12 +273,14 @@ src/
 │   ├── lesson/         # Lesson content and interactions
 │   └── quiz/           # Quiz system components
 ├── lib/
-│   ├── curriculum/     # All course content (850+ chapters)
+│   ├── curriculum/     # All course content (925+ chapters)
 │   │   ├── html-curriculum.ts
 │   │   ├── css-curriculum.ts
 │   │   ├── js-curriculum.ts
 │   │   ├── python-curriculum.ts
 │   │   ├── typescript-curriculum.ts
+│   │   ├── kotlin-curriculum.ts
+│   │   ├── postgresql-curriculum.ts
 │   │   └── index.ts
 │   ├── progress.ts      # User progress tracking
 │   ├── certificate.ts  # Certificate generation

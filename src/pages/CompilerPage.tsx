@@ -13,6 +13,7 @@ import AngularCompiler from "@/components/compiler/AngularCompiler";
 import VueCompiler from "@/components/compiler/VueCompiler";
 import ReactCompiler from "@/components/compiler/ReactCompiler";
 import KotlinCompiler from "@/components/compiler/KotlinCompiler";
+import PostgresCompiler from "@/components/compiler/PostgresCompiler";
 
 const CompilerPage = () => {
   const [params] = useSearchParams();
@@ -68,6 +69,10 @@ const CompilerPage = () => {
 
   if (track === "kotlin") {
     return <KotlinCompiler initialCode={params.get("code") || undefined} />;
+  }
+
+  if (track === "postgresql") {
+    return <PostgresCompiler initialCode={params.get("code") || undefined} />;
   }
 
   return (

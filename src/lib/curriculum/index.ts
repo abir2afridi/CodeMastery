@@ -20,6 +20,7 @@ import { angularTrack } from "./angular-curriculum";
 import { vueTrack } from "./vue-curriculum";
 import { reactTrack } from "./react-curriculum";
 import { kotlinTrack } from "./kotlin-curriculum";
+import { postgresqlTrack } from "./postgresql-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -317,19 +318,33 @@ export const tracks: Track[] = [
     brandColor: reactTrack.brandColor,
     glowColor: reactTrack.glowColor,
   },
-  {
+{
     id: kotlinTrack.id,
     title: kotlinTrack.title,
     titleBn: kotlinTrack.titleBn,
     tagline: kotlinTrack.tagline,
     taglineBn: kotlinTrack.taglineBn,
-    icon: "https://img.icons8.com/?size=96&id=ZoxjA0jZDdFZ&format=png",
+    icon: kotlinTrack.icon,
     colorVar: kotlinTrack.colorVar,
     totalChapters: kotlinTrack.totalChapters,
     estimatedHours: kotlinTrack.estimatedHours,
     chapters: kotlinTrack.chapters,
     brandColor: kotlinTrack.brandColor,
     glowColor: kotlinTrack.glowColor,
+  },
+  {
+    id: postgresqlTrack.id,
+    title: postgresqlTrack.title,
+    titleBn: postgresqlTrack.titleBn,
+    tagline: postgresqlTrack.tagline,
+    taglineBn: postgresqlTrack.taglineBn,
+    icon: postgresqlTrack.icon,
+    colorVar: postgresqlTrack.colorVar,
+    totalChapters: postgresqlTrack.totalChapters,
+    estimatedHours: postgresqlTrack.estimatedHours,
+    chapters: postgresqlTrack.chapters,
+    brandColor: postgresqlTrack.brandColor,
+    glowColor: postgresqlTrack.glowColor,
   },
 ];
 
