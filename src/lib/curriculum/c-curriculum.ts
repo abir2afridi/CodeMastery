@@ -3886,25 +3886,6 @@ fp(5, 3);            // Call
 **Bonus challenges:**
 - my_atoi — string to int
 - my_reverse — reverse string
-- my_trim — trim whitespace`,
-          content: `**Goal:** Implement common string functions using only pointers (no array notation).
-
-**Functions to implement:**
-1. my_strlen — string length
-2. my_strcpy — string copy
-3. my_strcat — string concatenation
-4. my_strcmp — string comparison
-5. my_strchr — find character
-6. my_strstr — find substring
-
-**Rules:**
-- Use pointer arithmetic only (no arr[i])
-- No standard string.h functions for your versions
-- Must handle edge cases
-
-**Bonus challenges:**
-- my_atoi — string to int
-- my_reverse — reverse string
 - my_trim — trim whitespace`
         },
         {

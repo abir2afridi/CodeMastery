@@ -58,6 +58,25 @@
     --bootstrap3-color: 262 52% 36%; /* Bootstrap 3 purple #563D7C */
     --bootstrap4-color: 262 43% 51%; /* Bootstrap 4 violet #7952B3 */
     --bootstrap5-color: 216 100% 50%; /* Bootstrap 5 blue #0D6EFD */
+    --sql-color: 120 100% 25%; /* SQL green #008000 */
+    --mysql-color: 35 100% 50%; /* MySQL orange #FFA500 */
+    --angular-color: 0 100% 50%; /* Angular red #FF0000 */
+    --vue-color: 153 100% 37%; /* Vue green #00BD7E */
+    --react-color: 189 100% 47%; /* React cyan #00D8FF */
+    --kotlin-color: 33 100% 50%; /* Kotlin orange #FF6F00 */
+    --postgresql-color: 210 100% 37%; /* PostgreSQL blue #0064A5 */
+    --jquery-color: 200 100% 50%; /* jQuery blue #0769AD */
+    --numpy-color: 226 100% 50%; /* NumPy blue #013243 */
+    --pandas-color: 131 58% 41%; /* Pandas blue #130654 */
+    --django-color: 120 2% 25%; /* Django green #092E20 */
+    --r-color: 217 71% 49%; /* R blue #276DC3 */
+    --go-color: 188 100% 42%; /* Go blue #00ADD8 */
+    --swift-color: 18 94% 50%; /* Swift orange #FA7343 */
+    --bash-color: 100 65% 40%; /* Bash green #4EAA25 */
+    --scipy-color: 221 65% 73%; /* SciPy blue #8CAAE6 */
+    --mongodb-color: 147 50% 47%; /* MongoDB green #47A248 */
+    --excel-color: 146 50% 37%; /* Excel green #217346 */
+    --dsa-color: 18 94% 58%; /* DSA orange #FF6B35 */
 
     /* Sidebar Colors */
     --sidebar-background: 264 59% 23%;

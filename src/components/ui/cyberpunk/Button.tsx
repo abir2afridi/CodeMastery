@@ -23,7 +23,7 @@ export const CyberpunkButton: React.FC<CyberpunkButtonProps> = ({
   disabled = false,
   asChild = false,
 }) => {
-  const Component = asChild ? motion.a : motion.button;
+  const Component = asChild ? motion.span : motion.button;
   const baseClasses = 'font-black uppercase tracking-[0.2em] transition-all duration-200 border-0';
   
   const sizeClasses = {

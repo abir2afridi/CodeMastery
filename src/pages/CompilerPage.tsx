@@ -16,6 +16,16 @@ import KotlinCompiler from "@/components/compiler/KotlinCompiler";
 import PostgresCompiler from "@/components/compiler/PostgresCompiler";
 import JQueryCompiler from "@/components/compiler/JQueryCompiler";
 import NumPyCompiler from "@/components/compiler/NumPyCompiler";
+import PandasCompiler from "@/components/compiler/PandasCompiler";
+import DjangoCompiler from "@/components/compiler/DjangoCompiler";
+import RCompiler from "@/components/compiler/RCompiler";
+import GoCompiler from "@/components/compiler/GoCompiler";
+import SwiftCompiler from "@/components/compiler/SwiftCompiler";
+import BashCompiler from "@/components/compiler/BashCompiler";
+import SciPyLab from "@/components/compiler/SciPyLab";
+import MongoDBStudio from "@/components/compiler/MongoDBStudio";
+import ExcelStudio from "@/components/compiler/ExcelStudio";
+import DSAVisualizerLab from "@/components/compiler/DSAVisualizerLab";
 
 const CompilerPage = () => {
   const [params] = useSearchParams();
@@ -83,6 +93,46 @@ const CompilerPage = () => {
 
   if (track === "numpy") {
     return <NumPyCompiler initialCode={params.get("code") || undefined} />;
+  }
+
+  if (track === "pandas") {
+    return <PandasCompiler initialCode={params.get("code") || undefined} />;
+  }
+
+  if (track === "django") {
+    return <DjangoCompiler initialCode={params.get("code") || undefined} />;
+  }
+
+  if (track === "r") {
+    return <RCompiler initialCode={params.get("code") || undefined} />;
+  }
+
+  if (track === "go") {
+    return <GoCompiler initialCode={params.get("code") || undefined} />;
+  }
+
+  if (track === "swift") {
+    return <SwiftCompiler initialCode={params.get("code") || undefined} />;
+  }
+
+  if (track === "bash") {
+    return <BashCompiler initialCode={params.get("code") || undefined} />;
+  }
+
+  if (track === "scipy") {
+    return <SciPyLab />;
+  }
+
+  if (track === "mongodb") {
+    return <MongoDBStudio />;
+  }
+
+  if (track === "excel") {
+    return <ExcelStudio />;
+  }
+
+  if (track === "dsa") {
+    return <DSAVisualizerLab />;
   }
 
   return (

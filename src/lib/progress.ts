@@ -81,6 +81,66 @@ export function loadProgress(): UserProgress | null {
     if (!progress.tracks.vue) {
       progress.tracks.vue = emptyTrack();
     }
+    // Migration: Add React track if missing
+    if (!progress.tracks.react) {
+      progress.tracks.react = emptyTrack();
+    }
+    // Migration: Add Kotlin track if missing
+    if (!progress.tracks.kotlin) {
+      progress.tracks.kotlin = emptyTrack();
+    }
+    // Migration: Add PostgreSQL track if missing
+    if (!progress.tracks.postgresql) {
+      progress.tracks.postgresql = emptyTrack();
+    }
+    // Migration: Add jQuery track if missing
+    if (!progress.tracks.jquery) {
+      progress.tracks.jquery = emptyTrack();
+    }
+    // Migration: Add NumPy track if missing
+    if (!progress.tracks.numpy) {
+      progress.tracks.numpy = emptyTrack();
+    }
+    // Migration: Add Pandas track if missing
+    if (!progress.tracks.pandas) {
+      progress.tracks.pandas = emptyTrack();
+    }
+    // Migration: Add Django track if missing
+    if (!progress.tracks.django) {
+      progress.tracks.django = emptyTrack();
+    }
+    // Migration: Add R track if missing
+    if (!progress.tracks.r) {
+      progress.tracks.r = emptyTrack();
+    }
+    // Migration: Add Go track if missing
+    if (!progress.tracks.go) {
+      progress.tracks.go = emptyTrack();
+    }
+    // Migration: Add Swift track if missing
+    if (!progress.tracks.swift) {
+      progress.tracks.swift = emptyTrack();
+    }
+    // Migration: Add Bash track if missing
+    if (!progress.tracks.bash) {
+      progress.tracks.bash = emptyTrack();
+    }
+    // Migration: Add SciPy track if missing
+    if (!progress.tracks.scipy) {
+      progress.tracks.scipy = emptyTrack();
+    }
+    // Migration: Add MongoDB track if missing
+    if (!progress.tracks.mongodb) {
+      progress.tracks.mongodb = emptyTrack();
+    }
+    // Migration: Add Excel track if missing
+    if (!progress.tracks.excel) {
+      progress.tracks.excel = emptyTrack();
+    }
+    // Migration: Add DSA track if missing
+    if (!progress.tracks.dsa) {
+      progress.tracks.dsa = emptyTrack();
+    }
 
     saveProgress(progress);
 
@@ -124,6 +184,21 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       mysql: emptyTrack(),
       angular: emptyTrack(),
       vue: emptyTrack(),
+      react: emptyTrack(),
+      kotlin: emptyTrack(),
+      postgresql: emptyTrack(),
+      jquery: emptyTrack(),
+      numpy: emptyTrack(),
+      pandas: emptyTrack(),
+      django: emptyTrack(),
+      r: emptyTrack(),
+      go: emptyTrack(),
+      swift: emptyTrack(),
+      bash: emptyTrack(),
+      scipy: emptyTrack(),
+      mongodb: emptyTrack(),
+      excel: emptyTrack(),
+      dsa: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);

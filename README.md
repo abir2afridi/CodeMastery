@@ -2,12 +2,12 @@
 🚀 Zero-to-Pro Web Development Learning Platform
 
 ## Overview
-CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, Web Colors, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, Kotlin, jQuery, and NumPy. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
+CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, Web Colors, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, Kotlin, jQuery, NumPy, Pandas, Django, R, Go, Swift, Bash, SciPy, MongoDB, Excel, and DSA. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
 
 ## 🌟 Key Features
 
-- **Interactive Multi-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, Kotlin, jQuery, and NumPy panels with real-time preview
-- **Comprehensive Curriculum**: 1050+ chapters covering everything from basics to advanced concepts
+- **Interactive Multi-Panel Compiler**: Live code editing with HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, Kotlin, jQuery, NumPy, Pandas, Django, R, Go, Swift, Bash, SciPy, MongoDB, Excel, and DSA panels with real-time preview
+- **Comprehensive Curriculum**: 1525+ chapters covering everything from basics to advanced concepts
 - **Progress Tracking**: XP system, streaks, achievements, and detailed progress analytics
 - **Certificate Generation**: Beautiful certificates upon track completion
 - **Project-Based Learning**: Real-world projects at every skill level
@@ -180,6 +180,151 @@ CodeMastery is a comprehensive web development learning platform designed to tak
 **Part 1: NumPy Fundamentals (Chapters 1-10)**
 - What Is NumPy and Why It Matters?, Installing NumPy, NumPy Arrays vs Python Lists, Creating Arrays, Array Attributes and Shapes, Indexing and Slicing, Array Operations, Data Types in NumPy, Reshaping Arrays, Array Iteration
 
+### Pandas Track (10 Chapters - ~5 hours)
+**Part 1: Pandas Fundamentals (Chapters 1-10)**
+- What Is Pandas and Why Use It?, Installing Pandas, Series Objects, DataFrames, Reading CSV Files, Reading Excel Files, Inspecting Data, Selecting Columns and Rows, Filtering Data, Data Types in Pandas
+
+### Django Track (10 Chapters - ~5 hours)
+**Part 1: Django Foundations (Chapters 1-10)**
+- What Is Django and Why Use It?, Installing Django and Creating First Project, Django Apps and Project Architecture, URLs and Routing, Views in Django, Django Templates, Models and Databases, Django Admin Panel, Forms and User Input, Static Files and Media Uploads
+
+### R Track (10 Chapters - ~4 hours)
+**Part 1: R Fundamentals (Chapters 1-10)**
+- What Is R and Why Use It?, Installing R and RStudio, Basic Data Types and Variables, Vectors and Vector Operations, Data Frames, Functions in R, Control Flow, Data Visualization with Base R, Introduction to dplyr, Statistical Analysis Basics
+
+### Go Track (60 Chapters - ~105 hours)
+**Part 1: Go Foundations (Chapters 1-10)**
+- What Is Go and Why Was It Created?, Installing Go and First Program, Variables and Data Types, Operators and Expressions, Control Flow, Functions in Go, Arrays Slices and Maps, Structs and Methods, Pointers in Go, Packages and Modules
+
+**Part 2: Intermediate Go (Chapters 11-22)**
+- Interfaces in Go, Error Handling, Defer Panic Recover, File Handling, JSON Encoding/Decoding, Time Package, Strings Package, Generics in Go, Reflection, Testing in Go, Benchmarking, Logging
+
+**Part 3: Concurrency (Chapters 23-34)**
+- Goroutines, Channels, Buffered Channels, Select Statement, Worker Pools, Mutexes and Synchronization, WaitGroups, Context Package, Race Conditions, Concurrent Patterns, High Performance Concurrency, Building Concurrent Systems
+
+**Part 4: Web Development (Chapters 35-46)**
+- HTTP Servers in Go, Routing, Middleware, REST APIs, JSON APIs, Authentication, JWT Tokens, PostgreSQL Integration, ORM Basics, WebSockets, File Upload APIs, API Security
+
+**Part 5: Advanced Go (Chapters 47-54)**
+- Memory Management, Garbage Collection, Performance Optimization, Profiling in Go, WebAssembly with Go, Microservices, Dockerizing Go Apps, Deploying Go Applications
+
+**Part 6: Projects (Chapters 55-60)**
+- CLI Tool Project, REST API Project, Real-Time Chat Server, Concurrent File Processor, Microservice Project, Go Mastery Recap + Certificate Prep
+
+### Swift Track (60 Chapters - ~110 hours)
+**Part 1: Swift Foundations (Chapters 1-10)**
+- What Is Swift and Why Did Apple Create It?, Installing Xcode and Swift Setup, Variables and Constants, Operators and Expressions, Control Flow, Functions, Collections, Structs and Classes, Optionals, Enumerations
+
+**Part 2: Intermediate Swift (Chapters 11-22)**
+- Protocols, Extensions, Error Handling, Closures Deep Dive, Generics, Access Control, ARC and Memory Management, Property Wrappers, Result Type, Async/Await, Actors and Concurrency, Codable and JSON
+
+**Part 3: SwiftUI (Chapters 23-36)**
+- Introduction to SwiftUI, Views and Layouts, Text and Images, Stacks and Grids, Navigation, State Management, Bindings, Lists and Forms, Animations, Gestures, MVVM Architecture, Networking in SwiftUI, Persistence and Storage, App Lifecycle
+
+**Part 4: iOS Development (Chapters 37-48)**
+- UIKit Basics, Table Views and Collection Views, Notifications and Permissions, Camera and Photos, Core Data, UserDefaults, Location Services, Push Notifications, API Integration, Authentication, Testing iOS Apps, App Store Deployment
+
+**Part 5: Advanced Swift (Chapters 49-54)**
+- Advanced Concurrency, Performance Optimization, Combine Framework, Modular App Architecture, Security Best Practices, Cross-Platform Swift
+
+**Part 6: Projects (Chapters 55-60)**
+- Notes App Project, Weather App Project, Chat App Project, E-Commerce App Project, Full SwiftUI Dashboard App, Swift Mastery Recap + Certificate Prep
+
+### Bash Track (60 Chapters - ~90 hours)
+**Part 1: Bash Foundations (Chapters 1-10)**
+- What Is Bash and Why Learn It?, Navigating the Filesystem, Working with Files and Directories, Viewing and Editing Files, Permissions and Ownership, Pipes and Redirection, Environment Variables, Process Management, Command History and Shortcuts, Finding Files and Content
+
+**Part 2: Intermediate Bash (Chapters 11-22)**
+- Introduction to Shell Scripting, Variables in Scripts, Positional Parameters and Input, Conditional Statements, Looping in Bash, Functions in Bash, Arrays in Bash, String Manipulation, Arithmetic and Calculations, Error Handling and Debugging, Regular Expressions with grep, sed — Stream Editor
+
+**Part 3: Text Processing & Data (Chapters 23-34)**
+- awk — Text Processing Powerhouse, Advanced awk, cut/paste/join, sort and uniq, diff and patch, File Archiving and Compression, File Monitoring and Watching, Date/Time/Timers, Network Commands (curl/wget), Text Editors in Terminal, Job Scheduling with cron, Shell Aliases and Functions
+
+**Part 4: System Administration (Chapters 35-46)**
+- User and Group Management, Disk and Filesystem Management, Package Management, System Logs and Journalctl, Process Prioritization and Limits, SSH and Remote Access, Firewall and Security, Systemd and Services, Environment and Shell Configuration, Backup Strategies, Monitoring and Alerting, Performance Tuning
+
+**Part 5: Advanced Bash (Chapters 47-54)**
+- Advanced Scripting Techniques, Debugging Complex Scripts, Bash Security Practices, POSIX vs Bash Extensions, Integration with Other Tools, CI/CD Scripting, Containerization (Docker), Cloud CLI Tools
+
+**Part 6: Projects (Chapters 55-60)**
+- System Backup Script, Log Analyzer, Deployment Automation, Monitoring Dashboard, DevOps Toolkit, Bash Mastery Recap + Certificate Prep
+
+### SciPy Track (50 Chapters - ~85 hours)
+**Part 1: SciPy Foundations (Chapters 1-8)**
+- What Is SciPy and Why It Matters?, Installing and Setting Up SciPy, Understanding the Scientific Python Ecosystem, NumPy Review for SciPy, Working with Arrays and Matrices, Mathematical Functions in SciPy, Scientific Computing Workflows, Real-World Applications of SciPy
+
+**Part 2: Linear Algebra and Matrix Computing (Chapters 9-16)**
+- Linear Algebra Fundamentals, Matrix Operations with scipy.linalg, Solving Linear Systems, Eigenvalues and Eigenvectors, Matrix Decomposition Methods, Sparse Matrices, Matrix Performance Optimization, Real Engineering Matrix Problems
+
+**Part 3: Optimization and Numerical Methods (Chapters 17-26)**
+- Numerical Optimization Basics, scipy.optimize Overview, Minimization Algorithms, Root Finding Methods, Curve Fitting and Regression, Nonlinear Optimization, Constrained Optimization, Numerical Integration, Differential Equations with scipy.integrate, Real Simulation Systems
+
+**Part 4: Signal and Image Processing (Chapters 27-36)**
+- Signal Processing Fundamentals, Fourier Transform and FFT, Filtering Signals, Audio Signal Analysis, Time Series Analysis, Image Processing Basics, Edge Detection and Filters, Image Transformations, Scientific Image Analysis, Real-World Signal Projects
+
+**Part 5: Statistics and Scientific Analysis (Chapters 37-44)**
+- Statistical Functions in SciPy, Probability Distributions, Hypothesis Testing, Statistical Modeling, Random Variables and Simulations, Monte Carlo Methods, Scientific Experiment Analysis, Research Data Workflows
+
+**Part 6: Projects (Chapters 45-50)**
+- Scientific Calculator System, Signal Processing Analyzer, Optimization Dashboard, Scientific Image Processing Toolkit, Scientific Challenge Set, SciPy Mastery Recap + Certificate Prep
+
+### MongoDB Track (60 Chapters - ~95 hours)
+**Part 1: NoSQL and MongoDB Foundations (Chapters 1-10)**
+- What Is MongoDB and Why NoSQL Exists?, Installing MongoDB and MongoDB Compass, Databases, Collections, and Documents, JSON vs BSON, MongoDB Shell Basics, CRUD: Insert, CRUD: Read, CRUD: Update, CRUD: Delete, Query Operators Deep Dive
+
+**Part 2: Data Modeling and Relationships (Chapters 11-20)**
+- Schema Design Principles, Embedding vs Referencing, One-to-One Relationships, One-to-Many Relationships, Many-to-Many Relationships, Schema Validation, Design Patterns (Bucket, Subset), Polymorphic Schemas, Time Series Data Design, Geospatial Data Modeling
+
+**Part 3: Aggregation and Advanced Queries (Chapters 21-32)**
+- Introduction to Aggregation Pipeline, $match and $group, $project and $sort, $lookup (Joins), $unwind and $bucket, $addFields and $replaceRoot, Aggregation Expressions, Date and String Operators, Conditional Aggregation, Pipeline Optimization, Real Aggregation Projects, Change Streams and Cursors
+
+**Part 4: Indexing, Performance, and Security (Chapters 33-42)**
+- Single Field Indexes, Compound Indexes, Multikey and Text Indexes, Geospatial and Hashed Indexes, Query Optimization and explain(), Performance Tuning, Authentication and Authorization, TLS/SSL and Encryption, Auditing and Compliance, Backup and Restore Strategies
+
+**Part 5: Backend Integration and Scaling (Chapters 43-52)**
+- MongoDB with Node.js, Mongoose ODM Basics, Advanced Mongoose Patterns, REST API Integration, Authentication Systems, Replication and Replica Sets, Sharding Concepts, MongoDB Atlas, Monitoring and Ops, Migration Strategies
+
+**Part 6: Projects (Chapters 53-60)**
+- Blog Backend Database, E-Commerce Database System, Analytics Dashboard Backend, Chat Application Database, Full MERN Stack Backend, Debugging Challenges, Production Optimization Challenges, Mastery Recap + Certificate Prep
+
+### Excel Track (70 Chapters - ~110 hours)
+**Part 1: Excel Foundations (Chapters 1-10)**
+- What Is Excel and Why It Matters?, Excel Interface and Navigation, Cells, Rows, Columns, and Worksheets, Entering and Editing Data, Basic Formatting, Saving, Exporting, and File Types, Basic Formulas and Arithmetic, Relative vs Absolute References, Excel Productivity Shortcuts, Real Business Spreadsheet Workflows
+
+**Part 2: Formulas and Functions (Chapters 11-26)**
+- SUM, AVERAGE, MIN, MAX, COUNT, COUNTA, COUNTIF, SUMIF, Logical Functions (IF, AND, OR), Nested IF Statements, Text Functions, Date and Time Functions, Lookup Functions (VLOOKUP), XLOOKUP Deep Dive, INDEX and MATCH, Dynamic Arrays, FILTER, SORT, UNIQUE, Error Handling Functions, Financial Functions, Statistical Functions, Formula Auditing and Debugging, Advanced Formula Patterns
+
+**Part 3: Data Analysis and Visualization (Chapters 27-40)**
+- Tables in Excel, Sorting and Filtering, Conditional Formatting, Data Validation, Pivot Tables Basics, Advanced Pivot Tables, Pivot Charts, Chart Types and Visualization, Dashboard Design Principles, Interactive Dashboards, Power Query Basics, Data Cleaning Workflows, Importing External Data, Business Intelligence Workflows
+
+**Part 4: Automation and Advanced Excel (Chapters 41-52)**
+- Named Ranges, Advanced Conditional Formatting, Advanced Data Validation, Scenario Analysis, Goal Seek and Solver, Power Pivot Basics, Excel Automation Concepts, Introduction to Macros, VBA Fundamentals, VBA Automation Workflows, Advanced VBA Projects, Excel Best Practices
+
+**Part 5: Professional Business Workflows (Chapters 53-62)**
+- Financial Modeling, Sales Reporting Systems, HR Data Management, Inventory Tracking Systems, KPI Dashboard Design, Budget Planning Systems, Forecasting and Trend Analysis, Data Cleaning Pipelines, Excel Collaboration Workflows, Enterprise Spreadsheet Standards
+
+**Part 6: Projects and Mastery (Chapters 63-70)**
+- Project: Sales Dashboard, Project: Financial Tracker, Project: Inventory Management System, Project: Employee Analytics Dashboard, Project: Automated Reporting System, Excel Challenge Set, Real Business Case Studies, Excel Mastery Recap + Certificate Prep
+
+### DSA Track (100 Chapters - ~180 hours)
+**Part 1: Algorithmic Thinking Foundations (Chapters 1-10)**
+- What Are Algorithms and Why They Matter?, Understanding Time Complexity, Big O Notation Deep Dive, Space Complexity, Problem Solving Methodologies, Recursion Fundamentals, Iteration vs Recursion, Mathematical Foundations for DSA, Debugging and Tracing Algorithms, Introduction to Competitive Programming
+
+**Part 2: Core Data Structures (Chapters 11-30)**
+- Arrays Fundamentals, Dynamic Arrays, Strings and String Algorithms, Linked Lists, Doubly Linked Lists, Circular Linked Lists, Stacks, Queues, Deques, Priority Queues, Hash Tables, Hash Collisions and Resolution, Sets and Maps, Trees Fundamentals, Binary Trees, Binary Search Trees, AVL Trees, Heaps, Tries, Disjoint Set Union (Union Find)
+
+**Part 3: Sorting, Searching, and Recursion (Chapters 31-44)**
+- Linear Search, Binary Search, Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort, Heap Sort, Counting Sort, Radix Sort, Recursive Backtracking, Divide and Conquer, Recursion Optimization, Problem Solving Patterns
+
+**Part 4: Graph Algorithms (Chapters 45-58)**
+- Graph Fundamentals, Graph Representations, Breadth-First Search (BFS), Depth-First Search (DFS), Topological Sorting, Shortest Path Algorithms, Dijkstra's Algorithm, Bellman-Ford Algorithm, Floyd-Warshall Algorithm, Minimum Spanning Trees, Prim's Algorithm, Kruskal's Algorithm, Graph Cycles and Connectivity, Real Graph Applications
+
+**Part 5: Advanced Algorithms (Chapters 59-76)**
+- Greedy Algorithms, Dynamic Programming Fundamentals, Memoization vs Tabulation, Knapsack Problems, Longest Common Subsequence, Matrix DP Problems, Sliding Window Technique, Two Pointer Technique, Bit Manipulation, Segment Trees, Fenwick Trees, Sparse Tables, Advanced String Algorithms, KMP Algorithm, Rabin-Karp Algorithm, Trie Optimization, Computational Geometry Basics, Advanced Competitive Programming Patterns
+
+**Part 6: Interview Preparation and Projects (Chapters 77-100)**
+- FAANG Interview Strategy, Whiteboard Problem Solving, Complexity Optimization Strategies, Common Interview Mistakes, Array Interview Problems, Linked List Interview Problems, Tree Interview Problems, Graph Interview Problems, DP Interview Problems, Greedy Interview Problems, Sliding Window Challenges, Binary Search Challenges, Recursion Challenge Set, Advanced Graph Challenges, DP Challenge Set, Competitive Programming Sets 1-3, Real System Design Algorithms, Project: Route Optimization Engine, Project: Social Graph Analyzer, Project: Search Engine Mini System, Mega DSA Challenge Set, DSA Mastery Recap + Certificate Prep
+
 ### W3.CSS Track (55 Chapters - ~45 hours)
 ### Web Colors Track (50 Chapters - ~40 hours)
 **Part 1: Absolute Beginning (Chapters 1-8)**
@@ -291,12 +436,12 @@ npm run dev
 src/
 ├── components/
 │   ├── certificate/     # Certificate generation components
-│   ├── compiler/       # Multi-panel live code editor (HTML, CSS, JS, Python, TypeScript)
+│   ├── compiler/       # Multi-panel live code editor (HTML, CSS, JS, Python, TypeScript, Go, Swift, Bash, SciPy, MongoDB, Excel, DSA)
 │   ├── layout/         # Navigation and layout components
 │   ├── lesson/         # Lesson content and interactions
 │   └── quiz/           # Quiz system components
 ├── lib/
-│   ├── curriculum/     # All course content (1050+ chapters)
+│   ├── curriculum/     # All course content (1570+ chapters)
 │   │   ├── html-curriculum.ts
 │   │   ├── css-curriculum.ts
 │   │   ├── js-curriculum.ts
@@ -306,6 +451,15 @@ src/
 │   │   ├── postgresql-curriculum.ts
 │   │   ├── jquery-curriculum.ts
 │   │   ├── numpy-curriculum.ts
+│   │   ├── pandas-curriculum.ts
+│   │   ├── django-curriculum.ts
+│   │   ├── go-curriculum.ts
+│   │   ├── swift-curriculum.ts
+│   │   ├── bash-curriculum.ts
+│   │   ├── scipy-curriculum.ts
+│   │   ├── mongodb-curriculum.ts
+│   │   ├── excel-curriculum.ts
+│   │   ├── dsa-curriculum.ts
 │   │   └── index.ts
 │   ├── progress.ts      # User progress tracking
 │   ├── certificate.ts  # Certificate generation
