@@ -59,7 +59,7 @@ const navItems = [
   {
     title: "Web Dev Hub",
     icon: Globe,
-    url: "/tech",
+    url: "/web-dev",
     color: "text-cyan-500"
   },
   {
@@ -77,13 +77,16 @@ const navItems = [
 ];
 
 const webDevHubLinks: { title: string; icon: LucideIcon; url: string; color: string }[] = [
-  { title: "Browse All", icon: Globe, url: "/tech", color: "#00D4FF" },
-  { title: "Frontend", icon: Palette, url: "/tech?category=Frontend", color: "#00D4FF" },
-  { title: "Backend", icon: Server, url: "/tech?category=Backend", color: "#00FF41" },
-  { title: "Databases", icon: Database, url: "/tech?category=Databases", color: "#FFB700" },
-  { title: "AI & ML", icon: Brain, url: "/tech?category=AI%20%26%20ML", color: "#B026FF" },
-  { title: "DevOps", icon: Cloud, url: "/tech?category=DevOps", color: "#FF3B30" },
-  { title: "Data Science", icon: BarChart3, url: "/tech?category=Data%20Science", color: "#FF6B35" },
+  { title: "Browse All", icon: Globe, url: "/web-dev", color: "#00D4FF" },
+  { title: "Frontend", icon: Palette, url: "/web-dev/category/frontend", color: "#00D4FF" },
+  { title: "Backend", icon: Server, url: "/web-dev/category/backend", color: "#00FF41" },
+  { title: "Databases", icon: Database, url: "/web-dev/category/databases", color: "#FFB700" },
+  { title: "AI & ML", icon: Brain, url: "/web-dev/category/ai-tools", color: "#B026FF" },
+  { title: "DevOps", icon: Cloud, url: "/web-dev/category/devops", color: "#FF3B30" },
+  { title: "Languages", icon: BarChart3, url: "/web-dev/languages", color: "#FF6B35" },
+  { title: "Roadmaps", icon: BookOpen, url: "/web-dev/roadmaps", color: "#00FF41" },
+  { title: "Rankings", icon: Activity, url: "/web-dev/ranking", color: "#FFB700" },
+  { title: "Dev Tools", icon: Terminal, url: "/web-dev/dev-tools", color: "#B026FF" },
 ];
 
 export function AppSidebar() {

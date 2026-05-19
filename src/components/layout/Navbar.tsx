@@ -65,7 +65,7 @@ export function Navbar() {
         {/* Right: Actions */}
         <div className="flex items-center gap-4">
           <Link
-            to="/tech"
+            to="/web-dev"
             className="hidden md:flex items-center gap-2 px-3 py-1.5 text-[10px] font-black tracking-widest uppercase rounded border border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 transition-colors"
           >
             <Globe className="w-3.5 h-3.5" />

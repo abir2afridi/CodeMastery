@@ -281,11 +281,90 @@
     opacity: 0.05;
   }
 
+  .bg-dot-pattern {
+    background-image: radial-gradient(circle, hsl(var(--foreground) / 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
 
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-foreground via-foreground/90 to-foreground/70;
+  }
 
   .border-glow {
     box-shadow: 0 0 15px hsl(var(--primary) / 0.2);
   }
+
+  .glass-morphism {
+    @apply bg-background/60 backdrop-blur-[20px] border border-white/10 dark:border-white/5;
+  }
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+  .scrollbar-premium {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+  }
+  .scrollbar-premium::-webkit-scrollbar { width: 4px; }
+  .scrollbar-premium::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-premium::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    border: 1px solid transparent;
+    transition: all 0.4s ease;
+  }
+  .scrollbar-premium:hover::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); }
+  .stagger-children > * { @apply animate-fade-in; }
+  .stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+  .stagger-children > *:nth-child(2) { animation-delay: 30ms; }
+  .stagger-children > *:nth-child(3) { animation-delay: 60ms; }
+  .stagger-children > *:nth-child(4) { animation-delay: 90ms; }
+  .stagger-children > *:nth-child(5) { animation-delay: 120ms; }
+  .stagger-children > *:nth-child(6) { animation-delay: 150ms; }
+  .stagger-children > *:nth-child(n+7) { animation-delay: 180ms; }
+  .surface-premium {
+    @apply bg-gradient-to-br from-secondary/50 via-background to-secondary/30 backdrop-blur-xl border border-border/40 shadow-2xl;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
