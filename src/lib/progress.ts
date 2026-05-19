@@ -218,6 +218,12 @@ export function loadProgress(): UserProgress | null {
     if (!progress.tracks.icons) {
       progress.tracks.icons = emptyTrack();
     }
+    if (!progress.tracks.canvas) {
+      progress.tracks.canvas = emptyTrack();
+    }
+    if (!progress.tracks.emojis) {
+      progress.tracks.emojis = emptyTrack();
+    }
 
     saveProgress(progress);
 
@@ -300,6 +306,8 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       "typing-speed": emptyTrack(),
       svg: emptyTrack(),
       icons: emptyTrack(),
+      canvas: emptyTrack(),
+      emojis: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);

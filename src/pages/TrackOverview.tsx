@@ -1,8 +1,8 @@
 import { Link, Navigate, useParams } from "react-router-dom";
-import { getTrack } from "@/lib/curriculum";
+import { getTrack, enrichedTracks } from "@/lib/curriculum";
 import { useProgress } from "@/hooks/useProgress";
 import { getChapterProgress, isChapterUnlocked, startTrackFor, saveProgress } from "@/lib/progress";
-import { Lock, Check, Play, ArrowLeft, Terminal, Shield, Zap, Activity, ChevronRight, Cpu, Database } from "lucide-react";
+import { Lock, Check, Play, ArrowLeft, Terminal, Shield, Zap, Activity, ChevronRight, Cpu, Database, ArrowRight, BookOpen, GraduationCap } from "lucide-react";
 import { DifficultyBadge, XPBadge } from "@/components/ui/badges";
 import type { TrackId } from "@/lib/curriculum/types";
 import { useEffect } from "react";
@@ -10,6 +10,7 @@ import { CyberpunkButton, CyberpunkCard } from "@/components/ui/cyberpunk";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/hooks/useI18n";
+import { getTrackRelationshipSummary, learningPaths } from "@/lib/learning-taxonomy";
 
 const TrackOverview = () => {
   const { trackId } = useParams<{ trackId: TrackId }>();
@@ -284,6 +285,149 @@ const TrackOverview = () => {
               </div>
             ))}
           </div>
+
+          {/* RELATED TRACKS SECTION */}
+          {(() => {
+            const summary = getTrackRelationshipSummary(track.id);
+            if (!summary) return null;
+
+            const relatedTrackObjects = summary.relatedTracks
+              .map(id => enrichedTracks.find(t => t.id === id))
+              .filter(Boolean);
+
+            const prerequisiteObjects = summary.prerequisites
+              .map(id => enrichedTracks.find(t => t.id === id))
+              .filter(Boolean);
+
+            const learningPath = summary.learningPath;
+
+            return (
+              <div className="space-y-12 mt-16 pt-12 border-t-2 border-foreground/10">
+                {/* Learning Path */}
+                {learningPath && (
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-4">
+                      <div className="h-[2px] w-8 bg-primary" />
+                      <span className="terminal-label text-primary">LEARNING_PATH</span>
+                    </div>
+                    <CyberpunkCard className="p-6 border-2 border-primary/30 bg-primary/5">
+                      <div className="flex items-start gap-4">
+                        <GraduationCap className="w-8 h-8 text-primary shrink-0 mt-1" />
+                        <div className="space-y-3 flex-1">
+                          <h3 className="text-xl font-black uppercase tracking-tight text-primary">{learningPath.title}</h3>
+                          <p className="text-[10px] font-black tracking-widest text-foreground/40 uppercase">
+                            {learningPath.tracks.length} tracks • {learningPath.estimatedHours} hrs
+                          </p>
+                          <div className="flex flex-wrap items-center gap-2">
+                            {learningPath.tracks.map((id, i) => {
+                              const pathTrack = enrichedTracks.find(t => t.id === id);
+                              if (!pathTrack) return null;
+                              return (
+                                <span key={id} className="flex items-center gap-2">
+                                  {i > 0 && <ArrowRight className="w-3 h-3 text-foreground/20" />}
+                                  <Link
+                                    to={`/learn/${id}`}
+                                    className={cn(
+                                      "text-[10px] font-black tracking-wider uppercase transition-colors",
+                                      id === track.id ? "text-primary" : "text-foreground/60 hover:text-foreground"
+                                    )}
+                                  >
+                                    {isBn && pathTrack.titleBn ? pathTrack.titleBn : pathTrack.title}
+                                  </Link>
+                                </span>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    </CyberpunkCard>
+                  </div>
+                )}
+
+                {/* Prerequisites */}
+                {prerequisiteObjects.length > 0 && (
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-4">
+                      <div className="h-[2px] w-8 bg-warning-amber" />
+                      <span className="terminal-label text-warning-amber">PREREQUISITES</span>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {prerequisiteObjects.map(prereq => (
+                        <Link key={prereq!.id} to={`/learn/${prereq!.id}`} className="group">
+                          <CyberpunkCard className="p-4 border-2 border-foreground/10 hover:border-warning-amber/30 transition-all">
+                            <div className="flex items-center gap-3">
+                              <img src={prereq!.icon} alt="" className="w-8 h-8" />
+                              <div>
+                                <h4 className="text-sm font-black uppercase tracking-tight group-hover:text-warning-amber transition-colors">
+                                  {isBn && prereq!.titleBn ? prereq!.titleBn : prereq!.title}
+                                </h4>
+                                <p className="text-[8px] font-black tracking-widest text-foreground/40 uppercase">
+                                  {prereq!.difficulty}
+                                </p>
+                              </div>
+                              <ChevronRight className="w-4 h-4 ml-auto text-foreground/20 group-hover:text-warning-amber transition-colors" />
+                            </div>
+                          </CyberpunkCard>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Related Tracks */}
+                {relatedTrackObjects.length > 0 && (
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-4">
+                      <div className="h-[2px] w-8 bg-primary" />
+                      <span className="terminal-label text-primary">RELATED_TRACKS</span>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {relatedTrackObjects.map(related => (
+                        <Link key={related!.id} to={`/learn/${related!.id}`} className="group">
+                          <CyberpunkCard className="p-4 border-2 border-foreground/10 hover:border-primary/30 transition-all">
+                            <div className="flex items-center gap-3">
+                              <img src={related!.icon} alt="" className="w-8 h-8" />
+                              <div className="min-w-0">
+                                <h4 className="text-sm font-black uppercase tracking-tight truncate group-hover:text-primary transition-colors">
+                                  {isBn && related!.titleBn ? related!.titleBn : related!.title}
+                                </h4>
+                                <p className="text-[8px] font-black tracking-widest text-foreground/40 uppercase">
+                                  {related!.subcategory}
+                                </p>
+                              </div>
+                              <ChevronRight className="w-4 h-4 ml-auto shrink-0 text-foreground/20 group-hover:text-primary transition-colors" />
+                            </div>
+                          </CyberpunkCard>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Track Metadata */}
+                <div className="p-4 border-2 border-foreground/10 bg-foreground/[0.02] space-y-3">
+                  <div className="flex items-center gap-4">
+                    <div className="h-[2px] w-8 bg-foreground/20" />
+                    <span className="terminal-label">TRACK_METADATA</span>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-[10px]">
+                    <div>
+                      <span className="text-foreground/20 uppercase tracking-wider block">Category</span>
+                      <span className="font-black text-foreground/60">{summary.category}</span>
+                    </div>
+                    <div>
+                      <span className="text-foreground/20 uppercase tracking-wider block">Subcategory</span>
+                      <span className="font-black text-foreground/60">{summary.subcategory}</span>
+                    </div>
+                    <div>
+                      <span className="text-foreground/20 uppercase tracking-wider block">Difficulty</span>
+                      <span className="font-black text-foreground/60 capitalize">{summary.difficulty}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </div>
     </div>

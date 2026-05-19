@@ -282,6 +282,10 @@ export const en: Dict = {
   "track.svg.tagline": "Master scalable vector graphics and interactive visual systems",
   "track.icons.title": "Icons",
   "track.icons.tagline": "Master modern icon systems and scalable UI graphics",
+  "track.canvas.title": "HTML5 Canvas",
+  "track.canvas.tagline": "Draw, animate, and build interactive graphics in the browser",
+  "track.emojis.title": "Emoji & Unicode",
+  "track.emojis.tagline": "Master the universe of emojis, Unicode, and text encoding",
 
   // Courses Page
   "courses.title": "Programming Languages",
@@ -642,6 +646,10 @@ export const bn: Dict = {
   "track.svg.tagline": "স্কেলেবল ভেক্টর গ্রাফিক্স এবং ইন্টারঅ্যাকটিভ ভিজ্যুয়াল সিস্টেম আয়ত্ত করুন",
   "track.icons.title": "আইকন",
   "track.icons.tagline": "আধুনিক আইকন সিস্টেম এবং স্কেলেবল ইউআই গ্রাফিক্স আয়ত্ত করুন",
+  "track.canvas.title": "এইচটিএমএল৫ ক্যানভাস",
+  "track.canvas.tagline": "ব্রাউজারে আঁকুন, অ্যানিমেট করুন এবং ইন্টারঅ্যাকটিভ গ্রাফিক্স তৈরি করুন",
+  "track.emojis.title": "ইমোজি ও ইউনিকোড",
+  "track.emojis.tagline": "ইমোজি, ইউনিকোড এবং টেক্সট এনকোডিং আয়ত্ত করুন",
   "courses.title": "প্রোগ্রামিং ল্যাঙ্গুয়েজ",
   "courses.selectTrack": "আপনার শেখার যাত্রা শুরু করতে একটি ট্র্যাক নির্বাচন করুন",
   "courses.totalChapters": "মোট অধ্যায়",

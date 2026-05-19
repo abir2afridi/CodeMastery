@@ -50,6 +50,8 @@ import { SpreadsheetPlayground } from "@/components/compiler/SpreadsheetPlaygrou
 import { TypingPlayground } from "@/components/compiler/TypingPlayground";
 import { SVGPlayground } from "@/components/compiler/SVGPlayground";
 import { IconsPlayground } from "@/components/compiler/IconsPlayground";
+import { CanvasPlayground } from "@/components/compiler/CanvasPlayground";
+import { EmojiPlayground } from "@/components/compiler/EmojiPlayground";
 
 const CompilerPage = () => {
   const [params] = useSearchParams();
@@ -253,6 +255,14 @@ const CompilerPage = () => {
 
   if (track === "icons") {
     return <IconsPlayground />;
+  }
+
+  if (track === "canvas") {
+    return <CanvasPlayground />;
+  }
+
+  if (track === "emojis") {
+    return <EmojiPlayground />;
   }
 
   return (

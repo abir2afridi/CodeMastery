@@ -101,6 +101,8 @@
     --typing-speed-color: 25 95% 53%; /* Typing Speed orange #F97316 */
     --svg-color: 186 94% 43%; /* SVG cyan #06B6D4 */
     --icons-color: 43 91% 50%; /* Icons amber #F59E0B */
+    --canvas-color: 14 100% 57%; /* Canvas orange #FF5722 */
+    --emojis-color: 45 100% 50%; /* Emojis amber #FFC107 */
 
     /* Sidebar Colors */
     --sidebar-background: 264 59% 23%;

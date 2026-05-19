@@ -141,6 +141,7 @@ export default {
         "typing-speed": "hsl(var(--typing-speed-color))",
         svg: "hsl(var(--svg-color))",
         icons: "hsl(var(--icons-color))",
+        emojis: "hsl(var(--emojis-color))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

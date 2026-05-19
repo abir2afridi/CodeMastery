@@ -57,7 +57,10 @@ import { googleSheetsTrack } from "./google-sheets-curriculum";
 import { typingSpeedTrack } from "./typing-speed-curriculum";
 import { svgTrack } from "./svg-curriculum";
 import { iconsTrack } from "./icons-curriculum";
+import { canvasTrack } from "./canvas-curriculum";
+import { emojiTrack } from "./emoji-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
+import { trackRelationships } from "@/lib/learning-taxonomy";
 export const tracks: Track[] = [
   {
     id: "html",
@@ -885,9 +888,52 @@ export const tracks: Track[] = [
     brandColor: iconsTrack.brandColor,
     glowColor: iconsTrack.glowColor,
   },
+  {
+    id: canvasTrack.id,
+    title: canvasTrack.title,
+    titleBn: canvasTrack.titleBn,
+    tagline: canvasTrack.tagline,
+    taglineBn: canvasTrack.taglineBn,
+    icon: canvasTrack.icon,
+    colorVar: canvasTrack.colorVar,
+    totalChapters: canvasTrack.totalChapters,
+    estimatedHours: canvasTrack.estimatedHours,
+    chapters: canvasTrack.chapters,
+    brandColor: canvasTrack.brandColor,
+    glowColor: canvasTrack.glowColor,
+  },
+  {
+    id: emojiTrack.id,
+    title: emojiTrack.title,
+    titleBn: emojiTrack.titleBn,
+    tagline: emojiTrack.tagline,
+    taglineBn: emojiTrack.taglineBn,
+    icon: emojiTrack.icon,
+    colorVar: emojiTrack.colorVar,
+    totalChapters: emojiTrack.totalChapters,
+    estimatedHours: emojiTrack.estimatedHours,
+    chapters: emojiTrack.chapters,
+    brandColor: emojiTrack.brandColor,
+    glowColor: emojiTrack.glowColor,
+  },
 ];
 
-export const getTrack = (id: TrackId): Track | undefined => tracks.find((t) => t.id === id);
+// Enrich tracks with taxonomy data
+export const enrichedTracks: Track[] = tracks.map(track => {
+  const rel = trackRelationships[track.id];
+  if (!rel) return track;
+  return {
+    ...track,
+    prerequisites: rel.prerequisites,
+    relatedTracks: rel.relatedTracks,
+    recommendedAfter: rel.recommendedAfter,
+    category: rel.category,
+    subcategory: rel.subcategory,
+    difficulty: rel.difficulty,
+  };
+});
+
+export const getTrack = (id: TrackId): Track | undefined => enrichedTracks.find((t) => t.id === id);
 
 export const getChapter = (trackId: TrackId, chapterId: string): Chapter | undefined => {
   const track = getTrack(trackId);

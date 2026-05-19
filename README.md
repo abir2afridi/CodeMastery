@@ -2,12 +2,12 @@
 🚀 Zero-to-Pro Web Development Learning Platform
 
 ## Overview
-CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, Web Colors, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, React, Kotlin, jQuery, NumPy, Pandas, Django, R, Go, Swift, Bash, SciPy, MongoDB, Excel, DSA, XML, JSON, Node.js, ASP, Cybersecurity, AWS, Machine Learning, Statistics, RWD, AJAX, Rust, Matplotlib, UTF-8 & Character Encoding, and Raspberry Pi & IoT. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
+CodeMastery is a comprehensive web development learning platform designed to take absolute beginners from zero to professional-level mastery in HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, W3.CSS, Web Colors, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, React, Kotlin, jQuery, NumPy, Pandas, Django, R, Go, Swift, Bash, SciPy, MongoDB, Excel, DSA, XML, JSON, Node.js, ASP, Cybersecurity, AWS, Machine Learning, Statistics, RWD, AJAX, Rust, Matplotlib, UTF-8 & Character Encoding, Raspberry Pi & IoT, Bootstrap 3/4/5, HTML DOM, AI, GenAI, Intro to Programming, Web Accessibility, Intro to HTML & CSS, CodeGame, Google Sheets, Typing Speed, SVG, and Icons. Built with the philosophy that quality and depth matter more than speed, every concept is explained thoroughly with real-world analogies, hands-on practice, and immediate feedback.
 
 ## 🌟 Key Features
 
-- **Interactive Multi-Panel Compiler**: Live code editing with 49 language-specific compilers including HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, React, Kotlin, jQuery, NumPy, Pandas, Django, R, Go, Swift, Bash, SciPy, MongoDB, Excel, DSA, XML, JSON, Node.js, ASP, Cybersecurity, AWS, Machine Learning, Statistics, RWD, AJAX, Rust, Matplotlib, UTF-8 & Character Encoding, and Raspberry Pi & IoT with real-time preview
-- **Comprehensive Curriculum**: 2848+ chapters across 49 tracks covering everything from basics to advanced concepts
+- **Interactive Multi-Panel Compiler**: Live code editing with 59 language-specific compilers and interactive playgrounds including HTML, CSS, JavaScript, Python, TypeScript, C, C++, Java, C#, PHP, SQL, MySQL, PostgreSQL, Angular, Vue, React, Kotlin, jQuery, NumPy, Pandas, Django, R, Go, Swift, Bash, SciPy, MongoDB, Excel, DSA, XML, JSON, Node.js, ASP, Cybersecurity, AWS, Machine Learning, Statistics, RWD, AJAX, Rust, Matplotlib, UTF-8 & Character Encoding, Raspberry Pi & IoT, Bootstrap 3/4/5, HTML DOM, AI, GenAI, Google Sheets, Typing Speed, SVG, and Icons with real-time preview
+- **Comprehensive Curriculum**: 3400+ chapters across 59 tracks covering everything from basics to advanced concepts
 - **Progress Tracking**: XP system, streaks, achievements, and detailed progress analytics
 - **Certificate Generation**: Beautiful certificates upon track completion
 - **Project-Based Learning**: Real-world projects at every skill level
@@ -325,8 +325,7 @@ CodeMastery is a comprehensive web development learning platform designed to tak
 **Part 6: Interview Preparation and Projects (Chapters 77-100)**
 - FAANG Interview Strategy, Whiteboard Problem Solving, Complexity Optimization Strategies, Common Interview Mistakes, Array Interview Problems, Linked List Interview Problems, Tree Interview Problems, Graph Interview Problems, DP Interview Problems, Greedy Interview Problems, Sliding Window Challenges, Binary Search Challenges, Recursion Challenge Set, Advanced Graph Challenges, DP Challenge Set, Competitive Programming Sets 1-3, Real System Design Algorithms, Project: Route Optimization Engine, Project: Social Graph Analyzer, Project: Search Engine Mini System, Mega DSA Challenge Set, DSA Mastery Recap + Certificate Prep
 
-### W3.CSS Track (55 Chapters - ~45 hours)
-### Web Colors Track (50 Chapters - ~40 hours)
+### C Programming Track (85 Chapters - ~130 hours)
 **Part 1: Absolute Beginning (Chapters 1-8)**
 - What is C?, Variables & Data Types, Operators, Input/Output, Conditionals, Loops, Functions, Scope & Storage Classes
 
@@ -350,6 +349,26 @@ CodeMastery is a comprehensive web development learning platform designed to tak
 
 **Part 8: Advanced C and Projects (Chapters 69-85)**
 - Standard Library, Math Functions, Time/Date, Signals, Multithreading, Socket Programming, Portable Code, Interview Questions, and 6 Comprehensive Projects
+
+### W3.CSS Track (55 Chapters - ~45 hours)
+**Part 1: W3.CSS Fundamentals (Chapters 1-14)**
+- What Is W3.CSS?, Installation & Setup, Containers & Layouts, Typography, Colors, Buttons, Cards, Tables, Forms, Navigation, Responsive Design with W3.CSS, Animations, Modals & Popups
+
+**Part 2: Components & Projects (Chapters 15-30)**
+- Progress Bars, Input Groups, Panels & Wells, Dropdowns, Accordions, Tabs, Slideshows, Tooltips, Badges & Labels, Icons & Fonts, Grid System, Code Highlighting
+
+**Part 3: Advanced & Projects (Chapters 31-55)**
+- W3.CSS with JavaScript, Theming & Customization, Mobile Optimization, Landing Page, Portfolio, Dashboard, E-Commerce, Blog Theme, Challenge Sets, Mastery + Certificate Prep
+
+### Web Colors Track (50 Chapters - ~40 hours)
+**Part 1: Color Theory (Chapters 1-12)**
+- What Is Color?, Light & Color, RGB Color Model, Hex Colors, HSL & HSLA, Color Wheel, Color Harmony, Color Psychology, Accessibility & Contrast, Brand Colors, Cultural Color Meanings, Color Trends
+
+**Part 2: Web Color Systems (Chapters 13-30)**
+- CSS Named Colors, Custom Properties & Themes, Gradient Systems, Color Variables, Dark Mode, Color Palettes, Design Token Colors, Color in UI Components, Data Visualization Color, Color Blindness Considerations, WCAG Color Contrast, Tools & Pickers
+
+**Part 3: Projects (Chapters 31-50)**
+- Color Palette Generator, Theme Builder, Accessibility Checker, Gradient Studio, Brand Color System, Challenge Sets, Mastery + Certificate Prep
 
 ### Angular Track (70+ Chapters - ~115 hours)
 **Part 1: Angular Fundamentals**
@@ -550,6 +569,216 @@ CodeMastery is a comprehensive web development learning platform designed to tak
 **Part 5: Projects (Chapters 47-60)**
 - Smart Home Dashboard, Weather Station, Security Camera System, Motion Alarm, IoT Plant Monitor, Voice Assistant, Smart Lighting, Pi NAS, Robot Car, Mini Hardware Challenges, Automation Challenge Set, IoT System Design, Deployment & Maintenance, Mastery + Certificate
 
+### PHP Track (90 Chapters - ~140 hours)
+**Part 1: PHP Foundations (Chapters 1-14)**
+- What Is PHP?, Installation & Setup, Syntax & Variables, Data Types, Operators, Conditionals, Loops, Functions, Arrays, Superglobals, Forms & Input, Sessions & Cookies, File Handling, Error Handling
+
+**Part 2: OOP & Databases (Chapters 15-30)**
+- Classes & Objects, Inheritance, Interfaces, Traits, Namespaces, PDO & MySQL, CRUD Operations, SQL Injection Prevention, Prepared Statements, Relationships, Authentication, File Uploads, REST APIs with PHP, Composer & Packages, MVC Architecture
+
+**Part 3: Modern PHP & Frameworks (Chapters 31-50)**
+- Laravel Fundamentals, Routing & Controllers, Blade Templating, Eloquent ORM, Migrations & Seeders, Middleware, API Development, Testing with PHPUnit, Security Best Practices, Caching, Queues & Jobs, Email & Notifications, Real-Time Features, Deployment & DevOps
+
+**Part 4: Projects (Chapters 51-90)**
+- Blog Engine, REST API Server, E-Commerce Backend, CMS System, Task Manager, Challenge Sets, Mastery + Certificate Prep
+
+### SQL Track (75 Chapters - ~50 hours)
+**Part 1: SQL Fundamentals (Chapters 1-18)**
+- What Is SQL?, SELECT Queries, WHERE Clause, Operators, ORDER BY, LIMIT/OFFSET, DISTINCT, Aggregate Functions, GROUP BY, HAVING, JOINs (INNER, LEFT, RIGHT, FULL), Subqueries, UNION, EXISTS, CASE Expressions, NULL Handling, Data Types, Constraints
+
+**Part 2: Data Manipulation & Design (Chapters 19-35)**
+- INSERT, UPDATE, DELETE, Transactions, Views, Indexes, Stored Procedures, Functions, Triggers, Normalization, ER Diagrams, Schema Design, Performance Tuning, Query Optimization, Security Best Practices, Backup & Restore
+
+**Part 3: Advanced SQL & Projects (Chapters 36-75)**
+- Window Functions, CTEs, Recursive Queries, Full-Text Search, JSON in SQL, Temporal Tables, Partitioning, Replication, Migration Strategies, E-Commerce Database, Analytics Dashboard, Data Warehouse, Challenge Sets, Mastery + Certificate Prep
+
+### MySQL Track (70 Chapters - ~110 hours)
+**Part 1: MySQL Foundations (Chapters 1-16)**
+- What Is MySQL?, Installation & Configuration, Databases & Tables, Data Types, SELECT Queries, Filtering, Sorting, Aggregate Functions, GROUP BY, JOINs, Subqueries, Views, Indexes, Stored Procedures, Functions, Triggers
+
+**Part 2: Administration & Performance (Chapters 17-34)**
+- User Management, Privileges & Security, Backup & Restore, Replication, Partitioning, Query Optimization, EXPLAIN, Performance Schema, InnoDB Architecture, Locking & Transactions, Logging & Monitoring, High Availability
+
+**Part 3: MySQL Ecosystem & Projects (Chapters 35-70)**
+- PHP & MySQL, Python & MySQL, Node.js & MySQL, ORM Integration, Full-Text Search, JSON Support, GIS & Spatial Data, Cloud MySQL, Docker & MySQL, Migration, E-Commerce Backend, Analytics System, Challenge Sets, Mastery + Certificate Prep
+
+### Bootstrap 3 Track (20 Chapters - ~30 hours)
+**Part 1: Bootstrap 3 Essentials (Chapters 1-10)**
+- Grid System, Typography, Tables, Forms, Buttons, Images, Helper Classes, Responsive Utilities, Components Overview, JavaScript Plugins
+
+**Part 2: Layout & Projects (Chapters 11-20)**
+- Navbar, Dropdowns, Modals, Carousels, Tabs & Pills, Tooltips & Popovers, Landing Page, Dashboard UI, Portfolio, Challenge Sets
+
+### Bootstrap 4 Track (22 Chapters - ~35 hours)
+**Part 1: Bootstrap 4 Fundamentals (Chapters 1-11)**
+- Migration from v3, Flexbox Grid, Display Utilities, Spacing System, Typography Updates, Forms & Input Groups, Cards, New Components, Icons, Custom Forms, Utilities
+
+**Part 2: Advanced & Projects (Chapters 12-22)**
+- Navbar, Dropdowns, Modals, Carousel, Tooltips, Scrollspy, Toasts, Dashboard, E-Commerce UI, Landing Page, Challenge Sets
+
+### Bootstrap 5 Track (25 Chapters - ~40 hours)
+**Part 1: Bootstrap 5 Essentials (Chapters 1-12)**
+- Migration from v4, CSS Custom Properties, Improved Grid, Updated Forms, Floating Labels, Offcanvas, Accordion, New Utility API, Icons & SVGs, RTL Support, JavaScript Rewrite
+
+**Part 2: Ecosystem & Projects (Chapters 13-25)**
+- Theme Customization, Build Tools, Sass Integration, Dashboard, SaaS Landing Page, Admin Panel, Portfolio, Component Library, Challenge Sets, Mastery + Certificate Prep
+
+### HTML DOM Track (60 Chapters - ~90 hours)
+**Part 1: DOM Fundamentals (Chapters 1-14)**
+- What Is the DOM?, DOM Tree Structure, Node Types, Document Object, Element Selection, Traversal Methods, Node Manipulation, Attribute Management, Style Manipulation, ClassList API, innerHTML vs textContent, DOM Events, Event Propagation, Event Object
+
+**Part 2: Advanced DOM (Chapters 15-34)**
+- Event Delegation, Custom Events, Intersection Observer, Mutation Observer, Resize Observer, Drag & Drop API, Clipboard API, Fullscreen API, Page Visibility API, Geolocation API, Web Storage, IndexedDB, Canvas Basics, SVG Manipulation, Form APIs, Validation API, Shadow DOM, Custom Elements, HTML Templates, Web Components Lifecycle
+
+**Part 3: Performance & Projects (Chapters 35-60)**
+- DOM Performance, Reflow & Repaint, Virtual DOM Concepts, Document Fragments, Debouncing & Throttling, Lazy Loading, Infinite Scroll, Todo App, Kanban Board, Image Gallery, Form Builder, Dashboard, Real-Time Editor, Challenge Sets, Mastery + Certificate Prep
+
+### React Track (52 Chapters - ~90 hours)
+**Part 1: React Foundations (Chapters 1-12)**
+- What Is React?, JSX, Components, Props, State & useState, Event Handling, Conditional Rendering, Lists & Keys, Forms, Lifting State, Composition, Lifecycle & useEffect
+
+**Part 2: Intermediate React (Chapters 13-26)**
+- useRef, useReducer, Context API, Custom Hooks, React Router, Styling Approaches, Controlled vs Uncontrolled, Portals, Error Boundaries, Higher-Order Components, Render Props, Code Splitting
+
+**Part 3: Advanced React (Chapters 27-38)**
+- Performance Optimization, useMemo & useCallback, React.memo, Virtualization, State Management (Redux/Zustand), Testing with RTL, TypeScript with React, Next.js Basics, SSR & SSG, API Routes, Authentication, Deployment
+
+**Part 4: Projects (Chapters 39-52)**
+- Todo App, Weather Dashboard, E-Commerce Store, Social Feed, Real-Time Chat, Dashboard, Challenge Sets, Mastery + Certificate Prep
+
+### AI Track (85 Chapters - ~160 hours)
+**Part 1: AI Foundations (Chapters 1-14)**
+- What Is Artificial Intelligence?, History of AI, Types of AI, Problem Solving & Search, Uninformed Search, Informed Search, Adversarial Search, Knowledge Representation, Logic & Reasoning, Planning Systems, Probability & Uncertainty, Bayesian Inference, Markov Models, AI Ethics
+
+**Part 2: Machine Learning Basics (Chapters 15-30)**
+- Supervised vs Unsupervised Learning, Linear Regression, Logistic Regression, Decision Trees, Random Forests, SVM, K-Nearest Neighbors, Naive Bayes, K-Means, Hierarchical Clustering, Dimensionality Reduction, Feature Engineering, Model Evaluation, Cross-Validation, Overfitting & Regularization
+
+**Part 3: Deep Learning (Chapters 31-50)**
+- Neural Networks Fundamentals, Perceptron, Activation Functions, Backpropagation, CNNs, RNNs, LSTMs, Transformers, Attention Mechanism, GANs, Autoencoders, Transfer Learning, Reinforcement Learning, Q-Learning, Deep Q Networks, Model Deployment, MLOps, AI Project Lifecycle
+
+**Part 4: Advanced AI & Projects (Chapters 51-85)**
+- NLP & LLMs, Computer Vision, Speech Recognition, Recommender Systems, Autonomous Agents, AI in Production, Edge AI, AI Security, AI for Code Generation, Chatbot Development, Image Classifier, Recommendation Engine, AI Agent Framework, Challenge Sets, Mastery + Certificate Prep
+
+### GenAI Track (90 Chapters - ~170 hours)
+**Part 1: Generative AI Foundations (Chapters 1-16)**
+- What Is Generative AI?, Evolution of GenAI, LLM Architecture, Transformer Deep Dive, Tokenization, Embeddings, Attention Mechanisms, Prompt Engineering Fundamentals, Few-Shot & Zero-Shot Learning, Temperature & Sampling, Context Windows, RAG Architecture, Vector Databases, Embedding Models, Chunking Strategies
+
+**Part 2: LLM Development (Chapters 17-36)**
+- OpenAI API, Claude API, Gemini API, Open Source Models (Llama, Mistral), Hugging Face Ecosystem, Fine-Tuning Fundamentals, LoRA & QLoRA, RLHF, Instruction Tuning, Model Evaluation, Hallucination Detection, Safety & Alignment, Guardrails, Prompt Injection Prevention, Cost Optimization, Latency Optimization
+
+**Part 3: GenAI Applications (Chapters 37-60)**
+- Chat Applications, Code Generation, Text-to-SQL, Document Q&A, Multi-Modal Applications, Image Generation, Audio Generation, Video Understanding, Agent Frameworks, Tool Use, Function Calling, Memory Systems, Multi-Agent Systems, Workflow Automation
+
+**Part 4: Production & Projects (Chapters 61-90)**
+- LLM Observability, A/B Testing, Prompt Management, Version Control for Prompts, CI/CD for LLMs, RAG Pipeline Optimization, Custom Chatbot, Code Assistant, Document Analyzer, Research Assistant, Agent Framework, Challenge Sets, Mastery + Certificate Prep
+
+### Intro to Programming Track (70 Chapters - ~105 hours)
+**Part 1: Programming Fundamentals (Chapters 1-16)**
+- What Is Programming?, How Computers Work, Binary & Data, Algorithms in Daily Life, Variables & Memory, Data Types, Operators, Expressions, Control Flow (if/else), Loops, Functions, Parameters & Return Values, Scope, Debugging Basics, Problem-Solving Strategies, Pseudocode
+
+**Part 2: Core Concepts (Chapters 17-34)**
+- Arrays & Lists, Strings & Text Processing, Dictionaries & Maps, Sets, Recursion, Sorting Algorithms (Bubble, Selection), Searching (Linear, Binary), Complexity Basics, File I/O, Error Handling, Testing Fundamentals, Code Organization, Version Control Basics, Documentation, Collaboration Workflows
+
+**Part 3: Building Things (Chapters 35-50)**
+- CLI Applications, Simple Games (Guess Number, Hangman), Data Processing Tools, Web API Basics, Database Concepts, Project: Calculator, Project: Todo App, Project: Weather CLI, Project: File Manager, Project: Quiz Game, Challenge Set 1-3
+
+**Part 4: Career Prep (Chapters 51-70)**
+- Problem-Solving Patterns, Technical Interview Basics, Portfolio Building, Open Source Contribution, Learning Roadmaps, Communities & Resources, Mastery + Certificate Prep
+
+### Web Accessibility Track (55 Chapters - ~85 hours)
+**Part 1: Accessibility Foundations (Chapters 1-12)**
+- What Is Web Accessibility?, WCAG Overview, POUR Principles, Assistive Technologies, Screen Readers, Keyboard Navigation, Accessibility Tree, Semantic HTML, ARIA Introduction, ARIA Roles, ARIA Properties, Accessibility Testing Tools
+
+**Part 2: Accessible Components (Chapters 13-30)**
+- Accessible Forms, Error Validation, Accessible Images, Accessible Links, Accessible Navigation, Accessible Tables, Accessible Data Visualization, Accessible Modals & Dialogs, Accessible Carousels, Accessible Accordions, Accessible Tabs, Accessible Tooltips, Accessible Drag & Drop, Accessible Animations, Color & Contrast, Focus Management, Skip Links, Screen Reader Announcements
+
+**Part 3: Advanced & Compliance (Chapters 31-42)**
+- WCAG 2.1/2.2 Compliance Levels, Accessibility Audits, Automated Testing (axe, Lighthouse), Manual Testing, User Testing with Disabilities, Accessibility in Agile, Legal Requirements, Accessibility Statements, Inclusive Design Patterns, Cognitive Accessibility, Mobile Accessibility
+
+**Part 4: Projects (Chapters 43-55)**
+- Audit & Remediation, Accessible Form System, Accessible Dashboard, E-Commerce Accessibility, Media Player, Challenge Sets, Mastery + Certificate Prep
+
+### Intro to HTML & CSS Track (75 Chapters - ~110 hours)
+**Part 1: Absolute Beginning (Chapters 1-14)**
+- What Are HTML & CSS?, Your First Webpage, Text Elements, Links & Navigation, Images, Lists, Tables, Forms, Semantic HTML, CSS Basics, Selectors, Colors & Backgrounds, Typography, Box Model
+
+**Part 2: Layout & Styling (Chapters 15-34)**
+- Display & Positioning, Flexbox, CSS Grid, Responsive Design, Media Queries, CSS Variables, Gradients, Shadows, Transitions, Transforms, Animations, Filters, Pseudo-classes, Pseudo-elements, Specificity & Cascade, Custom Fonts, Accessibility Basics, Forms Styling
+
+**Part 3: Building Real Sites (Chapters 35-50)**
+- Multi-Page Websites, Navigation Systems, Hero Sections, Card Layouts, Landing Pages, Portfolios, Blog Layouts, E-Commerce Pages, Dashboard Mockups, Email Templates
+
+**Part 4: Projects (Chapters 51-75)**
+- Personal Portfolio, Business Website, Recipe Blog, Landing Page, Admin Dashboard, Photo Gallery, Challenge Sets, Code Review, Mastery + Certificate Prep
+
+### CodeGame Track (50 Chapters - ~80 hours)
+**Part 1: Game Development Fundamentals (Chapters 1-12)**
+- What Is CodeGame?, Game Loop, Canvas Rendering, Sprites & Animation, Input Handling, Collision Detection, Physics Basics, Score Systems, Game States, Audio Systems, Level Design, Game Math
+
+**Part 2: Game Types (Chapters 13-28)**
+- Platformer Games, Puzzle Games, Arcade Shooters, Racing Games, RPG Systems, Card Games, Board Games, Text Adventures, Multiplayer Basics, Leaderboards, Save/Load Systems, Procedural Generation
+
+**Part 3: Game Development Tools (Chapters 29-40)**
+- Game Design Documentation, Prototyping, Playtesting, Polish & Juice, UI/HUD Systems, Accessibility in Games, Performance Optimization, Mobile Touch Controls, Publishing Workflows
+
+**Part 4: Projects (Chapters 41-50)**
+- Platformer, Puzzle Game, Top-Down Shooter, Rhythm Game, Card Game, Challenge Sets, Mastery + Certificate Prep
+
+### Google Sheets Track (60 Chapters - ~90 hours)
+**Part 1: Sheets Fundamentals (Chapters 1-14)**
+- What Is Google Sheets?, Interface & Navigation, Cells, Ranges & Sheets, Data Entry & Validation, Basic Formulas (SUM, AVERAGE, COUNT), Cell References, Named Ranges, Sorting & Filtering, Conditional Formatting, Data Visualization (Charts), Pivot Tables, Importing Data, Sharing & Collaboration
+
+**Part 2: Advanced Formulas (Chapters 15-30)**
+- Logical Functions (IF, AND, OR, NOT), Lookup Functions (VLOOKUP, HLOOKUP, XLOOKUP), INDEX & MATCH, Text Functions, Date & Time Functions, Array Formulas, QUERY Function, IMPORTRANGE, GOOGLEFINANCE, Error Handling (IFERROR, IFNA), Statistical Functions, Financial Functions, Database Functions
+
+**Part 3: Automation & Scripting (Chapters 31-44)**
+- Google Apps Script Introduction, Custom Functions, Macros & Automation, Triggers (onEdit, Time-Driven), Menus & Sidebars, Google Services Integration (Drive, Gmail), API Integration, Data Validation Scripts, Email Reports, Form Processing
+
+**Part 4: Projects (Chapters 45-60)**
+- Budget Tracker, Sales Dashboard, Inventory System, Project Manager, HR Dashboard, Reporting Automation, Expense Tracker, Financial Model, Challenge Sets, Mastery + Certificate Prep
+
+### Typing Speed Track (45 Chapters - ~60 hours)
+**Part 1: Touch Typing Foundations (Chapters 1-12)**
+- What Is Touch Typing?, Home Row Position, Top Row Keys, Bottom Row Keys, Shift Keys & Capitals, Number Row, Punctuation & Symbols, Common Bigrams, Typing Rhythm, Posture & Ergonomics, Speed vs Accuracy, Typing Tests
+
+**Part 2: Speed Development (Chapters 13-24)**
+- Muscle Memory Drills, Common Words Practice, Long Words, Number & Code Typing, Special Characters, Capitalization Patterns, Punctuation Flow, Repetition Patterns, Transitions & Jumps, Rhythm Optimization, Error Analysis, Benchmarking
+
+**Part 3: Coding & Advanced Typing (Chapters 25-34)**
+- Code Syntax Typing, Brackets & Semicolons, Programming Keywords, HTML & CSS Typing, JavaScript Syntax, Python Indentation, Markdown & Documentation, Symbol Sequences, Code Comments
+
+**Part 4: Projects (Chapters 35-45)**
+- Speed Test App, Accuracy Analyzer, Code Typing Trainer, Multiplayer Challenge, Challenge Sets, Mastery + Certificate Prep
+
+### SVG Track (60 Chapters - ~90 hours)
+**Part 1: SVG Foundations (Chapters 1-14)**
+- What Is SVG?, SVG vs Canvas vs PNG, Coordinate System, Basic Shapes (Rect, Circle, Ellipse, Line, Polyline, Polygon), Path Elements, Stroke & Fill, Opacity & Colors, Transformations, Groups & defs, ViewBox & preserveAspectRatio, SVG in HTML, Accessibility (aria-label, role, title)
+
+**Part 2: Advanced SVG (Chapters 15-34)**
+- Gradients (Linear, Radial), Patterns, Filters (blur, drop-shadow, color matrix), Clip Paths & Masks, Text in SVG, Text Paths, Animations with SMIL, CSS Animations in SVG, JavaScript & SVG Interactivity, Responsive SVG, Inline vs External SVG, SVG Sprites, Icon Systems, Data Visualization with SVG, Charts & Graphs
+
+**Part 3: SVG Tools & Ecosystem (Chapters 35-48)**
+- SVG Editors (Inkscape, Figma, Sketch), SVG Optimization & Minification, SVGO, SVG in React, SVG in Design Systems, Icon Libraries (Heroicons, Lucide, Feather), Animated SVG Libraries (GSAP, anime.js), Accessibility Deep Dive, SVG Performance, Fallback Strategies
+
+**Part 4: Projects (Chapters 49-60)**
+- Icon Set, Animated Infographic, Data Dashboard, Interactive Map, Logo Animation, Chart Library, Challenge Sets, Mastery + Certificate Prep
+
+### Icons Track (50 Chapters - ~75 hours)
+**Part 1: Icon Fundamentals (Chapters 1-10)**
+- What Are Icons?, History of Icon Design, Icon Grid Systems, Stroke vs Fill Icons, Pixel-Perfect Design, Consistent Weights & Spacing, Icon Sizing & Scaling, Color & Accessibility, Cultural Considerations, File Formats (SVG, PNG, ICO, WebP)
+
+**Part 2: Icon Libraries & Systems (Chapters 11-22)**
+- Heroicons, Lucide, Material Design Icons, Font Awesome, Bootstrap Icons, Feather Icons, Phosphor Icons, Remix Icons, Tabler Icons, Custom Icon Fonts, Icon Sprite Systems, Tree-Shaking Icons
+
+**Part 3: SVG Icon Engineering (Chapters 23-34)**
+- SVG Path Anatomy, Icon Grids & ViewBox, Consistent Stroke-Width, Rounded Corners & Caps, Optimization Techniques, Minification, Accessibility (aria-label, role, focusable), Color Customization, Animation, Icon Components
+
+**Part 4: Design Systems & Production (Chapters 35-42)**
+- Building an Icon Set, Icon Design Process, Naming Conventions, Organization & Categories, Versioning Icons, Documentation, Testing Across Platforms, Performance Best Practices
+
+**Part 5: Projects (Chapters 43-50)**
+- Custom Icon Set, Icon Picker Component, Animated Icon Library, Icon Design System, Export & Build Pipeline, Challenge Sets, Mastery + Certificate Prep
+
 ## 🎯 Learning Philosophy
 - **Zero Prior Knowledge Assumed**: Every chapter starts from scratch
 - **Real-World Analogies First**: Technical concepts explained through relatable examples
@@ -603,44 +832,44 @@ npm run dev
 src/
 ├── components/
 │   ├── certificate/     # Certificate generation components
-│   ├── compiler/       # Multi-panel live code editor (49 compilers: HTML through Raspberry Pi)
+│   ├── compiler/       # Multi-panel live code editor (59 compilers & playgrounds)
 │   ├── layout/         # Navigation and layout components
 │   ├── lesson/         # Lesson content and interactions
 │   └── quiz/           # Quiz system components
 ├── lib/
-│   ├── curriculum/     # All course content (2848+ chapters across 49 tracks)
+│   ├── curriculum/     # All course content (3400+ chapters across 59 tracks)
 │   │   ├── html-curriculum.ts
 │   │   ├── css-curriculum.ts
 │   │   ├── js-curriculum.ts
 │   │   ├── python-curriculum.ts
 │   │   ├── typescript-curriculum.ts
-│   │   ├── kotlin-curriculum.ts
-│   │   ├── postgresql-curriculum.ts
-│   │   ├── jquery-curriculum.ts
-│   │   ├── numpy-curriculum.ts
-│   │   ├── pandas-curriculum.ts
-│   │   ├── django-curriculum.ts
-│   │   ├── go-curriculum.ts
-│   │   ├── swift-curriculum.ts
-│   │   ├── bash-curriculum.ts
-│   │   ├── scipy-curriculum.ts
-│   │   ├── mongodb-curriculum.ts
-│   │   ├── excel-curriculum.ts
-│   │   ├── dsa-curriculum.ts
-│   │   ├── xml-curriculum.ts
-│   │   ├── json-curriculum.ts
-│   │   ├── nodejs-curriculum.ts
-│   │   ├── asp-curriculum.ts
-│   │   ├── cybersecurity-curriculum.ts
-│   │   ├── aws-curriculum.ts
-│   │   ├── machinelearning-curriculum.ts
-│   │   ├── statistic-curriculum.ts
-│   │   ├── rwd-curriculum.ts
-│   │   ├── ajax-curriculum.ts
-│   │   ├── rust-curriculum.ts
-│   │   ├── matplotlib-curriculum.ts
-│   │   ├── utf8-curriculum.ts
-│   │   ├── pi-curriculum.ts
+│   │   ├── c-curriculum.ts / cpp-curriculum.ts / java-curriculum.ts / csharp-curriculum.ts
+│   │   ├── w3css-curriculum.ts / colors-curriculum.ts / php-curriculum.ts
+│   │   ├── htmldom-curriculum.ts
+│   │   ├── bootstrap3-curriculum.ts / bootstrap4-curriculum.ts / bootstrap5-curriculum.ts
+│   │   ├── sql-curriculum.ts / mysql-curriculum.ts / postgresql-curriculum.ts
+│   │   ├── angular-curriculum.ts / vue-curriculum.ts / react-curriculum.ts
+│   │   ├── kotlin-curriculum.ts / jquery-curriculum.ts
+│   │   ├── numpy-curriculum.ts / pandas-curriculum.ts / django-curriculum.ts
+│   │   ├── go-curriculum.ts / swift-curriculum.ts / bash-curriculum.ts
+│   │   ├── r-curriculum.ts / scipy-curriculum.ts
+│   │   ├── mongodb-curriculum.ts / excel-curriculum.ts / dsa-curriculum.ts
+│   │   ├── xml-curriculum.ts / json-curriculum.ts
+│   │   ├── nodejs-curriculum.ts / asp-curriculum.ts
+│   │   ├── cybersecurity-curriculum.ts / aws-curriculum.ts
+│   │   ├── machinelearning-curriculum.ts / statistic-curriculum.ts
+│   │   ├── rwd-curriculum.ts / ajax-curriculum.ts
+│   │   ├── rust-curriculum.ts / matplotlib-curriculum.ts
+│   │   ├── utf8-curriculum.ts / pi-curriculum.ts
+│   │   ├── ai-curriculum.ts / genai-curriculum.ts
+│   │   ├── programming-intro-curriculum.ts
+│   │   ├── accessibility-curriculum.ts
+│   │   ├── htmlcss-intro-curriculum.ts
+│   │   ├── codegame-curriculum.ts
+│   │   ├── google-sheets-curriculum.ts
+│   │   ├── typing-speed-curriculum.ts
+│   │   ├── svg-curriculum.ts
+│   │   ├── icons-curriculum.ts
 │   │   └── index.ts
 │   ├── progress.ts      # User progress tracking
 │   ├── certificate.ts  # Certificate generation
