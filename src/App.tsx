@@ -16,6 +16,9 @@ import Profile from "./pages/Profile";
 import CertificatePage from "./pages/CertificatePage";
 import PracticePage from "./pages/PracticePage";
 import NotFound from "./pages/NotFound.tsx";
+import TechnologyDirectory from "./pages/TechnologyDirectory";
+import TechnologyPage from "./pages/TechnologyPage";
+import TechnologyCompare from "./pages/TechnologyCompare";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +41,9 @@ const App = () => (
                 <Route path="/compiler" element={<CompilerPage />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/certificate/:certId" element={<CertificatePage />} />
+                <Route path="/tech" element={<TechnologyDirectory />} />
+                <Route path="/tech/:slug" element={<TechnologyPage />} />
+                <Route path="/compare/:slug1/:slug2" element={<TechnologyCompare />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </MainLayout>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   LayoutDashboard,
@@ -12,7 +13,16 @@ import {
   Palette,
   FileCode2,
   Library,
-  LucideIcon
+  Globe,
+  ChevronDown,
+  LucideIcon,
+  BookOpen,
+  Server,
+  Database,
+  Brain,
+  Cloud,
+  CircuitBoard,
+  BarChart3,
 } from "lucide-react";
 import { 
   Sidebar, 
@@ -29,10 +39,9 @@ import {
 } from "@/components/ui/sidebar";
 import { useI18n } from "@/hooks/useI18n";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { tracks } from "@/lib/curriculum";
 
 const navItems = [
   {
@@ -48,6 +57,12 @@ const navItems = [
     color: "text-indigo-500"
   },
   {
+    title: "Web Dev Hub",
+    icon: Globe,
+    url: "/tech",
+    color: "text-cyan-500"
+  },
+  {
     title: "nav.compiler",
     icon: Terminal,
     url: "/compiler",
@@ -61,13 +76,15 @@ const navItems = [
   }
 ];
 
-const trackIcons: Record<string, LucideIcon> = {
-  html: Code2,
-  css: Palette,
-  javascript: Zap,
-  python: Activity,
-  default: FileCode2
-};
+const webDevHubLinks: { title: string; icon: LucideIcon; url: string; color: string }[] = [
+  { title: "Browse All", icon: Globe, url: "/tech", color: "#00D4FF" },
+  { title: "Frontend", icon: Palette, url: "/tech?category=Frontend", color: "#00D4FF" },
+  { title: "Backend", icon: Server, url: "/tech?category=Backend", color: "#00FF41" },
+  { title: "Databases", icon: Database, url: "/tech?category=Databases", color: "#FFB700" },
+  { title: "AI & ML", icon: Brain, url: "/tech?category=AI%20%26%20ML", color: "#B026FF" },
+  { title: "DevOps", icon: Cloud, url: "/tech?category=DevOps", color: "#FF3B30" },
+  { title: "Data Science", icon: BarChart3, url: "/tech?category=Data%20Science", color: "#FF6B35" },
+];
 
 export function AppSidebar() {
   const { t } = useI18n();
@@ -104,6 +121,7 @@ export function AppSidebar() {
       </SidebarHeader>
 
       <SidebarContent className="px-3 py-4 space-y-6">
+        {/* Main Navigation */}
         <SidebarGroup>
           <SidebarGroupLabel className="px-4 text-[10px] font-black tracking-[0.3em] text-sidebar-foreground/30 uppercase mb-4">
             {t("system.segmentIndex")}
@@ -111,7 +129,7 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu className="space-y-2">
               {navItems.map((item) => {
-                const isActive = location.pathname === item.url || (item.url === "/learn" && location.pathname.startsWith("/learn") && !tracks.some(tr => location.pathname.includes(`/learn/${tr.id}`)));
+                const isActive = location.pathname === item.url || (item.url === "/learn" && location.pathname.startsWith("/learn") && !location.pathname.startsWith("/learn/"));
                 return (
                   <SidebarMenuItem key={item.url}>
                     <SidebarMenuButton 
@@ -143,6 +161,47 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
 
+        {/* Web Dev Hub Categories */}
+        {!isCollapsed && (
+          <SidebarGroup>
+            <div className="px-4 py-2 text-[10px] font-black tracking-[0.3em] text-sidebar-foreground/30 uppercase">
+              <Globe className="w-3 h-3 inline mr-2" />
+              Web Dev Hub
+            </div>
+            <SidebarGroupContent>
+              <SidebarMenu className="space-y-1">
+                {webDevHubLinks.map((item) => {
+                  const fullUrl = location.pathname + location.search;
+                  const isActive = fullUrl === item.url;
+                  return (
+                    <SidebarMenuItem key={item.url}>
+                      <SidebarMenuButton 
+                        asChild 
+                        isActive={isActive}
+                        className={cn(
+                          "h-8 px-4 transition-all duration-300 rounded-none border-l-2 text-[11px]",
+                          isActive
+                            ? "bg-primary/10 border-primary text-sidebar-foreground"
+                            : "bg-transparent border-transparent text-sidebar-foreground/40 hover:bg-sidebar-accent hover:text-sidebar-foreground/70"
+                        )}
+                      >
+                        <Link to={item.url} className="flex items-center gap-3 w-full">
+                          <item.icon className="h-3.5 w-3.5" style={{ color: item.color }} />
+                          <span className="font-bold uppercase tracking-widest truncate">{item.title}</span>
+                          {isActive && (
+                            <ChevronRight className="ml-auto h-3 w-3 text-primary animate-pulse" />
+                          )}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  );
+                })}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        )}
+
+        {/* System Status */}
         {!isCollapsed && (
           <SidebarGroup className="mt-auto pt-4">
             <div className="px-6 py-4 bg-foreground/[0.02] border border-border/10 space-y-4">

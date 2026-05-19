@@ -5,7 +5,8 @@ import {
 } from "@/components/ui/command";
 import { tracks } from "@/lib/curriculum";
 import { useI18n } from "@/hooks/useI18n";
-import { Layout, Terminal, User, BookOpen, Code2 } from "lucide-react";
+import { Layout, Terminal, User, BookOpen, Code2, Globe } from "lucide-react";
+import { technologies } from "@/lib/technology-encyclopedia";
 
 export function CommandPalette() {
   const [open, setOpen] = useState(false);
@@ -28,6 +29,8 @@ export function CommandPalette() {
     [],
   );
 
+  const allTechnologies = useMemo(() => Object.values(technologies), []);
+
   const go = (path: string) => { setOpen(false); navigate(path); };
 
   return (
@@ -39,6 +42,16 @@ export function CommandPalette() {
           <CommandItem onSelect={() => go("/learn")}><Layout className="mr-2 h-4 w-4" />{t("nav.dashboard")}</CommandItem>
           <CommandItem onSelect={() => go("/compiler")}><Terminal className="mr-2 h-4 w-4" />{t("nav.compiler")}</CommandItem>
           <CommandItem onSelect={() => go("/profile")}><User className="mr-2 h-4 w-4" />{t("nav.profile")}</CommandItem>
+          <CommandItem onSelect={() => go("/tech")}><Globe className="mr-2 h-4 w-4" />Web Dev Hub</CommandItem>
+        </CommandGroup>
+        <CommandSeparator />
+        <CommandGroup heading="Technologies">
+          {allTechnologies.slice(0, 30).map((tech) => (
+            <CommandItem key={tech.id} onSelect={() => go(`/tech/${tech.slug}`)}>
+              <img src={tech.logo} alt="" className="mr-2 h-4 w-4" />
+              {tech.name} <span className="ml-auto text-xs text-muted-foreground">{tech.category}</span>
+            </CommandItem>
+          ))}
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading={t("palette.tracks")}>

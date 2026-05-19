@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Code2, Search, Activity, Clock, Calendar } from "lucide-react";
+import { Code2, Search, Activity, Clock, Calendar, Globe } from "lucide-react";
 import { useProgress } from "@/hooks/useProgress";
 import { getLevel } from "@/lib/progress";
 import { useI18n } from "@/hooks/useI18n";
@@ -64,6 +64,13 @@ export function Navbar() {
 
         {/* Right: Actions */}
         <div className="flex items-center gap-4">
+          <Link
+            to="/tech"
+            className="hidden md:flex items-center gap-2 px-3 py-1.5 text-[10px] font-black tracking-widest uppercase rounded border border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 transition-colors"
+          >
+            <Globe className="w-3.5 h-3.5" />
+            <span>Web Dev Hub</span>
+          </Link>
           {/* Date & Time Display */}
           <div className="hidden lg:flex items-center gap-3 px-3 py-1.5 border border-white/10 bg-muted/30">
             <div className="flex items-center gap-1.5">
