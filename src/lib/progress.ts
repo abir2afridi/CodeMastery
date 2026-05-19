@@ -212,6 +212,12 @@ export function loadProgress(): UserProgress | null {
     if (!progress.tracks["typing-speed"]) {
       progress.tracks["typing-speed"] = emptyTrack();
     }
+    if (!progress.tracks.svg) {
+      progress.tracks.svg = emptyTrack();
+    }
+    if (!progress.tracks.icons) {
+      progress.tracks.icons = emptyTrack();
+    }
 
     saveProgress(progress);
 
@@ -292,6 +298,8 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       codegame: emptyTrack(),
       "google-sheets": emptyTrack(),
       "typing-speed": emptyTrack(),
+      svg: emptyTrack(),
+      icons: emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);

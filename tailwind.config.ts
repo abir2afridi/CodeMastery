@@ -139,6 +139,8 @@ export default {
         codegame: "hsl(var(--codegame-color))",
         "google-sheets": "hsl(var(--google-sheets-color))",
         "typing-speed": "hsl(var(--typing-speed-color))",
+        svg: "hsl(var(--svg-color))",
+        icons: "hsl(var(--icons-color))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

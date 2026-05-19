@@ -55,9 +55,8 @@ import { htmlcssIntroTrack } from "./htmlcss-intro-curriculum";
 import { codegameTrack } from "./codegame-curriculum";
 import { googleSheetsTrack } from "./google-sheets-curriculum";
 import { typingSpeedTrack } from "./typing-speed-curriculum";
-import { svgTrack } from "./svg-curriculum";
-import { iconsTrack } from "./icons-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
+// Dont change Icon (https://img.icons8.com) Url what's i alreday implemented
 export const tracks: Track[] = [
   {
     id: "html",
@@ -359,7 +358,7 @@ export const tracks: Track[] = [
     titleBn: kotlinTrack.titleBn,
     tagline: kotlinTrack.tagline,
     taglineBn: kotlinTrack.taglineBn,
-    icon: kotlinTrack.icon,
+    icon: "https://img.icons8.com/?size=96&id=ZoxjA0jZDdFZ&format=png",
     colorVar: kotlinTrack.colorVar,
     totalChapters: kotlinTrack.totalChapters,
     estimatedHours: kotlinTrack.estimatedHours,
@@ -429,7 +428,7 @@ export const tracks: Track[] = [
     titleBn: djangoTrack.titleBn,
     tagline: djangoTrack.tagline,
     taglineBn: djangoTrack.taglineBn,
-    icon: "https://img.icons8.com/?size=160&id=9YYvIDj9TYP5&format=png",
+    icon: djangoTrack.icon,
     colorVar: djangoTrack.colorVar,
     totalChapters: djangoTrack.totalChapters,
     estimatedHours: djangoTrack.estimatedHours,
@@ -856,34 +855,6 @@ export const tracks: Track[] = [
     chapters: typingSpeedTrack.chapters,
     brandColor: typingSpeedTrack.brandColor,
     glowColor: typingSpeedTrack.glowColor,
-  },
-  {
-    id: svgTrack.id,
-    title: svgTrack.title,
-    titleBn: svgTrack.titleBn,
-    tagline: svgTrack.tagline,
-    taglineBn: svgTrack.taglineBn,
-    icon: svgTrack.icon,
-    colorVar: svgTrack.colorVar,
-    totalChapters: svgTrack.totalChapters,
-    estimatedHours: svgTrack.estimatedHours,
-    chapters: svgTrack.chapters,
-    brandColor: svgTrack.brandColor,
-    glowColor: svgTrack.glowColor,
-  },
-  {
-    id: iconsTrack.id,
-    title: iconsTrack.title,
-    titleBn: iconsTrack.titleBn,
-    tagline: iconsTrack.tagline,
-    taglineBn: iconsTrack.taglineBn,
-    icon: iconsTrack.icon,
-    colorVar: iconsTrack.colorVar,
-    totalChapters: iconsTrack.totalChapters,
-    estimatedHours: iconsTrack.estimatedHours,
-    chapters: iconsTrack.chapters,
-    brandColor: iconsTrack.brandColor,
-    glowColor: iconsTrack.glowColor,
   },
 ];
 

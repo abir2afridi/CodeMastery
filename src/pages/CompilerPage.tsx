@@ -48,6 +48,8 @@ import { HTMLCSSPlayground } from "@/components/compiler/HTMLCSSPlayground";
 import { CodeGamePlayground } from "@/components/compiler/CodeGamePlayground";
 import { SpreadsheetPlayground } from "@/components/compiler/SpreadsheetPlayground";
 import { TypingPlayground } from "@/components/compiler/TypingPlayground";
+import { SVGPlayground } from "@/components/compiler/SVGPlayground";
+import { IconsPlayground } from "@/components/compiler/IconsPlayground";
 
 const CompilerPage = () => {
   const [params] = useSearchParams();
@@ -243,6 +245,14 @@ const CompilerPage = () => {
 
   if (track === "typing-speed") {
     return <TypingPlayground />;
+  }
+
+  if (track === "svg") {
+    return <SVGPlayground />;
+  }
+
+  if (track === "icons") {
+    return <IconsPlayground />;
   }
 
   return (

@@ -278,6 +278,10 @@ export const en: Dict = {
   "track.google-sheets.tagline": "Master spreadsheets, automation, and data workflows",
   "track.typing-speed.title": "Typing Speed Test",
   "track.typing-speed.tagline": "Master typing speed and coding accuracy",
+  "track.svg.title": "SVG",
+  "track.svg.tagline": "Master scalable vector graphics and interactive visual systems",
+  "track.icons.title": "Icons",
+  "track.icons.tagline": "Master modern icon systems and scalable UI graphics",
 
   // Courses Page
   "courses.title": "Programming Languages",
@@ -634,6 +638,10 @@ export const bn: Dict = {
   "track.google-sheets.tagline": "স্প্রেডশিট, অটোমেশন এবং ডেটা ওয়ার্কফ্লো আয়ত্ত করুন",
   "track.typing-speed.title": "টাইপিং স্পিড টেস্ট",
   "track.typing-speed.tagline": "টাইপিং গতি এবং কোডিং নির্ভুলতা আয়ত্ত করুন",
+  "track.svg.title": "এসভিজি",
+  "track.svg.tagline": "স্কেলেবল ভেক্টর গ্রাফিক্স এবং ইন্টারঅ্যাকটিভ ভিজ্যুয়াল সিস্টেম আয়ত্ত করুন",
+  "track.icons.title": "আইকন",
+  "track.icons.tagline": "আধুনিক আইকন সিস্টেম এবং স্কেলেবল ইউআই গ্রাফিক্স আয়ত্ত করুন",
   "courses.title": "প্রোগ্রামিং ল্যাঙ্গুয়েজ",
   "courses.selectTrack": "আপনার শেখার যাত্রা শুরু করতে একটি ট্র্যাক নির্বাচন করুন",
   "courses.totalChapters": "মোট অধ্যায়",
