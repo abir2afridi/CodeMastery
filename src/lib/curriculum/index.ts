@@ -47,6 +47,14 @@ import { rustTrack } from "./rust-curriculum";
 import { matplotlibTrack } from "./matplotlib-curriculum";
 import { utf8Track } from "./utf8-curriculum";
 import { piTrack } from "./pi-curriculum";
+import { aiTrack } from "./ai-curriculum";
+import { genaiTrack } from "./genai-curriculum";
+import { introProgrammingTrack } from "./programming-intro-curriculum";
+import { accessibilityTrack } from "./accessibility-curriculum";
+import { htmlcssIntroTrack } from "./htmlcss-intro-curriculum";
+import { codegameTrack } from "./codegame-curriculum";
+import { googleSheetsTrack } from "./google-sheets-curriculum";
+import { typingSpeedTrack } from "./typing-speed-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 
 export const tracks: Track[] = [
@@ -735,6 +743,118 @@ export const tracks: Track[] = [
     chapters: piTrack.chapters,
     brandColor: piTrack.brandColor,
     glowColor: piTrack.glowColor,
+  },
+  {
+    id: aiTrack.id,
+    title: aiTrack.title,
+    titleBn: aiTrack.titleBn,
+    tagline: aiTrack.tagline,
+    taglineBn: aiTrack.taglineBn,
+    icon: aiTrack.icon,
+    colorVar: aiTrack.colorVar,
+    totalChapters: aiTrack.totalChapters,
+    estimatedHours: aiTrack.estimatedHours,
+    chapters: aiTrack.chapters,
+    brandColor: aiTrack.brandColor,
+    glowColor: aiTrack.glowColor,
+  },
+  {
+    id: genaiTrack.id,
+    title: genaiTrack.title,
+    titleBn: genaiTrack.titleBn,
+    tagline: genaiTrack.tagline,
+    taglineBn: genaiTrack.taglineBn,
+    icon: genaiTrack.icon,
+    colorVar: genaiTrack.colorVar,
+    totalChapters: genaiTrack.totalChapters,
+    estimatedHours: genaiTrack.estimatedHours,
+    chapters: genaiTrack.chapters,
+    brandColor: genaiTrack.brandColor,
+    glowColor: genaiTrack.glowColor,
+  },
+  {
+    id: introProgrammingTrack.id,
+    title: introProgrammingTrack.title,
+    titleBn: introProgrammingTrack.titleBn,
+    tagline: introProgrammingTrack.tagline,
+    taglineBn: introProgrammingTrack.taglineBn,
+    icon: introProgrammingTrack.icon,
+    colorVar: introProgrammingTrack.colorVar,
+    totalChapters: introProgrammingTrack.totalChapters,
+    estimatedHours: introProgrammingTrack.estimatedHours,
+    chapters: introProgrammingTrack.chapters,
+    brandColor: introProgrammingTrack.brandColor,
+    glowColor: introProgrammingTrack.glowColor,
+  },
+  {
+    id: accessibilityTrack.id,
+    title: accessibilityTrack.title,
+    titleBn: accessibilityTrack.titleBn,
+    tagline: accessibilityTrack.tagline,
+    taglineBn: accessibilityTrack.taglineBn,
+    icon: accessibilityTrack.icon,
+    colorVar: accessibilityTrack.colorVar,
+    totalChapters: accessibilityTrack.totalChapters,
+    estimatedHours: accessibilityTrack.estimatedHours,
+    chapters: accessibilityTrack.chapters,
+    brandColor: accessibilityTrack.brandColor,
+    glowColor: accessibilityTrack.glowColor,
+  },
+  {
+    id: htmlcssIntroTrack.id,
+    title: htmlcssIntroTrack.title,
+    titleBn: htmlcssIntroTrack.titleBn,
+    tagline: htmlcssIntroTrack.tagline,
+    taglineBn: htmlcssIntroTrack.taglineBn,
+    icon: htmlcssIntroTrack.icon,
+    colorVar: htmlcssIntroTrack.colorVar,
+    totalChapters: htmlcssIntroTrack.totalChapters,
+    estimatedHours: htmlcssIntroTrack.estimatedHours,
+    chapters: htmlcssIntroTrack.chapters,
+    brandColor: htmlcssIntroTrack.brandColor,
+    glowColor: htmlcssIntroTrack.glowColor,
+  },
+  {
+    id: codegameTrack.id,
+    title: codegameTrack.title,
+    titleBn: codegameTrack.titleBn,
+    tagline: codegameTrack.tagline,
+    taglineBn: codegameTrack.taglineBn,
+    icon: codegameTrack.icon,
+    colorVar: codegameTrack.colorVar,
+    totalChapters: codegameTrack.totalChapters,
+    estimatedHours: codegameTrack.estimatedHours,
+    chapters: codegameTrack.chapters,
+    brandColor: codegameTrack.brandColor,
+    glowColor: codegameTrack.glowColor,
+  },
+  {
+    id: googleSheetsTrack.id,
+    title: googleSheetsTrack.title,
+    titleBn: googleSheetsTrack.titleBn,
+    tagline: googleSheetsTrack.tagline,
+    taglineBn: googleSheetsTrack.taglineBn,
+    icon: googleSheetsTrack.icon,
+    colorVar: googleSheetsTrack.colorVar,
+    totalChapters: googleSheetsTrack.totalChapters,
+    estimatedHours: googleSheetsTrack.estimatedHours,
+    chapters: googleSheetsTrack.chapters,
+    brandColor: googleSheetsTrack.brandColor,
+    glowColor: googleSheetsTrack.glowColor,
+  },
+  {
+    id: typingSpeedTrack.id,
+    title: typingSpeedTrack.title,
+    titleBn: typingSpeedTrack.titleBn,
+    tagline: typingSpeedTrack.tagline,
+    taglineBn: typingSpeedTrack.taglineBn,
+    icon: typingSpeedTrack.icon,
+    colorVar: typingSpeedTrack.colorVar,
+    totalChapters: typingSpeedTrack.totalChapters,
+    estimatedHours: typingSpeedTrack.estimatedHours,
+    chapters: typingSpeedTrack.chapters,
+    brandColor: typingSpeedTrack.brandColor,
+    glowColor: typingSpeedTrack.glowColor,
   },
 ];
 

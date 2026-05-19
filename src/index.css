@@ -91,6 +91,14 @@
     --matplotlib-color: 202 76% 28%; /* Matplotlib blue #11557C */
     --unicode_utf8-color: 261 85% 62%; /* UTF-8 violet #8B5CF6 */
     --raspberry_pi-color: 344 77% 44%; /* Raspberry red #C51A4A */
+    --ai-color: 261 83% 60%; /* AI violet #7C3AED */
+    --genai-color: 330 81% 57%; /* GenAI pink #EC4899 */
+    --intro-programming-color: 223 84% 53%; /* Intro blue #2563EB */
+    --accessibility-color: 196 97% 46%; /* Accessibility sky #0EA5E9 */
+    --intro-html-css-color: 25 95% 53%; /* Intro HTML/CSS orange #F97316 */
+    --codegame-color: 264 90% 65%; /* CodeGame purple #8B5CF6 */
+    --google-sheets-color: 141 69% 45%; /* Google Sheets green #22C55E */
+    --typing-speed-color: 25 95% 53%; /* Typing Speed orange #F97316 */
 
     /* Sidebar Colors */
     --sidebar-background: 264 59% 23%;

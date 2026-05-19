@@ -188,6 +188,30 @@ export function loadProgress(): UserProgress | null {
     if (!progress.tracks.raspberry_pi) {
       progress.tracks.raspberry_pi = emptyTrack();
     }
+    if (!progress.tracks.ai) {
+      progress.tracks.ai = emptyTrack();
+    }
+    if (!progress.tracks.genai) {
+      progress.tracks.genai = emptyTrack();
+    }
+    if (!progress.tracks["intro-programming"]) {
+      progress.tracks["intro-programming"] = emptyTrack();
+    }
+    if (!progress.tracks.accessibility) {
+      progress.tracks.accessibility = emptyTrack();
+    }
+    if (!progress.tracks["intro-html-css"]) {
+      progress.tracks["intro-html-css"] = emptyTrack();
+    }
+    if (!progress.tracks.codegame) {
+      progress.tracks.codegame = emptyTrack();
+    }
+    if (!progress.tracks["google-sheets"]) {
+      progress.tracks["google-sheets"] = emptyTrack();
+    }
+    if (!progress.tracks["typing-speed"]) {
+      progress.tracks["typing-speed"] = emptyTrack();
+    }
 
     saveProgress(progress);
 
@@ -260,6 +284,14 @@ export function initProgress(name: string, startTrack: TrackId): UserProgress {
       matplotlib: emptyTrack(),
       unicode_utf8: emptyTrack(),
       raspberry_pi: emptyTrack(),
+      ai: emptyTrack(),
+      genai: emptyTrack(),
+      "intro-programming": emptyTrack(),
+      accessibility: emptyTrack(),
+      "intro-html-css": emptyTrack(),
+      codegame: emptyTrack(),
+      "google-sheets": emptyTrack(),
+      "typing-speed": emptyTrack(),
     },
   };
   startTrackFor(p, startTrack);

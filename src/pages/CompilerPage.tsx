@@ -40,6 +40,14 @@ import RustPlayground from "@/components/compiler/RustPlayground";
 import MatplotlibLab from "@/components/compiler/MatplotlibLab";
 import EncodingLab from "@/components/compiler/EncodingLab";
 import RaspberryPiLab from "@/components/compiler/RaspberryPiLab";
+import { AIPlayground } from "@/components/compiler/AIPlayground";
+import { GenAIPlayground } from "@/components/compiler/GenAIPlayground";
+import { ProgrammingPlayground } from "@/components/compiler/ProgrammingPlayground";
+import { AccessibilityPlayground } from "@/components/compiler/AccessibilityPlayground";
+import { HTMLCSSPlayground } from "@/components/compiler/HTMLCSSPlayground";
+import { CodeGamePlayground } from "@/components/compiler/CodeGamePlayground";
+import { SpreadsheetPlayground } from "@/components/compiler/SpreadsheetPlayground";
+import { TypingPlayground } from "@/components/compiler/TypingPlayground";
 
 const CompilerPage = () => {
   const [params] = useSearchParams();
@@ -203,6 +211,38 @@ const CompilerPage = () => {
 
   if (track === "raspberry_pi") {
     return <RaspberryPiLab />;
+  }
+
+  if (track === "ai") {
+    return <AIPlayground />;
+  }
+
+  if (track === "genai") {
+    return <GenAIPlayground />;
+  }
+
+  if (track === "intro-programming") {
+    return <ProgrammingPlayground />;
+  }
+
+  if (track === "accessibility") {
+    return <AccessibilityPlayground />;
+  }
+
+  if (track === "intro-html-css") {
+    return <HTMLCSSPlayground />;
+  }
+
+  if (track === "codegame") {
+    return <CodeGamePlayground />;
+  }
+
+  if (track === "google-sheets") {
+    return <SpreadsheetPlayground />;
+  }
+
+  if (track === "typing-speed") {
+    return <TypingPlayground />;
   }
 
   return (
