@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Rock+Salt&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Rock+Salt&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -302,17 +302,17 @@
   }
   .scrollbar-premium {
     scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+    scrollbar-color: hsl(var(--sidebar-foreground) / 0.15) transparent;
   }
   .scrollbar-premium::-webkit-scrollbar { width: 4px; }
   .scrollbar-premium::-webkit-scrollbar-track { background: transparent; }
   .scrollbar-premium::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.08);
+    background: hsl(var(--sidebar-foreground) / 0.08);
     border-radius: 20px;
     border: 1px solid transparent;
     transition: all 0.4s ease;
   }
-  .scrollbar-premium:hover::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); }
+  .scrollbar-premium:hover::-webkit-scrollbar-thumb { background: hsl(var(--sidebar-foreground) / 0.2); }
   .stagger-children > * { @apply animate-fade-in; }
   .stagger-children > *:nth-child(1) { animation-delay: 0ms; }
   .stagger-children > *:nth-child(2) { animation-delay: 30ms; }

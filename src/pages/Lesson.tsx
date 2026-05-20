@@ -79,7 +79,7 @@ const Lesson = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 pb-24 relative overflow-clip font-['Outfit']">
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 pb-24 relative font-['Outfit']">
       {/* SCANNER BAR */}
       <motion.div 
         style={{ scaleX }}
@@ -93,7 +93,7 @@ const Lesson = () => {
         <div className="absolute inset-0 bg-background [mask-image:linear-gradient(to_bottom,transparent,black)] opacity-50" />
       </div>
 
-      <div className="mx-auto w-full max-w-[1800px] px-4 lg:px-8 pt-12 relative z-10">
+      <div className="mx-auto w-full max-w-[1800px] px-4 lg:px-8 pt-12 relative z-10 min-w-0">
         <div className={cn(
           "grid gap-16 transition-all duration-300",
           isLeftSidebarExpanded ? "lg:grid-cols-[280px_1fr_260px]" : "lg:grid-cols-[60px_1fr_260px]"
@@ -192,12 +192,39 @@ const Lesson = () => {
           </aside>
 
           {/* MAIN CONTENT AREA */}
-          <main>
+          <main className="min-w-0 overflow-x-hidden">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="space-y-16"
             >
+              {/* Mobile Chapter Navigation */}
+              <div className="lg:hidden mb-8">
+                <label className="text-[8px] font-black tracking-[0.3em] text-foreground/40 uppercase block mb-2">{t("system.segmentIndex")}</label>
+                <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4">
+                  {track.chapters.map((c) => {
+                    const unlocked = isChapterUnlocked(progress, trackId, c.id);
+                    const isCurrent = c.id === chapterId;
+                    return (
+                      <Link
+                        key={c.id}
+                        to={unlocked ? `/learn/${trackId}/${c.id}` : "#"}
+                        className={cn(
+                          "flex-shrink-0 px-3 py-2 text-[10px] font-black uppercase tracking-wider border transition-colors whitespace-nowrap",
+                          isCurrent
+                            ? "bg-primary text-primary-foreground border-primary"
+                            : unlocked
+                              ? "border-foreground/10 text-foreground/60 hover:border-foreground/30"
+                              : "border-foreground/5 text-foreground/20 cursor-not-allowed opacity-40"
+                        )}
+                      >
+                        {c.number}. {isBn && c.titleBn ? c.titleBn : c.title}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+
               {/* NODE HEADER */}
               <header className="space-y-8">
                 <div className="flex items-center gap-4">
@@ -216,7 +243,7 @@ const Lesson = () => {
                 <div className="space-y-4">
                   <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.8] mb-6 text-foreground">
                     {(isBn && chapter.titleBn ? chapter.titleBn : chapter.title).split(' ').map((word, i) => (
-                      <span key={i} className={cn("block", i % 2 === 1 && "text-primary")}>
+                      <span key={i} className={cn("block break-words", i % 2 === 1 && "text-primary")}>
                         {word}
                       </span>
                     ))}
@@ -286,8 +313,8 @@ const Lesson = () => {
               </div>
 
               <div className="space-y-24 py-16">
-                {chapter.sections.map((s) => (
-                  <SectionView key={s.id} section={s} trackId={trackId as TrackId} />
+                {chapter.sections.map((s, i) => (
+                  <SectionView key={s.id ?? `section-${i}`} section={s} trackId={trackId as TrackId} />
                 ))}
               </div>
 

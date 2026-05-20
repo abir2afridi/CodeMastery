@@ -16,6 +16,8 @@ import Profile from "./pages/Profile";
 import CertificatePage from "./pages/CertificatePage";
 import PracticePage from "./pages/PracticePage";
 import NotFound from "./pages/NotFound.tsx";
+import About from "./pages/About";
+import DeveloperProfile from "./pages/DeveloperProfile";
 import TechnologyDirectory from "./pages/TechnologyDirectory";
 import TechnologyPage from "./pages/TechnologyPage";
 import TechnologyCompare from "./pages/TechnologyCompare";
@@ -50,6 +52,7 @@ const App = () => (
         <TooltipProvider>
           <BrowserRouter>
             <Routes>
+              {/* Routes with MainLayout (sidebar) */}
               <Route element={<MainLayout />}>
                 <Route path="/" element={<Landing />} />
                 <Route path="/setup" element={<Setup />} />
@@ -65,6 +68,9 @@ const App = () => (
                 <Route path="/tech" element={<TechnologyDirectory />} />
                 <Route path="/tech/:slug" element={<TechnologyPage />} />
                 <Route path="/compare/:slug1/:slug2" element={<TechnologyCompare />} />
+                <Route path="/dev-profile" element={<DeveloperProfile />} />
+                <Route path="/dev-profile/:username" element={<DeveloperProfile />} />
+                <Route path="/about" element={<About />} />
                 <Route path="/web-dev" element={<WebDevProviders />}>
                   <Route element={<WDContentWrapper />}>
                     <Route index element={<WDIndex />} />
@@ -83,6 +89,7 @@ const App = () => (
                   </Route>
                 </Route>
               </Route>
+              
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

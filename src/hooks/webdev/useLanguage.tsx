@@ -175,6 +175,12 @@ const translations: Record<Language, Record<string, string>> = {
     "roadmaps.heroBadge": "আর্কিটেকচারাল রোডম্যাপ",
     "roadmaps.heroDesc": "আধুনিক ইঞ্জিনিয়ারিং মাস্টারি জন্য কৌশলগত প্রযুক্তিগত গতিপথ।",
     "roadmaps.phase": "ফেজ",
+    "settings.title": "রেজিস্ট্রি সেটিংস",
+    "settings.language": "ভাষা কনফিগারেশন",
+    "settings.languageDescription": "প্রযুক্তিগত রেজিস্ট্রির জন্য প্রাথমিক ইন্টারফেস ভাষা নির্বাচন করুন।",
+    "settings.appearance": "ভিজুয়াল প্রোফাইল",
+    "settings.appearanceDescription": "সিস্টেম ডিসপ্লের জন্য ভিজুয়াল প্রোটোকল কনফিগার করুন।",
+    "settings.status": "সিস্টেম স্ট্যাটাস: অনলাইন",
     "settings.toggleMode": "ইন্টারফেস মোড পরিবর্তন করুন",
     "settings.lightPulse": "লাইট পালস",
     "settings.darkVoid": "ডার্ক ভয়েড",
@@ -185,6 +191,8 @@ const translations: Record<Language, Record<string, string>> = {
     "header.category": "ক্যাটাগরি",
     "header.intel": "ইন্টেল",
     "header.noMatches": "কোনো মিল পাওয়া যায়নি",
+    "sidebar.directory": "ডিরেক্টরি",
+    "sidebar.units": "ইউনিট",
     "sidebar.admin": "অ্যাডমিনিস্ট্রেটর",
     "ticker.liveIntel": "লাইভ ইন্টেল",
     "ticker.systemRunning": "সিস্টেম চলছে",
@@ -195,9 +203,33 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>(() => {
-    const saved = localStorage.getItem("app-language");
+    if (typeof window === "undefined") return "en";
+    // Migrate from old key
+    if (localStorage.getItem("app-language") && !localStorage.getItem("cm.lang")) {
+      localStorage.setItem("cm.lang", localStorage.getItem("app-language")!);
+    }
+    localStorage.removeItem("app-language");
+    const saved = localStorage.getItem("cm.lang");
     return (saved as Language) || "en";
   });
+
+  // Sync with main i18n system's localStorage key
+  useEffect(() => {
+    localStorage.setItem("cm.lang", language);
+  }, [language]);
+
+  useEffect(() => {
+    const check = () => {
+      const saved = localStorage.getItem("cm.lang") as Language | null;
+      if (saved === "en" || saved === "bn") setLanguage(saved);
+    };
+    window.addEventListener("storage", check);
+    const id = setInterval(check, 200);
+    return () => {
+      window.removeEventListener("storage", check);
+      clearInterval(id);
+    };
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("app-language", language);

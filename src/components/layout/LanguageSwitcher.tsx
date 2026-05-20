@@ -6,9 +6,9 @@ import {
   DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const OPTIONS: { code: UILang; label: string; native: string }[] = [
-  { code: "en", label: "English", native: "English" },
-  { code: "bn", label: "Bangla", native: "বাংলা" },
+const OPTIONS: { code: UILang; labelKey: string; native: string }[] = [
+  { code: "en", labelKey: "lang.english", native: "English" },
+  { code: "bn", labelKey: "lang.bangla", native: "বাংলা" },
 ];
 
 export function LanguageSwitcher() {
@@ -30,7 +30,7 @@ export function LanguageSwitcher() {
             className={o.code === lang ? "bg-primary/10 text-primary" : ""}
           >
             <span className="flex-1">{o.native}</span>
-            <span className="text-xs text-muted-foreground ml-2">{o.label}</span>
+            <span className="text-xs text-muted-foreground ml-2">{t(o.labelKey)}</span>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

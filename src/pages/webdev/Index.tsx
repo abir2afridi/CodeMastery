@@ -33,7 +33,7 @@ const Index = () => {
             <h1 className="text-5xl md:text-7xl font-black uppercase italic tracking-tightest leading-none text-slate-900 dark:text-white">
               Architectural <span className="text-primary">Intelligence</span>
             </h1>
-            <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 font-bold max-w-2xl mx-auto leading-relaxed uppercase tracking-tight italic px-10">
+            <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 font-bold max-w-2xl mx-auto leading-relaxed uppercase tracking-tight italic px-4 sm:px-6 md:px-10">
               Systematic categorization of core engineering assets, frameworks, and technological paradigms for modern infrastructure development.
             </p>
           </div>

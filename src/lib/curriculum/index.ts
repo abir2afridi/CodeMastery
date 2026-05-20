@@ -61,6 +61,8 @@ import { canvasTrack } from "./canvas-curriculum";
 import { emojiTrack } from "./emoji-curriculum";
 import type { Track, TrackId, Chapter } from "./types";
 import { trackRelationships } from "@/lib/learning-taxonomy";
+import { bnProgramIntro } from "./bn-programming-intro";
+import type { BnSectionOverride } from "./bn-programming-intro";
 export const tracks: Track[] = [
   {
     id: "html",
@@ -921,15 +923,26 @@ export const tracks: Track[] = [
 // Enrich tracks with taxonomy data
 export const enrichedTracks: Track[] = tracks.map(track => {
   const rel = trackRelationships[track.id];
-  if (!rel) return track;
+  const base = rel ? { ...track, ...rel } : { ...track };
   return {
-    ...track,
-    prerequisites: rel.prerequisites,
-    relatedTracks: rel.relatedTracks,
-    recommendedAfter: rel.recommendedAfter,
-    category: rel.category,
-    subcategory: rel.subcategory,
-    difficulty: rel.difficulty,
+    ...base,
+    chapters: base.chapters.map(ch => ({
+      ...ch,
+      sections: ch.sections.map(s => {
+        const section = typeof s === 'string' ? JSON.parse(s) : s;
+        // BN override from auto-translated curriculum (e.g. intro-programming)
+        const bnOverride: BnSectionOverride | undefined = bnProgramIntro[section.id];
+        return {
+          ...section,
+          titleBn: section.titleBn ?? bnOverride?.titleBn ?? section.title,
+          contentBn: section.contentBn ?? bnOverride?.contentBn ?? section.content,
+          descriptionBn: section.description ?? bnOverride?.descriptionBn ?? section.description,
+          whyItMattersBn: section.whyItMattersBn ?? bnOverride?.whyItMattersBn ?? section.whyItMatters,
+          realWorldAnalogyBn: section.realWorldAnalogyBn ?? bnOverride?.realWorldAnalogyBn ?? section.realWorldAnalogy,
+          deepDiveBn: section.deepDiveBn ?? bnOverride?.deepDiveBn ?? section.deepDive,
+        };
+      }),
+    })),
   };
 });
 

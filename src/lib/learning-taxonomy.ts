@@ -691,7 +691,7 @@ export const trackRelationships: Record<TrackId, TrackRelationship> = {
   cybersecurity: {
     trackId: "cybersecurity",
     prerequisites: ["bash", "html", "css", "javascript"],
-    relatedTracks: ["bash", "aws", "nodejs", "python", "linux"],
+    relatedTracks: ["bash", "aws", "nodejs", "python"],
     recommendedAfter: ["bash", "html", "css", "javascript"],
     category: "Cybersecurity",
     subcategory: "Security Engineering",
@@ -709,7 +709,7 @@ export const trackRelationships: Record<TrackId, TrackRelationship> = {
   raspberry_pi: {
     trackId: "raspberry_pi",
     prerequisites: ["python", "bash"],
-    relatedTracks: ["python", "bash", "c", "linux"],
+    relatedTracks: ["python", "bash", "c"],
     recommendedAfter: ["python", "bash"],
     category: "Hardware & IoT",
     subcategory: "Embedded Systems",

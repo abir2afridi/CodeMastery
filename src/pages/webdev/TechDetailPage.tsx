@@ -88,7 +88,7 @@ const TechDetailPage = () => {
   );
 
   return (
-    <div className="space-y-6 animate-fade-in relative pb-20">
+    <div className="space-y-6 animate-fade-in relative pb-20 overflow-x-hidden min-w-0">
       
       {/* ─── TECHNICAL HEADER ─── */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-border/40">
@@ -106,7 +106,7 @@ const TechDetailPage = () => {
             <span className="text-slate-600 dark:text-slate-200">{tech.type}</span>
           </div>
           <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-            <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 dark:text-white uppercase italic leading-none">{tech.name}</h1>
+            <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 dark:text-white uppercase italic leading-none break-words">{tech.name}</h1>
             <Badge variant="secondary" className="w-fit bg-primary/10 text-primary border-primary/20 text-[13px] font-black px-3 py-1 uppercase tracking-widest">{tech.currentVersion || "LTS"}</Badge>
           </div>
         </div>
@@ -164,11 +164,11 @@ const TechDetailPage = () => {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         
         {/* Left Span: Technical Overview (3/4) */}
-        <div className="lg:col-span-3 space-y-6">
+        <div className="lg:col-span-3 space-y-6 min-w-0">
            
            {/* Segment: Overview Card */}
-           <div className="grid grid-cols-1 md:grid-cols-10 gap-4 p-5 rounded-xl bg-white dark:bg-[#0f1115] border border-border/40 shadow-sm relative group overflow-hidden">
-             <div className="md:col-span-2 flex justify-center md:block">
+           <div className="grid grid-cols-1 md:grid-cols-10 gap-4 p-5 rounded-xl bg-white dark:bg-[#0f1115] border border-border/40 shadow-sm relative group">
+              <div className="md:col-span-2 flex justify-center md:block min-w-0">
                <div className="size-24 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center p-5 shadow-2xl shadow-slate-200/50 dark:shadow-none transition-transform hover:scale-105">
                   {tech.logo ? (
                     <img src={tech.logo} alt={tech.name} className="size-16" />
@@ -177,15 +177,15 @@ const TechDetailPage = () => {
                   )}
                </div>
              </div>
-              <div className="md:col-span-8 space-y-2.5">
+              <div className="md:col-span-8 space-y-2.5 min-w-0">
                 <div className="flex items-center gap-2">
                    <Badge variant="outline" className="border-border/40 text-[12px] font-black uppercase tracking-widest h-6 px-3 bg-slate-50/50 dark:bg-slate-800/50 text-slate-700 dark:text-white">{tech.type}</Badge>
                    <span className="text-[12px] font-bold text-slate-700 dark:text-slate-300 uppercase tracking-widest">Asset ID: {tech.id?.slice(0, 8)}</span>
                 </div>
-                <p className="text-[16px] md:text-lg font-bold text-slate-900 dark:text-slate-100 leading-snug uppercase italic tracking-tight">
-                  {t(`tech.${tech.id}.desc`) !== `tech.${tech.id}.desc` ? t(`tech.${tech.id}.desc`) : tech.shortDescription}
+                <p className="text-[16px] md:text-lg font-bold text-slate-900 dark:text-slate-100 leading-snug uppercase italic tracking-tight break-words">
+                   {t(`tech.${tech.id}.desc`) !== `tech.${tech.id}.desc` ? t(`tech.${tech.id}.desc`) : tech.shortDescription}
                 </p>
-                <p className="text-[14px] md:text-[16px] font-medium text-slate-800 dark:text-slate-200 leading-relaxed italic border-l border-primary/20 pl-4 py-1">
+                <p className="text-[14px] md:text-[16px] font-medium text-slate-800 dark:text-slate-200 leading-relaxed italic border-l border-primary/20 pl-4 py-1 break-words">
                   {t(`tech.${tech.id}.history`) !== `tech.${tech.id}.history` ? t(`tech.${tech.id}.history`) : tech.history}
                 </p>
              </div>
@@ -199,8 +199,8 @@ const TechDetailPage = () => {
                </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {tech.features?.slice(0, 6).map((feat, i) => (
-                    <div key={i} className="p-5 rounded-xl bg-white dark:bg-[#0f1115] border border-border/40 flex flex-col gap-2 group hover:border-primary/40 transition-all">
-                      <span className="text-[15px] font-black uppercase italic tracking-tight text-slate-900 dark:text-slate-100">{feat}</span>
+                    <div key={i} className="p-5 rounded-xl bg-white dark:bg-[#0f1115] border border-border/40 flex flex-col gap-2 group hover:border-primary/40 transition-all min-w-0">
+                       <span className="text-[15px] font-black uppercase italic tracking-tight text-slate-900 dark:text-slate-100 break-words">{feat}</span>
                       <div className="flex items-center justify-between opacity-70 group-hover:opacity-100 transition-opacity">
                          <span className="text-[12px] font-black text-slate-800 dark:text-slate-100 uppercase tracking-widest leading-none">Module-0{i+1}</span>
                          <Zap className="size-3 text-primary" />
@@ -222,7 +222,7 @@ const TechDetailPage = () => {
                     <Terminal className="size-5 text-primary" />
                   </div>
                   <div className="space-y-1.5">
-                    <p className="text-[15px] font-bold text-slate-800 dark:text-slate-200 uppercase italic leading-relaxed">
+                    <p className="text-[15px] font-bold text-slate-800 dark:text-slate-200 uppercase italic leading-relaxed break-words">
                       {tech.installation}
                     </p>
                     <div className="flex items-center gap-2 opacity-80">
@@ -235,8 +235,8 @@ const TechDetailPage = () => {
             )}
 
            {/* Segment: Deployment Patterns */}
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+               <div className="space-y-3 min-w-0">
                  <div className="flex items-center gap-2 px-1">
                   <div className="h-0.5 w-4 bg-primary rounded-full" />
                   <h2 className="text-[13px] font-black uppercase tracking-[0.3em] text-slate-800 dark:text-slate-100">{t("tech.strategicVectors")}</h2>
@@ -245,12 +245,12 @@ const TechDetailPage = () => {
                     {tech.useCases?.map((use, i) => (
                       <div key={i} className="flex gap-3 items-start group">
                          <div className="size-1.5 rounded-full bg-primary/30 mt-1.5 shrink-0 group-hover:bg-primary" />
-                         <span className="text-[13px] font-bold text-slate-800 dark:text-slate-300 uppercase tracking-tight italic leading-tight">{use}</span>
+                         <span className="text-[13px] font-bold text-slate-800 dark:text-slate-300 uppercase tracking-tight italic leading-tight break-words">{use}</span>
                       </div>
                     ))}
                   </div>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-3 min-w-0">
                  <div className="flex items-center gap-2 px-1">
                   <div className="h-0.5 w-4 bg-primary rounded-full" />
                   <h2 className="text-[13px] font-black uppercase tracking-[0.3em] text-slate-800 dark:text-slate-100">{t("tech.globalAdopters")}</h2>
@@ -279,8 +279,8 @@ const TechDetailPage = () => {
                       <Copy className="size-3.5" /> Sync
                    </button>
                 </div>
-                <div className="rounded-xl bg-[#0d1117] border border-white/5 p-5 md:p-6 font-mono text-[13px] overflow-hidden relative shadow-lg group/code">
-                   <pre className="text-slate-300 overflow-x-auto scrollbar-hide py-1 leading-[1.5]">
+                <div className="rounded-xl bg-[#0d1117] border border-white/5 p-5 md:p-6 font-mono text-[13px] relative shadow-lg group/code overflow-x-auto">
+                   <pre className="text-slate-300 scrollbar-hide py-1 leading-[1.5] whitespace-pre-wrap break-words">
                       <code>{tech.codeExample}</code>
                    </pre>
                 </div>
@@ -289,7 +289,7 @@ const TechDetailPage = () => {
         </div>
 
         {/* Right Span: Specification Sidebar (1/4) */}
-        <aside className="space-y-6">
+        <aside className="space-y-6 min-w-0">
                       {/* Specifications Card */}
             <div className="space-y-3">
                <h2 className="text-[11px] font-black uppercase tracking-[0.4em] text-slate-600 dark:text-slate-200 px-1">{t("tech.specs")}</h2>
@@ -359,12 +359,12 @@ const TechDetailPage = () => {
                <h2 className="text-[11px] font-black uppercase tracking-[0.4em] text-slate-600 dark:text-slate-200 px-1">{t("tech.learningVectors")}</h2>
               <div className="grid gap-2.5">
                  {tech.learningResources?.map((r, i) => (
-                  <a key={i} href={r.url} target="_blank" className="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-border/60 hover:border-primary/40 hover:bg-white transition-all group shadow-sm">
-                     <div className="flex items-center gap-3">
-                     <div className="size-10 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center text-slate-300 group-hover:text-primary transition-all border border-border/10">
-                        <GraduationCap className="size-4.5" />
-                     </div>
-                     <span className="text-[13px] font-black uppercase italic tracking-tight text-slate-800 dark:text-slate-100">{r.title}</span>
+                   <a key={i} href={r.url} target="_blank" className="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-border/60 hover:border-primary/40 hover:bg-white transition-all group shadow-sm min-w-0">
+                      <div className="flex items-center gap-3 min-w-0">
+                      <div className="size-10 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center text-slate-300 group-hover:text-primary transition-all border border-border/10 shrink-0">
+                         <GraduationCap className="size-4.5" />
+                      </div>
+                      <span className="text-[13px] font-black uppercase italic tracking-tight text-slate-800 dark:text-slate-100 truncate">{r.title}</span>
                   </div>
                   <ArrowRight className="size-4 text-slate-300 group-hover:text-primary transition-all group-hover:translate-x-0.5" />
                   </a>

@@ -23,6 +23,28 @@ import {
   Cloud,
   CircuitBoard,
   BarChart3,
+  Box,
+  Package,
+  GitBranch,
+  Sparkles,
+  Ruler,
+  SwatchBook,
+  FlaskConical,
+  Hammer,
+  Layers,
+  Link as LinkIcon,
+  Network,
+  RefreshCw,
+  TrendingUp,
+  Bot,
+  Monitor,
+  FileEdit,
+  Lock,
+  Bug,
+  LineChart,
+  X,
+  Github,
+  Info,
 } from "lucide-react";
 import { 
   Sidebar, 
@@ -80,24 +102,60 @@ const webDevHubLinks: { title: string; icon: LucideIcon; url: string; color: str
   { title: "Browse All", icon: Globe, url: "/web-dev", color: "#00D4FF" },
   { title: "Frontend", icon: Palette, url: "/web-dev/category/frontend", color: "#00D4FF" },
   { title: "Backend", icon: Server, url: "/web-dev/category/backend", color: "#00FF41" },
+  { title: "Frameworks", icon: Box, url: "/web-dev/category/frameworks", color: "#FF6B35" },
+  { title: "JS Libraries", icon: Code2, url: "/web-dev/category/js-libraries", color: "#F7DF1E" },
+  { title: "Languages", icon: FileCode2, url: "/web-dev/languages", color: "#FF6B35" },
+  { title: "APIs", icon: LinkIcon, url: "/web-dev/category/apis", color: "#00D4FF" },
+  { title: "Version Control", icon: GitBranch, url: "/web-dev/category/version-control", color: "#FFB700" },
+  { title: "Animation", icon: Sparkles, url: "/web-dev/category/animation", color: "#FF3B30" },
+  { title: "UI/UX Design", icon: Ruler, url: "/web-dev/category/ui-tools", color: "#B026FF" },
+  { title: "CSS Frameworks", icon: SwatchBook, url: "/web-dev/category/css-frameworks", color: "#00D4FF" },
+  { title: "Package Mgrs", icon: Package, url: "/web-dev/category/package-managers", color: "#FFB700" },
+  { title: "Testing", icon: FlaskConical, url: "/web-dev/category/testing", color: "#00FF41" },
+  { title: "Build Tools", icon: Hammer, url: "/web-dev/category/build-tools", color: "#FF6B35" },
+  { title: "Static Site Gen", icon: FileCode2, url: "/web-dev/category/ssg", color: "#B026FF" },
+  { title: "State Mgmt", icon: Layers, url: "/web-dev/category/state-management", color: "#00D4FF" },
+  { title: "Auth", icon: Lock, url: "/web-dev/category/auth", color: "#FF3B30" },
   { title: "Databases", icon: Database, url: "/web-dev/category/databases", color: "#FFB700" },
-  { title: "AI & ML", icon: Brain, url: "/web-dev/category/ai-tools", color: "#B026FF" },
   { title: "DevOps", icon: Cloud, url: "/web-dev/category/devops", color: "#FF3B30" },
-  { title: "Languages", icon: BarChart3, url: "/web-dev/languages", color: "#FF6B35" },
+  { title: "Hosting", icon: Server, url: "/web-dev/category/hosting", color: "#00FF41" },
+  { title: "Cloud", icon: Cloud, url: "/web-dev/category/cloud", color: "#B026FF" },
+  { title: "Serverless", icon: Zap, url: "/web-dev/category/serverless", color: "#00D4FF" },
+  { title: "CDN", icon: Network, url: "/web-dev/category/cdn", color: "#FF6B35" },
+  { title: "CI/CD", icon: RefreshCw, url: "/web-dev/category/cicd", color: "#00FF41" },
+  { title: "Monitoring", icon: LineChart, url: "/web-dev/category/monitoring", color: "#FFB700" },
+  { title: "Dev Tools", icon: Terminal, url: "/web-dev/dev-tools", color: "#B026FF" },
+  { title: "Browser Dev", icon: Bug, url: "/web-dev/category/browser-tools", color: "#00D4FF" },
+  { title: "Browsers", icon: Monitor, url: "/web-dev/category/browsers", color: "#FF6B35" },
+  { title: "Code Editors", icon: FileEdit, url: "/web-dev/category/code-editors", color: "#00FF41" },
+  { title: "IDEs", icon: Monitor, url: "/web-dev/category/ides", color: "#B026FF" },
+  { title: "CLI Tools", icon: Terminal, url: "/web-dev/category/cli-tools", color: "#00FF41" },
+  { title: "AI Dev Tools", icon: Brain, url: "/web-dev/category/ai-tools", color: "#B026FF" },
+  { title: "AI Assistants", icon: Bot, url: "/web-dev/category/ai-assistants", color: "#FF6B35" },
+  { title: "ML APIs", icon: Cpu, url: "/web-dev/category/ml-apis", color: "#00FF41" },
+  { title: "Analytics", icon: TrendingUp, url: "/web-dev/category/analytics", color: "#FF3B30" },
+  { title: "Security", icon: Shield, url: "/web-dev/category/security", color: "#00D4FF" },
   { title: "Roadmaps", icon: BookOpen, url: "/web-dev/roadmaps", color: "#00FF41" },
   { title: "Rankings", icon: Activity, url: "/web-dev/ranking", color: "#FFB700" },
-  { title: "Dev Tools", icon: Terminal, url: "/web-dev/dev-tools", color: "#B026FF" },
 ];
 
 export function AppSidebar() {
   const { t } = useI18n();
   const location = useLocation();
-  const { state } = useSidebar();
+  const { state, isMobile, setOpenMobile } = useSidebar();
   const isCollapsed = state === "collapsed";
 
   return (
     <Sidebar className="border-r border-sidebar-border bg-sidebar text-sidebar-foreground">
-      <SidebarHeader className="p-6">
+      <SidebarHeader className="p-6 relative">
+        {isMobile && (
+          <button
+            onClick={() => setOpenMobile(false)}
+            className="absolute top-3 right-3 w-7 h-7 flex items-center justify-center rounded hover:bg-sidebar-foreground/10 text-sidebar-foreground/60 hover:text-sidebar-foreground transition-colors"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        )}
         <Link to="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 bg-primary flex items-center justify-center shrink-0 relative overflow-hidden">
             <span className="text-black font-black text-xl z-10">CM</span>
@@ -117,7 +175,7 @@ export function AppSidebar() {
               className="flex flex-col"
             >
               <span className="text-lg font-black tracking-tighter leading-none uppercase">CodeMastery</span>
-              <span className="text-[8px] font-black tracking-[0.4em] text-primary uppercase">Core_System.v4</span>
+              <span className="text-[8px] font-black tracking-[0.4em] text-primary uppercase">Learning Platform</span>
             </motion.div>
           )}
         </Link>
@@ -190,6 +248,49 @@ export function AppSidebar() {
                       >
                         <Link to={item.url} className="flex items-center gap-3 w-full">
                           <item.icon className="h-3.5 w-3.5" style={{ color: item.color }} />
+                          <span className="font-bold uppercase tracking-widest truncate">{item.title}</span>
+                          {isActive && (
+                            <ChevronRight className="ml-auto h-3 w-3 text-primary animate-pulse" />
+                          )}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  );
+                })}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        )}
+
+        {/* About Section */}
+        {!isCollapsed && (
+          <SidebarGroup>
+            <div className="px-4 py-2 text-[10px] font-black tracking-[0.3em] text-sidebar-foreground/30 uppercase">
+              <Info className="w-3 h-3 inline mr-2" />
+              About
+            </div>
+            <SidebarGroupContent>
+              <SidebarMenu className="space-y-1">
+                {[
+                  { title: "About Us", icon: Info, url: "/about", color: "text-primary" },
+                  { title: "Dev Profile", icon: Github, url: "/dev-profile", color: "text-electric-blue" },
+                ].map((item) => {
+                  const fullUrl = location.pathname + location.search;
+                  const isActive = fullUrl === item.url;
+                  return (
+                    <SidebarMenuItem key={item.url}>
+                      <SidebarMenuButton 
+                        asChild 
+                        isActive={isActive}
+                        className={cn(
+                          "h-8 px-4 transition-all duration-300 rounded-none border-l-2 text-[11px]",
+                          isActive
+                            ? "bg-primary/10 border-primary text-sidebar-foreground"
+                            : "bg-transparent border-transparent text-sidebar-foreground/40 hover:bg-sidebar-accent hover:text-sidebar-foreground/70"
+                        )}
+                      >
+                        <Link to={item.url} className="flex items-center gap-3 w-full">
+                          <item.icon className={cn("h-3.5 w-3.5", item.color)} />
                           <span className="font-bold uppercase tracking-widest truncate">{item.title}</span>
                           {isActive && (
                             <ChevronRight className="ml-auto h-3 w-3 text-primary animate-pulse" />

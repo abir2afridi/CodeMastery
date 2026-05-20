@@ -55,7 +55,7 @@ function TrackCard({ track, index }: { track: typeof tracks[number]; index: numb
             style={{ backgroundColor: track.brandColor }}
           />
 
-          <div className="p-8 pl-10 space-y-6 relative z-10">
+          <div className="p-4 sm:p-6 md:p-8 md:pl-10 space-y-6 relative z-10">
             <div className="flex justify-between items-start">
               <div
                 className="w-20 h-20 flex items-center justify-center relative border-4 transition-transform duration-500 group-hover:scale-105"
@@ -69,7 +69,7 @@ function TrackCard({ track, index }: { track: typeof tracks[number]; index: numb
                   variant="status"
                   style={{ backgroundColor: `${track.brandColor}22`, color: track.brandColor, borderColor: `${track.brandColor}44` }}
                 >
-                  {pct > 0 ? `${pct}% Learned` : "READY"}
+                  {pct > 0 ? `${pct}% ${t("courses.learned")}` : t("courses.ready")}
                 </CyberpunkBadge>
                 <CyberpunkBadge
                   variant="status"
@@ -82,7 +82,7 @@ function TrackCard({ track, index }: { track: typeof tracks[number]; index: numb
             </div>
 
             <div className="space-y-2">
-              <h2 className="text-4xl font-black uppercase tracking-tighter" style={{ color: track.brandColor }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter break-words" style={{ color: track.brandColor }}>
                 {isBn && track.titleBn ? track.titleBn : track.title}
               </h2>
               <p className="text-xs font-black uppercase tracking-widest text-foreground/40 leading-relaxed">
@@ -101,18 +101,18 @@ function TrackCard({ track, index }: { track: typeof tracks[number]; index: numb
 
             <div className="pt-4 border-t border-foreground/10 grid grid-cols-2 gap-4">
               <div className="space-y-1">
-                <span className="text-[9px] font-black text-foreground/20 uppercase tracking-[0.3em]">Total Chapters</span>
-                <p className="text-sm font-mono font-black">{track.chapters.length} UNITS</p>
+                <span className="text-[9px] font-black text-foreground/20 uppercase tracking-[0.3em]">{t("courses.totalChapters")}</span>
+                <p className="text-sm font-mono font-black">{track.chapters.length} {t("courses.units")}</p>
               </div>
               <div className="space-y-1 text-right">
-                <span className="text-[9px] font-black text-foreground/20 uppercase tracking-[0.3em]">Estimated Time</span>
-                <p className="text-sm font-mono font-black">{track.estimatedHours} HRS</p>
+                <span className="text-[9px] font-black text-foreground/20 uppercase tracking-[0.3em]">{t("courses.estimatedTime")}</span>
+                <p className="text-sm font-mono font-black">{track.estimatedHours} {t("courses.hrs")}</p>
               </div>
             </div>
 
             {track.prerequisites && track.prerequisites.length > 0 && (
               <div className="text-[8px] font-black tracking-wider uppercase text-foreground/30">
-                Prerequisites: {track.prerequisites.slice(0, 3).map(id => {
+                  {t("courses.prerequisites")}: {track.prerequisites.slice(0, 3).map(id => {
                   const prereqTrack = tracks.find(t => t.id === id);
                   return prereqTrack ? (isBn && prereqTrack.titleBn ? prereqTrack.titleBn : prereqTrack.title) : id;
                 }).join(", ")}
@@ -186,7 +186,7 @@ const Courses = () => {
       ).map(id => tracks.find(t => t.id === id)!).filter(Boolean);
 
       return { ...cat, tracks: sorted };
-    }).filter(Boolean) as (typeof learningCategories[number] & { tracks: typeof tracks })[];
+    }).filter(Boolean) as (Omit<typeof learningCategories[number], 'tracks'> & { tracks: typeof tracks })[];
   }, [difficultyFilter, activeCategory]);
 
   const clearFilters = () => {
@@ -196,7 +196,7 @@ const Courses = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background p-8 md:p-12 lg:p-16 relative overflow-hidden">
+    <div className="min-h-screen bg-background p-4 sm:p-8 md:p-12 lg:p-16 relative overflow-hidden">
       <div className="fixed inset-0 z-0 pointer-events-none opacity-[0.03]"
         style={{
           backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
@@ -216,7 +216,7 @@ const Courses = () => {
             {t("nav.languages")}
           </h1>
           <p className="text-muted-foreground uppercase text-xs tracking-[0.2em] font-black max-w-xl leading-relaxed">
-            Select a neural uplink node to begin data ingestion. Each track is a verified core protocol for modern web architecture.
+            {t("courses.selectNode")}
           </p>
         </header>
 
@@ -231,7 +231,7 @@ const Courses = () => {
                 : "border-foreground/10 text-foreground/40 hover:border-foreground/30"
             )}
           >
-            All Tracks
+            {t("courses.allTracks")}
           </button>
           <button
             onClick={() => { setViewMode("paths"); setActiveCategory("all"); }}
@@ -243,14 +243,14 @@ const Courses = () => {
             )}
           >
             <GraduationCap className="w-3 h-3 inline mr-1.5" />
-            Learning Paths
+            {t("courses.learningPaths")}
           </button>
           <button
             onClick={() => setShowFilters(!showFilters)}
             className="px-4 py-2 text-xs font-black tracking-widest uppercase rounded transition-all border-2 border-foreground/10 text-foreground/40 hover:border-foreground/30"
           >
             <Filter className="w-3 h-3 inline mr-1.5" />
-            Filters
+            {t("courses.filters")}
           </button>
         </div>
 
@@ -264,7 +264,7 @@ const Courses = () => {
               className="p-6 border-2 border-foreground/10 bg-foreground/[0.02] rounded space-y-6"
             >
               <div>
-                <h3 className="text-[10px] font-black tracking-[0.3em] text-foreground/40 uppercase mb-3">Category</h3>
+                <h3 className="text-[10px] font-black tracking-[0.3em] text-foreground/40 uppercase mb-3">{t("courses.category")}</h3>
                 <div className="flex flex-wrap gap-2">
                   <button
                     onClick={() => { setActiveCategory("all"); setViewMode("all"); }}
@@ -275,7 +275,7 @@ const Courses = () => {
                         : "border-foreground/10 text-foreground/40 hover:border-foreground/30"
                     )}
                   >
-                    All
+                    {t("courses.all")}
                   </button>
                   {learningCategories.map(cat => {
                     const Icon = categoryIcons[cat.title] ?? Code2;
@@ -299,7 +299,7 @@ const Courses = () => {
               </div>
 
               <div>
-                <h3 className="text-[10px] font-black tracking-[0.3em] text-foreground/40 uppercase mb-3">Difficulty</h3>
+                <h3 className="text-[10px] font-black tracking-[0.3em] text-foreground/40 uppercase mb-3">{t("courses.difficulty")}</h3>
                 <div className="flex flex-wrap gap-2">
                   {(["all", "beginner", "intermediate", "advanced"] as DifficultyFilter[]).map(diff => (
                     <button
@@ -312,7 +312,7 @@ const Courses = () => {
                           : "border-foreground/10 text-foreground/40 hover:border-foreground/30"
                       )}
                     >
-                      {diff === "all" ? "All Levels" : diff.charAt(0).toUpperCase() + diff.slice(1)}
+                      {diff === "all" ? t("courses.allLevels") : diff.charAt(0).toUpperCase() + diff.slice(1)}
                     </button>
                   ))}
                 </div>
@@ -326,7 +326,7 @@ const Courses = () => {
           <div className="space-y-8">
             <h2 className="text-3xl font-black uppercase tracking-tight">
               <GraduationCap className="w-6 h-6 inline mr-2" />
-              Career Learning Paths
+              {t("courses.careerPaths")}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {learningPaths.map((path, index) => {
@@ -350,11 +350,11 @@ const Courses = () => {
                         <div className="space-y-2">
                           <h3 className="text-xl font-black uppercase tracking-tight">{path.title}</h3>
                           <p className="text-[10px] font-black tracking-widest text-foreground/40 uppercase">
-                            {path.tracks.length} tracks • {path.estimatedHours} hrs
+                            {path.tracks.length} {t("courses.trackCount")} • {path.estimatedHours} {t("courses.hrs")}
                           </p>
                         </div>
                           <CyberpunkBadge variant="status">
-                            {pathProgress > 0 ? `${pathProgress}%` : "Start"}
+                            {pathProgress > 0 ? `${pathProgress}%` : t("courses.startPath")}
                           </CyberpunkBadge>
                       </div>
 
@@ -381,7 +381,7 @@ const Courses = () => {
 
                       <Link to={`/learn/${path.tracks[0]}`} className="block">
                         <CyberpunkButton variant="outline" className="w-full border-2 border-primary text-primary">
-                          <span className="font-black tracking-widest uppercase">Start Path</span>
+                          <span className="font-black tracking-widest uppercase">{t("courses.startPath")}</span>
                           <ArrowRight className="h-4 w-4 ml-2" />
                         </CyberpunkButton>
                       </Link>
@@ -404,13 +404,13 @@ const Courses = () => {
                   {difficultyFilter.charAt(0).toUpperCase() + difficultyFilter.slice(1)}
                 </span>
                 <span className="text-xs text-foreground/40">
-                  tracks
+                  {t("courses.trackCount")}
                 </span>
                 <button
                   onClick={clearFilters}
                   className="ml-auto text-[10px] font-black tracking-wider uppercase text-foreground/40 hover:text-foreground transition-colors"
                 >
-                  Clear Filters
+                  {t("courses.clearFilters")}
                 </button>
               </div>
             )}
@@ -428,7 +428,7 @@ const Courses = () => {
                       <div className="flex-1">
                         <h2 className="text-2xl font-black uppercase tracking-tight">{cat.title}</h2>
                         <p className="text-[9px] font-black tracking-widest text-foreground/40 uppercase">
-                          {isBn ? cat.descriptionBn : cat.description} • {cat.tracks.length} tracks
+                          {isBn ? cat.descriptionBn : cat.description} • {cat.tracks.length} {t("courses.trackCount")}
                         </p>
                       </div>
                       {cat.tracks.length > 3 && (
@@ -436,7 +436,7 @@ const Courses = () => {
                           onClick={() => { setActiveCategory(cat.title); }}
                           className="text-[9px] font-black tracking-widest uppercase text-primary/60 hover:text-primary transition-colors shrink-0"
                         >
-                          View All →
+                          {t("courses.viewAll")}
                         </button>
                       )}
                     </div>
@@ -455,7 +455,7 @@ const Courses = () => {
                         </span>
                       ))}
                       {cat.tracks.length > 6 && (
-                        <span className="text-foreground/30 ml-1">+{cat.tracks.length - 6} more</span>
+                        <span className="text-foreground/30 ml-1">+{cat.tracks.length - 6} {t("courses.more")}</span>
                       )}
                     </div>
 
@@ -473,18 +473,20 @@ const Courses = () => {
             {categoryGroups.length === 0 && (
               <div className="text-center py-16">
                 <p className="text-lg font-black tracking-wider text-foreground/40 uppercase">
-                  No tracks found for the selected filters.
+                  {t("courses.noTracksFound")}
                 </p>
                 <button
                   onClick={clearFilters}
                   className="mt-4 text-sm font-black tracking-wider text-primary hover:text-primary/80 transition-colors uppercase"
                 >
-                  Clear all filters
+                  {t("courses.clearAllFilters")}
                 </button>
               </div>
             )}
           </>
         )}
+
+        {/* SINGLE CATEGORY VIEW */}
 
         {/* SINGLE CATEGORY VIEW */}
         {viewMode === "all" && activeCategory !== "all" && (
@@ -495,13 +497,13 @@ const Courses = () => {
                 {activeCategory}
               </span>
               <span className="text-xs text-foreground/40">
-                ({filteredTracks.length} tracks)
+                ({filteredTracks.length} {t("courses.trackCount")})
               </span>
               <button
                 onClick={clearFilters}
                 className="ml-auto text-[10px] font-black tracking-wider uppercase text-foreground/40 hover:text-foreground transition-colors"
               >
-                Clear Filters
+                {t("courses.clearFilters")}
               </button>
             </div>
 
@@ -514,13 +516,13 @@ const Courses = () => {
             {filteredTracks.length === 0 && (
               <div className="text-center py-16">
                 <p className="text-lg font-black tracking-wider text-foreground/40 uppercase">
-                  No tracks found for the selected filters.
+                  {t("courses.noTracksFound")}
                 </p>
                 <button
                   onClick={clearFilters}
                   className="mt-4 text-sm font-black tracking-wider text-primary hover:text-primary/80 transition-colors uppercase"
                 >
-                  Clear all filters
+                  {t("courses.clearAllFilters")}
                 </button>
               </div>
             )}

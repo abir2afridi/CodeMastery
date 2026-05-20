@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 function renderParagraph(text: string, key: string, brandColor?: string) {
   const parts = text.split(/(`[^`]+`)/g);
   return (
-    <p key={key} className="text-foreground leading-relaxed mb-8 text-[17px] font-medium tracking-normal selection:bg-primary/30">
+    <p key={key} className="text-foreground leading-relaxed mb-8 text-[17px] font-medium tracking-normal selection:bg-primary/30 break-words">
       {parts.map((p, i) =>
         p.startsWith("`") && p.endsWith("`") ? (
           <code 
@@ -46,7 +46,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
-      className="scroll-mt-32 mb-40 relative group"
+      className="scroll-mt-32 mb-40 relative group min-w-0"
     >
       {/* Brutalist Section Marker */}
       <div 
@@ -60,15 +60,15 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
         <div style={{ backgroundColor: brandColor }} className="w-1.5 h-1.5 animate-pulse" />
       </div>
 
-      <div className="flex flex-col mb-12 gap-3">
+      <div className="flex flex-col mb-12 gap-3 min-w-0">
         <div className="flex items-center gap-4">
           <div style={{ backgroundColor: `${brandColor}1A`, borderColor: `${brandColor}33` }} className="px-2 py-0.5 border">
-            <span style={{ color: brandColor }} className="text-[9px] font-black tracking-[0.3em] uppercase">{t("system.section")}_{section.id.toUpperCase()}</span>
+            <span style={{ color: brandColor }} className="text-[9px] font-black tracking-[0.3em] uppercase">{t("system.section")}_{section.id?.toUpperCase() ?? "???"}</span>
           </div>
           <div className="h-px flex-1 bg-gradient-to-r from-border/40 to-transparent" />
           <span className="text-[10px] font-mono text-foreground-20 tracking-tighter">{t("system.coordinate")}: {Math.floor(Math.random() * 999)}.{Math.floor(Math.random() * 999)}</span>
         </div>
-        <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] text-foreground italic">
+        <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] text-foreground italic break-words">
           {isBn && section.titleBn ? section.titleBn : section.title}
         </h2>
       </div>
@@ -94,7 +94,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
               {t("lesson.whyMatters")}
             </span>
           </div>
-          <p className="text-lg font-bold uppercase tracking-tight text-foreground-80 leading-tight">
+          <p className="text-lg font-bold uppercase tracking-tight text-foreground-80 leading-tight break-words">
             {isBn && section.whyItMattersBn ? section.whyItMattersBn : section.whyItMatters}
           </p>
         </div>
@@ -112,15 +112,15 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
                 {t("lesson.analogy")}
               </span>
             </div>
-            <p className="text-lg font-bold uppercase tracking-tight text-foreground-40 leading-tight">
+            <p className="text-lg font-bold uppercase tracking-tight text-foreground-40 leading-tight break-words">
               {isBn && section.realWorldAnalogyBn ? section.realWorldAnalogyBn : section.realWorldAnalogy}
             </p>
           </div>
         )}
       </div>
 
-      <div className="max-w-4xl mb-16 relative">
-        {(isBn && section.contentBn ? section.contentBn : section.content).split("\n\n").map((para, i) => renderParagraph(para, `${section.id}-p-${i}`, brandColor))}
+      <div className="max-w-4xl mb-16 relative min-w-0">
+        {(isBn && section.contentBn ? section.contentBn : section.content ?? "").split("\n\n").map((para, i) => renderParagraph(para, `${section.id ?? "s"}-p-${i}`, brandColor))}
         {/* Sub-border */}
         <div className="absolute -left-4 top-0 bottom-0 w-0.5 bg-foreground/10" />
       </div>
@@ -136,9 +136,9 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <div style={{ backgroundColor: brandColor }} className="w-2 h-2" />
-                <span style={{ color: brandColor }} className="text-[10px] font-black tracking-[0.4em] uppercase italic">{t("system.exhibit")}_{ex.id.toUpperCase()}</span>
+                <span style={{ color: brandColor }} className="text-[10px] font-black tracking-[0.4em] uppercase italic">{t("system.exhibit")}_{ex.id?.toUpperCase() ?? "???"}</span>
               </div>
-              <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-foreground">
+              <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-foreground break-words">
                 {isBn && ex.titleBn ? ex.titleBn : ex.title}
               </h3>
             </div>
@@ -154,7 +154,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
                    <div style={{ backgroundColor: `${brandColor}0D`, borderColor: `${brandColor}33` }} className="p-3 border shrink-0">
                       <Terminal style={{ color: brandColor }} className="h-5 w-5" />
                    </div>
-                   <p className="text-[15px] font-medium text-foreground-40 leading-relaxed max-w-3xl">
+                   <p className="text-[15px] font-medium text-foreground-40 leading-relaxed max-w-3xl break-words">
                       {isBn && ex.descriptionBn ? ex.descriptionBn : ex.description}
                    </p>
                 </div>
@@ -178,7 +178,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
                     <Activity style={{ color: brandColor }} className="h-4 w-4 animate-pulse" />
                     <span style={{ color: brandColor }} className="text-[10px] font-black tracking-[0.3em] uppercase">{t("system.analysisLog")}</span>
                   </div>
-                  <p className="text-base text-foreground-80 leading-relaxed font-medium">
+                  <p className="text-base text-foreground-80 leading-relaxed font-medium break-words">
                     {isBn && ex.explanationBn ? ex.explanationBn : ex.explanation}
                   </p>
                 </div>
@@ -189,10 +189,10 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
                     style={{ borderColor: `${brandColor}1A` }}
                     className="flex items-center gap-4 p-5 bg-zinc-900 border hover:border-primary/30 transition-colors"
                   >
-                    <div className="p-2 bg-yellow-500/10 border border-yellow-500/20">
+                    <div className="p-2 bg-yellow-500/10 border border-yellow-500/20 shrink-0">
                       <Zap className="h-4 w-4 text-yellow-400 fill-yellow-400" />
                     </div>
-                    <span className="text-sm font-bold uppercase tracking-wide text-foreground-40 italic">
+                    <span className="text-sm font-bold uppercase tracking-wide text-foreground-40 italic break-words">
                       {isBn && ex.tryItPromptBn ? ex.tryItPromptBn : ex.tryItPrompt}
                     </span>
                   </motion.div>
@@ -215,7 +215,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
                 <Zap className="h-4 w-4 fill-black" />
                 {t("lesson.microExercise")}
               </div>
-              <h4 className="text-4xl md:text-5xl font-black uppercase tracking-tighter max-w-3xl leading-[0.95] text-foreground">
+              <h4 className="text-4xl md:text-5xl font-black uppercase tracking-tighter max-w-3xl leading-[0.95] text-foreground break-words">
                 {isBn && section.microExercise.instructionBn ? section.microExercise.instructionBn : section.microExercise.instruction}
               </h4>
             </div>
@@ -337,7 +337,7 @@ export function SectionView({ section, trackId }: { section: Section, trackId: T
                 <div className="mt-12 p-10 md:p-16 bg-background border border-border/40 relative">
                   <div className="absolute top-6 right-6 text-[9px] font-black text-zinc-800 tracking-[0.5em] uppercase">{t("system.accessGranted")}</div>
                   <div className="max-w-4xl relative">
-                    {(isBn && section.deepDiveBn ? section.deepDiveBn : section.deepDive).split("\n\n").map((p, i) => renderParagraph(p, `${section.id}-d-${i}`, brandColor))}
+                    {(isBn && section.deepDiveBn ? section.deepDiveBn : section.deepDive ?? "").split("\n\n").map((p, i) => renderParagraph(p, `${section.id ?? "s"}-d-${i}`, brandColor))}
                     {/* Vertical decorative line inside deep dive */}
                     <div style={{ backgroundColor: `${brandColor}33` }} className="absolute -left-8 top-0 bottom-0 w-0.5" />
                   </div>

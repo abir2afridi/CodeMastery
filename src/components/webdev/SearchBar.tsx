@@ -3,12 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { searchTechnologies } from "@/data/webdev/technologies";
 import { Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/hooks/useI18n";
 
 export function SearchBar() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+  const { t } = useI18n();
 
   const results = query.length >= 2 ? searchTechnologies(query).slice(0, 8) : [];
 
@@ -39,7 +41,7 @@ export function SearchBar() {
         className="fixed bottom-0 left-0 right-0 z-30 h-12 bg-card border-t border-border flex items-center px-4 gap-2 lg:left-64"
       >
         <Search className="h-4 w-4 text-muted-foreground" />
-        <span className="text-sm text-muted-foreground flex-1 text-left">Search technologies...</span>
+        <span className="text-sm text-muted-foreground flex-1 text-left">{t("search.placeholder")}</span>
         <kbd className="hidden sm:inline-flex text-xs border border-border rounded px-1.5 py-0.5 text-muted-foreground font-mono">K</kbd>
       </button>
     );
@@ -58,7 +60,7 @@ export function SearchBar() {
             ref={inputRef}
             value={query}
             onChange={e => setQuery(e.target.value)}
-            placeholder="Search technologies..."
+            placeholder={t("search.placeholder")}
             className="flex-1 h-12 bg-transparent text-foreground text-sm outline-none placeholder:text-muted-foreground font-sans"
           />
           <button onClick={() => setOpen(false)} className="p-1 text-muted-foreground hover:text-foreground">
@@ -84,7 +86,7 @@ export function SearchBar() {
           </ul>
         )}
         {query.length >= 2 && results.length === 0 && (
-          <p className="px-4 py-6 text-sm text-muted-foreground text-center font-serif">No technologies found.</p>
+          <p className="px-4 py-6 text-sm text-muted-foreground text-center font-serif">{t("common.noResults")}</p>
         )}
       </div>
     </div>

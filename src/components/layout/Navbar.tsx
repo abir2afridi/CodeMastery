@@ -71,6 +71,13 @@ export function Navbar() {
             <Globe className="w-3.5 h-3.5" />
             <span>Web Dev Hub</span>
           </Link>
+          <Link
+            to="/web-dev"
+            className="flex md:hidden items-center justify-center w-8 h-8 rounded border border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 transition-colors"
+            aria-label="Web Dev Hub"
+          >
+            <Globe className="w-3.5 h-3.5" />
+          </Link>
           {/* Date & Time Display */}
           <div className="hidden lg:flex items-center gap-3 px-3 py-1.5 border border-white/10 bg-muted/30">
             <div className="flex items-center gap-1.5">
@@ -87,6 +94,13 @@ export function Navbar() {
           <div className="h-6 w-px bg-white/10" />
           <button
             onClick={openPalette}
+            className="flex items-center md:hidden justify-center w-8 h-8 border border-white/10 bg-muted/50 hover:bg-muted transition-all"
+            aria-label={t("nav.search")}
+          >
+            <Search className="h-3.5 w-3.5 text-muted-foreground" />
+          </button>
+          <button
+            onClick={openPalette}
             className="hidden md:flex items-center gap-3 px-4 py-2 border border-white/10 bg-muted/50 hover:bg-muted transition-all group/search"
             aria-label={t("nav.search")}
           >
@@ -98,7 +112,7 @@ export function Navbar() {
           </button>
           
           {progress && lvl && (
-            <div className="flex items-center border border-primary/20 bg-background overflow-hidden shadow-lg h-10">
+            <div className="flex items-center border border-primary/20 bg-background overflow-hidden shadow-lg h-10 flex-shrink-0">
               <div className="px-3 py-1.5 flex flex-col items-start gap-0 border-r border-white/10 bg-muted/30">
                 <div className="flex items-center gap-1">
                   <Activity className="h-2.5 w-2.5 text-primary animate-pulse" />

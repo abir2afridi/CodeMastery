@@ -41,34 +41,34 @@ export function CalloutBox({ callout }: { callout: Callout }) {
       <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-primary/40" />
 
       <div className="p-5 md:p-6 ml-1">
-        <div className="flex items-start gap-4">
-          <div className={cn(
-            "p-2 border border-border/20 bg-background/50 relative shrink-0",
-            s.text
-          )}>
-            <Icon className="h-5 w-5" />
-            <div className="absolute -top-1 -left-1 w-2 h-2 border-t border-l border-current opacity-40" />
-          </div>
-
-          <div className="space-y-3 flex-1">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className={cn("text-[9px] font-black tracking-[0.3em] uppercase", s.text)}>
-                  {s.label}
-                </span>
-                <div className="h-px w-8 bg-border/20" />
-                <span className="text-[10px] font-bold uppercase tracking-widest text-foreground/40">
-                  {isBn && callout.titleBn ? callout.titleBn : callout.title}
-                </span>
-              </div>
-              <Zap className={cn("h-3 w-3 opacity-20", s.text)} />
+          <div className="flex items-start gap-4 min-w-0">
+            <div className={cn(
+              "p-2 border border-border/20 bg-background/50 relative shrink-0",
+              s.text
+            )}>
+              <Icon className="h-5 w-5" />
+              <div className="absolute -top-1 -left-1 w-2 h-2 border-t border-l border-current opacity-40" />
             </div>
-            
-            <p className="text-[15px] leading-relaxed font-medium text-foreground/80">
-              {isBn && callout.contentBn ? callout.contentBn : callout.content}
-            </p>
+
+            <div className="space-y-3 flex-1 min-w-0">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className={cn("text-[9px] font-black tracking-[0.3em] uppercase", s.text)}>
+                    {s.label}
+                  </span>
+                  <div className="h-px w-8 bg-border/20 shrink-0" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 truncate">
+                    {isBn && callout.titleBn ? callout.titleBn : callout.title}
+                  </span>
+                </div>
+                <Zap className={cn("h-3 w-3 opacity-20 shrink-0", s.text)} />
+              </div>
+              
+              <p className="text-[15px] leading-relaxed font-medium text-foreground/80 break-words">
+                {isBn && callout.contentBn ? callout.contentBn : callout.content}
+              </p>
+            </div>
           </div>
-        </div>
       </div>
 
       {/* Decorative scanline overlay */}

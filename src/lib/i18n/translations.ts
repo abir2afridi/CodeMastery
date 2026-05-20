@@ -153,6 +153,13 @@ export const en: Dict = {
   "system.resetBuffer": "RESET_BUFFER",
   "system.neuralCompilerUplink": "NEURAL_COMPILER_UPLINK",
 
+  // Difficulty levels
+  "difficulty.Absolute Beginner": "Absolute Beginner",
+  "difficulty.Beginner": "Beginner",
+  "difficulty.Intermediate": "Intermediate",
+  "difficulty.Advanced": "Advanced",
+  "difficulty.Expert": "Expert",
+
   // Compiler
   "compiler.reset": "Reset",
   "compiler.console": "Console output",
@@ -297,6 +304,35 @@ export const en: Dict = {
   "courses.completed": "Completed",
   "courses.inProgress": "In Progress",
   "courses.notStarted": "Not Started",
+  "courses.prerequisites": "Prerequisites",
+  "courses.selectNode": "Select a neural uplink node to begin data ingestion. Each track is a verified core protocol for modern web architecture.",
+  "courses.allTracks": "All Tracks",
+  "courses.learningPaths": "Learning Paths",
+  "courses.filters": "Filters",
+  "courses.category": "Category",
+  "courses.all": "All",
+  "courses.difficulty": "Difficulty",
+  "courses.allLevels": "All Levels",
+  "courses.careerPaths": "Career Learning Paths",
+  "courses.startPath": "Start Path",
+  "courses.clearFilters": "Clear Filters",
+  "courses.viewAll": "View All →",
+  "courses.more": "more",
+  "courses.noTracksFound": "No tracks found for the selected filters.",
+  "courses.clearAllFilters": "Clear all filters",
+  "courses.trackCount": "tracks",
+  "courses.units": "UNITS",
+  "courses.hrs": "HRS",
+  "courses.ready": "READY",
+  "courses.learned": "Learned",
+  "courses.pathProgress": "tracks • {hours} hrs",
+
+  // Search
+  "search.placeholder": "Search technologies...",
+
+  // Language
+  "lang.english": "English",
+  "lang.bangla": "Bangla",
 
   // Track Overview
   "trackOverview.lesson": "Lesson",
@@ -561,6 +597,14 @@ export const bn: Dict = {
   "system.markAsResolved": "সমাধান_হিসেবে_চিহ্নিত",
   "system.resetBuffer": "বাফার_রিসেট",
   "system.neuralCompilerUplink": "নিউরাল_কম্পাইলার_আপলিঙ্ক",
+
+  // Difficulty levels
+  "difficulty.Absolute Beginner": "একেবারে শিক্ষানবিস",
+  "difficulty.Beginner": "শিক্ষানবিস",
+  "difficulty.Intermediate": "মাঝারি",
+  "difficulty.Advanced": "উন্নত",
+  "difficulty.Expert": "বিশেষজ্ঞ",
+
   "compiler.clear": "ক্লিয়ার",
   "compiler.run": "রান",
   "compiler.running": "চলছে...",
@@ -659,6 +703,37 @@ export const bn: Dict = {
   "courses.completed": "সম্পন্ন",
   "courses.inProgress": "চলছে",
   "courses.notStarted": "শুরু হয়নি",
+  "courses.prerequisites": "পূর্বশর্ত",
+  "courses.selectNode": "ডাটা ইনজেশন শুরু করতে একটি নিউরাল আপলিঙ্ক নোড নির্বাচন করুন। প্রতিটি ট্র্যাক আধুনিক ওয়েব আর্কিটেকচারের জন্য একটি যাচাইকৃত কোর প্রোটোকল।",
+  "courses.allTracks": "সব ট্র্যাক",
+  "courses.learningPaths": "লার্নিং পাথ",
+  "courses.filters": "ফিল্টার",
+  "courses.category": "ক্যাটাগরি",
+  "courses.all": "সব",
+  "courses.difficulty": "জটিলতা",
+  "courses.allLevels": "সব লেভেল",
+  "courses.careerPaths": "ক্যারিয়ার লার্নিং পাথ",
+  "courses.startPath": "পাথ শুরু করুন",
+  "courses.clearFilters": "ফিল্টার মুছুন",
+  "courses.viewAll": "সব দেখুন →",
+  "courses.more": "আরও",
+  "courses.noTracksFound": "নির্বাচিত ফিল্টারের জন্য কোন ট্র্যাক পাওয়া যায়নি।",
+  "courses.clearAllFilters": "সব ফিল্টার মুছুন",
+  "courses.trackCount": "টি ট্র্যাক",
+  "courses.units": "ইউনিট",
+  "courses.hrs": "ঘণ্টা",
+  "courses.ready": "প্রস্তুত",
+  "courses.learned": "শিখেছেন",
+  "courses.pathProgress": "{hours} ঘণ্টায় {tracks} টি ট্র্যাক",
+
+  // Not Found
+  // Search
+  "search.placeholder": "প্রযুক্তি অনুসন্ধান করুন...",
+
+  // Language
+  "lang.english": "ইংরেজি",
+  "lang.bangla": "বাংলা",
+
   "trackOverview.lesson": "পাঠ",
   "trackOverview.startLearning": "শেখা শুরু করুন",
   "trackOverview.continueLearning": "শেখা চালিয়ে যান",
@@ -668,6 +743,7 @@ export const bn: Dict = {
   "quiz.question": "প্রশ্ন",
   "quiz.submit": "উত্তর জমা দিন",
   "quiz.next": "পরবর্তী প্রশ্ন",
+  "quiz.previous": "পূর্ববর্তী",
   "quiz.finish": "কুইজ শেষ করুন",
   "quiz.score": "স্কোর",
   "quiz.passed": "পাস করেছেন!",
