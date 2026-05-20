@@ -12,8 +12,10 @@ CodeMastery is a comprehensive web development learning platform designed to tak
 - **Certificate Generation**: Beautiful certificates upon track completion
 - **Project-Based Learning**: Real-world projects at every skill level
 - **Comprehensive Quiz System**: 8+ questions per chapter with multiple question types
+- **Web Dev Hub**: Technology directory with 30+ categories, 200+ technologies, rankings, roadmaps, and comparisons
+- **Developer Profile**: Cyber-brutalist GitHub profile dashboard with stats, contribution heatmap, and live signal feed
 - **Dark Mode Interface**: Modern space/terminal aesthetic with smooth animations
-- **Bengali Language Support**: Full Bangla translations for all curriculum content
+- **Bengali Language Support**: Full Bangla translations for all curriculum content and UI
 - **Mobile Responsive**: Learn on any device with optimized layouts
 
 ## 📚 Curriculum Structure
@@ -792,10 +794,13 @@ CodeMastery is a comprehensive web development learning platform designed to tak
 - **Styling**: Tailwind CSS + shadcn/ui components
 - **Animations**: Framer Motion for smooth transitions
 - **Code Editor**: CodeMirror 6 with syntax highlighting
+- **Charts**: Recharts for data visualization
 - **Icons**: Lucide React
-- **Themes**: Dark mode with space/terminal aesthetic
-- **State Management**: React hooks + localStorage
+- **Themes**: Dark/Light mode with cyber-brutalist and space/terminal aesthetics
+- **State Management**: React hooks + React Query + localStorage
+- **Internationalization**: Custom i18n system with JSON locale files (English & Bengali)
 - **Certificates**: html2canvas + jsPDF
+- **Database**: SQL.js (in-browser SQL), Supabase-ready
 
 ## 🚀 Getting Started
 
@@ -833,65 +838,55 @@ src/
 ├── components/
 │   ├── certificate/     # Certificate generation components
 │   ├── compiler/       # Multi-panel live code editor (59 compilers & playgrounds)
-│   ├── layout/         # Navigation and layout components
+│   ├── layout/         # Navigation, sidebar, and layout components
 │   ├── lesson/         # Lesson content and interactions
-│   └── quiz/           # Quiz system components
+│   ├── quiz/           # Quiz system components
+│   ├── ui/             # shadcn/ui base components
+│   └── webdev/         # Web Dev Hub components (TechCard, LiveTicker, CompareTray)
+├── data/
+│   └── webdev/         # Web Dev Hub data (200+ technologies, 30+ categories)
+├── hooks/
+│   ├── useProgress.ts
+│   ├── useI18n.ts      # Main i18n hook
+│   ├── useToast.ts
+│   ├── use-mobile.tsx
+│   └── webdev/         # Web Dev Hub hooks (useTechnologies, useBookmarks, useCompare)
 ├── lib/
 │   ├── curriculum/     # All course content (3400+ chapters across 59 tracks)
-│   │   ├── html-curriculum.ts
-│   │   ├── css-curriculum.ts
-│   │   ├── js-curriculum.ts
-│   │   ├── python-curriculum.ts
-│   │   ├── typescript-curriculum.ts
+│   │   ├── html-curriculum.ts / css-curriculum.ts / js-curriculum.ts
+│   │   ├── python-curriculum.ts / typescript-curriculum.ts
 │   │   ├── c-curriculum.ts / cpp-curriculum.ts / java-curriculum.ts / csharp-curriculum.ts
-│   │   ├── w3css-curriculum.ts / colors-curriculum.ts / php-curriculum.ts
-│   │   ├── htmldom-curriculum.ts
-│   │   ├── bootstrap3-curriculum.ts / bootstrap4-curriculum.ts / bootstrap5-curriculum.ts
-│   │   ├── sql-curriculum.ts / mysql-curriculum.ts / postgresql-curriculum.ts
+│   │   ├── php-curriculum.ts / sql-curriculum.ts / mysql-curriculum.ts / postgresql-curriculum.ts
 │   │   ├── angular-curriculum.ts / vue-curriculum.ts / react-curriculum.ts
-│   │   ├── kotlin-curriculum.ts / jquery-curriculum.ts
-│   │   ├── numpy-curriculum.ts / pandas-curriculum.ts / django-curriculum.ts
 │   │   ├── go-curriculum.ts / swift-curriculum.ts / bash-curriculum.ts
-│   │   ├── r-curriculum.ts / scipy-curriculum.ts
+│   │   ├── rust-curriculum.ts / nodejs-curriculum.ts / asp-curriculum.ts
 │   │   ├── mongodb-curriculum.ts / excel-curriculum.ts / dsa-curriculum.ts
-│   │   ├── xml-curriculum.ts / json-curriculum.ts
-│   │   ├── nodejs-curriculum.ts / asp-curriculum.ts
-│   │   ├── cybersecurity-curriculum.ts / aws-curriculum.ts
-│   │   ├── machinelearning-curriculum.ts / statistic-curriculum.ts
-│   │   ├── rwd-curriculum.ts / ajax-curriculum.ts
-│   │   ├── rust-curriculum.ts / matplotlib-curriculum.ts
-│   │   ├── utf8-curriculum.ts / pi-curriculum.ts
-│   │   ├── ai-curriculum.ts / genai-curriculum.ts
-│   │   ├── programming-intro-curriculum.ts
-│   │   ├── accessibility-curriculum.ts
-│   │   ├── htmlcss-intro-curriculum.ts
-│   │   ├── codegame-curriculum.ts
-│   │   ├── google-sheets-curriculum.ts
-│   │   ├── typing-speed-curriculum.ts
-│   │   ├── svg-curriculum.ts
-│   │   ├── icons-curriculum.ts
+│   │   ├── ai-curriculum.ts / genai-curriculum.ts / ml-curriculum.ts
+│   │   ├── and 30+ more curriculum files...
+│   │   ├── bn-programming-intro.json  # Bangla translations
 │   │   └── index.ts
 │   ├── progress.ts      # User progress tracking
 │   ├── certificate.ts  # Certificate generation
-│   ├── i18n/           # Internationalization (English & Bengali)
+│   ├── i18n/           # Internationalization (461 keys, English & Bengali)
 │   └── utils.ts        # Utility functions
-├── pages/              # Page components
-│   ├── Dashboard.tsx   # Main learning dashboard
-│   ├── CompilerPage.tsx # Standalone compiler
-│   ├── CertificatePage.tsx # Certificate view
-│   └── [track]/        # Dynamic track pages
-└── hooks/              # Custom React hooks
-    ├── useProgress.ts
-    ├── useToast.ts
-    └── use-mobile.tsx
+├── pages/
+│   ├── Landing.tsx / Dashboard.tsx / Courses.tsx
+│   ├── TrackOverview.tsx / Lesson.tsx / QuizPage.tsx / PracticePage.tsx
+│   ├── CompilerPage.tsx / Profile.tsx / CertificatePage.tsx
+│   ├── About.tsx        # About page with Developer Features
+│   ├── DeveloperProfile.tsx  # Cyber-brutalist GitHub dashboard
+│   ├── TechnologyDirectory.tsx / TechnologyPage.tsx / TechnologyCompare.tsx
+│   └── NotFound.tsx
+├── pages/webdev/        # Web Dev Hub pages (Index, CategoryPage, TechDetailPage, etc.)
+└── public/locales/      # JSON locale files (en/common.json, bn/common.json)
 ```
 
 ## 🎨 Design System
-- **Theme**: Dark mode with space/terminal aesthetic
-- **Colors**: Electric blue (#00D4FF), Violet (#7C3AED), Dark backgrounds
-- **Fonts**: Space Grotesk (headings), Inter (body), JetBrains Mono (code)
-- **UI Patterns**: Glassmorphism cards, neon glows, smooth transitions
-- **Animations**: Framer Motion for all page changes and interactions
+- **Themes**: Dark mode (space/terminal) and Light mode with cyber-brutalist accents
+- **Colors**: Electric blue (#0066FF), Neon cyan (#00D4FF), Terminal green (#00FF41), Dark/light backgrounds
+- **Fonts**: Syne (headings), Inter (body), JetBrains Mono / Fira Code (code)
+- **UI Patterns**: Sharp corners, scanline overlays, glow effects, glassmorphism cards, neon borders
+- **Animations**: Framer Motion for page transitions, marquee tickers, scanning effects
 
 ## 🔧 Development Commands
 ```bash
@@ -940,6 +935,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **shadcn/ui** - Beautiful and accessible component library
 - **Framer Motion** - Production-ready motion library for React
 - **CodeMirror 6** - Powerful code editor with syntax highlighting
+- **Recharts** - Composable charting library for React
+- **React Query** - Server state management and data fetching
 - **Lucide React** - Beautiful & consistent icon toolkit
 - **html2canvas & jsPDF** - Certificate generation
 - **Canvas Confetti** - Celebration animations
